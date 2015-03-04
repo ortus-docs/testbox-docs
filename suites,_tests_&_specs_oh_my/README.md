@@ -17,7 +17,7 @@ component displayName="The name of my suite" asyncAll="boolean" labels="list" sk
 |labels|false|---|string/list|The list of labels this test belongs to|
 |skip|false|false|boolean/udf|A boolean flag that makes the runners skip the test for execution. It can also be the name of a UDF in the same CFC that will be executed and MUST return a boolean value.|
 
-> **Important** If you activate the asyncAll flag for asynchronous testing, you HAVE to make sure your tests are also thread safe and appropriately locked.
+> **Caution** If you activate the asyncAll flag for asynchronous testing, you HAVE to make sure your tests are also thread safe and appropriately locked.
 
 <h3 style="color:grey">Tests</h3>
 TestBox discovers test methods in your bundle CFC by applying the following discovery rules:

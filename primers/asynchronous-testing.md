@@ -34,5 +34,5 @@ component displayName="TestBox xUnit suite" skip="testEnv" asyncAll=true{
 }
 ```
 
-> **Important** Once you delve into the asynchronous world you will have to make sure your tests are also thread safe (var-scoped) and provide any necessary locking if necessary.
+> **Caution** Once you delve into the asynchronous world you will have to make sure your tests are also thread safe (var-scoped) and provide any necessary locking if necessary.
 
