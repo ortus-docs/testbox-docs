@@ -21,35 +21,4 @@ function testMyObj() expectedException="[type]:[regex]"{
 }
 ```
 
-> **Danger** Please note that the usage of the `expectedException()` method can ONLY be used while in synchronous mode. If you are running your tests in asynchronous mode, this will not work. We would recommend the closure or annotation approach instead.
-
-<br>
-
-> **Caution** Test
-
-<br>
-
-> **Success** Test
-
-<br>
-
-> **Warning** Test
-
-<br>
-
-> **Quote** Test
-
-<br>
-
-> **Hint** Test
-
-<br>
-
-> **Comment** Test
-
-<br>
-
-> **Note** Test
-
-<br>
-
+> **Caution** Please note that the usage of the `expectedException()` method can ONLY be used while in synchronous mode. If you are running your tests in asynchronous mode, this will not work. We would recommend the closure or annotation approach instead.
