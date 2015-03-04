@@ -1,0 +1,21 @@
+# Installing TestBox
+
+TestBox can be downloaded from http://www.coldbox.org/download or can be installed via CommandBox CLI (http://www.ortussolutions.com/products/commandbox):
+
+```javascript
+// latest stable version
+box install testbox
+
+// latest bleeding edge
+box install testbox-be
+```
+This will install TestBox in a */testbox* folder from where you called the command. You can also extract the download zip and place it anywhere you like and create a mapping called */testbox* that points to testbox in the distribution folder, this is the most secure approach. However, you can just place it in the webroot if you like.
+
+```javascript
+this.mappings[ "/testbox" ] = expandPath( "C:/frameworks/testbox/" );
+```
+You can also clone from Github:
+
+```javascript
+git clone git://github.com/ortus-solutions/testbox testbox
+```
