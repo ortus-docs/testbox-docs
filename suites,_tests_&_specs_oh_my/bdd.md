@@ -1,8 +1,6 @@
-# BDD
+# BDD Suites
 
-<h3 style="color:grey">Suites</h3>
-
-A test suite begins with a call to our TestBox describe() function with at least two arguments: a title and a closure within the life-cycle method called *run()*. The *title* is the name of the suite to register and the function is the block of code that implements the suite. There are more arguments which you can see below:
+A test suite begins with a call to our TestBox `describe()` function with at least two arguments: a `title` and a `body` closure within the life-cycle method called `run()`. The `title` is the name of the suite to register and the `body` function is the block of code that implements the suite. There are more arguments which you can see below:
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
@@ -69,9 +67,9 @@ describe("A spec", function() {
 
 });
 ```
-<h3 style="color:grey">Specs</h3>
+## BDD Specs
 
-Specs are defined by calling the TestBox it() global function, which takes in a title and a function. The title is the title of this spec or test you will write and the function is a block of code that represents the test/spec. A spec will contain most likely one or more expectations that will test the state of the SUT (software under test) or sometimes referred to as code under test.
+Specs are defined by calling the TestBox `it()` global function, which takes in a title and a function. The title is the title of this spec or test you will write and the function is a block of code that represents the test/spec. A spec will contain most likely one or more expectations that will test the state of the SUT (software under test) or sometimes referred to as code under test.
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
