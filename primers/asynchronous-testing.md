@@ -1,6 +1,6 @@
 # Asynchronous-Testing
 
-You can tag a bundle component declaration with the boolean asyncAll annotation and TestBox will execute all specs in separate threads for you concurrently.
+You can tag a bundle component declaration with the boolean `asyncAll` annotation and TestBox will execute all specs in separate threads for you concurrently.
 
 ```javascript
 component displayName="TestBox xUnit suite" skip="testEnv" asyncAll=true{
