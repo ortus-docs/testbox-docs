@@ -1,5 +1,6 @@
 # Spies & Mocking
-Please refer to our [MockBox](http://wiki.coldbox.org/wiki/MockBox.cfm) guide to take advantage of all the mocking and stubbing you can do. However, every BDD TestBundle has the following functions available to you for mocking and stubbing purposes:
+
+Please refer to our [MockBox](../../mockbox/index.md) section to take advantage of all the mocking and stubbing you can do. However, every BDD TestBundle has the following functions available to you for mocking and stubbing purposes:
 
 * makePublic( target, method, newName ) - Exposes private methods from objects as public methods
 * querySim( queryData ) - Simulate a query
