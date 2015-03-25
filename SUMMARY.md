@@ -6,7 +6,7 @@
    * [Author](introduction/author.md)
 * [Overview](overview/index.md)
    * [System Requirements](overview/system_requirements.md)
-   * Features At A Glance
+   * [Features At A Glance](overview/features_at_a_glance.md)
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
 * [Primers](primers/README.md)
