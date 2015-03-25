@@ -1,6 +1,6 @@
 # Specs
 
-Specifications (Specs) are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec. A spec will contain most likely one or more expectations that will test the state of the SUT (software under test) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your describe() block of your story.
+Specifications (Specs) are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec. A spec will contain most likely one or more expectations that will test the state of the [SUT](http://en.wikipedia.org/wiki/System_under_test) (software under test) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your `describe()` block of your [story](http://en.wikipedia.org/wiki/User_story).
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
@@ -28,9 +28,9 @@ function run(){
 }
 ```
 
-<h3 style="color:grey">They are closures Ma!</h3>
+##They are closures Ma!
 
-Since the implementations of the describe() and it() functions are closures, they can contain executable code that is necessary to implement the test. All ColdFusion rules of scoping apply to [closures](http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d31851842acbba1353e848b35-8000.html), so please remember them. We recommend always using the variables scope for easy access and distinction.
+Since the implementations of the `describe()` and `it()` functions are closures, they can contain executable code that is necessary to implement the test. All CFML rules of scoping apply to [closures](http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d31851842acbba1353e848b35-8000.html), so please remember them. We recommend always using the `variables` scope for easy access and distinction.
 
 ```javascript
 function run(){
