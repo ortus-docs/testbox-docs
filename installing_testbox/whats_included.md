@@ -1,5 +1,7 @@
 # What's Included
 
+![](testbox-included.png)
+
 The download structure includes:
 
 * **apidocs** : The API docs for TestBox
