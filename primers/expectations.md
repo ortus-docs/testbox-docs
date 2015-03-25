@@ -136,7 +136,7 @@ describe("Some Included TestBox Matchers:", function() {
 });
 ```
 
-<h3 style="color:grey">Custom Matchers</h3>
+### Custom Matchers
 
 You can also build and register custom matchers. Please visit the Custom Matchers chapter to read more about custom matchers.
 
