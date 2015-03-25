@@ -49,7 +49,7 @@
    * [xUnit](life-cycle_methods/xunit.md)
    * [BDD](life-cycle_methods/bdd.md)
 * [Suites, Tests & Specs (Oh My!)](suites,_tests_&_specs_oh_my/README.md)
-   * [xUnit](suites,_tests_&_specs_oh_my/xunit)
+   * [xUnit](suites,_tests_&_specs_oh_my/xunit.md)
    * [BDD](suites,_tests_&_specs_oh_my/bdd.md)
 * [Assertions](assertions/README.md)
    * [Custom Assertions](assertions/custom_assertions.md)
