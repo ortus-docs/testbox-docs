@@ -56,17 +56,17 @@ TestBox ships with a global runner that can be used to run pretty much anything.
 
 <img src="../images/testbox-global-runner.png">
 
-<h3 style="color:grey">Test Browser</h3>
+##Test Browser
 
 TestBox ships with a test browser that is highly configurable to whatever URL accessible path you want. It will then show you a test browser where you can navigate and execute not only individual tests, but also directory suites as well.
 
 <img src="../images/testbox-browser.png">
 
-<h3 style="color:grey">ANT Runner</h3>
+##ANT Runner
 
 In our test samples and templates we include an ANT runner that will be able to execute your tests via ANT. It can also leverage our ANTJunit reporter to use the junitreport task to produce JUnit compliant reports as well. You can find this runner in the test samples and runner template directory.
 
-<h3 style="color:grey">Bundle(s) Runner</h3>
+##Bundle(s) Runner
 
 ```javascript
 <cfset r = new coldbox.system.TestBox( "coldbox.testing.cases.testing.specs.BDDTest" ) >
