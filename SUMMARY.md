@@ -70,7 +70,7 @@
    * [ANT Runner](running_tests/ant_runner.md)
 * [Reporters](reporters/README.md)
    * [Custom Reporters](reporters/custom_reporters.md)
-* [MockBox](mockbox.md)
+* [MockBox](mockbox/index.md)
    * [System Requirements](mockboxsystemrequirements.md)
    * [Installing Mockbox](installing_mockbox.md)
    * [What is Mocking?](what_is_mocking.md)
