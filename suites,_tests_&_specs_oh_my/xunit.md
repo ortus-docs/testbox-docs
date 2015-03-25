@@ -1,5 +1,8 @@
 # xUnit Tests
 
+The testing bundle CFC is actually the suite in xUnit style as it contains all the test methods you would like to test with. Usually, this CFC represents a test case for a specific software under test (SUT), whether that's a model object, service, etc. This component can have some cool annotations as well that can alter its behavior.
+
+
 ```javascript
 component displayName="The name of my suite" asyncAll="boolean" labels="list" skip="boolean"{
 
