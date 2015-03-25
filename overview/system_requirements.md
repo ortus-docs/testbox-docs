@@ -6,10 +6,11 @@ If you are going to be using the xUnit style of testing which includes MXUnit co
 
 * ColdFusion 9+
 * Railo 3+
+* Lucee 4.5+
 
 
 ##BDD Style (Requires closures)
 
 * ColdFusion 10+
 * Railo 4.1+
-
+* Lucee 4.5+
