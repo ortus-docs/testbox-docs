@@ -1,4 +1,4 @@
-# xUnit
+# xUnit Tests
 
 ```javascript
 component displayName="The name of my suite" asyncAll="boolean" labels="list" skip="boolean"{
