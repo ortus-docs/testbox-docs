@@ -6,6 +6,7 @@
    * [System Requirements](system_requirements.md)
    * [About This Book](introduction/about_this_book.md)
    * [Author](introduction/author.md)
+* Overview
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
 * [Primers](primers/README.md)
@@ -94,5 +95,4 @@
        * [$debug()](debug.md)
    * [Some Examples](some_examples.md)
    * [Conclusion](conclusion.md)
-* Overview
 
