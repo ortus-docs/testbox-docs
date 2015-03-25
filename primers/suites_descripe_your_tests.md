@@ -1,6 +1,6 @@
-# Suites: Descripe Your Tests
+# Suites: Describe Your Tests
 
-A test suite begins with a call to our TestBox describe() function with at least two arguments: a title and a function. The title is the name of the suite to register and the function is the block of code that implements the suite. When applying BDD to your tests, this function is used to describe your story scenarios that you will implement. There are more arguments which you can see below:
+A test suite begins with a call to our TestBox `describe()` function with at least two arguments: a `title` and a `body` function/closure. The `title` is the name of the suite to register and the `body` function/closure is the block of code that implements the suite. When applying BDD to your tests, this function is used to describe your story scenarios that you will implement. There are more arguments which you can see below:
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
