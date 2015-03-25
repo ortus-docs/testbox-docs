@@ -30,9 +30,9 @@ describe("A spec", function() {
 });
 ```
 
-<h3 style="color:grey">Skip Argument</h3>
+## Skip Argument
 
-The skip argument can be a boolean value or a closure. If the value is true then the suite or spec is skipped. If the return value of the closure is true then the suite or spec is skipped. Using the closure approach allows you to dynamically at runtime figure out if the desired spec or suite is skipped. This is such a great way to prepare tests for different CFML engines.
+The `skip` argument can be a boolean value or a closure. If the value is **true** then the suite or spec is skipped. If the return value of the closure is **true** then the suite or spec is skipped. Using the closure approach allows you to dynamically at runtime figure out if the desired spec or suite is skipped. This is such a great way to prepare tests for different CFML engines.
 
 ```javascript
 describe(title="A railo suite", body=function() {
