@@ -38,7 +38,7 @@ function testAwesomenewss(){
 }
 ```
 
-## CFC Assertions 
+##CFC Assertions 
 You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of assertions (Yes, I said plethora), in a CFC and register that as the assertions via its instantiation path. This provides much more flexibility and reusability for your projects.
 
 ```javascript
