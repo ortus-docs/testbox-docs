@@ -16,7 +16,7 @@
        * [Ref Card](primers/ref_card.md)
        * [Requirements](primers/requirements.md)
        * [Bundles: Group Your Tests](primers/bundles_group_your_tests.md)
-       * [Suites: Descripe Your Tests](primers/suites_descripe_your_tests.md)
+       * [Suites: Describe Your Tests](primers/suites_descripe_your_tests.md)
        * [Specs](primers/specs.md)
        * [Expectations](primers/expectations.md)
        * [Suite Groups](primers/suite_groups.md)
