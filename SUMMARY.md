@@ -5,6 +5,7 @@
    * [Features At A Glance](features_at_a_glance.md)
    * [System Requirements](system_requirements.md)
    * About This Book
+   * Author
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
 * [Primers](primers/README.md)
