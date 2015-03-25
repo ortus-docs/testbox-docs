@@ -8,7 +8,7 @@ component displayName="The name of my suite" asyncAll="boolean" labels="list" sk
 }
 ```
 
-<h3 style="color:grey">Bundle Annotations</h3>
+##Bundle Annotations
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
@@ -17,13 +17,13 @@ component displayName="The name of my suite" asyncAll="boolean" labels="list" sk
 |labels|false|---|string/list|The list of labels this test belongs to|
 |skip|false|false|boolean/udf|A boolean flag that makes the runners skip the test for execution. It can also be the name of a UDF in the same CFC that will be executed and MUST return a boolean value.|
 
-> **Caution** If you activate the asyncAll flag for asynchronous testing, you HAVE to make sure your tests are also thread safe and appropriately locked.
+> **Caution** If you activate the `asyncAll` flag for asynchronous testing, you HAVE to make sure your tests are also thread safe and appropriately locked.
 
-<h3 style="color:grey">Tests</h3>
+##Tests
 TestBox discovers test methods in your bundle CFC by applying the following discovery rules:
 
-* Any method that has a test annotation on it
-* Any public method that starts or ends with the word test
+* Any method that has a `test` annotation on it
+* Any public method that starts or ends with the word `test`
 
 ```javascript
 // Via inline annotation
@@ -40,7 +40,7 @@ function testShouldDoThis(){}
 function shouldDoThisTest(){}
 ```
 
-Each test method will test the state of the SUT (software under test) or sometimes referred to as code under test. It will do so by asserting that actual values from an execution match an expected value or condition. TestBox offers an assertion library that you have available in your bundle via the injected variable $assert. You can also use our expectations library if you so desire, but that is mostly used in our BDD approach (chapter 2: Primers).
+Each test method will test the state of the SUT (software under test) or sometimes referred to as code under test. It will do so by asserting that actual values from an execution match an expected value or condition. TestBox offers an assertion library that you have available in your bundle via the injected variable `$assert`. You can also use our expectations library if you so desire, but that is mostly used in our BDD approach (chapter 3: [Primers](../primers/index.md)).
 
 ```javascript
 function testIncludes(){
