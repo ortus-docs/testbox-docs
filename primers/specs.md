@@ -1,6 +1,6 @@
 # Specs
 
-Specifications (Specs) are defined by calling the TestBox it() global function, which takes in a title and a function. The title is the title of this spec you will write and the function is a block of code that represents the spec. A spec will contain most likely one or more expectations that will test the state of the SUT (software under test) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your describe() block of your story.
+Specifications (Specs) are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec. A spec will contain most likely one or more expectations that will test the state of the SUT (software under test) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your describe() block of your story.
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
