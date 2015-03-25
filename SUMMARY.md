@@ -4,6 +4,7 @@
    * [What's New With 2.1.0](introduction/whats_new_with_210.md)
    * [Features At A Glance](features_at_a_glance.md)
    * [System Requirements](system_requirements.md)
+   * About This Book
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
 * [Primers](primers/README.md)
