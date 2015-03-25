@@ -1,6 +1,6 @@
 # Asynchronous Testing
 
-As you can see from our arguments for a test suite, you can pass an asyncAll argument to the describe() blocks that will allow TestBox to execute all specs in separate threads for you concurrently.
+As you can see from our arguments for a test suite, you can pass an `asyncAll` argument to the `describe()` blocks that will allow TestBox to execute all specs in separate threads for you concurrently.
 
 ```javascript
 describe(title="A spec (with setup and tear-down)", asyncAll=true, body=function() {
@@ -26,4 +26,4 @@ describe(title="A spec (with setup and tear-down)", asyncAll=true, body=function
 });
 ```
 
-> <br>Important</b> Once you delve into the asynchronous world you will have to make sure your tests are also thread safe (var-scoped) and provide any necessary locking if necessary.
+> **Caution** Once you delve into the asynchronous world you will have to make sure your tests are also thread safe (var-scoped) and provide any necessary locking if necessary.
