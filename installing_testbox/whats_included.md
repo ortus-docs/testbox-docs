@@ -1,6 +1,6 @@
 # What's Included
 
-![](testbox-included.png)
+![](../testbox-included.png)
 
 The download structure includes:
 
