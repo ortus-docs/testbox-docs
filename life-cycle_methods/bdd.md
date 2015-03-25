@@ -1,11 +1,11 @@
 # BDD
 
-* beforeAll() - Executes once before all specs for the entire test bundle CFC
-* afterAll() - Executes once after all specs complete in the test bundle CFC
-* run( testResults, TestBox ) - Executes once so it can capture all your describe and it blocks
-* beforeEach( currentSpec ) - Executes before every single spec in a single describe block and receives the currently executing spec.
-* afterEach( currentSpec ) - Executes after every single spec in a single describe block and receives the currently executing spec.
-* aroundEach( spec, suite ) - Executes around the executing spec so you can provide code surrouding the spec.
+* `beforeAll()` - Executes once before all specs for the entire test bundle CFC
+* `afterAll()` - Executes once after all specs complete in the test bundle CFC
+* `run( testResults, TestBox )` - Executes once so it can capture all your describe and it blocks
+* `beforeEach( currentSpec )` - Executes before every single spec in a single describe block and receives the currently executing spec.
+* `afterEach( currentSpec )` - Executes after every single spec in a single describe block and receives the currently executing spec.
+* `aroundEach( spec, suite )` - Executes around the executing spec so you can provide code surrouding the spec.
 
 ```javascript
 
@@ -59,6 +59,6 @@ component{
 }
 ```
 
-The great flexibility of the BDD approach is that it allows you to nest *describe* blocks or create multiple *describe* blocks. Each describe block can have its own life-cycle methods as well. Not only that, if they are nested, TestBox will walk the tree and call each *beforeEach()* and *afterEach() *in the order you declare them.
+The great flexibility of the BDD approach is that it allows you to nest `describe` blocks or create multiple `describe` blocks. Each `describe` block can have its own life-cycle methods as well. Not only that, if they are nested, TestBox will walk the tree and call each `beforeEach()` and `afterEach()` in the order you declare them.
 
 
