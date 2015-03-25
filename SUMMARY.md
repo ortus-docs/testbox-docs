@@ -7,7 +7,7 @@
 * [Overview](overview/index.md)
    * [Features At A Glance](overview/features_at_a_glance.md)
    * [System Requirements](overview/system_requirements.md)
-   * RefCards
+   * [RefCards](overview/refcards.md)
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
 * [Primers](primers/README.md)
