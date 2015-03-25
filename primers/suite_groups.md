@@ -61,11 +61,12 @@ aroundEach( function( spec, suite ){
 ```
 
 The method receives a structure of data representing the spec. This contains the following elements:
-* body : The actual closure for the spec that you will use to execute within it.
-* labels : The labels used in the spec
-* name : The name of the spec
-* order : The order of execution of the spec
-* skip : The skip flag or closure that determines if the spec runs
+
+* **body** : The actual closure for the spec that you will use to execute within it.
+* **labels** : The labels used in the spec
+* **name** : The name of the spec
+* **order** : The order of execution of the spec
+* **skip** : The skip flag or closure that determines if the spec runs
 
 The method also receives a structure of metadata about the suite this spec is contained in. It has information about life-cycle closures, async information, names, parents, etc. Here is a very practical example of creating and around each closure to provide rollbacks for specs:
 
@@ -87,9 +88,9 @@ aroundEach( function( spec, suite ){
 
 This simple around each life-cycle closure will rollback ALL my spec's executions even if they throw exceptions.
 
-<h3 style="color:grey">Nesting describe Blocks</h3>
+##Nesting describe Blocks
 
-Calls to our describe() function can be nested with specs at any level or point of execution. This allows you to create your tests as a related tree of nested functions. Please note that before a spec is executed, TestBox walks down the tree executing each beforeEach() and afterEach() function in the declared order. This is a great way to logically group specs in any level as you see fit.
+Calls to our `describe()` function can be nested with specs at any level or point of execution. This allows you to create your tests as a related tree of nested functions. Please note that before a spec is executed, TestBox walks down the tree executing each `beforeEach()` and `afterEach()` function in the declared order. This is a great way to logically group specs in any level as you see fit.
 
 ```javascript
 describe("A spec", function() {
