@@ -53,6 +53,6 @@ Each test function can also have some cool annotations attached to it.
 
 |Arguments|Required|Default|Type|Description|
 |--|--|--|--|--|
-|labels|false|string/list|---|The list of labels this test belongs to|
-|skip|false|false|boolean/udf|A boolean flag that makes the runners skip the test for execution. It can also be the name of a UDF in the same CFC that will be executed and MUST return a boolean value.|
+| `labels` |false|string/list|---|The list of labels this test belongs to|
+| `skip` |false|false|boolean/udf|A boolean flag that makes the runners skip the test for execution. It can also be the name of a UDF in the same CFC that will be executed and MUST return a boolean value.|
 
