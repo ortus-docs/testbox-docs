@@ -70,14 +70,12 @@ TestBox is a professional open source software backed by [Ortus Solutions, Corp]
 * [Much More](http://www.ortussolutions.com/services)
 
 # Resources
-* Official Site: http://www.coldbox.org
-* Source Code: https://github.com/coldbox/coldbox-platform
-* Bug Tracker: https://ortussolutions.atlassian.net/browse/COLDBOX
-* Twitter: [@coldbox](http://www.twitter.com/coldbox)
-* Facebook: https://www.facebook.com/coldboxplatform
-* Google+: https://www.google.com/+ColdboxOrg
-* Vimeo Channel: http://vimeo.com/channels/coldbox
-* ColdBox Wiki: http://wiki.coldbox.org
+* Official Site: http://www.ortussolutions.com/products/testbox
+* Source Code: https://github.com/Ortus-Solutions/TestBox
+* Bug Tracker: https://ortussolutions.atlassian.net/browse/TESTBOX
+* Twitter: [@ortussolutions](http://www.twitter.com/ortussolutions)
+* Facebook: https://www.facebook.com/ortussolutions
+* Google+: https://plus.google.com/u/0/b/107581581269566431930/+OrtusSolutions
 
 
 ---
