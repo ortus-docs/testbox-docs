@@ -122,3 +122,28 @@ aroundEach( function( spec, suite ){
 ```
 
 This simple around each life-cycle closure will rollback ALL my spec's executions even if they throw exceptions.
+
+## Simple Reporter Bundle Filter
+The simple reporter has been enhanced to add a bundle test filter that can help reduce noise when looking for a specific bundle result:
+
+![Bundle Filter](../images/bundle-filter.png)
+
+##`run()` Enhancements
+
+The traditional BDD `run()` has been enhanced so it now receives the TestBox TestResults object as a reference and TestBox as a reference. This way you can have more metadata and access to what will be reported to users in a reporter. You can also use it to decorate it or store much more information that can be picked up later by reports. You also have access to the TestBox class so you can see how the test is supposed to execute, what labels was it passed, directories, options, etc.
+
+```js
+/**
+* My BDD Test
+*/
+component extends="testbox.system.BaseSpec"{
+	
+	function run( testResults, testBox ){
+		// all your suites go here.
+		describe( "My First Suite", function(){
+
+		});
+	}
+
+}
+```
