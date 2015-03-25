@@ -10,6 +10,8 @@ this.mappings[ "/mxunit" ] = expandPath( "/testbox/system/compat" );
 
 After this, all your test code remains the same but it will execute through TestBox's xUnit runners. You can even execute them via the normal URL you are used to. If there is something that is not compatible, please let us know and we will fix it.
 
-<h3 style="color:grey">Expected Exceptions</h3>
+## Expected Exceptions
 
-We also support in the compatibility mode the expected exception MXUnit annotation: mxunit:expectedException and the *expectException()* methods. The *expectException()* method is not part of the assertion library, but instead is inherited from BaseSpec.cfc. Please refer to MXUnit's documentation on the annotation and method for expected exceptions, but it is supported with one caveat. The *expectException()* method can produce unwanted results if you are running your test specs in TestBox asynchronous mode since it stores state at the component level. Only synchronous mode is supported if you are using the *expectException()* method. The annotation can be used in both modes.
+We also support in the compatibility mode the expected exception MXUnit annotation: `mxunit:expectedException` and the `expectException()` methods. The `expectException()` method is not part of the assertion library, but instead is inherited from our `BaseSpec.cfc`. 
+
+Please refer to MXUnit's documentation on the annotation and method for expected exceptions, but it is supported with one caveat. The `expectException()` method can produce unwanted results if you are running your test specs in TestBox asynchronous mode since it stores state at the component level. Only synchronous mode is supported if you are using the `expectException()` method. The annotation can be used in both modes.
