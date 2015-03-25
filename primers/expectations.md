@@ -138,5 +138,5 @@ describe("Some Included TestBox Matchers:", function() {
 
 ### Custom Matchers
 
-You can also build and register custom matchers. Please visit the Custom Matchers chapter to read more about custom matchers.
+You can also build and register custom matchers. Please visit the Custom Matchers chapter to read more about [custom matchers](../../expectations/custom_matchers-expectations.md).
 
