@@ -6,7 +6,7 @@
    * [About This Book](introduction/about_this_book.md)
    * [Author](introduction/author.md)
 * [Overview](overview/index.md)
-   * System Requirements
+   * [System Requirements](overview/system_requirements.md)
 * [System Requirements](system_requirements.md)
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
