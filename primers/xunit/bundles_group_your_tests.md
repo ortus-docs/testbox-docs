@@ -15,5 +15,5 @@ component displayName="My test suite" extends="testbox.system.BaseSpec"{
 }
 ```
 
-This bundle can contain 2 life-cycle methods, the `beforeTests()` and `afterTests()` methods will execute once before ALL your tests run and then after ALL your tests run. This is a great way to do any kind of global setup or teardown in your tests. It also contains a `displayName` argument in the component declaration which gives you a way to name your testing suite. We will see later the other annotations you can add to the component declaration.
+This bundle can contain 2 life-cycle methods, the `beforeTests()` and `afterTests()` methods will execute once before ALL your tests run and then after ALL your tests run. This is a great way to do any kind of global setup or teardown in your tests. It also contains a `displayName` argument in the component declaration which gives you a way to name your testing suite. We will see later the other annotations you can add to the component declaration further in the primer.
 
