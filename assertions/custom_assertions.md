@@ -1,6 +1,6 @@
 # Custom Assertions
 
-TestBox comes with a plethora of assertions that cover what we believe are common scenarios. However, we recommend that you create custom assertions that meet your needs and criteria so that you can avoid duplication and have reusability. A custom assertion function can receive any amount of arguments but it must use the fail() method in order to fail an assertion or just return true or void for passing.
+TestBox comes with a plethora of assertions that cover what we believe are common scenarios. However, we recommend that you create custom assertions that meet your needs and criteria so that you can avoid duplication and have re-usability. A custom assertion function can receive any amount of arguments but it must use the fail() method in order to fail an assertion or just return true or void for passing.
 
 Here is an example:
 
