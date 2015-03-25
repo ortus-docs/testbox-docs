@@ -1,5 +1,6 @@
 # Injected Methods
-At runtime, TestBox will also decorate your bundle CFC with tons of methods to help you in your testing adventures. Dependening on your testing style you will leverage some more than others. For the latest methods please visit the API Docs for more information.
+
+At runtime, TestBox will also decorate your bundle CFC with tons of methods to help you in your testing adventures. Depending on your testing style you will leverage some more than others. For the latest methods please visit the API Docs for more information.
 
 ```javascript
 // quick assertion methods
