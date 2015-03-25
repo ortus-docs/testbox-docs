@@ -1,10 +1,10 @@
 # Expectations
 
-Expectations are self-concatenated strings that evaluate an actual value to an expected value or condition. These are initiated by the global TestBox method called expect() which takes in a value called the actual value. It is concatenated in our expectations DSL with a matcher function that will most likely take in an expected value or condition to test. You can also concatenate the matchers and do multiple evaluations on a single actual value.
+Expectations are self-concatenated strings that evaluate an **actual** value to an **expected** value or condition. These are initiated by the global TestBox method called `expect()` which takes in a value called the **actual** value. It is concatenated in our expectations DSL with a matcher function that will most likely take in an expected value or condition to test. You can also concatenate the matchers and do multiple evaluations on a single actual value.
 
-<h3 style="color:grey">Matchers</h3>
+## Matchers
 
-Each matcher implements a comparison or evaluation of the actual value and an expected value or condition. It is responsible for either passing or failing this evaluation and reporting it to TestBox. Each matcher also has a negative counterpart assertion by just prefixing the call to the matcher with a not expression.
+Each matcher implements a comparison or evaluation of the **actual** value and an **expected** value or condition. It is responsible for either passing or failing this evaluation and reporting it to TestBox. Each matcher also has a negative counterpart assertion by just prefixing the call to the matcher with a `not` expression.
 
 ```javascript
 function run(){
@@ -22,9 +22,9 @@ function run(){
 }
 ```
 
-<h3 style="color:grey">Included Matchers</h3>
+### Included Matchers
 
-TestBox has a plethora (That's Right! I said Plethora) of matchers that are included in the release. The best way to see all the latest matchers is to visit our [API](http://www.coldbox.org/api) and digest the coldbox.system.Expectation class. There is also the ability to register and write custom matchers in TestBox via our addMatchers() function.
+TestBox has a plethora (That's Right! I said [Plethora](http://www.merriam-webster.com/dictionary/plethora)) of matchers that are included in TestBox. The best way to see all the latest matchers is to visit our [API](http://apidocs.ortussolutions.com/testbox/current) and digest the `testbox.system.Expectation` class. There is also the ability to register and write custom matchers in TestBox via our `addMatchers()` function at runtime.
 
 
 ```javascript
