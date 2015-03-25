@@ -7,7 +7,6 @@
    * [Author](introduction/author.md)
 * [Overview](overview/index.md)
    * [System Requirements](overview/system_requirements.md)
-* [System Requirements](system_requirements.md)
 * [Installing TestBox](installing_testbox/README.md)
    * [What's Included](installing_testbox/whats_included.md)
 * [Primers](primers/README.md)
