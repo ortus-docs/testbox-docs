@@ -1,4 +1,5 @@
 # Skipping Tests and Suites
+
 Tests and suites can be skipped from execution by using the skip annotation in the component or function declaration. The reporters will show that these suites or tests where skipped from execution. The value of the skip annotation can be a simple true or false or it can be the name of a UDF that exists in the same bundle CFC. This UDF must return a boolean value and it is evaluated at runtime.
 
 ```javascript
