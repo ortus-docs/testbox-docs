@@ -65,3 +65,60 @@ any function debug(
 ```
 
 The output will now include information as to what spec produced the output, timestamps, data, and thread data.
+
+![Debug Panel](../images/debug.png)
+
+##Expectation Chaining
+
+You can now chain your matchers on a specific expectation to produce an even nicer DSL when trying to assert data on a single expectation:
+
+```js
+// more than 1 matcher tests
+it( "can have more than one expectation test", function(){
+	// Can concatenate multiple matchers on a single expectation.
+	expect( coldbox )
+		.toBeTypeOf( 'numeric' );
+		.toBeNumeric();
+		.toBeCloseTo( expected=10, delta=2 );
+		.notToBe( 4 );
+});
+```
+
+##`AroundEach()` Life-Cycle Method
+
+We have added a new life-cycle method to the suites called `aroundEach()` which will completely wrap your spec in another closure. This is an elegant way for you to provide a complete around AOP advice to a specificiation. You can use it to surround the execution in transaction blocks, ORM rollbacks, logging, and so much more. This life-cycle method will decorate ALL specificiations within a single suite. The method signature is below:
+
+```js
+aroundEach( function( spec, suite ){
+	// execute the spec
+	arguments.spec.body();
+} );
+```
+
+The method receives a structure of data representing the `spec`. This contains the following elements:
+
+* **body** : The actual closure for the spec that you will use to execute within it.
+* **labels** : The labels used in the spec
+* **name** : The name of the spec
+* **order** : The order of execution of the spec
+* **skip** : The skip flag or closure that determines if the spec runs
+
+The method also receives a structure of metadata about the suite this spec is contained in. It has information about life-cycle closures, async information, names, parents, etc. Here is a very practical example of creating and around each closure to provide rollbacks for specs:
+
+```js
+aroundEach( function( spec, suite ){
+
+	transaction action="begin"{
+		try{/
+			// execute the spec
+			arguments.spec.body();
+		} catch( Any e ){
+			rethrow;
+		} finally{
+			transaction action="rollback";
+		}
+	}
+} );
+```
+
+This simple around each life-cycle closure will rollback ALL my spec's executions even if they throw exceptions.
