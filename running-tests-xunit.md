@@ -1,6 +1,6 @@
 # Running Tests
 
-TestBox ships with several test runners internally but we have tried to simplify and abstract it with our TestBox object which can be found in the testbox.system package. The TestBox object allows you to execute tests from a CFC, CFM, HTTP, SOAP or REST. You can also make your CFC's extend from our BaseSpec class so you can execute it directly via the URL. The main execution methods are:
+TestBox ships with several test runners internally but we have tried to simplify and abstract it with our TestBox object which can be found in the testbox.system package. The TestBox object allows you to execute tests from a CFC, CFM, HTTP, NodeJS, SOAP or REST. You can also make your CFC's extend from our `BaseSpec` class so you can execute it directly via the URL. The main execution methods are:
 
 ```javascript
 // Run tests and produce reporter results
@@ -16,9 +16,10 @@ testbox.runRemote()
 http://localhost/test/spec.cfc?method=runRemote
 ```
 
-> We encourage you to read the API docs included in the distribution for the complete parameters for each method.
+> **Info** We encourage you to read the API docs included in the distribution for the complete parameters for each method.
 
-Here are the arguments you can use for initializing TestBox or executing the *run()* method
+## `run()` Arguments
+Here are the arguments you can use for initializing TestBox or executing the `run()` method
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
@@ -31,7 +32,8 @@ Here are the arguments you can use for initializing TestBox or executing the *ru
 |testSuites |false |---|string/array |A list or array of suite names that are the ones that will be executed ONLY! |
 |testSpecs |false|---|string/array|A list or array of test names that are the ones that will be executed ONLY|
 
-Here are the arguments you can use for executing the *runRemote()* method of the *TestBox* object:
+## `runRemote()` arguments
+Here are the arguments you can use for executing the `runRemote()` method:
 
 |Argument|Required|Default|Type|Description|
 |--|--|--|--|--|
@@ -48,23 +50,23 @@ Here are the arguments you can use for executing the *runRemote()* method of the
 
 The bundles argument which can be a single CFC path or an array of CFC paths or a directory argument so it can go and discover the test bundles from that directory. The reporter argument can be a core reporter name like: json,xml,junit,raw,simple,dots,tap,min,etc or it can be an instance of a reporter CFC. You can execute the runners from any cfm template or any CFC or any URL, that is up to you.
 
-<h3 style="color:grey">Global Runner</h3>
+##Global Runner
 
 TestBox ships with a global runner that can be used to run pretty much anything. You can customize it or place it wherever you need it:
 
 <img src="../images/testbox-global-runner.png">
 
-<h3 style="color:grey">Test Browser</h3>
+##Test Browser
 
 TestBox ships with a test browser that is highly configurable to whatever URL accessible path you want. It will then show you a test browser where you can navigate and execute not only individual tests, but also directory suites as well.
 
 <img src="../images/testbox-browser.png">
 
-<h3 style="color:grey">ANT Runner</h3>
+##ANT Runner
 
 In our test samples and templates we include an ANT runner that will be able to execute your tests via ANT. It can also leverage our ANTJunit reporter to use the junitreport task to produce JUnit compliant reports as well. You can find this runner in the test samples and runner template directory.
 
-<h3 style="color:grey">Bundle(s) Runner</h3>
+##Bundle(s) Runner
 
 ```javascript
 <cfset r = new coldbox.system.TestBox( "coldbox.testing.cases.testing.specs.BDDTest" ) >
@@ -91,9 +93,9 @@ http://localhost/test/MyTest.cfc?method=runRemote
 ```
 
 You can also pass the following arguments to the method via the URL:
-* testSuites : A list or array of suite names that are the ones that will be executed ONLY!
-* testSpecs : A list or array of test names that are the ones that will be executed ONLY!
-* reporter : The type of reporter to run the test with
+* **testSuites** : A list or array of suite names that are the ones that will be executed ONLY!
+* **testSpecs** : A list or array of test names that are the ones that will be executed ONLY!
+* **reporter** : The type of reporter to run the test with
 
 ```javascript
 http://localhost/test/MyTest.cfc?method=runRemote&reporter=json
@@ -125,7 +127,7 @@ http://localhost/test/MyTest.cfc?method=runRemote&reporter=json
 <cfset fileWrite( 'testreports.json', r.run() )>
 ```
 
-<h3 style="color:grey">SOAP Runner</h3>
+##SOAP Runner
 
 You can run tests via SOAP by leveraging the runRemote() method. The WSDL URL will be
 
@@ -137,6 +139,17 @@ http://localhost/testbox/system/TestBox.cfc?wsdl
 You can run tests via HTTP/REST by leveraging the runRemote() endpoint. The URL will be
 ```javascript
 http://localhost/testbox/system/TestBox.cfc?method=runRemote
+```
+
+##NodeJS Runner
+
+![](../images/testbox-node.png)
+There is a user-contributed NodeJS Runner that looks fantastic and can be downloaded here: https://www.npmjs.com/package/testbox-runner
+
+Just use node to install:
+
+```bash
+npm install -g testbox-runner
 ```
 
 
