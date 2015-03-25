@@ -1,6 +1,6 @@
 # Custom Assertions
 
-TestBox comes with a plethora of assertions that cover what we believe are common scenarios. However, we recommend that you create custom assertions that meet your needs and criteria so that you can avoid duplication and have re-usability. A custom assertion function can receive any amount of arguments but it must use the fail() method in order to fail an assertion or just return true or void for passing.
+TestBox comes with a plethora of assertions that cover what we believe are common scenarios. However, we recommend that you create custom assertions that meet your needs and criteria so that you can avoid duplication and have re-usability. A custom assertion function can receive any amount of arguments but it must use the `fail()` method in order to fail an assertion or just return true or void for passing.
 
 Here is an example:
 
@@ -9,9 +9,9 @@ function isAwesome( required expected ){
      return ( arguments.expected == "TestBox" ? fail( 'TestBox is always awesome' ) : true );
 }
 ```
-<h3 style="color:grey">Assertion Registration</h3>
+##Assertion Registration
 
-You can register assertion functions in several ways within TestBox, but we always recommend that you register them inside of the beforeTests() or setup() life-cycle method blocks, so they are only inserted once.
+You can register assertion functions in several ways within TestBox, but we always recommend that you register them inside of the `beforeTests()` or `setup()` life-cycle method blocks, so they are only inserted once.
 
 Inline Assertions You can pass a structure of key/value pairs of the assertions you would like to register. The key is the name of the assertion function and the value is the closure function representation.
 
