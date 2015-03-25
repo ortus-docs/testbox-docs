@@ -1,6 +1,6 @@
 # Suite Groups
 
-As we have seen before, the describe() function describes a test suite of related specs in a test bundle CFC. The title of the suite is concatenated with the title of a spec to create a full spec's name which is very descriptive. If you name them well, they will read out as full sentences as defined by [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style.
+As we have seen before, the `describe()` function describes a test suite of related specs in a test bundle CFC. The title of the suite is concatenated with the title of a spec to create a full spec's name which is very descriptive. If you name them well, they will read out as full sentences as defined by [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) style.
 
 ```javascript
 describe("A spec", function() {
@@ -21,9 +21,9 @@ describe("A spec", function() {
 });
 ```
 
-<h3 style="color:grey">Setup and Teardown</h3>
+##Setup and Teardown
 
-If you are familiar with xUnit style frameworks, the majority of them provide a way to execute functions before and after every single test case or spec in BDD. This is a great way to keep your tests DRY (Do not repeat yourself)! TestBox provides the beforeEach() and afterEach() methods that each take in a closure as their argument that receive the name of the spec that's about to be executed or just executed. As their names indicate, they execute before a spec and after a spec in a related describe block.
+If you are familiar with xUnit style frameworks, the majority of them provide a way to execute functions before and after every single test case or spec in BDD. This is a great way to keep your tests DRY (Do not repeat yourself)! TestBox provides the `beforeEach()` and `afterEach()` methods that each take in a closure as their argument that receive the name of the spec that's about to be executed or just executed. As their names indicate, they execute before a spec and after a spec in a related describe block.
 
 ```javascript
 describe("A spec (with setup and tear-down)", function() {
@@ -49,9 +49,9 @@ describe("A spec (with setup and tear-down)", function() {
 });
 ```
 
-<h3 style="color:grey">AroundEach() Life-Cycle Method</h3>
+##AroundEach() Life-Cycle Method
 
-The aroundEach() life-cycle method will completely wrap your spec in another closure. This is an elegant way for you to provide a complete around AOP advice to a specificiation. You can use it to surround the execution in transaction blocks, ORM rollbacks, logging, and so much more. This life-cycle method will decorate ALL specs within a single suite. The method signature is below:
+The `aroundEach()` life-cycle method will completely wrap your spec in another closure. This is an elegant way for you to provide a complete around AOP advice to a specification. You can use it to surround the execution in transaction blocks, ORM rollbacks, logging, and so much more. This life-cycle method will decorate ALL specs within a single suite. The method signature is below:
 
 ```javascript
 aroundEach( function( spec, suite ){
