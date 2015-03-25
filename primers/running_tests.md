@@ -1,6 +1,6 @@
 # Running Tests
 
-TestBox ships with several test runners internally but we have tried to simplify and abstract it with our TestBox object which can be found in the testbox.system package. The TestBox object allows you to execute tests from a CFC, CFM, HTTP, SOAP or REST. You can also make your CFC's extend from our BaseSpec class so you can execute it directly via the URL. The main execution methods are:
+TestBox ships with several test runners internally but we have tried to simplify and abstract it with our TestBox object which can be found in the testbox.system package. The TestBox object allows you to execute tests from a CFC, CFM, HTTP, NodeJS, SOAP or REST. You can also make your CFC's extend from our `BaseSpec` class so you can execute it directly via the URL. The main execution methods are:
 
 ```javascript
 // Run tests and produce reporter results
@@ -16,7 +16,7 @@ testbox.runRemote()
 http://localhost/test/spec.cfc?method=runRemote
 ```
 
-> We encourage you to read the API docs included in the distribution for the complete parameters for each method.
+> **Info** We encourage you to read the API docs included in the distribution for the complete parameters for each method.
 
 Here are the arguments you can use for initializing TestBox or executing the *run()* method
 
