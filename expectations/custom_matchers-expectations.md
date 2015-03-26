@@ -27,7 +27,7 @@ The next step is to tell TestBox about your matcher.
 
 You can register matcher functions in several ways within TestBox, but we always recommend that you register them inside of the `beforeAll()` or `beforeEach()` life-cycle method blocks for performance considerations and global availability.
 
-#### Inline matchers
+### Inline matchers
 You can pass a structure of key/value pairs of the matchers you would like to register. The key is the name of the matcher function and the value is the closure function representation.
 
 ```javascript
@@ -53,9 +53,9 @@ it("A custom matcher", function(){
 });
 ```
 
-#### CFC Matchers
+### CFC Matchers
 
-You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matchers (Yes, I said plethora), in a CFC and register that as the matchers via its instantiation path. This provides much more flexibility and reusability for your projects.
+You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matchers (Yes, I said plethora), in a CFC and register that as the matchers via its instantiation path. This provides much more flexibility and re-usability for your projects.
 
 ```javascript
 addMatchers( "model.util.MyMatchers" );
