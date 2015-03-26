@@ -8,7 +8,7 @@ Every custom matcher is a function and must have the following signature, with `
 boolean function MyMatcher( required expectation, args={} )
 ```
 
-The matcher function receives the `expectation` object and a second argument which is a structure of all the arguments with which the matcher function was called with. It must then return a **true** or a **false** depending if it passes your criteria. It will most likely use the expectation object to retrieve the actual and isNot values. It can also set a custom failure message on the expectation object itself by using the *message* property.
+The matcher function receives the `expectation` object and a second argument which is a structure of all the arguments with which the matcher function was called with. It must then return a **true** or a **false** depending if it passes your criteria. It will most likely use the `expectation` object to retrieve the **actual** and **isNot** values. It can also set a custom failure message on the expectation object itself by using the `message` property of the `expectation` object.
 
 ```javascript
 boolean function reallyFalse( expectation, args={} ){
@@ -23,9 +23,9 @@ boolean function reallyFalse( expectation, args={} ){
 
 The next step is to tell TestBox about your matcher.
 
-<h3 style="color:grey">Matcher Registration</h3>
+## Matcher Registration
 
-You can register matcher functions in several ways within TestBox, but we always recommend that you register them inside of the *beforeAll()* or* beforeEach()* life-cycle method blocks for performance considerations and global availability.
+You can register matcher functions in several ways within TestBox, but we always recommend that you register them inside of the `beforeAll()` or `beforeEach()` life-cycle method blocks for performance considerations and global availability.
 
 #### Inline matchers
 You can pass a structure of key/value pairs of the matchers you would like to register. The key is the name of the matcher function and the value is the closure function representation.
