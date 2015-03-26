@@ -61,11 +61,11 @@ mockBox.prepareMock( myService );
 
 Let's say that we have a user service layer object that relies on the following objects:
 
-* sessionstorage - a session facade object
-* transfer - the transfer ORM
-* userDAO - a data access object for complex query operations
+* **sessionstorage** - a session facade object
+* **transfer** - the transfer ORM
+* **userDAO** - a data access object for complex query operations
 
-We can start testing our user service and mocking its dependencies by preparing it in a test case CFC with the following setup() method:
+We can start testing our user service and mocking its dependencies by preparing it in a test case CFC with the following `setup()` method:
 
 ```javascript
 component extends=”testbox.system.BaseSpec” {
