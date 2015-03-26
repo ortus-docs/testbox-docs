@@ -1,6 +1,6 @@
 # Custom Reporters
 
-You can also build your own reporters by implementing our core class: coldbox.system.reporters.IReport
+You can also build your own reporters by implementing our core class: `testbox.system.reporters.IReport`
 
 ```javascript
 interface{
@@ -19,13 +19,13 @@ interface{
   * @options.hint A structure of options this reporter needs to build the report with
   */
   any function runReport(
-    required coldbox.system.TestResult results,
-    required coldbox.system.TestBox testbox,
+    required testbox.system.TestResult results,
+    required testbox.system.TestBox testbox,
     struct options={} );
 }
 ```
 
-Once you implement your own report you just need to pass the class path or the instance of your reporter to the TestBox runner methods using the reporter argument.
+Once you implement your own report you just need to pass the class path or the instance of your reporter to the TestBox runner methods using the `reporter` argument.
 
 ```javascript
 r = new TestBox( reporter="my.path.toCustomReporter" );
@@ -55,8 +55,8 @@ component{
   * @options.hint A structure of options this reporter needs to build the report with
   */
   any function runReport(
-    required coldbox.system.TestResult results,
-    required coldbox.system.TestBox testbox,
+    required testbox.system.TestResult results,
+    required testbox.system.TestBox testbox,
     struct options={}
   ){
     getPageContext().getResponse().setContentType( "application/json" );
