@@ -1,12 +1,6 @@
 # ANT Runner
 
-
-
 In our test samples and templates we include an ANT runner that will be able to execute your tests via ANT. It can also leverage our ANTJunit reporter to use the junitreport task to produce JUnit compliant reports as well. You can find this runner in the test samples and runner template directory.
-
-<h3 style="color:grey">Runner</h3>
-
-This is the runner used for any reporter and ANT Junit style reporting
 
 ```javascript
 <cfsetting showDebugOutput="false">
