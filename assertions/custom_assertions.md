@@ -13,7 +13,8 @@ function isAwesome( required expected ){
 
 You can register assertion functions in several ways within TestBox, but we always recommend that you register them inside of the `beforeTests()` or `setup()` life-cycle method blocks, so they are only inserted once.
 
-Inline Assertions You can pass a structure of key/value pairs of the assertions you would like to register. The key is the name of the assertion function and the value is the closure function representation.
+###Inline Assertions 
+You can pass a structure of key/value pairs of the assertions you would like to register. The key is the name of the assertion function and the value is the closure function representation.
 
 ```javascript
 function beforeTests(){
