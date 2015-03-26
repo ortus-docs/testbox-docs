@@ -39,8 +39,8 @@ function testAwesomenewss(){
 }
 ```
 
-##CFC Assertions 
-You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of assertions (Yes, I said plethora), in a CFC and register that as the assertions via its instantiation path. This provides much more flexibility and reusability for your projects.
+###CFC Assertions 
+You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of assertions (Yes, I said plethora), in a CFC and register that as the assertions via its instantiation path. This provides much more flexibility and re-usability for your projects.
 
 ```javascript
 addAssertions( "model.util.MyAssertions" );
