@@ -1,13 +1,10 @@
 # Installing Mockbox
 
-MockBox can be downloaded from http://www.coldbox.org or can be installed via CommandBox:
+MockBox can be downloaded from http://www.ortussolutions.com/products/testbox or can be installed via [CommandBox](http://www.ortussolutions.com/products/commandbox):
 
 ```javascript
-// latest stable version
+// install standalone
 box install mockbox
-
-// latest bleeding edge
-box install mockbox-be
 
 // installing with testbox
 box install testbox
