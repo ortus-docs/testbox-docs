@@ -1,6 +1,6 @@
 # Verification Methods
 
-The following methods are also mixed in at runtime into mock objects and they will be used to verify behavior and calls from these mock/stub objects. These are great in order to find out how many mocked methods calls have been made and to find out the arguments that where passed to each mocked method call.
+The following methods are also mixed in at run-time into mock objects and they will be used to verify behavior and calls from these mock/stub objects. These are great in order to find out how many mocked methods calls have been made and to find out the arguments that where passed to each mocked method call.
 
 |Method Name|Return Type|Description|
 |--|--|--|
