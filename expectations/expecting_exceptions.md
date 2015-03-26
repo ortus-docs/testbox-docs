@@ -1,8 +1,10 @@
 # Expecting Exceptions
 
-Our default syntax for expecting exceptions is to use our closure approach (Note: CF10+, Railo 4+) concatenated with our `toThrow()` method in our expectations or our `throws()` method in our assertions object.
+Our default syntax for expecting exceptions is to use our closure approach concatenated with our `toThrow()` method in our expectations or our `throws()` method in our assertions object.
 
-> **Info** Please always remember to pass in a closure to these methods and not the actual test call: `function(){ myObj.method();`}
+> **Info** Please always remember to pass in a closure to these methods and not the actual test call: `function(){ myObj.method();}`
+
+**Example**
 
 ```javascript
 expect( function(){ myObj.method(); } ).toThrow( [type], [regex], [message] );
