@@ -14,7 +14,7 @@ This method will create an empty stub object that you can use and mock with meth
 
 ## CreateStub() Inheritance
 
-The createStub() method has an argument called extends that accepts a class path. This will create and generate a stub that physically extends that class path directly. This is an amazing way to create stubs that you can override with inherited functionality or just make it look like it is EXACTLY the type of object you want.
+The `createStub()` method has an argument called `extends` that accepts a class path. This will create and generate a stub that physically extends that class path directly. This is an amazing way to create stubs that you can override with inherited functionality or just make it look like it is EXACTLY the type of object you want.
 
 ```javascript
 myService = mockbox.createStub(extends="model.security.MyService");
