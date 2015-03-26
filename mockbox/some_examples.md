@@ -97,7 +97,7 @@ Ok, this simple liner security validator throws tons of problems. Why? Well, I h
 * isSSOCookieValid() - checks if a single sign on cookie is set
 * authorizeUser() - Authorize a user in my system
 
-Since I am unit testing this target object's userValidator method, I don't really care about the method calls, I just worry about the behavior that is associated with them because my other tests will go into detail about what they do. However, for my purposes of testing the userValidator method, I just need behavior. Thus, we need to be able to create mocking representations of these methods.
+Since I am unit testing this target object's `userValidator` method, I don't really care about the method calls, I just worry about the behavior that is associated with them because my other tests will go into detail about what they do. However, for my purposes of testing the `userValidator` method, I just need behavior. Thus, we need to be able to create mocking representations of these methods.
 
 ```javascript
 function beforeAll(){
