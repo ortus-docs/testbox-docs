@@ -1,6 +1,6 @@
 # Mocking Methods
 
-Once you have created a mock object, you can use it like the real object as it will respond exactly as it was coded. However, you can override its behavior by using the mocking methods that have been placed on the mocked object at runtime. The methods that you can call upon in your object are the following (we will review them in detail later):
+Once you have created a mock object, you can use it like the real object as it will respond exactly as it was coded. However, you can override its behavior by using the mocking methods that have been placed on the mocked object at run-time. The methods that you can call upon in your object are the following (we will review them in detail later):
 
 |Method Name|Return Type|Description|
 |--|--|--|
