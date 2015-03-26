@@ -1,12 +1,14 @@
 # Custom Matchers
 
-TestBox comes with a decent amount of matchers that cover what we believe are common scenarios. However, we recommend that you create custom matchers that meet your needs and criteria so that you can avoid duplication and have reusability. Every custom matcher must have the following signature, with *MyMatcher* being the name of your custom matcher function:
+TestBox comes with a decent amount of matchers that cover what we believe are common scenarios. However, we recommend that you create custom matchers that meet your needs and criteria so that you can avoid duplication and have re-usability. 
+
+Every custom matcher is a function and must have the following signature, with `MyMatcher` being the name of your custom matcher function:
 
 ```javascript
 boolean function MyMatcher( required expectation, args={} )
 ```
 
-The matcher function receives the expectation object and a second argument which is a structure of all the arguments with which the matcher function was called with. It must then return a true or a false depending if it passes your criteria. It will most likely use the expectation object to retrieve the actual and isNot values. It can also set a custom failure message on the expectation object itself by using the *message* property.
+The matcher function receives the `expectation` object and a second argument which is a structure of all the arguments with which the matcher function was called with. It must then return a **true** or a **false** depending if it passes your criteria. It will most likely use the expectation object to retrieve the actual and isNot values. It can also set a custom failure message on the expectation object itself by using the *message* property.
 
 ```javascript
 boolean function reallyFalse( expectation, args={} ){
