@@ -133,5 +133,5 @@ function run(){
 }
 ```
 
-As you can see from the example above, I mocked all the necessary data and objects to test all the paths that I could follow in my user validator method. Now we are cooking with MockBox.
+As you can see from the example above, I mocked all the necessary data and objects to test all the paths that I could follow in my `userValidator` method. Now we are cooking with MockBox.
 
