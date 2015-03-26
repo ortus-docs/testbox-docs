@@ -68,7 +68,7 @@
    * [SOAP Runner](running_tests/soap_runner.md)
    * [HTTP/REST Runner](running_tests/httprest_runner.md)
    * [ANT Runner](running_tests/ant_runner.md)
-   * NodeJS Runner
+   * [NodeJS Runner](running_tests/nodejs_runner.md)
 * [Reporters](reporters/README.md)
    * [Custom Reporters](reporters/custom_reporters.md)
 * [MockBox](mockbox/index.md)
