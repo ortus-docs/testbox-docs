@@ -56,7 +56,7 @@
 * [Expectations](expectations/README.md)
    * [Matchers](expectations/matchers.md)
    * [Not Operator](expectations/not_operator.md)
-   * [Expecting Exceptions](expecting_exceptions/README.md)
+   * [Expecting Exceptions](expectations/expecting_exceptions.md)
    * [Custom Matchers](expectations/custom_matchers-expectations.md)
 * [Output Utilities](output_utilities/README.md)
 * [Running Tests](running_tests/README.md)
