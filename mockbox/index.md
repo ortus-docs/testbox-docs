@@ -1,5 +1,7 @@
 # MockBox
 
+![MockBox](../images/MockBox_300.png)
+
 ## Introduction
 MockBox is a companion package to TestBox (xUnit and BDD Testing Framework) that will give you advanced mocking/stubbing capabilities; hence a Mocking Framework. You can use it from withing TestBox or as a standalone package.
 
