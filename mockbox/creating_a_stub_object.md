@@ -21,7 +21,8 @@ myService = mockbox.createStub(extends="model.security.MyService");
 ```
 
 ## CreateStub() Interfaces
-The createStub() method has an argument called implements that accepts a list of interface class paths you want the stub to implement. MockBox will then generate the stub and it will make sure that it implements all the methods the interfaces have defined as per their contract. This is such a fantastic and easy way to create a stub that looks and feels and actually has the methods an interface needs.
+
+The `createStub()` method has an argument called `implements` that accepts a list of interface class paths you want the stub to implement. MockBox will then generate the stub and it will make sure that it implements all the methods the interfaces have defined as per their contract. This is such a fantastic and easy way to create a stub that looks and feels and actually has the methods an interface needs.
 
 ```javascript
 myFakeProvider = mockbox.createStub(implements="coldbox.system.cache.ICacheProvider");
