@@ -1,6 +1,6 @@
 # $results() Method
 
-This method can only be used in conjunction with $() as a chained call as it needs to know for what method are the results for.
+This method can only be used in conjunction with `$()` as a chained call as it needs to know for what method are the results for.
 
 ```javascript
 $(...).$results(...)
@@ -34,7 +34,7 @@ Results = true
 Results = "cacheEnabled"
 ```
 
-As you can see, the sequence repeats itself once the call counter increases. Let's say that you have a test where the first call to a user object's isAuthorized() method is false but then it has to be true. Then you can do this:
+As you can see, the sequence repeats itself once the call counter increases. Let's say that you have a test where the first call to a user object's `isAuthorized()` method is false but then it has to be true. Then you can do this:
 
 ```javascript
 mockUser = getMockBox().createMock("model.User");
