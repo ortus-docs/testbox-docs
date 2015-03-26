@@ -19,5 +19,5 @@ mockConfig.$("getKey").$args("OutgoingMail").$results('devmail@mail.com');
 //Then you can call and get the expected results
 ```
 
-So remember that if you use the `$args()` call, you need to tell it what kind of results you are expecting by calling the `$results()` method after it or you might end up with an exception.
+> **Hint** So remember that if you use the `$args()` call, you need to tell it what kind of results you are expecting by calling the `$results()` method after it or you might end up with an exception.
 
