@@ -1,6 +1,5 @@
 # Creating a Mock Object
 
-
 In order to create a mock object you need to use any of the following methods: `createMock()`, `createEmptyMock()`, or `prepareMock()`.
 
 ### createMock()
