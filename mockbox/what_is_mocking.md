@@ -1,6 +1,6 @@
 # What is Mocking?
 
-> "A mock object is an object that takes the place of a 'real' object in such a way that makes testing easier and more meaningful, or in some cases, possible at all". by Scott Bain (Emergent Design
+> "A mock object is an object that takes the place of a 'real' object in such a way that makes testing easier and more meaningful, or in some cases, possible at all". by Scott Bain (**Emergent Design**
 <br><small>[The Evolutionary Nature of Professional Software Development](http://www.netobjectives.com/resources/books/emergent-design))</small>
 
 Here are some examples of real life mocks to get you in the mocking mood:
