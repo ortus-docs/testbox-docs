@@ -1,6 +1,8 @@
 # Our Approach and Benefits
 
-The approach that we take with MockBox is a dynamic and minimalistic approach. Why dynamic? Well, because we dynamically transform target objects into mock form at runtime. The API for the mocking factory is very easy to use and provides you a very simplistic approach to mocking. We even use `$()style` method calls so you can easily distinguish when using or mocking methods, properties, etc. So what can MockBox do for me?
+The approach that we take with MockBox is a dynamic and minimalistic approach. Why dynamic? Well, because we dynamically transform target objects into mock form at runtime. The API for the mocking factory is very easy to use and provides you a very simplistic approach to mocking. 
+
+We even use `$()style` method calls so you can easily distinguish when using or mocking methods, properties, etc. So what can MockBox do for me?
 
 * Create mock objects for you and keep their methods intact (Does not wipe methods, so you can do method spys, or mock helper methods)
 * Create mock objects and wipe out their method signatures
