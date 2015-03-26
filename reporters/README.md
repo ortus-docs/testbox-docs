@@ -1,6 +1,7 @@
 # Reporters
 
 TestBox comes also with a nice plethora of reporters:
+
 * ANTJunit : A specific variant of JUnit XML that works with the ANT junitreport task
 * Codexwiki : Produces MediaWiki syntax for usage in Codex Wiki
 * Console : Sends report to console
