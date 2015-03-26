@@ -1,6 +1,5 @@
 # Test Runner
-<h3 style="color:grey">Test Runner</h3>
-If you make your test bundle CFC inherit from our testbox.system.BaseSpec class, you will be able to execute the CFC directly via the URL:
+If you make your test bundle CFC inherit from our `testbox.system.BaseSpec` class, you will be able to execute the CFC directly via the URL:
 
 ```javascript
 http://localhost/test/MyTest.cfc?method=runRemote
