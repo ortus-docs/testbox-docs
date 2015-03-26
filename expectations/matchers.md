@@ -1,6 +1,6 @@
 # Matchers
 
-The *toBe() *matcher represents an equality matcher much how an *$assert.isEqual()* behaves. Below are many other matchers available to you.
+The `toBe()` matcher represents an equality matcher much how an `$assert.isEqual()` behaves. Below are several of the most common matchers available to you.  However, the best way to see which ones are available is to checkout the [API Docs](apidocs.ortussolutions.com/testbox/current).
 
 ```javascript
 toBeTrue() :  value to true
