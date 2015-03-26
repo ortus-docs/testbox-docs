@@ -19,7 +19,7 @@ Parameters:
 collaborator = mockbox.createMock("model.myClass");
 ```
 
-### createEmptyMock()
+## createEmptyMock()
 
 Used to create a new mock object with all its method signatures wiped out, basically an interface with no real implementation. It will be up to you to mock all behavior.
 
@@ -35,7 +35,7 @@ Parameters:
 ```javascript
 user = mockbox.createEmptyMock("model.User");
 ```
-### prepareMock()
+## prepareMock()
 Decorate an already instantiated object with mocking capabilities. It does not wipe out the object's methods or signature, it only decorates it (mixes-in methods) with methods for mocking operations. This is great for doing targeted mocking for specific methods, private methods, properties and more.
 
 ```javascript
@@ -54,9 +54,10 @@ mockBox.prepareMock( myService );
 
 > **Caution** If call logging is turned on, then the mock object will keep track of all method calls to mocked methods ONLY. It will store them in a sequential array with all the arguments the method was called with (named or ordered). This is essential if you need to investigate if a method was called and with what arguments. You can also use this to inspect save or update calls based on mocked external repositories.
 
-Sample:
+<br>
+**Sample:**
 
-<img src="./images/mockbox_UserServiceSample.png">
+<img src="../images/mockbox_UserServiceSample.png">
 
 Let's say that we have a user service layer object that relies on the following objects:
 
