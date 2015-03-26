@@ -31,7 +31,8 @@ if( url.reporter eq "ANTJunit" ){
 writeoutput( results );
 </cfscript>
 ```
-<h3 style="color:grey">Ant</h3>
+
+## Ant
 
 This build is our global build for running TestBox via ANT.
 
