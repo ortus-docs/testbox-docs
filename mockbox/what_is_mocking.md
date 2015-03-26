@@ -5,9 +5,9 @@
 
 Here are some examples of real life mocks to get you in the mocking mood:
 
-<img src="./images/mockbox_nikemock.jpg">
+<img src="../images/mockbox_nikemock.jpg">
 
-<img src="./images/mockbox_pumamock.jpg">
+<img src="../images/mockbox_pumamock.jpg">
 
 When doing unit testing of ColdFusion CFCs, we will come to a point where a single class can have multiple external dependencies or collaborators; whether they are classes themselves, data, external APIs, etc. Therefore, in order to unit test our class exclusively and easily we need to be able to mock this behavior or have full control of this behavior. Remember that unit testing is the testing of software units in isolation. If not, we would be instantiating and creating entire set of components, frameworks, pulling network plugs and so much more ridiculous but functional things just to test one single piece of functionality and/or behavior. So in summary, mock objects are just test oriented replacements for collaborators and dependencies.
 
