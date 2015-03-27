@@ -58,7 +58,7 @@ please try to make mention of it in your code or web site.
 >**Info**: The ColdBox Websites, Documentation, logo and content have a separate license and they are a separate entity.
 
 # Discussion & Help
-The TestBox help and discussion group can be found here: https://groups.google.com/forum/#!forum/coldbox
+The TestBox help and discussion group can be found here: https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox
 
 # Reporting a Bug
 We all make mistakes from time to time :) So why not let us know about it and help us out.  We also love pull requests, so please star us and fork us: https://github.com/Ortus-Solutions/TestBox
@@ -78,8 +78,11 @@ TestBox is a professional open source software backed by [Ortus Solutions, Corp]
 
 # Resources
 * Official Site: http://www.ortussolutions.com/products/testbox
+* Help Group: https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox
 * Source Code: https://github.com/Ortus-Solutions/TestBox
-* Bug Tracker: https://ortussolutions.atlassian.net/browse/TESTBOX
+* Bug Trackers
+ * https://ortussolutions.atlassian.net/browse/TESTBOX
+ * https://ortussolutions.atlassian.net/browse/MOCKBOX
 * Twitter: [@ortussolutions](http://www.twitter.com/ortussolutions)
 * Facebook: https://www.facebook.com/ortussolutions
 * Google+: https://plus.google.com/u/0/b/107581581269566431930/+OrtusSolutions
