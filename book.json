@@ -1,4 +1,6 @@
 {
+	"gitbook": ">=2.0.1",
+	"isbn" : "978-1511778985",
     "plugins": [
         "richquotes"
     ],
