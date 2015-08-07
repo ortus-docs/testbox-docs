@@ -3,18 +3,20 @@
 This is the method that you will call upon in order to mock a method's behavior and return results. This method has the capability of mocking a return value or even making the method throw a controlled exception. By default the mocked method results will be returned all the time the method is called. So if the mocked method is called twice, the results will always be returned.
 
 ```javascript
-any $(string method, [any returns], boolean preserveReturnType='true', [boolean throwException='false'], [string throwType=], [string throwDetail=], [string throwMessage=], [boolean callLogging='false'])
+any $(string method, [any returns], boolean preserveReturnType='true', [boolean throwException='false'], [string throwType=''], [string throwDetail=''], [string throwMessage=''], [boolean callLogging='false'], [boolean preserveArguments='false'], [any callback])
 ```
 
 Parameters:
-* method - The method you want to mock
-* returns - The results it must return, if not passed it returns void or expected to use the mockResults method. (Optional)
-* preserveReturnType - If false, the mock will make the returntype of the method equal to ANY, if not it preserves the original return type.
-* throwException - If you want the method call to throw an exception (Defaults to false)
-* throwType - The type of the exception to throw
-* throwDetail - The detail of the exception to throw
-* throwMessage - The message of the exception to throw
-* callLogging - Will add the machinery to also log the incoming arguments to each subsequent calls to this method
+* `method` - The method you want to mock or spy on
+* `returns` - The results it must return, if not passed it returns void or you will have to do the mockResults() chain
+* `preserveReturnType` - If false, the mock will make the returntype of the method equal to ANY
+* `throwException` - If you want the method call to throw an exception
+* `throwType` - The type of the exception to throw
+* `throwDetail` - The detail of the exception to throw
+* `throwMessage` - The message of the exception to throw
+* `callLogging` - Will add the machinery to also log the incoming arguments to each subsequent calls to this method
+* `preserveArguments` - If true, argument signatures are kept, else they are ignored. If true, BEWARE with $args() matching as default values and missing arguments need to be passed too.
+* `callback` - A callback to execute that should return the desired results, this can be a UDF or closure.
 
 The cool thing about this method is that it also returns the same instance of the object. Therefore, you can use it to chain calls to the object and do multiple mocking of methods all within the same line. Remember that if no returns argument is provided then the return is void
 
