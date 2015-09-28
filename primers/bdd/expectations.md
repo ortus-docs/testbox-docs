@@ -120,7 +120,7 @@ describe("Some Included TestBox Matchers:", function() {
      });
 
      it("The 'toHaveDeepKey' checks for existence of keys anywhere in structs", function() {
-          expect( { name="luis", { age=35, awesome=true } } ).toHaveKey( 'age' );
+          expect( { name="luis", { age=35, awesome=true } } ).toHaveDeepKey( 'age' );
      });
 
      it("The 'toThrow' checks if the actual call fails", function() {
