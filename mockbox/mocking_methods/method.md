@@ -17,6 +17,7 @@ Parameters:
 * `callLogging` - Will add the machinery to also log the incoming arguments to each subsequent calls to this method
 * `preserveArguments` - If true, argument signatures are kept, else they are ignored. If true, BEWARE with $args() matching as default values and missing arguments need to be passed too.
 * `callback` - A callback to execute that should return the desired results, this can be a UDF or closure.
+* `throwErrorCode` - The error code to throw in the exception
 
 The cool thing about this method is that it also returns the same instance of the object. Therefore, you can use it to chain calls to the object and do multiple mocking of methods all within the same line. Remember that if no returns argument is provided then the return is void
 
