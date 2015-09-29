@@ -1,6 +1,6 @@
 # Before and After Specs
 
-If you are familiar with xUnit style frameworks, the majority of them provide a way to execute functions before and after every single test case or spec in BDD. This is a great way to keep your tests DRY (Do not repeat yourself)! TestBox provides the `beforeEach()` and `afterEach()` methods that each take in a closure as their argument that receive the name of the spec that's about to be executed or just executed. As their names indicate, they execute before a spec and after a spec in a related describe block.
+If you are familiar with xUnit style frameworks, the majority of them provide a way to execute functions before and after every single test case or spec in BDD. This is a great way to keep your tests DRY (Do not repeat yourself)! TestBox provides the `beforeEach()` and `afterEach()` methods that each take in a closure as their argument that receive the name of the spec that's about to be executed or just executed. As their names indicate, they execute before a spec and after a spec in a related `describe` block.
 
 ```javascript
 describe("A spec (with setup and tear-down)", function() {
