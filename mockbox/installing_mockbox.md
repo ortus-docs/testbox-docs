@@ -4,10 +4,10 @@ MockBox can be downloaded from http://www.ortussolutions.com/products/testbox or
 
 ```javascript
 // install standalone
-box install mockbox
-
-// installing with testbox
 box install testbox
+
+// installing bleeding edge
+box install testbox-be
 ```
 
 This will install MockBox in a `/mockbox` folder from where you called the command. You can also extract the download zip and place it anywhere you like and create a mapping called `/mockbox` that points to `mockbox` in the distribution folder, this is the most secure approach. However, you can just place it in the webroot if you like.
