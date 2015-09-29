@@ -13,6 +13,6 @@ The factory takes in one constructor argument that is not mandatory: `generation
 /testbox/system/stubs
 ```
 
-> **Hint** If you are using Railo or ACF10+ you can also decide to use the `ram://` resource and place all generated stubs in memory.
+> **Hint** If you are using Lucee or ACF10+ you can also decide to use the `ram://` resource and place all generated stubs in memory.
 
 
