@@ -92,20 +92,20 @@ Feature: Box Size
 TestBox provides you with `feature()`, `scenario()` and `story()` aliases for `describe()` blocks. As such we can write our requirements in test form like so:
 
 ```javascript
-feature("Box Size", function() {
+feature( "Box Size", function(){
 
-    describe("In order to know what size box I need
+    describe( "In order to know what size box I need
               As a distribution manager
-              I want to know the volume of the box", function() {
+              I want to know the volume of the box", function(){
 
-        scenario("Get box volume", function() {
-            given("I have entered a width of 20
+        scenario( "Get box volume", function(){
+            given( "I have entered a width of 20
                 And a height of 30
-                And a depth of 40", function() {
-                when("I run the calculation", function() {
-		              then("the result should be 24000", function() {
+                And a depth of 40", function(){
+                when( "I run the calculation", function(){
+		              then( "the result should be 24000", function(){
 		                  // call the method with the arguments and test the outcome
-		                  expect(myObject.myFunction(20,30,40)).toBe(24000);
+		                  expect( myObject.myFunction(20,30,40) ).toBe( 24000 );
 		              });
 	             });
             });
