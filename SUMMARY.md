@@ -27,7 +27,7 @@
        * [Asynchronous Testing](primers/bdd/asynchronous_testing.md)
        * [Running Tests](primers/bdd/running_tests.md)
        * [Reporters](primers/bdd/reporters.md)
-       * Life-Cycle Methods
+       * [Life-Cycle Methods](primers/bdd/life-cycle_methods.md)
    * [TestBox xUnit Primer](primers/xunit/index.md)
        * [RefCard](primers/xunit/refcard.md)
        * [Requirements](primers/xunit/requirements.md)
