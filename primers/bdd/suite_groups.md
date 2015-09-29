@@ -138,7 +138,7 @@ describe("A spec", function() {
 
 ##Given-When-Then Blocks
 
-[Given-When-Then](http://martinfowler.com/bliki/GivenWhenThen.html) is a style of writing tests where you describe the state of the code you want to test (`Given`). The behaviour you want to test (`When`) and the expected outcome (`Then`).
+[Given-When-Then](http://martinfowler.com/bliki/GivenWhenThen.html) is a style of writing tests where you describe the state of the code you want to test (`Given`). The behavior you want to test (`When`) and the expected outcome (`Then`).
 
 Testbox supports the use of function names `given()` and `when()` in-place of `describe()` function calls. The `then()` function call is an alternative for `it()` function calls. The advantage of this style of [behavioural specifications](https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioural_specifications) is that you can gather your requirements and write your tests in a common language that can be understood by developers and stake-holders alike. This common language format is often referred to as the Gherkin language; using it we can gather and document the requirements as: 
 
