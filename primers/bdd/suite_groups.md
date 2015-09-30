@@ -89,7 +89,7 @@ Feature: Box Size
         Then the result should be 24000
 ```
 
-TestBox provides you with `feature()`, `scenario()` and `story()` aliases for `describe()` blocks. As such we can write our requirements in test form like so:
+TestBox provides you with `feature()`, `scenario()` and `story()` wrappers for `describe()` blocks. As such we can write our requirements in test form like so:
 
 ```javascript
 feature( "Box Size", function(){
@@ -116,3 +116,21 @@ feature( "Box Size", function(){
 
 The output from running the test will read as the original requirements, providing you with not only automated tests but also a living document of the requirements in a business-readable format.
 
+If you prefer to gather requirements as [User Stories](https://en.wikipedia.org/wiki/User_story) then you may prefer to take advantage of the `story()` wrapper for `describe()` instead.
+
+```javascript
+story("As a distribution manager, I want to know the volume of the box I need", function() {
+    given("I have a width of 20
+        And a height of 30
+        And a depth of 40", function() {
+        when("I run the calculation", function() {
+              then("the result should be 24000", function() {
+                  // call the method with the arguments and test the outcome
+                  expect(myObject.myFunction(20,30,40)).toBe(24000);
+              });
+         });
+    });
+});
+```
+
+As `feature()`, `scenario()` and `story()` are wrappers for `describe()` you can intermix them so that your can create tests which read as the business requirements. As with `describe()`, they can be nested to build up blocks.
