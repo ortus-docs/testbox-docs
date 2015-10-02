@@ -11,20 +11,26 @@ TestBox 2.2.0 is a minor release with some great new functionality and tons of f
 </li>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-49'>TESTBOX-49</a>] -         Docs for Assertion CFCs inadequate, or functionality just doesn&#39;t work?
 </li>
+<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-120'>TESTBOX-120</a>] -         MXUnit injectMethod not working if calls to methods being replaced are not &quot;this&quot; scoped
+</li>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-122'>TESTBOX-122</a>] -          Order of args for init function did not match the interface
 </li>
-<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-128'>TESTBOX-128</a>] -         erroneous assertion message for isNotEmpty
+<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-134'>TESTBOX-134</a>] -         Mockbox: object instances as args do not always pass comparison
 </li>
 </ul>
             
 <h3>        New Feature
 </h3>
 <ul>
-<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-104'>TESTBOX-104</a>] -         Label Blacklist for run, runRemote, etc
-</li>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-129'>TESTBOX-129</a>] -         throwErrorCode addition to mock method generator
 </li>
+<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-132'>TESTBOX-132</a>] -         Ability to bind data to a spec
+</li>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-133'>TESTBOX-133</a>] -         Support story-given-when-then style of representing tests
+</li>
+<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-136'>TESTBOX-136</a>] -         MockBox no longer standalone package
+</li>
+<li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-138'>TESTBOX-138</a>] -         run method listeners so you can do callbacks on testing progress
 </li>
 </ul>
         
