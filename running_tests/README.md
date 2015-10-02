@@ -32,6 +32,7 @@ Here are the arguments you can use for initializing TestBox or executing the `ru
 |testBundles |false|---|string/array|A list or array of bundle names that are the ones that will be executed ONLY!|
 |testSuites |false |---|string/array |A list or array of suite names that are the ones that will be executed ONLY! |
 |testSpecs |false|---|string/array|A list or array of test names that are the ones that will be executed ONLY|
+| callbacks | false | `{}` | struct of closures or CFC | A struct of listener callbacks or a CFC with callbacks for listening to progress of the testing: `onBundleStart,onBundleEnd,onSuiteStart,onSuiteEnd,onSpecStart,onSpecEnd` |
 
 ## `runRemote()` Arguments
 Here are the arguments you can use for executing the `runRemote()` method of the TestBox object:
