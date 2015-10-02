@@ -4,12 +4,18 @@ Every `run` and `runRaw` methods now accept a `callbacks` argument, which can be
 
 The available callbacks are:
 ```javascript
+// Called at the beginning of a test bundle cycle
 function onBundleStart( target, testResults )
+// Called at the end of the bundle testing cycle
 function onBundleEnd( target, testResults )
 
+// Called anytime a new suite is about to be tested
 function onSuiteStart( target, testResults, suite )
+// Called after any suite has finalized testing
 function onSuiteEnd( target, testResults, suite )
 
+// Called anytime a new spec is about to be tested
 function onSpecStart( target, testResults, suite, spec )
+// Called after any spec has finalized testing
 function onSpecEnd( target, testResults, suite, spec )
 ```
