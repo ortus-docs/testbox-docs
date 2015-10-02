@@ -62,6 +62,7 @@
    * [Custom Matchers](expectations/custom_matchers-expectations.md)
 * [Output Utilities](output_utilities/README.md)
 * [Running Tests](running_tests/README.md)
+   * Run Listeners
    * [Global Runner](running_tests/global_runner.md)
    * [Test Browser](running_tests/test_browser.md)
    * [Bundle(s) Runner](running_tests/bundles_runner.md)
@@ -71,7 +72,6 @@
    * [HTTP/REST Runner](running_tests/httprest_runner.md)
    * [ANT Runner](running_tests/ant_runner.md)
    * [NodeJS Runner](running_tests/nodejs_runner.md)
-   * Run Listeners
 * [Reporters](reporters/README.md)
    * [Custom Reporters](reporters/custom_reporters.md)
 * [MockBox](mockbox/index.md)
