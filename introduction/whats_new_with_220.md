@@ -4,7 +4,7 @@ TestBox 2.2.0 is a minor release with some great new functionality and tons of f
 
 ## Release Notes
 
-<h3>        Bug
+<h3>        Bugs
 </h3>
 <ul>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-48'>TESTBOX-48</a>] -         Syntax error in docs for Assertion Registration
@@ -19,7 +19,7 @@ TestBox 2.2.0 is a minor release with some great new functionality and tons of f
 </li>
 </ul>
             
-<h3>        New Feature
+<h3>        New Features
 </h3>
 <ul>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-129'>TESTBOX-129</a>] -         throwErrorCode addition to mock method generator
@@ -34,7 +34,7 @@ TestBox 2.2.0 is a minor release with some great new functionality and tons of f
 </li>
 </ul>
         
-<h3>        Improvement
+<h3>        Improvements
 </h3>
 <ul>
 <li>[<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-121'>TESTBOX-121</a>] -         Ability to read assets from current directory to support lucee
