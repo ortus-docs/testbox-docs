@@ -8,6 +8,7 @@ Specifications (Specs) are defined by calling the TestBox `it()` global function
 |body|true|---|closure/udf|The closure that represents the spec|
 |labels|false|---|string/array|The list or array of labels this suite group belongs to|
 |skip|false|false|Boolean|A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean.|
+|data|false|`{}`|struct | A struct of data you can bind the spec with so you can use within the `body` closure|
 
 An expectation is a nice assertion DSL that TestBox exposes so you can pretty much read what should happen in the testing scenario. A spec will pass if all expectations pass. A spec with one or more expectations that fail will fail the entire spec.
 
