@@ -56,4 +56,22 @@ The `data` argument can be used to pass in a struct of data into the spec so it 
 it( title="can handle binding", body=function( data ){
 	expect(	data.keep ).toBeTrue();
 }, data = { keep = true } );
+
+// Complex Example
+for (filePath in files) {
+	it("#getFileFromPath(filePath)# should be valid JSON", function() {
+		var json = fileRead(filePath);
+		var isItJson = isJSON(json);
+		expect(json).notToBeEmpty();
+		expect(isItJson).toBeTrue();
+		if (isItJson) {
+			var data = deserializeJSON(json);
+			if (getFileFromPath(filePath) != "index.json") {
+				expect(data).toHaveKey("name");
+				expect(data).toHaveKey("type");
+			}
+		}
+		
+	});
+}
 ```
