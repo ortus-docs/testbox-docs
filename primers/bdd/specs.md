@@ -46,3 +46,14 @@ function run(){
 
 }
 ```
+
+## Spec Data Binding
+
+The `data` argument can be used to pass in a struct of data into the spec so it can be used later within the body closure.  This is great when doing looping and dynamic closure calls:
+
+```javascript
+// Simple Example
+it( title="can handle binding", body=function( data ){
+	expect(	data.keep ).toBeTrue();
+}, data = { keep = true } );
+```
