@@ -3,7 +3,7 @@
 ![MockBox](../images/MockBox_300.png)
 
 ## Introduction
-MockBox is a companion package to TestBox that will give you advanced mocking/stubbing capabilities; hence a Mocking Framework. You can use it from withing TestBox or as a standalone package in any other testing framework or CFML application as a data provider.
+MockBox is a companion package to TestBox that will give you advanced mocking/stubbing capabilities; hence a Mocking Framework. You can use it from within TestBox or as a standalone package in any other testing framework or CFML application as a data provider.
 
 ## Download
 Download from our [downloads page](http://www.ortussolutions.com/products/testbox) or clone via github. Also read our [installation](installing_mockbox.md) section.
