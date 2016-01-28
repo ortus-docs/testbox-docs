@@ -31,6 +31,8 @@ component{
                });
 
                describe("A nested suite", function(){
+               
+                    // my parent's aroundEach()
 
                     beforeEach( function(){
                          // before each spec in this suite + my parent's beforeEach()
