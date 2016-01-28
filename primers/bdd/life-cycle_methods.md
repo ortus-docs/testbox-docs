@@ -28,7 +28,7 @@ describe("A spec (with setup and tear-down)", function() {
 
 #Around Specs
 
-The `aroundEach()` life-cycle method will completely wrap your spec in another closure. This is an elegant way for you to provide a complete around AOP advice to a specification. You can use it to surround the execution in transaction blocks, ORM rollbacks, logging, and so much more. This life-cycle method will decorate ALL specs within a single suite. The method signature is below:
+The `aroundEach()` life-cycle method will completely wrap your spec in another closure. This is an elegant way for you to provide a complete around AOP advice to a specification. You can use it to surround the execution in transaction blocks, ORM rollbacks, logging, and so much more. This life-cycle method will decorate ALL specs within a single suite and any children suites. The method signature is below:
 
 ```javascript
 aroundEach( function( spec, suite ){
