@@ -7,7 +7,7 @@ configBean.getKey('DebugMode');
 configBean.getKey('OutgoingMail');
 ```
 
-How in the world can I mock ths? Well, using the mock arguments method.
+How in the world can I mock this? Well, using the mock arguments method.
 
 ```javascript
 //get a mock config bean
