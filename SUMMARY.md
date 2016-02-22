@@ -50,6 +50,7 @@
 * [Life-Cycle Methods](life-cycle_methods/README.md)
    * [xUnit](life-cycle_methods/xunit.md)
    * [BDD](life-cycle_methods/bdd.md)
+   * [Annotations](life-cycle-methods/annotations.md)
 * [Suites, Tests & Specs (Oh My!)](suites,_tests_&_specs_oh_my/README.md)
    * [xUnit](suites,_tests_&_specs_oh_my/xunit.md)
    * [BDD](suites,_tests_&_specs_oh_my/bdd.md)
