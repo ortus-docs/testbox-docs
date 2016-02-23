@@ -89,6 +89,7 @@
        * [$getProperty() Method](mockbox/mocking_methods/getproperty_method.md)
        * [$results() Method](mockbox/mocking_methods/results_method.md)
        * [$args() Method](mockbox/mocking_methods/args_method.md)
+       * [$throws() Method](mockbox/mocking_methods/throws_method.md)
        * [$querySim() Method](mockbox/mocking_methods/querysim_method.md)
    * [Verification Methods](mockbox/verification_methods/index.md)
        * [$count()](mockbox/verification_methods/count.md)
