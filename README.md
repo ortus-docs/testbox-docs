@@ -19,11 +19,11 @@
                                          
                                                                              
 ```
-# TestBox & MockBox Manual v2.2.0
+# TestBox & MockBox Manual v2.3.0
 
 ![TestBox](images/TestBoxLogo300.png)
 
-TestBox is a next generation testing framework for ColdFusion (CFML) that is based on [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) (Behavior Driven Development) for providing a clean obvious syntax for writing tests. It contains not only a testing framework, runner, assertions and expectations library but also ships with MockBox for mocking and stubbing. It also supports xUnit style of testing and MXUnit compatibilities.
+TestBox is a next generation testing framework for ColdFusion (CFML) that is based on [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) (Behavior Driven Development) for providing a clean obvious syntax for writing tests. It contains not only a testing framework, runner, assertions and expectations library but also ships with MockBox, A mocking and stubbing companion. It also supports xUnit style of testing and MXUnit compatibilities.
 
 ![MockBox](images/MockBox_300.png)
 
