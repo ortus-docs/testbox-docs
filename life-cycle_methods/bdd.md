@@ -8,8 +8,6 @@
 * `aroundEach( spec, suite )` - Executes around the executing spec so you can provide code surrouding the spec.
 
 ```javascript
-
-
 component{
      function beforeAll(){}
      function afterAll(){}
