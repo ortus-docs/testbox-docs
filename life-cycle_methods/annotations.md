@@ -11,6 +11,7 @@ In addition to the life-cycle methods, you can make any method a life-cycle meth
 Below are several examples using script notation.
 
 **DBTestCase.cfc (parent class)**
+
 ```javascript
 component extends="coldbox.system.testing.BaseTestCase"{
 
