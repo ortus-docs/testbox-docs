@@ -8,6 +8,8 @@ In addition to the life-cycle methods, you can make any method a life-cycle meth
 * `@afterEach` - Executes after every single spec in a single describe block and receives the currently executing spec.
 * `@aroundEach` - Executes around the executing spec so you can provide code surrounding the spec.
 
+Below are several examples using script notation.
+
 ```javascript
 // DBTestCase.cfc (parent class)
 component extends="coldbox.system.testing.BaseTestCase"{
