@@ -1,7 +1,7 @@
 # Annotations
 
-In addition to the lifecycle methods, you can make any method a lifecycle method by giving it the desired annotation.
-This is especially useful for parent classes that want to hook in to the TestBox lifecycle.
+In addition to the life-cycle methods, you can make any method a life-cycle method by giving it the desired annotation.
+This is especially useful for parent classes that want to hook in to the TestBox life-cycle.
 
 * `@beforeAll` - Executes once before all specs for the entire test bundle CFC
 * `@afterAll` - Executes once after all specs complete in the test bundle CFC
