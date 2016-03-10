@@ -67,4 +67,4 @@ component extends="DBTestCase"{
 
 This also helps parent classes enforce their setup methods are called by annotating the methods with `@beforeAll`.  No more forgetting to call `super.beforeAll()`!
 
-You can have as many annotated methods as you would like.  TestBox discovers them up the inheritance chain and calls them in reverse order.
+> **Info**: You can have as many annotated methods as you would like. TestBox discovers them up the inheritance chain and calls them in reverse order.
