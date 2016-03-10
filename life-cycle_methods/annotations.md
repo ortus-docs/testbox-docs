@@ -10,8 +10,8 @@ In addition to the life-cycle methods, you can make any method a life-cycle meth
 
 Below are several examples using script notation.
 
+**DBTestCase.cfc (parent class)**
 ```javascript
-// DBTestCase.cfc (parent class)
 component extends="coldbox.system.testing.BaseTestCase"{
 
     /**
@@ -29,8 +29,11 @@ component extends="coldbox.system.testing.BaseTestCase"{
         }
      }
 }
+```
 
-// PostsTest.cfc
+**PostsTest.cfc**
+
+```javascript
 component extends="DBTestCase"{
 
     /**
