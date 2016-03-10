@@ -67,4 +67,4 @@ This simple around each life-cycle closure will rollback ALL my spec's execution
 
 
 ## Annotations
-TestBox since v2.3.0 also allows you to declare life-cycle methods via annotations.  Please see our [Annotations](life-cycle_methods/annotations.md) section for more information.
+TestBox since v2.3.0 also allows you to declare life-cycle methods via annotations.  Please see our [Annotations](/life-cycle_methods/annotations.md) section for more information.
