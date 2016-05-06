@@ -49,7 +49,7 @@ function run(){
 
 ## Spec Data Binding
 
-The `data` argument can be used to pass in a struct of data into the spec so it can be used later within the body closure.  This is great when doing looping and dynamic closure calls:
+The `data` argument can be used to pass in a structure of data into the spec so it can be used later within the body closure.  This is great when doing looping and creating dynamic closure calls:
 
 ```javascript
 // Simple Example
@@ -57,21 +57,29 @@ it( title="can handle binding", body=function( data ){
 	expect(	data.keep ).toBeTrue();
 }, data = { keep = true } );
 
-// Complex Example
-for (filePath in files) {
-	it("#getFileFromPath(filePath)# should be valid JSON", function() {
-		var json = fileRead(filePath);
-		var isItJson = isJSON(json);
-		expect(json).notToBeEmpty();
-		expect(isItJson).toBeTrue();
-		if (isItJson) {
-			var data = deserializeJSON(json);
-			if (getFileFromPath(filePath) != "index.json") {
-				expect(data).toHaveKey("name");
-				expect(data).toHaveKey("type");
-			}
-		}
-		
-	});
+// Complex Example. Let's iterate over a bunch of files and create dynamic specs
+for( var filePath in files ){
+
+  it( 
+    title="#getFileFromPath( filePath )# should be valid JSON", 
+    // pass in a struct of data to the spec for later evaluation
+    data = { filePath = filePath },
+    // the spec closure accepts the data for later evaluation
+    function( data ) {
+      var json = fileRead( data.filePath );
+      var isItJson = isJSON( json );
+      
+      expect( json ).notToBeEmpty();
+      expect( isItJson ).toBeTrue();
+      
+      if( isItJson ){
+          var jsonData = deserializeJSON(json);
+          if( getFileFromPath( filePath ) != "index.json"){
+              expect( jsonData ).toHaveKey( "name" );
+              expect( jsonData ).toHaveKey( "type" );
+          }
+      }
+
+  });
 }
 ```
