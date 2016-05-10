@@ -19,6 +19,7 @@
        * [Requirements](primers/bdd/requirements.md)
        * [Bundles: Group Your Tests](primers/bdd/bundles_group_your_tests.md)
        * [Suites: Describe Your Tests](primers/bdd/suites_describe_your_tests.md)
+         * [Dynamic Suites](primers/bdd/dynamic_suites.md)
        * [Specs](primers/bdd/specs.md)
        * [Expectations](primers/bdd/expectations.md)
        * [Suite Groups](primers/bdd/suite_groups.md)
