@@ -42,11 +42,13 @@ component
 		for ( var thing in dynamicSuiteConfig ) {
 			describe("Dynamic Suite #thing#", function(){
 				// notice how data is passed into the it() closure:
-				//  * data={keyA=valueA, keyB=ValueB}
+				//  * data={ keyA=valueA, keyB=ValueB }
 				//  * function( data )
-				it( title=thing & "test", data={thing=thing}, body=function( data ) {
-					var thing = data.thing;
-					expect(thing).toBe(thing);
+				it( title=thing & "test", 
+                    data={ thing=thing }, 
+                    body=function( data ) {
+                      var thing = data.thing;
+                      expect( thing ).toBe( thing );
 				});
 			});
 		}
