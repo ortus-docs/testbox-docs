@@ -20,7 +20,7 @@ function run(){
                expect( true ).toBeTrue();
           });
 
-            it("contains a spec with more than 1 expectation", function(){
+          it("contains a spec with more than 1 expectation", function(){
                expect( [1,2,3] ).toBeArray();
                expect( [1,2,3] ).toHaveLength( 3 );
           });
@@ -55,7 +55,7 @@ The `data` argument can be used to pass in a structure of data into the spec so 
 // Simple Example
 it( title="can handle binding", body=function( data ){
 	expect(	data.keep ).toBeTrue();
-}, data = { keep = true } );
+}, data={ keep = true } );
 
 // Complex Example. Let's iterate over a bunch of files and create dynamic specs
 for( var filePath in files ){
@@ -63,9 +63,9 @@ for( var filePath in files ){
   it( 
     title="#getFileFromPath( filePath )# should be valid JSON", 
     // pass in a struct of data to the spec for later evaluation
-    data = { filePath = filePath },
+    data={ filePath = filePath },
     // the spec closure accepts the data for later evaluation
-    function( data ) {
+    body=function( data ) {
       var json = fileRead( data.filePath );
       var isItJson = isJSON( json );
       
