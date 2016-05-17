@@ -2,7 +2,7 @@
 This method is used in order to mock an internal property on the target object. Let's say that the object has a private property of userDAO that lives in the variables scope and the lifecycle for the object is controlled by its parent, in this case the user service. This means that this dependency is created by the user service and not injected by an external force or dependency injection framework. How do we mock this? Very easily by using the $property() method on the target object.
 
 ```javascript
-any $property(any obj, string propertyName, [string propertyScope='variables'], any mock)
+any $property(string propertyName, [string propertyScope='variables'], any mock)
 ```
 
 Parameters:
