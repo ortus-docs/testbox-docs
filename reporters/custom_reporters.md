@@ -1,5 +1,8 @@
 # Custom Reporters
 
+
+## Building Reporters
+
 You can also build your own reporters by implementing our core class: `testbox.system.reporters.IReport`
 
 ```javascript
@@ -25,14 +28,28 @@ interface{
 }
 ```
 
-Once you implement your own report you just need to pass the class path or the instance of your reporter to the TestBox runner methods using the `reporter` argument.
+## Executing Your Reporter
+
+Once you implement your own report you just need to pass the class path or the instance of your reporter to the TestBox runner methods using the `reporter` argument.  The `reporter` argument can be the following values:
+
+* `string` - The class path of your reporter
+* `instance` - The instance of your reporter CFC
+* `struct` - A structure representing your reporter with the following keys: `{ type="class_path", options={}`. This is mostly used if you want to instantiate and use your reporter with a structure of options.
+
+Now you can init TestBox with your reporter:
 
 ```javascript
 r = new TestBox( reporter="my.path.toCustomReporter" );
 r = new TestBox( reporter= new my.path.CustomReporter() );
+r = new TestBox( reporter={
+    type = "my.path.to.CustomReporter",
+    options = { name = value, name2 = value2 }
+} );
 ```
 
-Here is a sample reporter for you:
+## Sample Reporter
+
+Here is a sample reporter for you that generates JSON for the output.
 
 ```javascript
 component{
@@ -65,3 +82,4 @@ component{
 
 }
 ```
+
