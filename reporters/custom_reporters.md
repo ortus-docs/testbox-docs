@@ -48,7 +48,8 @@ r = new TestBox( reporter={
 ```
 
 ## Sample Reporter
-Here is a sample reporter for you:
+
+Here is a sample reporter for you that generates JSON for the output.
 
 ```javascript
 component{
