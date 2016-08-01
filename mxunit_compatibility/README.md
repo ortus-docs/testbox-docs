@@ -1,6 +1,6 @@
 # MXUnit Compatibility
 
-TestBox is fully complaint with [MXUnit](http://mxunit.org/) xUnit test cases. In order to leverage it you will need to create or override the `/mxunit` mapping and make it point to the `/testbox/system/compat` folder. That's it, everything should continue to work as expected. 
+TestBox is fully compliant with [MXUnit](http://mxunit.org/) xUnit test cases. In order to leverage it you will need to create or override the `/mxunit` mapping and make it point to the `/testbox/system/compat` folder. That's it, everything should continue to work as expected. 
 
 > **Note** you will still need TestBox to be in the web root, or have a `/testbox` mapping created even when using the MXUnit compat runner.
 
