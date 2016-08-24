@@ -62,7 +62,7 @@ You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matche
 addMatchers( "model.util.MyMatchers" );
 ```
 
-You can also register a CFC instance
+You can also register a CFC instance:
 
 ```javascript
 addMatchers( new models.util.MyMatchers() );
