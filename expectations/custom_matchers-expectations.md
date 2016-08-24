@@ -1,6 +1,6 @@
 # Custom Matchers
 
-TestBox comes with a decent amount of matchers that cover what we believe are common scenarios. However, we recommend that you create custom matchers that meet your needs and criteria so that you can avoid duplication and have re-usability. 
+TestBox comes with a decent amount of matchers that cover what we believe are common scenarios. However, we recommend that you create custom matchers that meet your needs and criteria so that you can avoid duplication and have re-usability.
 
 Every custom matcher is a function and must have the following signature, with `MyMatcher` being the name of your custom matcher function:
 
@@ -28,7 +28,8 @@ The next step is to tell TestBox about your matcher.
 You can register matcher functions in several ways within TestBox, but we always recommend that you register them inside of the `beforeAll()` or `beforeEach()` life-cycle method blocks for performance considerations and global availability.
 
 ### Inline matchers
-You can pass a structure of key/value pairs of the matchers you would like to register. The key is the name of the matcher function and the value is the closure function representation.
+
+You can pass a structure of key\/value pairs of the matchers you would like to register. The key is the name of the matcher function and the value is the closure function representation.
 
 ```javascript
 function beforeAll(){
@@ -55,16 +56,15 @@ it("A custom matcher", function(){
 
 ### CFC Matchers
 
-You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matchers (Yes, I said plethora), in a CFC and register that as the matchers via its instantiation path. This provides much more flexibility and re-usability for your projects.
+You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matchers \(Yes, I said plethora\), in a CFC and register that as the matchers via its instantiation path. This provides much more flexibility and re-usability for your projects.
 
 ```javascript
 addMatchers( "model.util.MyMatchers" );
 ```
-You can also register more than 1 CFC by using a list or an array:
+
+You can also register a CFC instance
 
 ```javascript
-addMatchers( "model.util.MyMatchers, model.util.RegexMatchers" );
-addMatchers( [ "model.util.MyMatchers" , "model.util.RegexMatchers" ] );
+addMatchers( new models.util.MyMatchers() );
 ```
-
 
