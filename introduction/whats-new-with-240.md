@@ -5,6 +5,12 @@ TestBox 2.4.0 is a minor release with some great new functionality and tons of f
 ## New `mintext` Reporter
 This new reporter is to enhance console based runners in order for the report to be more legible.
 
+## New JSON Matchers & Assertions
+
+You can now use a `toBeJSON()` matcher or a `$assert.isJSON` assertion.
+
+## No more `runRemote`
+You no longer need to pass `?method=runRemote` in the URL when executing a test bundle via the URL.  This will automatically be added for you.
 
 
 ## Release Notes
