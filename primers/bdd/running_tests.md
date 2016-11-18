@@ -6,6 +6,9 @@ TestBox ships with several test runners internally but we have tried to simplify
 // Create TestBox object
 testbox = new testbox.system.TestBox();
 
+// You can add fluent specs via addDirectory(), addDirectories(), addBundles()
+testbox.addDirectory( "/tests/specs" );
+
 // Run tests and produce reporter results
 testbox.run()
 
