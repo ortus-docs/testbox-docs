@@ -54,6 +54,8 @@ Thanks to Joe Gooch you can now use the new methods in the TestBox cfc
 You can chain them as you see fit and they will aggregate the specs collected.
 
 ## Release Notes
+
+Here is the full release notes for this release
 ### Bugs
 
 * [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-169'>TESTBOX-169</a>] - discover if fail origin exists in errors and failures, else ignore as it causes issues
