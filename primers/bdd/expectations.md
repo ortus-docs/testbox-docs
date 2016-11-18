@@ -19,6 +19,12 @@ function run(){
           });
      });
 
+     describe("Collection expectations", function(){
+        it( "can be done easily with TestBox", function(){
+            expectAll( {a:2,b:4,c:6} ).toSatisfy( function(x){ return 0 == x%2; });
+        });
+    });
+
 }
 ```
 
