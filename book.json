@@ -12,7 +12,9 @@
         "richquotes",
         "edit-link",
         "github",
-        "advanced-emoji"
+        "advanced-emoji",
+        "sitemap",
+        "collapsible-chapters"
     ],
     "pluginsConfig": {
     	"edit-link": {
@@ -21,6 +23,9 @@
         },
         "github": {
             "url": "https://github.com/ortus-solutions/testbox"
+        },
+        "sitemap" : {
+            "hostname" : "https://testbox.ortusbooks.com"
         }
     },
     "links": {
