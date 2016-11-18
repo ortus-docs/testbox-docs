@@ -1,6 +1,6 @@
 # Expectations
 
-Expectations are self-concatenated strings that evaluate an **actual** value to an **expected** value or condition. These are initiated by the global TestBox method called `expect()` which takes in a value called the **actual** value. It is concatenated in our expectations DSL with a matcher function that will most likely take in an expected value or condition to test. You can also concatenate the matchers and do multiple evaluations on a single actual value.
+Expectations are self-concatenated strings that evaluate an **actual** value to an **expected** value or condition. These are initiated by the global TestBox method called `expect()` which takes in a value called the **actual** value or `expectAll()` which takes in an array or struct which will be the **actual** value. It is concatenated in our expectations DSL with a matcher function that will most likely take in an expected value or condition to test. You can also concatenate the matchers and do multiple evaluations on a single actual value.
 
 ## Matchers
 
