@@ -2,6 +2,38 @@
 
 TestBox 2.4.0 is a minor release with some great new functionality and tons of fixes. This release has been a great community effort as many people in the community contributed to its release. Special thanks to Eric Peterson, Joe Gooch and Sean Corfield for their additions, testing and contributions.
 
+## New `toSatisfy` matcher
+
+This new matcher is thanks to Sean Corfield.  It allows you to create your own closure that will evaluate the expectation and then decide if it passes the given truth test.
+
+```js
+it( "can satisfy truth tests", function(){
+
+expect( 1 ).toSatisfy( function( num ){ return arguments.num > 0; } );
+
+expect( 0 ).notToSatisfy( function( num ){ return arguments.num > 0; } );
+
+});
+
+```
+
+## New `expectAll()` collection expectation
+
+Sean was busy in this release and provided us with this awesome feature in which you can call on a new `expectAll()` and pass either an array or struct.  TestBox will then iterate for you and call all the chained matchers upon the collection items.
+
+```js
+it( "can test a collection", function(){
+    expectAll( [2,4,6,8] ).toSatisfy( function(x){ return 0 == x%2; });
+    expectAll( {a:2,b:4,c:6} ).toSatisfy( function(x){ return 0 == x%2; });
+
+    // and we can chain matchers
+    expectAll( [2,4,6,8] )
+        .toBeGTE( 2 )
+        .toBeLTE( 8 );
+});
+
+```
+
 ## New `mintext` Reporter
 This new reporter is to enhance console based runners in order for the report to be more legible.
 
