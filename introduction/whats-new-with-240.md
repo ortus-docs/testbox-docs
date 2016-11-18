@@ -12,7 +12,7 @@ TestBox 2.4.0 is a minor release with some great new functionality and tons of f
 * [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-175'>TESTBOX-175</a>] - No need to pass method=runRemote anymore on spec runners, defaults now
 * [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-176'>TESTBOX-176</a>] - Implements fluent API - addDirectory,addBundles,addDirectories on TestBox Core
 
-### Improvement
+### Improvements
 
 * [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-168'>TESTBOX-168</a>] - runRemote operations are not setting the default response to HTML, so wddx takes over
 * [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-173'>TESTBOX-173</a>] - Add toSatisfy( predicate ) matcher
