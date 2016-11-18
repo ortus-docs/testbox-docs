@@ -14,5 +14,7 @@ TestBox 2.4.0 is a minor release with some great new functionality and tons of f
 
 ### Improvement
 
-* [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-168'>TESTBOX-168</a>] - runRemote operations are not setting the default response to HTML, so wddx takes over* [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-173'>TESTBOX-173</a>] - Add toSatisfy( predicate ) matcher* [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-174'>TESTBOX-174</a>] - Add expectAll() to make it easier to work with collections
+* [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-168'>TESTBOX-168</a>] - runRemote operations are not setting the default response to HTML, so wddx takes over
+* [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-173'>TESTBOX-173</a>] - Add toSatisfy( predicate ) matcher
+* [<a href='https://ortussolutions.atlassian.net/browse/TESTBOX-174'>TESTBOX-174</a>] - Add expectAll() to make it easier to work with collections
 
