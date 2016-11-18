@@ -7,7 +7,7 @@
                                                                                                                      
 ```
 
-# TestBox & MockBox Manual v2.3.0
+# TestBox & MockBox Manual v2.4.0
 
 ![TestBox](images/TestBoxLogo300.png)
 
