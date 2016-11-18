@@ -43,9 +43,9 @@ please try to make mention of it in your code or web site.
 
 # Discussion & Help
 
-The TestBox help and discussion group can be found here: [https:\/\/groups.google.com\/a\/ortussolutions.com\/forum\/\#!forum\/testbox](https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox)
-
-The BoxTeam Slack channel can be accessed here: https://boxteam.herokuapp.com
+- Help Group : [https:\/\/groups.google.com\/a\/ortussolutions.com\/forum\/\#!forum\/testbox](https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox)
+- BoxTeam Slack : https://boxteam.herokuapp.com
+- CFML Slack: Look for the `box-team` channel: http://cfml.slack.com
 
 # Reporting a Bug
 
