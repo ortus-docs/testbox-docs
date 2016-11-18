@@ -12,6 +12,14 @@ You can now use a `toBeJSON()` matcher or a `$assert.isJSON` assertion.
 ## No more `runRemote`
 You no longer need to pass `?method=runRemote` in the URL when executing a test bundle via the URL.  This will automatically be added for you.
 
+## New Fluent API for Testing Declarations
+
+Thanks to Joe Gooch you can now use the new methods in the TestBox cfc
+* `addDirectory()`
+* `addDirectories()`
+* `addBundles()`
+
+You can chain them as you see fit and they will aggregate the specs collected.
 
 ## Release Notes
 ### Bugs
