@@ -7,7 +7,7 @@ TestBox can be downloaded from http://www.ortussolutions.com/products/testbox or
 box install testbox
 
 // latest bleeding edge
-box install testbox-be
+box install testbox@be
 ```
 
 This will install TestBox in a */testbox* folder from where you called the command. You can also extract the download zip and place it anywhere you like and create a mapping called */testbox* that points to testbox in the distribution folder, this is the most secure approach. However, you can just place it in the webroot if you like.
