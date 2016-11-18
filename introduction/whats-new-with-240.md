@@ -9,9 +9,9 @@ This new matcher is thanks to Sean Corfield.  It allows you to create your own c
 ```js
 it( "can satisfy truth tests", function(){
 
-expect( 1 ).toSatisfy( function( num ){ return arguments.num > 0; } );
+    expect( 1 ).toSatisfy( function( num ){ return arguments.num > 0; } );
 
-expect( 0 ).notToSatisfy( function( num ){ return arguments.num > 0; } );
+    expect( 0 ).notToSatisfy( function( num ){ return arguments.num > 0; } );
 
 });
 
