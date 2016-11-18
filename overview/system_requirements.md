@@ -4,7 +4,7 @@ If you are going to be using the xUnit style of testing which includes MXUnit co
 
 ##xUnit and MXUnit Compat
 
-* ColdFusion 9+
+* ColdFusion 9+ (Deprecated since v2.4.0)
 * Railo 3+
 * Lucee 4.5+
 
