@@ -18,9 +18,6 @@ TestBox is a next generation testing framework for ColdFusion (CFML) that is bas
 MockBox is a companion package to TestBox that will give you advanced mocking/stubbing capabilities; hence a Mocking Framework.
 
 
-<a href="https://vimeo.com/85396307"><img src="./images/testBoxIntro_VideoThumbnail.png"></a>
-
-
 # Versioning
 TestBox is maintained under the [Semantic Versioning](http://semver.org) guidelines as much as possible.Releases will be numbered with the following format:
 
