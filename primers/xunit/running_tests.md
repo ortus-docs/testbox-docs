@@ -138,7 +138,7 @@ http://localhost/testbox/system/TestBox.cfc?wsdl
 <h3 style="color:grey">HTTP/REST Runner</h3>
 You can run tests via HTTP/REST by leveraging the runRemote() endpoint. The URL will be
 ```javascript
-http://localhost/testbox/system/TestBox.cfc?method=runRemote
+http://localhost/testbox/system/TestBox.cfc
 ```
 
 ##NodeJS Runner

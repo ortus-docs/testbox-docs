@@ -4,13 +4,11 @@ If you are going to be using the xUnit style of testing which includes MXUnit co
 
 ##xUnit and MXUnit Compat
 
-* ColdFusion 9+
-* Railo 3+
+* ColdFusion 9+ (Deprecated since v2.4.0)
 * Lucee 4.5+
 
 
 ##BDD Style (Requires closures)
 
 * ColdFusion 10+
-* Railo 4.1+
 * Lucee 4.5+

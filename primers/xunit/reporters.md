@@ -14,4 +14,5 @@ TestBox comes also with a nice plethora of reporters:
 * **XML** 		: Builds yet another XML testing report
 * **Tap** 		: A test anything protocol reporter
 * **Min** 		: A minimalistic view of your test reports
+* **MinText** : A minimalistic view of your test reports for consoles
 * **NodeJS**    : User-contributed: https://www.npmjs.com/package/testbox-runner

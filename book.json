@@ -13,7 +13,8 @@
         "edit-link",
         "github",
         "advanced-emoji",
-        "sitemap"
+        "sitemap",
+        "collapsible-chapters"
     ],
     "pluginsConfig": {
     	"edit-link": {
@@ -23,8 +24,8 @@
         "github": {
             "url": "https://github.com/ortus-solutions/testbox"
         },
-        "sitemap": {
-            "hostname": "https://testbox.ortusbooks.com"
+        "sitemap" : {
+            "hostname" : "https://testbox.ortusbooks.com"
         }
     },
     "links": {
