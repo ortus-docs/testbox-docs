@@ -1,12 +1,12 @@
 # Summary
 
 * [Introduction](README.md)
+    * [What's New With 2.4.0](introduction/whats-new-with-240.md)
     * [What's New With 2.3.0](introduction/whats_new_with_230.md)
     * [What's New With 2.2.0](introduction/whats_new_with_220.md)
     * [What's New With 2.1.0](introduction/whats_new_with_210.md)
     * [About This Book](introduction/about_this_book.md)
     * [Author](introduction/author.md)
-    * [What's New With 2.4.0](whats-new-with-240.md)
 * [Overview](overview/index.md)
     * [RefCards](overview/refcards.md)
     * [Useful Resources](overview/useful_resources.md)
