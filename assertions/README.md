@@ -37,9 +37,9 @@ includes( target, needle, [message] )
 notIncludes( target, needle, [message] )
 includesWithCase( target, needle, [message] )
 notIncludesWithCase( target, needle, [message] )
-isGT( target, [message])
-isGTE( target, [message])
-isLT( target, [message])
-isLTE( target, [message])
+isGT( actual, target, [message])
+isGTE( actual, target, [message])
+isLT( actual, target, [message])
+isLTE( actual, target, [message])
 ```
 
