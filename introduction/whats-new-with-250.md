@@ -1,6 +1,19 @@
 # What's New With 2.5.0
 
-TestBox 2.5.0 is a minor release with some great new functionality and tons of fixes.
+TestBox 2.5.0 is a minor release with some great new functionality and tons of fixes.  You can find the release notes here and the major updates for this release. One of the biggest features for TestBox that was not part of TestBox, was the addition of TestBox Watchers to CommandBox.
+
+## TestBox Watchers
+
+CommandBox CLI has added watching capabilities to the `testbox` namespace.  Which means you can now run the following command in the root of your project: `testbox watch` and it will monitor all your CFCs for changes.  If a change is detected, then it will fire the new `testbox run` command with our CLI reporter.
+
+## Life-Cycle Data Binding
+We had introduced spec data binding in TestBox for creating dynamic specs and passing dynamic data into them.  We have extended this feature into life-cycle methods:
+
+* `beforeEach()`
+* `afterEach()`
+* `aroundEach()`
+
+
 
 ## Release Notes    
 
