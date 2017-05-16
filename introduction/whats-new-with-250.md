@@ -13,62 +13,56 @@ We had introduced spec data binding in TestBox for creating dynamic specs and pa
 * `afterEach()`
 * `aroundEach()`
 
-You can now pass in an argument called `data` which is a struct of dynamic data to pass into the life-cycle method.  You can then pickup this data in the closure for the life-cycle. 
-
-I tend to (want to) do a lot of dynamic tests, to keep DRY. I'm at a roadblock now because I can't get outside data into lifecycle methods (e.g., {{beforeEach}}). I know I can pass in outside data to an {{it}}, because it's set up to handle that, but I need it in {{beforeEach}}.
-
-https://gist.github.com/jamiejackson/9874cf01e4fd04931e6150b3675d5cc2#file-needdatainbeforeeach-cfc-L193
-
-h2. Implementation Below:
+You can now pass in an argument called `data` which is a struct of dynamic data to pass into the life-cycle method.  You can then pickup this data in the closure for the life-cycle. Here is a typical example:
 
 ```js
 describe( "Ability to bind data to life-cycle methods", function(){
 			
-			var data = [
-				"spec1",
-				"spec2"
-			];
+	var data = [
+		"spec1",
+		"spec2"
+	];
 
-			for( var thisData in data ){
-				describe( "Trying #thisData#", function(){
-					
-					beforeEach( data={ myData = thisData }, body=function( currentSpec, data ){
-						targetData = arguments.data.myData;
-					});
-					
-					it( title="should account for life-cycle data binding", 
-						data={ myData = thisData},
-						body=function( data ){
-							expect(	targetData ).toBe( data.mydata );
-						}
-					);
+	for( var thisData in data ){
+		describe( "Trying #thisData#", function(){
+			
+			beforeEach( data={ myData = thisData }, body=function( currentSpec, data ){
+				targetData = arguments.data.myData;
+			});
+			
+			it( title="should account for life-cycle data binding", 
+				data={ myData = thisData},
+				body=function( data ){
+					expect(	targetData ).toBe( data.mydata );
+				}
+			);
 
-					afterEach( data={ myData = thisData }, body=function( currentSpec, data ){
-						targetData = arguments.data.myData;
-					});
-				});
-			}
-
-			for( var thisData in data ){
-
-				describe( "Trying around life-cycles with #thisData#", function(){
-					
-					aroundEach( data={ myData = thisData }, body = function( spec, suite, data ){
-						targetData = arguments.data.myData;
-						arguments.spec.body( data=arguments.spec.data );
-					});
-
-					it( title="should account for life-cycle data binding", 
-						data={ myData = thisData },
-						body=function( data ){
-							expect(	targetData ).toBe( data.mydata );
-						}
-					);
-				
-				});
-
-			}
+			afterEach( data={ myData = thisData }, body=function( currentSpec, data ){
+				targetData = arguments.data.myData;
+			});
 		});
+	}
+
+	for( var thisData in data ){
+
+		describe( "Trying around life-cycles with #thisData#", function(){
+			
+			aroundEach( data={ myData = thisData }, body = function( spec, suite, data ){
+				targetData = arguments.data.myData;
+				arguments.spec.body( data=arguments.spec.data );
+			});
+
+			it( title="should account for life-cycle data binding", 
+				data={ myData = thisData },
+				body=function( data ){
+					expect(	targetData ).toBe( data.mydata );
+				}
+			);
+		
+		});
+
+	}
+});
 ```
 
 ## Release Notes    
