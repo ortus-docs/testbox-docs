@@ -4,10 +4,9 @@
    | |/ _ \/ __| __|  _ \ / _ \ \/ /
    | |  __/\__ \ |_| |_) | (_) >  < 
    |_|\___||___/\__|____/ \___/_/\_\
-
 ```
 
-# TestBox & MockBox Manual v2.4.0
+# TestBox & MockBox Manual v2.5.0
 
 ![TestBox](images/TestBoxLogo300.png)
 
@@ -33,7 +32,7 @@ And constructed with the following guidelines:
 
 # License
 
-TestBox and MockBox are open source and licensed under the [Apache 2](http://www.apache.org/licenses/LICENSE-2.0.html) License.  If you use them
+TestBox and MockBox are open source and licensed under the [Apache 2](http://www.apache.org/licenses/LICENSE-2.0.html) License.  If you use them  
 please try to make mention of it in your code or web site.
 
 * Copyright by Ortus Solutions, Corp
@@ -43,9 +42,9 @@ please try to make mention of it in your code or web site.
 
 # Discussion & Help
 
-- Help Group : [https:\/\/groups.google.com\/a\/ortussolutions.com\/forum\/\#!forum\/testbox](https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox)
-- BoxTeam Slack : https://boxteam.herokuapp.com
-- CFML Slack: Look for the `box-team` channel: http://cfml.slack.com
+* Help Group : [https:\/\/groups.google.com\/a\/ortussolutions.com\/forum\/\#!forum\/testbox](https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox)
+* BoxTeam Slack : [https://boxteam.herokuapp.com](https://boxteam.herokuapp.com)
+* CFML Slack: Look for the `box-team` channel: [http://cfml.slack.com](http://cfml.slack.com)
 
 # Reporting a Bug
 
@@ -83,8 +82,10 @@ TestBox is a professional open source software backed by [Ortus Solutions, Corp]
 
 Because of His grace, this project exists. If you don't like this, then don't read it, its not for you.
 
-> Therefore being justified by **faith**, we have peace with God through our Lord Jesus Christ:
+> Therefore being justified by **faith**, we have peace with God through our Lord Jesus Christ:  
 > By whom also we have access by **faith** into this **grace** wherein we stand, and rejoice in hope of the glory of God. - Romans 5:5
 
 ---
+
+
 
