@@ -73,7 +73,7 @@ beforeEach(
 		data.myData == "luis";
 	}
 );
-
+```
 
 Here is a typical example:
 
