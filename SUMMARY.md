@@ -1,5 +1,7 @@
 # Summary
 
+## Introduction
+
 * [Introduction](README.md)
   * [What's New With 2.5.0](introduction/whats-new-with-250.md)
   * [What's New With 2.4.0](introduction/whats-new-with-240.md)
@@ -44,9 +46,8 @@
     * [Running Tests](primers/xunit/running_tests.md)
     * [Reporters](primers/xunit/reporters.md)
 
----
+## In-Depth
 
-* [MXUnit Compatibility](mxunit_compatibility/README.md)
 * [Testing Styles](testing_styles/README.md)
 * [Test Bundles](test_bundles/README.md)
   * [Optional Inheritance](test_bundles/optional_inheritance.md)
@@ -108,4 +109,5 @@
     * [$debug\(\)](mockbox/verification_methods/debug.md)
   * [Some Examples](mockbox/some_examples.md)
   * [Conclusion](mockbox/conclusion.md)
+* [MXUnit Compatibility](mxunit_compatibility/README.md)
 
