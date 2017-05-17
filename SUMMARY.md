@@ -15,6 +15,9 @@
   * [System Requirements](overview/system_requirements.md)
 * [Installing TestBox](installing_testbox/README.md)
   * [What's Included](installing_testbox/whats_included.md)
+
+## Primers
+
 * [Primers](primers/index.md)
   * [TestBox BDD Primer](primers/bdd/index.md)
     * [Ref Card](primers/bdd/refcard.md)
