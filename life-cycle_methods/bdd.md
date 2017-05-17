@@ -63,7 +63,19 @@ The great flexibility of the BDD approach is that it allows you to nest `describ
 
 ## Life-Cycle Data Binding
 
-You can pass in an argument called `data` which is a `struct` of dynamic data to pass into the life-cycle method.  You can then pickup this data in the closure for the life-cycle. Here is a typical example:
+You can pass in an argument called `data` which is a `struct` of dynamic data to pass into the life-cycle method.  You can then pickup this data in the closure for the life-cycle. 
+
+```
+beforeEach( 
+	data = { mydata="luis" }, 
+	body = function( currentSpec, data ){
+		// The arguments.data is binded via the `data` snapshot above.
+		data.myData == "luis";
+	}
+);
+
+
+Here is a typical example:
 
 ```js
 describe( "Ability to bind data to life-cycle methods", function(){
