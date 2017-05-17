@@ -4,11 +4,14 @@ TestBox can be downloaded from https://www.ortussolutions.com/products/testbox o
 
 ```javascript
 // latest stable version
-box install testbox
+box install testbox --saveDev
 
 // latest bleeding edge
-box install testbox@be
+box install testbox@be --saveDev
 ```
+
+> **Note** Please note the `--saveDev` flag which tells CommandBox that TestBox is a development dependency and not a production dependency.
+
 
 This will install TestBox in a */testbox* folder from where you called the command. You can also extract the download zip and place it anywhere you like and create a mapping called */testbox* that points to testbox in the distribution folder, this is the most secure approach. However, you can just place it in the webroot if you like.
 
