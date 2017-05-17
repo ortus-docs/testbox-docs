@@ -6,7 +6,7 @@ A test suite begins with a call to our TestBox `describe()` function with at lea
 |--|--|--|--|--|
 |title|true|---|string|The title of the suite to register|
 |body|true|---|closure/udf|The closure that represents the test suite|
-|body|true|---|string/array |The list or array of labels this suite group belongs to|
+|labels|true|---|string/array |The list or array of labels this suite group belongs to|
 |asyncAll |false|false|Boolean|If you want to parallelize the execution of the defined specs in this suite group.|
 |skip|false|false|Boolean|A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean.|
 
