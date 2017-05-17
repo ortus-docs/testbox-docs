@@ -10,8 +10,6 @@
   * [Author](introduction/author.md)
 * [Overview](overview/index.md)
   * [RefCards](overview/refcards.md)
-  * [Useful Resources](overview/useful_resources.md)
-  * [Features At A Glance](overview/features_at_a_glance.md)
   * [System Requirements](overview/system_requirements.md)
 * [Installing TestBox](installing_testbox/README.md)
   * [What's Included](installing_testbox/whats_included.md)

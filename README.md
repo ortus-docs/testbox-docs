@@ -4,6 +4,42 @@
 
 TestBox is a next generation testing framework for ColdFusion \(CFML\) that is based on [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) \(Behavior Driven Development\) for providing a clean obvious syntax for writing tests. It contains not only a testing framework, runner, assertions and expectations library but also ships with MockBox, A mocking and stubbing companion. It also supports xUnit style of testing and MXUnit compatibilities.
 
+## Features At A Glance
+
+Here are a simple listing of features TestBox brings to the table:
+
+* BDD style testing
+* xUnit style testing
+* Testing life-cycle methods
+* [MockBox](http://wiki.coldbox.org/wiki/MockBox.cfm) integration for mocking and stubbing
+* Ability to extend and create custom test runners
+* Ability to extend and create custom test reporters
+* Extensible reporters, bundled with tons of them:
+    * JSON
+    * XML
+    * JUnit 4 XML
+    * Text (80's style)
+    * Console
+    * TAP ([Test Anything Protocol](http://testanything.org/))
+    * Simple HTML
+    * Min - Minimalistic Heaven
+    * Raw
+    * CommandBox
+* Asynchronous testing
+* Multi-suite capabilities
+* Test skipping
+* Suite skipping
+* Dynamic skipping support via runtime executions
+* Test one or more suites exclusively
+* Test one or more tests/specs exclusively
+* Test labels and tagging
+* Testing debug output stream
+* Clickable suite titles to filter test execution
+* Much more!
+
+
+
+
 # Versioning
 
 TestBox is maintained under the [Semantic Versioning](http://semver.org) guidelines as much as possible.Releases will be numbered with the following format:
