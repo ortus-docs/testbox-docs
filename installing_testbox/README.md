@@ -1,6 +1,6 @@
 # Installing TestBox
 
-TestBox can be downloaded from http://www.ortussolutions.com/products/testbox or can be installed via [CommandBox CLI](http://www.ortussolutions.com/products/commandbox):
+TestBox can be downloaded from https://www.ortussolutions.com/products/testbox or can be installed via [CommandBox CLI](https://www.ortussolutions.com/products/commandbox).  CommandBox is our preferred approach for all package installations, updates and more.
 
 ```javascript
 // latest stable version
