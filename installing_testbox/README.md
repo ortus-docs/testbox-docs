@@ -19,7 +19,7 @@ This will install TestBox in a */testbox* folder from where you called the comma
 this.mappings[ "/testbox" ] = expandPath( "C:/frameworks/testbox/" );
 ```
 
-You can also clone from Github and help us out :)
+You can also clone from [Github](https://github.com/ortus-solutions/testbox) and help us out :)
 
 ```javascript
 git clone git://github.com/ortus-solutions/testbox testbox
