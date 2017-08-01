@@ -78,7 +78,7 @@ In order for the `box testbox run` to execute correctly, our `box.json` (See htt
     // ForgeBox unique slug
     "slug" : "",
     // semantic version of your package
-    "version" : "1.0.0.buildID",
+    "version" : "1.0.0+buildID",
     // author of this package
     "author" : "Luis Majano <lmajano@ortussolutions.com>",
     // location of where to download the package, overrides ForgeBox location
