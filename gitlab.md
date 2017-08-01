@@ -69,4 +69,4 @@ In our script we basically install our dependencies for our project using Comman
 
 ### Box.json
 
-In order for the `box testbox run` to execute correctly, our `box.json` in our project must be able to connect to our server and know which tests to execute.  Below are all the possiblities for the `testbox` integration object in CommandBox.  (See )
+In order for the `box testbox run` to execute correctly, our `box.json` in our project must be able to connect to our server and know which tests to execute.  Below are all the possiblities for the `testbox` integration object in CommandBox.  (See https://commandbox.ortusbooks.com/content/testbox-integration.html)
