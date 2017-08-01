@@ -15,3 +15,13 @@ TestBox can integrate with all major CI servers as all you need to do is be able
 * Increase quality control
 * Reduce integration issues with other features
 * Much More...
+
+## CI Servers
+
+Here is a listing of the major CI servers:
+
+* Jenkins - https://jenkins.io/
+* Gitlab - https://gitlab.com/
+* Travis - https://travis-ci.org/
+* Bamboo - https://www.atlassian.com/software/bamboo
+* TeamCity - https://www.jetbrains.com/teamcity/
