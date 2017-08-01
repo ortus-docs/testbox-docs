@@ -119,4 +119,7 @@
 ## Continuous Integration
 
 * [Introduction](introduction.md)
+* [Gitlab](gitlab.md)
+* Travis
+* Jenkins
 
