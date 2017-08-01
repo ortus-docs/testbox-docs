@@ -96,13 +96,21 @@ In order for the `box testbox run` to execute correctly, our `box.json` (See htt
         "reporter" : "",
         // Which CFC bundles to execute, default is all
         "bundles" : "",
+        // Which directories to execute
         "directory" : "tests.specs",
+        // Recurse the directories for CFCs
         "recurse" : true,
+        // Which bundles to filter on
         "testBundles" : "",
+        // Which suites to filter on
         "testSuites" : "",
+        // Which specs to filter on
         "testSpecs" : "",
+        // Display extra details inlcuding passing and skipped tests.
         "verbose" : true,
+        // How may milliseconds to wait before polling for changes, defaults to 500 ms
         "watchDelay" : 500,
+        // Command delimited list of file globbing paths to watch relative to the working directory
         "watchPaths" : "**.cfc"
     }
 }
