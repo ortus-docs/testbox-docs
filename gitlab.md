@@ -21,4 +21,31 @@
 
 ## TestBox Integration
 
-In order to work with Gitlab you must create a `.gitlab-ci.yml` file in the root of your project.  Once there are commits in your repository, Gitlab will process this file as your build file.  Please refer to the Gitlab Pipelines documentation for further study.
+In order to work with Gitlab you must create a `.gitlab-ci.yml` file in the root of your project.  Once there are commits in your repository, Gitlab will process this file as your build file.  Please refer to the Gitlab Pipelines [documentation](https://docs.gitlab.com/ee/ci/pipelines.html) for further study.  
+
+We will leverage the Ortus Solutions CommandBox Docker image in order to provide us with the capability to run any CFML engine and to execute tests.  Please note that Gitlab runs in a docker environment.
+
+```yml
+image: ortussolutions/commandbox:alpine
+
+stages:
+  - build
+  - test
+  - deploy
+
+build_app:
+  stage: build
+  script:
+    # Install dependencies
+    - box install production=true
+
+run_tests:
+  stage: test
+  only:
+    - master
+  # when: manual, always, on_success, on_failure
+  script:
+      - box server start
+      - box testbox run
+
+```
