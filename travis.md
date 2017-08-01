@@ -1,22 +1,21 @@
 # Travis
 
+![](/assets/travis-ci.png)
 
 Travis CI is one of the most popular CI servers for open source software.  At Ortus Solutions, we use it for all of our open source software due to its strength of pull request runners and multi-matrix runners.  They have both free and commercial versions, so you can leverage it for private projects as well.
 
-
+![](/assets/travis-projectview.png)
 
 ## Features
 
-* All in one tool: CI, repository, docker registry, issues/milestones, etc.
-* Same as Travis in concept - CI Runner
-* Docker based
-* CI Runners can be decoupled to a docker swarm
-* Idea of CI pipelines
-    * Pipelines composed of jobs executed in stages
-    * Jobs can have dependencies, artifacts, services, etc
-    * Schedule Pipelines (Cron)
-    * Jobs can track environments
-* Great stats + charting
+* FREE for Open Source Projects
+* Runs distributed VM’s and Container Support
+* Triggers Build Script via git repository commits (.travis.yml)
+* Multiple language support
+* Many integrations and extensions
+* Many notification types
+* No ability to schedule/manual builds
+* Great for open source projects!
 
 ## TestBox Integration
 
