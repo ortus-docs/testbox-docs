@@ -2,7 +2,7 @@
 
 ![](/assets/travis-ci.png)
 
-Travis CI is one of the most popular CI servers for open source software.  At Ortus Solutions, we use it for all of our open source software due to its strength of pull request runners and multi-matrix runners.  They have both free and commercial versions, so you can leverage it for private projects as well.
+[Travis CI](https://travis-ci.org/) is one of the most popular CI servers for open source software.  At Ortus Solutions, we use it for all of our open source software due to its strength of pull request runners and multi-matrix runners.  They have both free and commercial versions, so you can leverage it for private projects as well.
 
 ![](/assets/travis-projectview.png)
 
@@ -10,7 +10,7 @@ Travis CI is one of the most popular CI servers for open source software.  At Or
 
 * FREE for Open Source Projects
 * Runs distributed VM’s and Container Support
-* Triggers Build Script via git repository commits (.travis.yml)
+* Triggers Build Script via git repository commits (`.travis.yml`)
 * Multiple language support
 * Many integrations and extensions
 * Many notification types
@@ -19,7 +19,7 @@ Travis CI is one of the most popular CI servers for open source software.  At Or
 
 ## TestBox Integration
 
-In order to work with Gitlab you must create a `.gitlab-ci.yml` file in the root of your project.  Once there are commits in your repository, Gitlab will process this file as your build file.  Please refer to the Gitlab Pipelines [documentation](https://docs.gitlab.com/ee/ci/pipelines.html) for further study.  
+In order to work with Travis you must create a `.travis.yml` file in the root of your project.  Once there are commits in your repository, Travis will process this file as your build file.  Please refer to the Travis Documentation for further study.
 
 We will leverage the [Ortus Solutions CommandBox Docker](https://hub.docker.com/r/ortussolutions/commandbox/) image in order to provide us with the capability to run any CFML engine and to execute tests.  Please note that Gitlab runs in a docker environment.
 
