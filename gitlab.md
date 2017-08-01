@@ -42,7 +42,7 @@ build_app:
 run_tests:
   stage: test
   only:
-    - master
+    - development
   # when: manual, always, on_success, on_failure
   script:
       - box install && box server start
@@ -50,4 +50,23 @@ run_tests:
 
 ```
 
-The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox.  We then have a few stages, but let's focus on the `run_tests` pipeline.
+The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox.  We then have a few stages (build,test,deploy), but let's focus on the `run_tests` job.
+
+```yml
+run_tests:
+  stage: test
+  only:
+    - development
+  # when: manual, always, on_success, on_failure
+  script:
+      - box install && box server start
+      - box testbox run
+```
+
+We define which branches it should listen to: `development`, and then we have a `script` block that defines what to do for this job.  Please note that the `when` action is commented, because we want to execute this job every time there is a commit.  In Gitlab we can determine if a job is manual, scheduled, automatic or dependent on other jobs, which is one of the most flexible execution runners around.
+
+In our script we basically install our dependencies for our project using CommandBox and startup a CFML server.  We then go ahead and execute our tests via `box testbox run`.
+
+### Box.json
+
+In order for the `box testbox run` to execute correctly, our `box.json` in our project must be able to connect to our server and know which tests to execute.  Below are all the possiblities for the `testbox` integration object in CommandBox.  (See )
