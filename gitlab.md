@@ -70,3 +70,42 @@ In our script we basically install our dependencies for our project using Comman
 ### Box.json
 
 In order for the `box testbox run` to execute correctly, our `box.json` (See https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html) in our project must be able to connect to our server and know which tests to execute.  Below are all the possiblities for the `testbox` integration object in CommandBox.  (See https://commandbox.ortusbooks.com/content/testbox-integration.html)
+
+
+```js
+{
+    "name" : "Package Name",
+    // ForgeBox unique slug
+    "slug" : "",
+    // semantic version of your package
+    "version" : "1.0.0.buildID",
+    // author of this package
+    "author" : "Luis Majano <lmajano@ortussolutions.com>",
+    // location of where to download the package, overrides ForgeBox location
+    "location" : "URL,Git/svn endpoint,etc",
+    
+    // testbox integration
+    testbox :{
+        runner : [
+            { "default": "" }
+        ],
+        "labels" : "",
+        "reporter" : "",
+        "bundles" : "",
+        "recurse" : true,
+        "directory" : "tests.specs",
+        "testBundles" : "",
+        "testSuites" : "",
+        "testSpecs" : "",
+        "verbose" : true,
+        "watchDelay" : 500,
+        "watchPaths" : "**.cfc"
+    }
+}
+```
+
+
+
+
+
+
