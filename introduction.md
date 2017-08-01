@@ -18,7 +18,7 @@ TestBox can integrate with all major CI servers as all you need to do is be able
 
 ## CI Servers
 
-Here is a listing of the major CI servers:
+Here is a listing of some of the major CI servers:
 
 * Jenkins - https://jenkins.io/
 * Gitlab - https://gitlab.com/
