@@ -50,3 +50,4 @@ run_tests:
 
 ```
 
+The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox.
