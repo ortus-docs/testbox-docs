@@ -83,6 +83,10 @@
   * [NodeJS Runner](running_tests/nodejs_runner.md)
 * [Reporters](reporters/README.md)
   * [Custom Reporters](reporters/custom_reporters.md)
+* [MXUnit Compatibility](mxunit_compatibility/README.md)
+
+## Mocking
+
 * [MockBox](mockbox/index.md)
   * [System Requirements](mockbox/system_requirements.md)
   * [Installing Mockbox](mockbox/installing_mockbox.md)
@@ -111,5 +115,8 @@
     * [$debug\(\)](mockbox/verification_methods/debug.md)
   * [Some Examples](mockbox/some_examples.md)
   * [Conclusion](mockbox/conclusion.md)
-* [MXUnit Compatibility](mxunit_compatibility/README.md)
+
+## Continuous Integration
+
+* [Introduction](introduction.md)
 
