@@ -69,7 +69,7 @@ In our script we basically install our dependencies for our project using Comman
 
 ### Box.json
 
-In order for the `box testbox run` to execute correctly, our `box.json` (See https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html) in our project must be able to connect to our server and know which tests to execute.  Below are all the possiblities for the `testbox` integration object in CommandBox.  (See https://commandbox.ortusbooks.com/content/testbox-integration.html)
+In order for the `box testbox run` to execute correctly, our `box.json` (See https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html) in our project must be able to connect to our server and know which tests to execute.  Below are all the possiblities for the `testbox` integration object in CommandBox's `box.json`.  (See https://commandbox.ortusbooks.com/content/testbox-integration.html)
 
 
 ```js
@@ -86,14 +86,18 @@ In order for the `box testbox run` to execute correctly, our `box.json` (See htt
     
     // testbox integration
     testbox :{
+        // The location of the runner
         runner : [
-            { "default": "" }
+            { "default": "http://localhost:8080/tests/runner.cfm" }
         ],
+        // Which labels to run, empty means all
         "labels" : "",
+        // Which reporter to use, default is json
         "reporter" : "",
+        // Which CFC bundles to execute, default is all
         "bundles" : "",
-        "recurse" : true,
         "directory" : "tests.specs",
+        "recurse" : true,
         "testBundles" : "",
         "testSuites" : "",
         "testSpecs" : "",
