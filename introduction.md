@@ -14,6 +14,7 @@ TestBox can integrate with all major CI servers as all you need to do is be able
 * Increase code visibility and promote communication
 * Increase quality control
 * Reduce integration issues with other features
+* Develop in an Agile/Scrum fashion with continuous improvement
 * Much More...
 
 ## CI Servers
