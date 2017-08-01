@@ -42,20 +42,23 @@ script:
 - box testbox run
 ```
 
-The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox.  We then have a few stages (build,test,deploy), but let's focus on the `run_tests` job.
+This build file is based on the `java` language and an Ubuntu Trusty image.  We start off by executing the `before_install` step which installs all the OS dependencies we might need.  In our case we add the CommandBox repository server keys and install CommandBox as our dependency.  We then move to our `install` step which makes sure we have all the required software dependencies to execute our tests, again this looks at our `box.json` for TestBox and required project dependencies.  After issuing the `box install` we move to starting up the CFML engine using `box server start` and we are ready to test.
 
 ```yml
-run_tests:
-  stage: test
-  only:
-    - development
-  # when: manual, always, on_success, on_failure
-  script:
-      - box install && box server start
-      - box testbox run
+install:
+- sudo apt-get update && sudo apt-get --assume-yes install commandbox
+- cd tests
+- box install
+- box server start
 ```
 
-We define which branches it should listen to: `development`, and then we have a `script` block that defines what to do for this job.  Please note that the `when` action is commented, because we want to execute this job every time there is a commit.  In Gitlab we can determine if a job is manual, scheduled, automatic or dependent on other jobs, which is one of the most flexible execution runners around.
+The testing occurs in the `script` block:
+
+```js
+script:
+- box testbox run
+```
+
 
 In our script we basically install our dependencies for our project using CommandBox and startup a CFML server.  We then go ahead and execute our tests via `box testbox run`.
 
