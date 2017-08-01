@@ -45,7 +45,8 @@ run_tests:
     - master
   # when: manual, always, on_success, on_failure
   script:
-      - box server start
+      - box install && box server start
       - box testbox run
 
 ```
+
