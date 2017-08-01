@@ -116,6 +116,9 @@ In order for the `box testbox run` to execute correctly, our `box.json` (See htt
 }
 ```
 
+## Online Example: cbVue
+
+You can look at our `cbVue` sample application online: https://gitlab.com/lmajano/cbvue which contains all CI server integrations.
 
 
 
