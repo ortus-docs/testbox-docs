@@ -19,33 +19,27 @@
 
 ## TestBox Integration
 
-In order to work with Travis you must create a `.travis.yml` file in the root of your project.  Once there are commits in your repository, Travis will process this file as your build file.  Please refer to the Travis Documentation for further study.
+In order to work with Travis you must create a `.travis.yml` file in the root of your project.  Once there are commits in your repository, Travis will process this file as your build file.  Please refer to the [Travis Documentation](https://docs.travis-ci.com/) for further study.
 
-We will leverage the [Ortus Solutions CommandBox Docker](https://hub.docker.com/r/ortussolutions/commandbox/) image in order to provide us with the capability to run any CFML engine and to execute tests.  Please note that Gitlab runs in a docker environment.
 
 ```yml
-image: ortussolutions/commandbox:alpine
+language: java
+sudo: required
+dist: trusty
 
-stages:
-  - build
-  - test
-  - deploy
+before_install:
+- sudo apt-key adv --keyserver keys.gnupg.net --recv 6DA70622
+- sudo echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a
+  /etc/apt/sources.list.d/commandbox.list
 
-build_app:
-  stage: build
-  script:
-    # Install dependencies
-    - box install production=true
+install:
+- sudo apt-get update && sudo apt-get --assume-yes install commandbox
+- cd tests
+- box install
+- box server start
 
-run_tests:
-  stage: test
-  only:
-    - development
-  # when: manual, always, on_success, on_failure
-  script:
-      - box install && box server start
-      - box testbox run
-
+script:
+- box testbox run
 ```
 
 The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox.  We then have a few stages (build,test,deploy), but let's focus on the `run_tests` job.
