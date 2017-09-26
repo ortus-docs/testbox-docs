@@ -7,5 +7,5 @@ MockBox can be downloaded from http://www.ortussolutions.com/products/testbox or
 box install testbox
 
 // installing bleeding edge
-box install testbox-be
+box install testbox@be
 ```
