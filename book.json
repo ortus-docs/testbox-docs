@@ -19,7 +19,7 @@
     ],
     "pluginsConfig": {
     	"edit-link": {
-            "base": "https://github.com/Ortus-Solutions/testbox-docs/tree/development",
+            "base": "https://github.com/Ortus-Solutions/testbox-docs/tree/master",
             "label": "Edit This Page"
         },
         "github": {
