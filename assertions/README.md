@@ -2,7 +2,7 @@
 
 TestBox supports the concept of [assertions](http://en.wikipedia.org/wiki/Assertion_%28software_development%29) to allow for validations and for legacy tests. We encourage developers to use our BDD expectations as they are more readable and fun to use (Yes, fun I said!). 
 
-The assertions are modeled in the class `testbox.system.Assertion`, so you can visit the API for the latest assertions available. Each test bundle will receive a variable called `$assert` which represents the assertions object. Here are some common assertion methods:
+The assertions are modeled in the class `testbox.system.Assertion`, so you can visit the [API](http://apidocs.ortussolutions.com/testbox/current/?testbox/system/Assertion.html) for the latest assertions available. Each test bundle will receive a variable called `$assert` which represents the assertions object. Here are some common assertion methods:
 
 ```javascript
 fail( [message] )
