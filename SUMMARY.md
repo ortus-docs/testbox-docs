@@ -12,8 +12,8 @@
   * [Author](introduction/author.md)
 * [Overview](overview/index.md)
   * [RefCards](overview/refcards.md)
-  * [System Requirements](overview/system_requirements.md)
   * [IDE Tools](overview/ide-tools.md)
+  * [System Requirements](overview/system_requirements.md)
 * [Installing TestBox](installing_testbox/README.md)
   * [What's Included](installing_testbox/whats_included.md)
 
