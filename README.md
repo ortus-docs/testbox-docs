@@ -68,7 +68,7 @@ please try to make mention of it in your code or web site.
 
 * Help Group : [https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox](https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox)
 * BoxTeam Slack : [https://boxteam.herokuapp.com](https://boxteam.herokuapp.com)
-* CFML Slack: Look for the `box-team` channel: [http://cfml.slack.com](http://cfml.slack.com)
+* CFML Slack: Look for the `box-products` channel: [http://cfml.slack.com](http://cfml.slack.com)
 
 # Reporting a Bug
 
