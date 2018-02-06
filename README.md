@@ -80,7 +80,7 @@ We all make mistakes from time to time :\) So why not let us know about it and h
 
 ![Ortus Solutions, Corp](images/ortussolutions_button.png)
 
-TestBox is a professional open source software backed by [Ortus Solutions, Corp](http://www.ortussolutions.com/products/testbox) offering services like:
+TestBox is a professional open source software backed by [Ortus Solutions, Corp](https://www.ortussolutions.com/products/testbox) offering services like:
 
 * Custom Development
 * Professional Support & Mentoring
@@ -88,7 +88,7 @@ TestBox is a professional open source software backed by [Ortus Solutions, Corp]
 * Server Tuning
 * Security Hardening
 * Code Reviews
-* [Much More](http://www.ortussolutions.com/services)
+* [Much More](https://www.ortussolutions.com/services)
 
 # Resources
 
