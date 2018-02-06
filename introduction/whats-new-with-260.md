@@ -30,7 +30,7 @@ This was another community driven contribution by [Ian Burns - iwburns](https://
 
 ## Expanding of `x` exclusion Methods
 
-You can now prefix the following methods to exclude them from execution:
+You can now prefix the following methods with the letter `x` to exclude them from execution:
 
 * `story()`
 * `given()`
