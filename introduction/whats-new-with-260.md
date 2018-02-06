@@ -18,6 +18,19 @@ Thanks to [Pixilation](https://github.com/pixilation) method mocking performance
 
 We have added a new argument to all TestBox `run(), runRemote(), runRaw()` commands: `eagerFailure`, which defaults to `false`.  If this is turned on, then TestBox will gracefully short-circuit out of testing further Test Bundles if it finds any failures or errors on previous ones.  This is useful for large suites that you want to stop testing if a failure is discovered.
 
+## Help for the Color Blind
+
+This was another community driven contribution by [Ian Burns - iwburns](https://github.com/iwburns) to help those folks with [Color Blindness](https://en.wikipedia.org/wiki/Color_blindness). You can see the differences in color in the github pull request: [https://github.com/Ortus-Solutions/TestBox/pull/60](https://github.com/Ortus-Solutions/TestBox/pull/60)
+
+**Before**
+<img src="https://user-images.githubusercontent.com/6172641/33219650-16ef7b06-d109-11e7-922c-6e50e3527f14.png">
+
+**After**
+<img src="">
+
+
+
+
 
 ## Release Notes       
 
