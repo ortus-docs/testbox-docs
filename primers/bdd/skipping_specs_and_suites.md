@@ -4,7 +4,12 @@ Specs and suites can be skipped from execution by prefixing certain functions wi
 
 * `it()`
 * `describe()`
-* 
+* `story()`
+* `given()`
+* `when()`
+* `then()`
+* `feature()`
+
 
 ```javascript
 xdescribe("A spec", function() {
