@@ -58,6 +58,11 @@ Here are the arguments you can use for executing the `runRemote()` method:
 |testBundles |false|---|string/array|A list or array of bundle names that are the ones that will be executed ONLY!|
 |testSuites|false|---|string|A list of suite names that are the ones that will be executed ONLY! |
 |testSpecs |false|---|string|A list of test names that are the ones that will be executed ONLY|
+| eagerFailure | false | false | boolean | If true, then after testing a bundle if there are any failures or errors no more testing will be performed. |
+
+
+
+
 
 The bundles argument which can be a single CFC path or an array of CFC paths or a directory argument so it can go and discover the test bundles from that directory. The reporter argument can be a core reporter name like: json,xml,junit,raw,simple,dots,tap,min,etc or it can be an instance of a reporter CFC. You can execute the runners from any cfm template or any CFC or any URL, that is up to you.
 
