@@ -16,7 +16,7 @@ Thanks to [Pixilation](https://github.com/pixilation) method mocking performance
 
 ## Eager Failures
 
-We have added a new argument to all TestBox `run` commands: `eagerFailure`, which defaults to `false`.  If this is turned on, then TestBox will gracefully short-circuit out of testing further Test Bundles if it finds any failures or errors on previous ones.  This is useful for large suites that you want to stop testing if a failure is discovered.
+We have added a new argument to all TestBox `run(), runRemote(), runRaw()` commands: `eagerFailure`, which defaults to `false`.  If this is turned on, then TestBox will gracefully short-circuit out of testing further Test Bundles if it finds any failures or errors on previous ones.  This is useful for large suites that you want to stop testing if a failure is discovered.
 
 
 ## Release Notes       
