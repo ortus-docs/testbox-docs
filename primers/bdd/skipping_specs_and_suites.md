@@ -1,6 +1,10 @@
 # Skipping Specs and Suites
 
-Specs and suites can be skipped from execution by using the `xdescribe()` and `xit()` functions or by using the skip argument in each of them. The reporters will show that these suites or specs where skipped from execution.
+Specs and suites can be skipped from execution by prefixing certain functions with the letter `x` or by using the skip argument in each of them. The reporters will show that these suites or specs where skipped from execution.  The functions you can prefix are:
+
+* `it()`
+* `describe()`
+* 
 
 ```javascript
 xdescribe("A spec", function() {
