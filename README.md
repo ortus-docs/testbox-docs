@@ -92,7 +92,7 @@ TestBox is a professional open source software backed by [Ortus Solutions, Corp]
 
 # Resources
 
-* Official Site: [http://www.ortussolutions.com/products/testbox](http://www.ortussolutions.com/products/testbox)
+* Official Site: [https://www.ortussolutions.com/products/testbox](http://www.ortussolutions.com/products/testbox)
 * Current API Docs: [http://apidocs.ortussolutions.com/testbox/current](http://apidocs.ortussolutions.com/testbox/current)
 * Help Group: [https://groups.google.com/a/ortussolutions.com/forum/\#!forum/testbox](https://groups.google.com/a/ortussolutions.com/forum/#!forum/testbox)
 * Source Code: [https://github.com/Ortus-Solutions/TestBox](https://github.com/Ortus-Solutions/TestBox)
