@@ -3,6 +3,7 @@
 ## Introduction
 
 * [Introduction](README.md)
+  * What's New With 2.6.0
   * [What's New With 2.5.0](introduction/whats-new-with-250.md)
   * [What's New With 2.4.0](introduction/whats-new-with-240.md)
   * [What's New With 2.3.0](introduction/whats_new_with_230.md)
