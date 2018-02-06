@@ -62,8 +62,6 @@ Here are the arguments you can use for executing the `runRemote()` method:
 
 
 
-
-
 The bundles argument which can be a single CFC path or an array of CFC paths or a directory argument so it can go and discover the test bundles from that directory. The reporter argument can be a core reporter name like: json,xml,junit,raw,simple,dots,tap,min,etc or it can be an instance of a reporter CFC. You can execute the runners from any cfm template or any CFC or any URL, that is up to you.
 
 ##Global Runner
