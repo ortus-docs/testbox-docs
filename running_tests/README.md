@@ -33,6 +33,7 @@ Here are the arguments you can use for initializing TestBox or executing the `ru
 |testSuites |false |---|string/array |A list or array of suite names that are the ones that will be executed ONLY! |
 |testSpecs |false|---|string/array|A list or array of test names that are the ones that will be executed ONLY|
 | callbacks | false | `{}` | struct of closures or CFC | A struct of listener callbacks or a CFC with callbacks for listening to progress of the testing: `onBundleStart,onBundleEnd,onSuiteStart,onSuiteEnd,onSpecStart,onSpecEnd` |
+| eagerFailure | false | false | boolean | If true, then after testing a bundle if there are any failures or errors no more testing will be performed. |
 
 ## `runRemote()` Arguments
 Here are the arguments you can use for executing the `runRemote()` method of the TestBox object:
@@ -49,6 +50,9 @@ Here are the arguments you can use for executing the `runRemote()` method of the
 |testBundles |false|---|string/array|A list or array of bundle names that are the ones that will be executed ONLY!|
 |testSuites|false|---|string|A list of suite names that are the ones that will be executed ONLY! |
 |testSpecs |false|---|string|A list of test names that are the ones that will be executed ONLY|
+| eagerFailure | false | false | boolean | If true, then after testing a bundle if there are any failures or errors no more testing will be performed. |
+
+
 
 ### Notes
 * The `bundles` argument which can be a single CFC path or an array of CFC paths or a directory argument so it can go and discover the test bundles from that directory. 
