@@ -1,4 +1,4 @@
-# TestBox & MockBox Manual v2.5.0
+# TestBox & MockBox Manual v2.6.0
 
 ![TestBox](images/TestBoxLogo300.png)
 
