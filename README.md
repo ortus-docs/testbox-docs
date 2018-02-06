@@ -42,7 +42,7 @@ Here are a simple listing of features TestBox brings to the table:
 
 # Versioning
 
-TestBox is maintained under the [Semantic Versioning](http://semver.org) guidelines as much as possible.Releases will be numbered with the following format:
+TestBox is maintained under the [Semantic Versioning](https://semver.org) guidelines as much as possible.Releases will be numbered with the following format:
 
 ```
 <major>.<minor>.<patch>
@@ -56,7 +56,7 @@ And constructed with the following guidelines:
 
 # License
 
-TestBox and MockBox are open source and licensed under the [Apache 2](http://www.apache.org/licenses/LICENSE-2.0.html) License. If you use them
+TestBox and MockBox are open source and licensed under the [Apache 2](https://www.apache.org/licenses/LICENSE-2.0.html) License. If you use them
 please try to make mention of it in your code or web site.
 
 * Copyright by Ortus Solutions, Corp
