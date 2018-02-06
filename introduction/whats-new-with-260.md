@@ -2,6 +2,23 @@
 
 TestBox 2.6.0 is a minor release with some great new functionality and tons of fixes.  You can find the release notes here and the major updates for this release.
 
+## Chained DSL Improvements
+
+The methods `aroundEach(), beforeEach() and afterEach()` can now be chained as they return the Base Spec as well.  So get funky with the DSL.
+
+## Null Support
+
+You can now pass `null` into an expectation and TestBox will gracefully represent it instead of blowing up!
+
+## Method Mocking Performance
+
+Thanks to [Pixilation](https://github.com/pixilation) method mocking performance has sky rocketed.  He changed the filename generation to an MD5 hash of the code, and disabled removing the files. This allows TestBox to leverage ColdFusion template caching. This reduces the time that `$()` takes from ~30 ms to ~0 ms.  It is a happy day for mocking!
+
+## Eager Failures
+
+We have added a new argument to all TestBox `run` commands: `eagerFailure`, which defaults to `false`.  If this is turned on, then TestBox will gracefully short-circuit out of testing further Test Bundles if it finds any failures or errors on previous ones.  This is useful for large suites that you want to stop testing if a failure is discovered.
+
+
 ## Release Notes       
 
 ### Bugs
