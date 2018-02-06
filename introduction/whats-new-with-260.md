@@ -28,8 +28,15 @@ This was another community driven contribution by [Ian Burns - iwburns](https://
 **After**
 <img src="https://user-images.githubusercontent.com/6172641/33219657-2900e3ca-d109-11e7-926d-bf78e2ee7362.png">
 
+## Expanding of `x` exclusion Methods
 
+You can now prefix the following methods to exclude them from execution:
 
+* `story()`
+* `given()`
+* `when()`
+* `then()`
+* `feature()`
 
 
 ## Release Notes       
