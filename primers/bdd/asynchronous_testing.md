@@ -26,4 +26,4 @@ describe(title="A spec (with setup and tear-down)", asyncAll=true, body=function
 });
 ```
 
-> **Caution** Once you delve into the asynchronous world you will have to make sure your tests are also thread safe (var-scoped) and provide any necessary locking if necessary.
+> **Caution** Once you delve into the asynchronous world you will have to make sure your tests are also thread safe (var-scoped) and provide any necessary locking.
