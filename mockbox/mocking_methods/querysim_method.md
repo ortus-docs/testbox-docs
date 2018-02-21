@@ -1,6 +1,6 @@
 # $querySim() Method
 
-This method is NOT injected into mock objects but avaialble via MockBox directly in order to create queries very quickly. This is a great way to simulate cfquery calls, cfdirectory or any other cf tag the returns a query.
+This method is NOT injected into mock objects but avaialble via MockBox directly in order to create queries very quickly. This is a great way to simulate cfquery calls, cfdirectory or any other cf tag that returns a query.
 
 ```javascript
 function testGetUsers(){
