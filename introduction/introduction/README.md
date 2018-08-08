@@ -1,6 +1,6 @@
 # Introduction
 
-## TestBox & MockBox Manual v2.6.0
+## TestBox & MockBox Manual v2.x
 
 ![TestBox](../../.gitbook/assets/testboxlogo300.png)
 
