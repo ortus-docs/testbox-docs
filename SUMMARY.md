@@ -32,7 +32,8 @@
     * [Dynamic Suites](primers/testbox-bdd-primer/suites-describe-your-tests/dynamic-suites.md)
   * [Specs](primers/testbox-bdd-primer/specs.md)
   * [Expectations](primers/testbox-bdd-primer/expectations.md)
-  * [Suite Groups](primers/testbox-bdd-primer/suite-groups.md)
+  * [Suite Groups](primers/testbox-bdd-primer/suite-groups/README.md)
+    * [Given-When-Then Blocks](primers/testbox-bdd-primer/suite-groups/given-when-then-blocks.md)
   * [Life-Cycle Methods](primers/testbox-bdd-primer/life-cycle-methods.md)
   * [Specs and Suite Labels](primers/testbox-bdd-primer/specs-and-suite-labels.md)
   * [Skipping Specs and Suites](primers/testbox-bdd-primer/skipping-specs-and-suites.md)
@@ -128,4 +129,3 @@
 * [Gitlab](continuous-integration/gitlab.md)
 * [Travis](continuous-integration/travis.md)
 * [Jenkins](continuous-integration/jenkins.md)
-
