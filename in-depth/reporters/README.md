@@ -16,6 +16,8 @@ TestBox comes also with a nice plethora of reporters:
 * Tap : A test anything protocol reporter
 * Min : A minimalistic view of your test reports
 
+To use a specific reporter append the `reporter` variable to the url string. ex `&reporter=Text`
+
 ![](../../.gitbook/assets/testbox-sc-console.png)
 
 ![](../../.gitbook/assets/testbox-sc-dots.png)
