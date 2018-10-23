@@ -56,13 +56,13 @@ The bundles argument which can be a single CFC path or an array of CFC paths or 
 
 TestBox ships with a global runner that can be used to run pretty much anything. You can customize it or place it wherever you need it:
 
-![](https://github.com/ortus/testbox-documentation/tree/e7d81b08bf4523316ec2783559ac02104e9f5950/primers/images/testbox-global-runner.png)
+![](https://raw.githubusercontent.com/ortus-docs/testbox-docs/master/.gitbook/assets/testbox-global-runner.png)
 
 ## Test Browser
 
 TestBox ships with a test browser that is highly configurable to whatever URL accessible path you want. It will then show you a test browser where you can navigate and execute not only individual tests, but also directory suites as well.
 
-![](https://github.com/ortus/testbox-documentation/tree/e7d81b08bf4523316ec2783559ac02104e9f5950/primers/images/testbox-browser.png)
+![](https://raw.githubusercontent.com/ortus-docs/testbox-docs/master/.gitbook/assets/testbox-browser.png)
 
 ## ANT Runner
 
@@ -133,7 +133,7 @@ http://localhost/testbox/system/TestBox.cfc
 
 ## NodeJS Runner
 
-![](https://github.com/ortus/testbox-documentation/tree/e7d81b08bf4523316ec2783559ac02104e9f5950/primers/images/testbox-node.png)
+![](https://raw.githubusercontent.com/ortus-docs/testbox-docs/master/.gitbook/assets/testbox-node.png)
 
  There is a user-contributed NodeJS Runner that looks fantastic and can be downloaded here: 
 
