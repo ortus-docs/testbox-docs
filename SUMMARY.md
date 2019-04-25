@@ -5,14 +5,7 @@
 ## Introduction
 
 * [Introduction](introduction/introduction/README.md)
-  * [What's New With 2.8.0](introduction/introduction/whats-new-with-2.8.0.md)
-  * [What's New With 2.7.0](introduction/introduction/whats-new-with-2.7.0.md)
-  * [What's New With 2.6.0](introduction/introduction/whats-new-with-2.6.0.md)
-  * [What's New With 2.5.0](introduction/introduction/whats-new-with-2.5.0.md)
-  * [What's New With 2.4.0](introduction/introduction/whats-new-with-2.4.0.md)
-  * [What's New With 2.3.0](introduction/introduction/whats-new-with-2.3.0.md)
-  * [What's New With 2.2.0](introduction/introduction/whats-new-with-2.2.0.md)
-  * [What's New With 2.1.0](introduction/introduction/whats-new-with-2.1.0.md)
+  * [What's New With 3.0.0](introduction/introduction/whats-new-with-3.0.0.md)
   * [About This Book](introduction/introduction/about-this-book.md)
   * [Author](introduction/introduction/author.md)
 * [Overview](introduction/overview/README.md)
@@ -122,6 +115,13 @@
     * [$debug\(\)](mocking/mockbox/verification-methods/usddebug.md)
   * [Some Examples](mocking/mockbox/some-examples.md)
   * [Conclusion](mocking/mockbox/conclusion.md)
+
+## Code Coverage
+
+* [Introduction](code-coverage/introduction.md)
+* [Running Code Coverage](code-coverage/running-code-coverage.md)
+* [Configuring Code Coverage](code-coverage/configuring-code-coverage.md)
+* [Known Behaviors](code-coverage/known-issues.md)
 
 ## Continuous Integration
 

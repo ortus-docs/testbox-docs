@@ -12,7 +12,7 @@ box install testbox@be --saveDev
 
 > **Note** Please note the `--saveDev` flag which tells CommandBox that TestBox is a development dependency and not a production dependency.
 
-This will install TestBox in a _/testbox_ folder from where you called the command. You can also extract the download zip and place it anywhere you like and create a mapping called _/testbox_ that points to testbox in the distribution folder, this is the most secure approach. However, you can just place it in the webroot if you like.
+This will install TestBox in a _`/testbox`_  folder from where you called the command. You can also extract the download zip and place it anywhere you like and create a mapping called _`/testbox`_that points to **testbox** in the distribution folder, this is the most secure approach. However, you can just place it in the webroot if you like.
 
 ```javascript
 this.mappings[ "/testbox" ] = expandPath( "C:/frameworks/testbox/" );
