@@ -7,7 +7,7 @@ In order to use TestBox Code Coverage, you will need TestBox 3.x or higher insta
 If you don't have FusionReactor installed, you can do so very easily in CommandBox like so:
 
 ```bash
-install commandbox-fusion-reactor
+install commandbox-fusionreactor
 fr register <Your license key here>
 ```
 
