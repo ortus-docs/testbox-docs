@@ -24,3 +24,8 @@ You can also clone from [Github](https://github.com/ortus-solutions/testbox) and
 git clone git://github.com/ortus-solutions/testbox testbox
 ```
 
+Once you have testbox installed, you'll need a quick way to set up a testing harness. The `generate harness` command will add a new `/tests` folder to your application with a few example tests to get you started.
+
+```bash
+box testbox generate harness
+```
