@@ -1,16 +1,8 @@
 # Specs
 
-Specifications \(Specs\) are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec. A spec will contain most likely one or more expectations that will test the state of the [SUT](http://en.wikipedia.org/wiki/System_under_test) \(software under test\) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your `describe()` block of your [story](http://en.wikipedia.org/wiki/User_story).
+A spec is a declaration that will usually test your system with a requirement.  They are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec. 
 
-| Argument | Required | Default | Type | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| title | true | --- | string | the title of the spec |
-| body | true | --- | closure/udf | The closure that represents the spec |
-| labels | false | --- | string/array | The list or array of labels this suite group belongs to |
-| skip | false | false | Boolean | A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean. |
-| data | false | `{}` | struct | A struct of data you can bind the spec with so you can use within the `body` closure |
-
-An expectation is a nice assertion DSL that TestBox exposes so you can pretty much read what should happen in the testing scenario. A spec will pass if all expectations pass. A spec with one or more expectations that fail will fail the entire spec.
+A spec will contain most likely one or more expectations that will test the state of the [SUT](http://en.wikipedia.org/wiki/System_under_test) \(software under test\) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your `describe()` block of your [story](http://en.wikipedia.org/wiki/User_story).
 
 ```javascript
 function run(){
@@ -28,6 +20,22 @@ function run(){
 
 }
 ```
+
+An expectation is a nice assertion DSL that TestBox exposes so you can pretty much read what should happen in the testing scenario. A spec will pass if all expectations pass. A spec with one or more expectations that fail will fail the entire spec.
+
+{% hint style="success" %}
+The `it()` function is also aliased as `then()`
+{% endhint %}
+
+### Arguments
+
+| Argument | Required | Default | Type | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| title | true | --- | string | the title of the spec |
+| body | true | --- | closure/udf | The closure that represents the spec |
+| labels | false | --- | string/array | The list or array of labels this suite group belongs to |
+| skip | false | false | Boolean | A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean. |
+| data | false | `{}` | struct | A struct of data you can bind the spec with so you can use within the `body` closure |
 
 ## They are closures Ma!
 

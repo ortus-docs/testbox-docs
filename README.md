@@ -1,6 +1,6 @@
 # Introduction
 
-## TestBox v3.x
+## TestBox BDD v3.x
 
 ![TestBox](.gitbook/assets/testboxlogo300.png)
 

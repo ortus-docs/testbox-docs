@@ -25,7 +25,7 @@ install testbox --saveDev
 
 The `--saveDev` flag will store TestBox as a development dependency.
 
-To update a previous installation of TestBox 2.x to the latest, you will need to explicitly ask for 3.x. Please note 3.x may have some breaking changes from 2.x and support different CF engines, so please review the [release notes](../introduction/introduction/whats-new-with-3.0.0.md) first.
+To update a previous installation of TestBox 2.x to the latest, you will need to explicitly ask for 3.x. Please note 3.x may have some breaking changes from 2.x and support different CF engines, so please review the [release notes](../intro/release-history/whats-new-with-3.0.0.md) first.
 
 ```bash
 install testbox@3

@@ -2,24 +2,23 @@
 
 * [Introduction](README.md)
 
-## Introduction
+## Intro
 
-* [Introduction](introduction/introduction/README.md)
-  * [What's New With 3.0.0](introduction/introduction/whats-new-with-3.0.0.md)
-  * [About This Book](introduction/introduction/about-this-book.md)
-  * [Author](introduction/introduction/author.md)
-* [Overview](introduction/overview/README.md)
-  * [RefCards](introduction/overview/refcards.md)
-  * [IDE Tools](introduction/overview/ide-tools.md)
-  * [System Requirements](introduction/overview/system-requirements.md)
-* [Installing TestBox](introduction/installing-testbox/README.md)
-  * [What's Included](introduction/installing-testbox/whats-included.md)
+* [Release History](intro/release-history/README.md)
+  * [What's New With 3.1.0](intro/release-history/whats-new-with-3.1.0.md)
+  * [What's New With 3.0.0](intro/release-history/whats-new-with-3.0.0.md)
+* [About This Book](intro/about-this-book.md)
+* [Author](intro/author.md)
+
+## Getting Started
+
+* [Overview](getting-started/overview.md)
+* [Installation](getting-started/installing-testbox/README.md)
+  * [IDE Tools](getting-started/installing-testbox/ide-tools.md)
 
 ## Primers
 
 * [TestBox BDD Primer](primers/testbox-bdd-primer/README.md)
-  * [Ref Card](primers/testbox-bdd-primer/ref-card.md)
-  * [Requirements](primers/testbox-bdd-primer/requirements.md)
   * [Bundles: Group Your Tests](primers/testbox-bdd-primer/bundles-group-your-tests.md)
   * [Suites: Describe Your Tests](primers/testbox-bdd-primer/suites-describe-your-tests/README.md)
     * [Dynamic Suites](primers/testbox-bdd-primer/suites-describe-your-tests/dynamic-suites.md)
@@ -30,6 +29,7 @@
   * [Life-Cycle Methods](primers/testbox-bdd-primer/life-cycle-methods.md)
   * [Specs and Suite Labels](primers/testbox-bdd-primer/specs-and-suite-labels.md)
   * [Skipping Specs and Suites](primers/testbox-bdd-primer/skipping-specs-and-suites.md)
+  * [Focused Specs and Suites](primers/testbox-bdd-primer/focused-specs-and-suites.md)
   * [Spies & Mocking](primers/testbox-bdd-primer/spies-and-mocking.md)
   * [Asynchronous Testing](primers/testbox-bdd-primer/asynchronous-testing.md)
   * [Running Tests](primers/testbox-bdd-primer/running-tests.md)
