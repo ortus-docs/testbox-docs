@@ -21,41 +21,40 @@
 
 In order to work with Travis you must create a `.travis.yml` file in the root of your project. Once there are commits in your repository, Travis will process this file as your build file. Please refer to the [Travis Documentation](https://docs.travis-ci.com/) for further study.
 
-```text
+```yaml
 language: java
 sudo: required
 dist: trusty
 
 before_install:
-- sudo apt-key adv --keyserver keys.gnupg.net --recv 6DA70622
-- sudo echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a
+  # CommandBox Keys
+  - curl -fsSl https://downloads.ortussolutions.com/debs/gpg | sudo apt-key add -
+  - sudo echo "deb https://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a
   /etc/apt/sources.list.d/commandbox.list
 
 install:
-- sudo apt-get update && sudo apt-get --assume-yes install commandbox
-- cd tests
-- box install
-- box server start
+  - sudo apt-get update && sudo apt-get --assume-yes install commandbox
+  - box install
+  - box server start
 
 script:
-- box testbox run
+  - box testbox run
 ```
 
 This build file is based on the `java` language and an Ubuntu Trusty image. We start off by executing the `before_install` step which installs all the OS dependencies we might need. In our case we add the CommandBox repository server keys and install CommandBox as our dependency. We then move to our `install` step which makes sure we have all the required software dependencies to execute our tests, again this looks at our `box.json` for TestBox and required project dependencies. After issuing the `box install` we move to starting up the CFML engine using `box server start` and we are ready to test.
 
-```text
+```yaml
 install:
-- sudo apt-get update && sudo apt-get --assume-yes install commandbox
-- cd tests
-- box install
-- box server start
+  - sudo apt-get update && sudo apt-get --assume-yes install commandbox
+  - box install
+  - box server start
 ```
 
 The testing occurs in the `script` block:
 
-```javascript
+```yaml
 script:
-- box testbox run
+  - box testbox run
 ```
 
 In our script we basically install our dependencies for our project using CommandBox and startup a CFML server. We then go ahead and execute our tests via `box testbox run`.

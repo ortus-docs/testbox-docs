@@ -25,7 +25,7 @@ In order to work with Gitlab you must create a `.gitlab-ci.yml` file in the root
 
 We will leverage the [Ortus Solutions CommandBox Docker](https://hub.docker.com/r/ortussolutions/commandbox/) image in order to provide us with the capability to run any CFML engine and to execute tests. Please note that Gitlab runs in a docker environment.
 
-```text
+```yaml
 image: ortussolutions/commandbox:alpine
 
 stages:
@@ -51,7 +51,7 @@ run_tests:
 
 The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox. We then have a few stages \(build,test,deploy\), but let's focus on the `run_tests` job.
 
-```text
+```yaml
 run_tests:
   stage: test
   only:

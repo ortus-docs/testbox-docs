@@ -128,5 +128,4 @@
 * [Introduction](continuous-integration/introduction.md)
 * [Gitlab](continuous-integration/gitlab.md)
 * [Travis](continuous-integration/travis.md)
-* [Jenkins](continuous-integration/jenkins.md)
 
