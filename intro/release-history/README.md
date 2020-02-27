@@ -4,11 +4,11 @@ In this section you will find the release notes for each version we release unde
 
 ## Version 3.0
 
-In this release we focused on dropping engine supports for legacy CFML engines.  We had a major breakthrough in introducing CodeCoverage thanks to the FusionReactor folks as well.  This major release came also with a new UI for all reporters and streamlining the result viewports.
+In this release we focused on dropping engine supports for legacy CFML engines.  We had a major breakthrough in introducing Code Coverage thanks to the [FusionReactor](https://www.fusion-reactor.com/) folks as well.  This major release came also with a new UI for all reporters and streamlining the result view ports.
 
 ## Version 2.0
 
-This version spawned off with over 8 minor releases.  We focused on taking TestBox 1 to yet a high level.  Much more attention to detail and introducing modern paradigms like given-when-then.  Multiple interception points, asyn executions and ability to chain methods.
+This version spawned off with over 8 minor releases.  We focused on taking TestBox 1 to yet a high level.  Much more attention to detail and introducing modern paradigms like given-when-then.  Multiple interception points, async executions and ability to chain methods.
 
 ## Version 1.0
 

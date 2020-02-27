@@ -2,8 +2,7 @@
 
 TestBox relies on the fact of creating **testing bundles** which are basically CFCs. A bundle CFC will hold all the **suites** and **specs** a TestBox runner will execute and produce reports on.  Don't worry, we will cover what's a suite and a spec as well.
 
-{% code-tabs %}
-{% code-tabs-item title="tests/specs/MySpec.cfc" %}
+{% code title="tests/specs/MySpec.cfc" %}
 ```javascript
 component extends="testbox.system.BaseSpec"{
 
@@ -20,8 +19,7 @@ component extends="testbox.system.BaseSpec"{
 
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 This bundle CFC can contain 2 life-cycle functions and a single `run()` function where you will be writing your test **suites** and **specs.** 
 

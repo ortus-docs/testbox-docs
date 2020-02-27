@@ -11,8 +11,7 @@ This was asked for a long time ago and finally we can oblige.  You can now prefi
 
 This is great if you ONLY want certain things to execute instead of the `x` prefix which was used to EXCLUDE specs and suites.
 
-{% code-tabs %}
-{% code-tabs-item title="tests/FocusedSpecs.cfc" %}
+{% code title="tests/FocusedSpecs.cfc" %}
 ```javascript
 function run( testResults, testBox ){
 	// all your suites go here.
@@ -106,8 +105,7 @@ function run( testResults, testBox ){
 
 	});
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Here are the results:
 
