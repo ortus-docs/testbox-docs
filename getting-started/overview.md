@@ -17,7 +17,7 @@ TestBox is a next generation testing framework for ColdFusion \(CFML\) that is b
 
 ## Ref Cards
 
-Our RefCards will get you up and running in now time.
+Our RefCards will get you up and running in no time.
 
 ## BDD RefCard
 
