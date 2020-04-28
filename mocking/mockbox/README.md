@@ -4,15 +4,15 @@
 
 ## Introduction
 
-MockBox is a companion package to TestBox that will give you advanced mocking/stubbing capabilities; hence a Mocking Framework. You can use it from within TestBox or as a standalone package in any other testing framework or CFML application as a data provider.
+TestBox includes a mocking and stubbing library we lovingly call MockBox.  You don't have to install it or have a separate libary, it is part of TestBox.
 
-## Download
+MockBox shines by allowing you to create mock and stub objects.
 
-Download from our [downloads page](http://www.ortussolutions.com/products/testbox) or clone via github. Also read our [installation](installing-mockbox.md) section.
+### Important Setup
 
-```javascript
-git clone git@github.com:Ortus-Solutions/TestBox.git
-```
+Write capabilities on disk for the default path of `/testbox/system/testings/stubs`. 
+
+You can also choose the directory destination for stub creations yourself when you initialize TestBox. If using ColdFusion 9 or Lucee you can even use `ram://` and use the virtual file system.
 
 ## Useful Resources
 
