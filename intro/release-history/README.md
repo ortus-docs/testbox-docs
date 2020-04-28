@@ -2,6 +2,10 @@
 
 In this section you will find the release notes for each version we release under this major version.  If you are looking for the release notes of previous major versions use the version switcher at the top left of this documentation book.  Here is a breakdown of our major version releases.
 
+## Version 4.0 - April 2020
+
+In this release we have dropped support for legacy CFML engines and introduced the ability  to mock data, relationships and build JSON documents.
+
 ## Version 3.0
 
 In this release we focused on dropping engine supports for legacy CFML engines.  We had a major breakthrough in introducing Code Coverage thanks to the [FusionReactor](https://www.fusion-reactor.com/) folks as well.  This major release came also with a new UI for all reporters and streamlining the result view ports.

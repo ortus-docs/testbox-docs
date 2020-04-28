@@ -42,9 +42,9 @@ server start
 
 Inside your directory will be a folder called `/tests` which has our test runner `/tests/runner.cfm`. You will need to open your runner.cfm and default code coverage enabled to true.
 
-```
+```text
 <!--- Code Coverage requires FusionReactor --->
-<cfparam name="url.coverageEnabled"	default="true">
+<cfparam name="url.coverageEnabled"    default="true">
 ```
 
 ## Run your Test Suite

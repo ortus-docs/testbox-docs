@@ -1,15 +1,13 @@
-# What's New With 3.0.0
+# What's New With 4.0.0
 
-
-
-TestBox 3.0.0 is a major release.  It has compatibility changes that you should be aware and lots of good feaures!  
+TestBox 4.0.0 is a major release.  It has compatibility changes that you should be aware and lots of good features!  
 
 ### Compatibility
 
 The major compatibility issues are the engine support removals:
 
 * Lucee 4.5 Support Dropped
-* Adobe ColdFusion 10 Dropped
+* Adobe ColdFusion 11 Dropped
 
 ### Updating
 
@@ -17,52 +15,118 @@ It is easy to update, just type `update testbox` and you are done!
 
 ## Major Features
 
-The most notable features of this release can be found below.
+### TestBox Output Utilities
 
-### Code Coverage
+Sometimes you need to dump something that is in the CFC you are testing or maybe an asynchronous test. The `debug()` method is only accessible from your test bundle, so getting to the TestBox output utilities is not easy.  We have now implemented the testing utilities into the `request` scope as `request.testbox`
 
-This has been fully documented and you can find much more information in the [code coverage](../../code-coverage/running-code-coverage.md) section.
+This utility struct provides you with the following methods:
 
-![Code Coverage Overview](../../.gitbook/assets/testbox-codecoverage-overview.png)
+| **Method** | **Comment** |
+| :--- | :--- |
+| `console()` | Send output to the console |
+| `debug()` | Send output to the TestBox reporter debugger |
+| `clearDebugBuffer()` | Clear the debugger |
+| `print()` | Send output to the ColdFusion output buffer |
+| `printLn()` | Same as print\(\) but adding a &lt;br&gt; separator |
 
-### Static Test Visualizer
-
-![TestBox Test Visualizer](../../.gitbook/assets/testbox-test-visualizer.png)
-
-The **static test visualizer** is basically the simple reporter but works in offline mode.  This means that it will read a static TestBox results **json** file and create the report for it in the browser.  This is incredibly useful for CI integrations and representing any TestBox results json file visually.
-
-#### Location
-
-You will find the analyzer under `/test-visualizer` in the root of the TestBox installation.
+This way in your code you can add them for better debugging, especially when testing async code:
 
 ```text
-/test-analyzer
-  + index.html (visualizer)
-  + test-results.json (sample test results)
+request.testbox.console( "I am here" )
+request.testbox.debug( "why is this not running" )
 ```
 
-#### Running It
+### Mocking Data
 
-To run it all you need to do is put alongside of it a `test-results.json` file and then run the `index.html` and voila! Test Results Visualized!
+We have included [MockDataCFC](https://www.forgebox.io/view/mockdatacfc) as a dependency to TestBox 4.  This will allow you to mock not only objects but data as well.  You can access the mocking method via the new `mockData()` method in all your specs.  This feature is a life-saver when mocking APIs or data within your applications.
+
+```javascript
+# Array of objects
+var data = mockData(
+    $num = 3,
+    "author" = "name",
+    "id" = "uuid"
+);
+
+# An object
+var data = mockData(
+    $returnType = "struct",
+    "author" = "name",
+    "id" = "uuid"
+);
+```
+
+Let's imagine the following object graph:
+
+```text
+Author
+    Has Many Books
+        Has Many Categories
+    Has Keywords
+    Has A Publisher
+```
+
+I can then use this mocking DSL to define it:
+
+```javascript
+mockData(
+    fullName    = "name",
+    description = "sentence",
+    age         = "age",
+    id          = "uuid",
+    createdDate = "datetime",
+    isActive	= "oneof:true: false",
+
+    // one to many complex object definitions
+    books = [
+        {
+            $num = "rand:1:      3",
+            "id" = "uuid",
+            "title" = "words:1:      5",
+            "categories" = {
+                "$num"      = "2",
+                "id"        = "uuid",
+                "category"  = "words"
+            }
+        }
+    ],
+
+    // object definition
+    publisher = {
+        "id" 	= "uuid",
+        "name" 	= "sentence"
+    },
+
+    // array of values
+    keywords = [
+        {
+            "$num" 	= "rand:1:      10",
+            "$type" = "words"
+        }
+    ]
+);
+```
+
+{% hint style="info" %}
+More information here: [https://www.forgebox.io/view/mockdatacfc](https://www.forgebox.io/view/mockdatacfc)
+{% endhint %}
 
 ## Release Notes
 
 ### Bugs
 
-* \[[TESTBOX-234](https://ortussolutions.atlassian.net/browse/TESTBOX-234)\] - bddrunner.cfm: now compiles properly on ACF
-* \[[TESTBOX-248](https://ortussolutions.atlassian.net/browse/TESTBOX-248)\] - Skip methods for given/when/then fail without \`this\` reference
+* \[[TESTBOX-275](https://ortussolutions.atlassian.net/browse/TESTBOX-275)\] - Exception in `beforeTests`/`afterTests` not reported in a meaningful way on the ANT Junit Reporter
+* \[[TESTBOX-278](https://ortussolutions.atlassian.net/browse/TESTBOX-278)\] - Fix the coverage % in HTML visualizer
 
 ### New Features
 
-* \[[TESTBOX-236](https://ortussolutions.atlassian.net/browse/TESTBOX-236)\] - Add CodeCoverage Reporter to TestBox
-* \[[TESTBOX-239](https://ortussolutions.atlassian.net/browse/TESTBOX-239)\] - Update the UI for the code coverage reporting and code visualizer
-* \[[TESTBOX-243](https://ortussolutions.atlassian.net/browse/TESTBOX-243)\] - Complete UI updates for test reporters
-* \[[TESTBOX-245](https://ortussolutions.atlassian.net/browse/TESTBOX-245)\] - Static Test Visualizer
+* \[[TESTBOX-274](https://ortussolutions.atlassian.net/browse/TESTBOX-274)\] - New testbox output utilities struct: request.testbox
+* \[[TESTBOX-276](https://ortussolutions.atlassian.net/browse/TESTBOX-276)\] - MockdataCFC is now a first class module in TestBox
+* \[[TESTBOX-277](https://ortussolutions.atlassian.net/browse/TESTBOX-277)\] - New mockData\(\) method in your base specs so you can mock any type of data
+* \[[TESTBOX-280](https://ortussolutions.atlassian.net/browse/TESTBOX-280)\] - Add cfconfig.json for controlling output and consistency between testing in diff engines
 
-### Improvements
+### Tasks
 
-* \[[TESTBOX-237](https://ortussolutions.atlassian.net/browse/TESTBOX-237)\] - Update usage of htmleditformat to encodeForHTML
-* \[[TESTBOX-242](https://ortussolutions.atlassian.net/browse/TESTBOX-242)\] - Removal of old cfml engines support acf10 and lucee 4.5
-* \[[TESTBOX-244](https://ortussolutions.atlassian.net/browse/TESTBOX-244)\] - streamify the code coverage collection
-* \[[TESTBOX-249](https://ortussolutions.atlassian.net/browse/TESTBOX-249)\] - Add original method name to mocking function so it can help in debugging
+* \[[TESTBOX-271](https://ortussolutions.atlassian.net/browse/TESTBOX-271)\] - Drop ACF11 Support
+* \[[TESTBOX-273](https://ortussolutions.atlassian.net/browse/TESTBOX-273)\] - Drop old mxunit decorator for ORM Transaction Decorator
 
