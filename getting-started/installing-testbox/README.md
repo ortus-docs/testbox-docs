@@ -35,7 +35,7 @@ box testbox generate harness
 ## System Requirements
 
 * Lucee 5.x+ 
-* ColdFusion 11+
+* ColdFusion 2016+
 
 ## What's Included
 
