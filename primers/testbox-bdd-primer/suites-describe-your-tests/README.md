@@ -1,6 +1,6 @@
 # Suites: Describe Your Tests
 
-A test suite in TestBox is a collection of specifications that will model what you want to test.  The way the suite is express can be of many different types as we will investigate.
+A test suite in TestBox is a collection of specifications that will model what you want to test.  The way the suite is expressed can be of many different types as we will investigate.
 
 > Test suite is a container that has a set of tests which helps testers in executing and reporting the test execution status.
 
