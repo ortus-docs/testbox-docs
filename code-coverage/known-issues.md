@@ -18,7 +18,7 @@ The only workaround at this time is to reduce the size of your CF files so the b
 
 Only executable code should be tracked, meaning a comment, whitespace, or HTML that does not run will not count against your total coverage percentage.  When using Adobe ColdFusion, if there are any CF files which did not run at all \(and therefore were not compiled\) they will count every line in the file as executable since FusionReactor is only capable of tracking files which are compiled.  Lucee has a workaround to manually force compilation on such files, but Adobe does not.
 
-The best work around is to improve your tests so that these files are being executed!  Alternatively, you can add those files to the blacklist until you are ready to write tests for them, but that will make your coverage look better than it really is if you do eventually want to write tests for those files.  Minimally, a test that does nothing bug create an instance of a CFC would be enough to trigger its compilation so correct coverage can kick in.
+The best work around is to improve your tests so that these files are being executed!  Alternatively, you can add those files to the blacklist until you are ready to write tests for them, but that will make your coverage look better than it really is if you do eventually want to write tests for those files.  Minimally, a test that does nothing but create an instance of a CFC would be enough to trigger its compilation so correct coverage can kick in.
 
 ### Why didn't this ending curly brace, etc get tracked correctly?
 
