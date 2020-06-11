@@ -69,7 +69,7 @@ Note, all the basic rules of file globbing apply here.  To give you a quick revi
 
 ## coverageBlacklist
 
-This is a comma-delimited list of file globbing patterns relative to the `coveragePathToCapture` setting that is applied _on top of_ any whitelist patterns to prune back folders or files you don't' want capture.  There's no reason to include a path in the blacklist if you have a whitelist specified and that whitelist already doesn't include the path in question.  However, a blacklist can be very handy when you want to include everything but a few small exceptions and it's easier to list those exceptions rather than create a large number of paths in the whitelist.  
+This is a comma-delimited list of file globbing patterns relative to the `coveragePathToCapture` setting that is applied _on top of_ any whitelist patterns to prune back folders or files you don't want to track.  There's no reason to include a path in the blacklist if you have a whitelist specified and that whitelist already doesn't include the path in question.  However, a blacklist can be very handy when you want to include everything but a few small exceptions and it's easier to list those exceptions rather than create a large number of paths in the whitelist.  
 
 ```markup
 <cfparam name="url.coverageBlacklist" default="/testbox/,/build/,/myTest.cfm">
