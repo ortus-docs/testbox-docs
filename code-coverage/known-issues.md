@@ -24,3 +24,10 @@ The best work around is to improve your tests so that these files are being exec
 
 Occasionally you may run across some lines of code in the Code Coverage Browser report that doesn't seem correctly tracked.  Common offenders are extra curly braces or ending tags floating on a line of their own.  The fact is, mapping each line of CF code to the actual lines of compiled bytecode is tricky business and done entirely by the CF engines \(Adobe, Lucee\) under the hood during compilation.  Sometimes bits of code might not seem tracked correctly, but we've never seen it have any significant effect on your overall coverage data.  The behavior is specific to each engine/version but typically lines like that just get associated with the next executable line, so once your coverage for a file hits all the possible lines, the issue goes away :\)  Feel free to report any issues you see.  We have some workarounds in place and can see about making it better.
 
+### My coverage statistics all of a sudden show 0% or weird numbers for code I know that is runnning
+
+TestBox's code coverage feature relies on byte code instrumentation from Fusion Reactor. It seems that in some instances this process can fall over due to FR's internal behaviour, byte code class caching, internal compilation changes going from one version of your CFML engine to another one and other reasons. While we report these kind of issues upstream, unfortunately they are nearly impossible for us to properly investigate and debug.
+
+One common symptom seems to be that code coverage statistics for individual files or your overall codebase vary extremely between two TestBox executions without having changed code at all or in a meaningful way. Another symptom observed by users is that code coverage drops to 0% for certain files and you know for sure that these files would be executed during your tests.
+
+A restart of your CFML engine and a subsequent run of your tests with code coverage usually fixes this problem.
