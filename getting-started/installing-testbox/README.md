@@ -22,7 +22,7 @@ This will install TestBox in a _`/testbox`_ folder from where you called the com
 
 ## Manual Installation
 
-You can also download TestBox from [https://www.ortussolutions.com/products/testbox](https://www.ortussolutions.com/products/testbox). Extract the downloaded zip and place it anywhere you like. You can either create a mapping called \_`/testbox`\_that points to **testbox** in the distribution folder, which is the most secure approach, or you can just place it in the webroot if you like. You can also create an application-level mapping:
+You can also download TestBox from [https://www.forgebox.io/view/testbox#versions](https://www.forgebox.io/view/testbox#versions). Extract the downloaded zip and place it anywhere you like. You can either create a mapping called \_`/testbox`\_that points to **testbox** in the distribution folder, which is the most secure approach, or you can just place it in the webroot if you like. You can also create an application-level mapping:
 
 ```javascript
 this.mappings[ "/testbox" ] = expandPath( "C:/frameworks/testbox/" );
