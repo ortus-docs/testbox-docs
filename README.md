@@ -2,7 +2,7 @@
 
 ## TestBox BDD v4.x
 
-![TestBox](.gitbook/assets/testboxlogo300.png)
+![TestBox](.gitbook/assets/TestBoxLogo300.png)
 
 **TestBox** is a next generation testing framework for ColdFusion \(CFML\) that is based on [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) \(Behavior Driven Development\) for providing a clean obvious syntax for writing tests. It contains not only a testing framework, runner, assertions and expectations library but also ships with MockBox, A mocking and stubbing companion. It also supports xUnit style of testing and MXUnit compatibilities.
 
@@ -80,7 +80,7 @@ We all make mistakes from time to time :\) So why not let us know about it and h
 
 ## Professional Open Source
 
-![Ortus Solutions, Corp](.gitbook/assets/ortussolutions_button.png)
+![Ortus Solutions, Corp](.gitbook/assets/ortussolutions_button%20%281%29.png)
 
 TestBox is a professional open source software backed by [Ortus Solutions, Corp](https://www.ortussolutions.com/products/testbox) offering services like:
 

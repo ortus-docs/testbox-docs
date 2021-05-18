@@ -1,12 +1,12 @@
 # Suites: Describe Your Tests
 
-A test suite in TestBox is a collection of specifications that will model what you want to test.  The way the suite is expressed can be of many different types as we will investigate.
+A test suite in TestBox is a collection of specifications that will model what you want to test. The way the suite is expressed can be of many different types as we will investigate.
 
 > Test suite is a container that has a set of tests which helps testers in executing and reporting the test execution status.
 
-A test suite begins with a call to our TestBox `describe()` function with at least two arguments: a `title` and a `body` function/closure. The `title` is the name of the suite to register and the `body` function/closure is the block of code that implements the suite. 
+A test suite begins with a call to our TestBox `describe()` function with at least two arguments: a `title` and a `body` function/closure. The `title` is the name of the suite to register and the `body` function/closure is the block of code that implements the suite.
 
-When applying BDD to your tests, this function is used to describe your story scenarios that you will implement. 
+When applying BDD to your tests, this function is used to describe your story scenarios that you will implement.
 
 ```javascript
 function run( testResults, testBox ){
@@ -27,7 +27,7 @@ function run( testResults, testBox ){
 The `describe()` function is also aliased with the following names:`story(), feature(), scenario(), given(), when()`
 {% endhint %}
 
-### Arguments
+## Arguments
 
 There are more arguments which you can see below:
 

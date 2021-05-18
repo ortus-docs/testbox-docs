@@ -1,6 +1,6 @@
 # Installation
 
-TestBox can be installed easily via [CommandBox CLI](https://www.ortussolutions.com/products/commandbox) or by your manually implementing it. 
+TestBox can be installed easily via [CommandBox CLI](https://www.ortussolutions.com/products/commandbox) or by your manually implementing it.
 
 ## Commandbox installation
 
@@ -18,11 +18,11 @@ box install testbox@be --saveDev
 Please note the `--saveDev` flag which tells CommandBox that TestBox is a development dependency and not a production dependency.
 {% endhint %}
 
-This will install TestBox in a _`/testbox`_ folder from where you called the command. 
+This will install TestBox in a _`/testbox`_ folder from where you called the command.
 
 ## Manual Installation
 
-You can also download TestBox from [https://www.forgebox.io/view/testbox#versions](https://www.forgebox.io/view/testbox#versions). Extract the downloaded zip and place it anywhere you like. You can either create a mapping called \_`/testbox`\_that points to **testbox** in the distribution folder, which is the most secure approach, or you can just place it in the webroot if you like. You can also create an application-level mapping:
+You can also download TestBox from [https://www.forgebox.io/view/testbox\#versions](https://www.forgebox.io/view/testbox#versions). Extract the downloaded zip and place it anywhere you like. You can either create a mapping called \_`/testbox`\_that points to **testbox** in the distribution folder, which is the most secure approach, or you can just place it in the webroot if you like. You can also create an application-level mapping:
 
 ```javascript
 this.mappings[ "/testbox" ] = expandPath( "C:/frameworks/testbox/" );

@@ -5,6 +5,8 @@
 ## Intro
 
 * [Release History](intro/release-history/README.md)
+  * [What's New With 4.3.0](intro/release-history/whats-new-with-4.3.0.md)
+  * [What's New With 4.2.x](intro/release-history/whats-new-with-4.2.x.md)
   * [What's New With 4.1.0](intro/release-history/whats-new-with-4.1.0.md)
   * [What's New With 4.0.0](intro/release-history/whats-new-with-4.0.0.md)
 * [About This Book](intro/about-this-book/README.md)
@@ -56,8 +58,8 @@
   * [Injected Variables](in-depth/test-bundles/injected-variables.md)
   * [Injected Methods](in-depth/test-bundles/injected-methods.md)
 * [Life-Cycle Methods](in-depth/life-cycle-methods/README.md)
-  * [xUnit](in-depth/life-cycle-methods/xunit.md)
   * [BDD](in-depth/life-cycle-methods/bdd.md)
+  * [xUnit](in-depth/life-cycle-methods/xunit.md)
   * [Annotations](in-depth/life-cycle-methods/annotations.md)
 * [Suites, Tests & Specs \(Oh My!\)](in-depth/suites-tests-and-specs-oh-my/README.md)
   * [xUnit](in-depth/suites-tests-and-specs-oh-my/xunit.md)
