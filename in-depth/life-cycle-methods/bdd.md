@@ -2,7 +2,7 @@
 
 ## Global Callbacks
 
-Global callbacks affect the execution of the entire test bundle CFC and all of it's suites and specs.
+Global callbacks affect the execution of the entire test bundle CFC and all of its suites and specs.
 
 ### beforeAll\(\)
 
@@ -61,19 +61,41 @@ You can find the API docs for `testbox` and the `testResults` arguments here: [h
 
 ## Suite Callbacks
 
-The following callbacks influence the execution of specification methods: `it(), then()`.  The great flexibility of the BDD approach is that it allows you to nest `describe, feature, story, given, scenario, when` suite blocks to create very human readable and organized documentation for your tests. Each suite block can have its own life-cycle methods as well. Not only that, if they are nested, TestBox will walk the tree and call each `beforeEach()` and `afterEach()` in the order you declare them.
+The following callbacks influence the execution of specification methods: `it(), then()`.  The great flexibility of the BDD approach is that it allows you to nest `describe`, `feature`, `story`, `given`, `scenario`, `when` suite blocks to create very human readable and organized documentation for your tests. Each suite block can have its own life-cycle methods as well. Not only that, if they are nested, TestBox will walk the tree and call each `beforeEach()` and `afterEach()` in the order you declare them.
 
 {% hint style="success" %}
 TestBox will walk down the tree \(from the outermost suite\) for `beforeEach()` operations and out of the tree \(from the innermost suite\) for `afterEach()` operations.
 {% endhint %}
 
-### beforeEach\( currentSpec, data \)
+### beforeEach\( body, data \)
 
-Executes before **every** single spec in a single suite block and receives the currently executing spec and any [data you want to bind the specification](../../primers/testbox-bdd-primer/specs.md#spec-data-binding) with.
+Executes before **every** single spec in a single suite block and receives the currently executing spec and any [data you want to bind the specification](../../primers/testbox-bdd-primer/specs.md#spec-data-binding) with.  The `body` is a closure/lambda that will fire and the `data` argument is a way to [bind the life-cycle method ](bdd.md#life-cycle-data-binding)with a struct of data that can flow down to specs.
 
-### afterEach\( currentSpec, data \)
+The `body` closure will receive have the following signature:
 
-Executes after **every** single spec in a single suite block and receives the currently executing spec and any [data you want to bind the specification](../../primers/testbox-bdd-primer/specs.md#spec-data-binding) with.
+```javascript
+function( currentSpec, data ){
+
+}
+
+(currentSpec, data ) => {}
+```
+
+### afterEach\( body, data \)
+
+Executes after **every** single spec in a single suite block and receives the currently executing spec and any [data you want to bind the specification](../../primers/testbox-bdd-primer/specs.md#spec-data-binding) with.  The `body` is a closure/lambda that will fire and the `data` argument is a way to [bind the life-cycle method ](bdd.md#life-cycle-data-binding)with a struct of data that can flow down to specs.
+
+The `body` closure will receive have the following signature:
+
+```javascript
+function( currentSpec, data ){
+
+}
+
+(currentSpec, data ) => {}
+```
+
+Here are some examples:
 
 ```javascript
 component{
@@ -81,11 +103,11 @@ component{
      function run( testResults, testBox ){
           describe("A Spec", function(){
 
-               beforeEach( function( currentSpec ){
+               beforeEach( function( currentSpec, data ){
                     // before each spec in this suite
                });
 
-               afterEach( function( currentSpec ){
+               afterEach( function( currentSpec, data ){
                     // after each spec in this suite
                });
 
@@ -93,11 +115,11 @@ component{
 
                     // my parent's aroundEach()
 
-                    beforeEach( function(){
+                    beforeEach( ( currentSpec, data ) => {
                          // before each spec in this suite + my parent's beforeEach()
                     });
 
-                    afterEach( function(){
+                    afterEach( ( currentSpec, data ) => {
                          // after each spec in this suite + my parent's afterEach()
                     });
 
@@ -107,11 +129,11 @@ component{
 
           describe("A second spec", function(){
 
-               beforeEach( function( currentSpec ){
+               beforeEach( function( currentSpec, data ){
                     // before each spec in this suite, separate from the two other ones
                });
 
-               afterEach( function( currentSpec ){
+               afterEach( function( currentSpec, data ){
                     // after each spec in this suite, separate from the two other ones
                });
 
@@ -120,9 +142,23 @@ component{
 }
 ```
 
-### aroundEach\( spec, suite, data \)
+### aroundEach\( body, data \)
 
-Executes **around** the executing spec so you can provide code that will surround the execution of the spec.  It's like combining `before` and `after` in a single operation.  This is the only way you can use CFML constructs that wrap around code like: try/catch, transaction, for, while, etc.
+Executes **around** the executing spec so you can provide code that will surround the execution of the spec.  It's like combining `before` and `after` in a single operation.  The `body` is a closure/lambda that will fire and the `data` argument is a way to [bind the life-cycle method ](bdd.md#life-cycle-data-binding)with a struct of data that can flow down to specs.  This is the only way you can use CFML constructs that wrap around code like: try/catch, transaction, for, while, etc.
+
+The `body` closure will receive have the following signature:
+
+```javascript
+function( spec, suite, data ){
+
+}
+
+(spec, suite, data) => {}
+```
+
+The `spec` is the currently executing specification, the `suite` is the suite this life-cycle is embedded in and `data` is the data binding, if any.
+
+Here is an example:
 
 ```javascript
 component{
@@ -148,11 +184,11 @@ component{
 
                     // my parent's aroundEach()
 
-                    beforeEach( function(){
+                    beforeEach( function( currentSpec, data ){
                          // before each spec in this suite + my parent's beforeEach()
                     });
 
-                    afterEach( function(){
+                    afterEach( function( currentSpec, data ){
                          // after each spec in this suite + my parent's afterEach()
                     });
 
