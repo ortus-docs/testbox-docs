@@ -14,9 +14,9 @@ This release has revamped the `text` and `mintext` reporters.  Check them out by
 
 The simple reporter has been updated to add editor opening integration.  Now all the tag contexts and traces are links and will open in your favorite IDE of choice.  You can control the editor by using the `url.editor` parameter in the URL or via your runner.
 
-![](../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.20-pm%20%281%29.png)
+![](../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.20-pm%20%282%29.png)
 
-![](../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.29-pm.png)
+![](../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.29-pm%20%281%29.png)
 
 ## Release Notes
 
