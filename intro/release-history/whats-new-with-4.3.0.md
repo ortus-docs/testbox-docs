@@ -1,3 +1,7 @@
+---
+description: 'Released: May 24, 2021'
+---
+
 # What's New With 4.3.0
 
 TestBox v4.3.0 includes several new features and bug fixes.  Here are the release notes and major areas of improvements.

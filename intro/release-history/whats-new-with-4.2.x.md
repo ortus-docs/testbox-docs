@@ -1,3 +1,7 @@
+---
+description: 'Released: November 19, 2021'
+---
+
 # What's New With 4.2.x
 
 TestBox v4.2.x is a minor + patch update. Quickly update it via CommandBox

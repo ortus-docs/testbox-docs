@@ -1,3 +1,7 @@
+---
+description: 'Released: April 28, 2020'
+---
+
 # What's New With 4.0.0
 
 TestBox 4.0.0 is a major release.  It has compatibility changes that you should be aware and lots of good features!  

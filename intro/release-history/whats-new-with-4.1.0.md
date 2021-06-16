@@ -1,3 +1,7 @@
+---
+description: 'Released: May 27, 2020'
+---
+
 # What's New With 4.1.0
 
 TestBox v4.1.0 is a minor update. Quickly update it via CommandBox
