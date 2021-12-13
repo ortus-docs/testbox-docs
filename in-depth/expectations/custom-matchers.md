@@ -29,7 +29,7 @@ You can register matcher functions in several ways within TestBox, but we always
 
 ### Inline matchers
 
-You can pass a structure of key\/value pairs of the matchers you would like to register. The key is the name of the matcher function and the value is the closure function representation.
+You can pass a structure of key\\/value pairs of the matchers you would like to register. The key is the name of the matcher function and the value is the closure function representation.
 
 ```javascript
 function beforeAll(){
@@ -56,7 +56,7 @@ it("A custom matcher", function(){
 
 ### CFC Matchers
 
-You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matchers \(Yes, I said plethora\), in a CFC and register that as the matchers via its instantiation path. This provides much more flexibility and re-usability for your projects.
+You can also store a [plethora](http://en.wikipedia.org/wiki/Plethora) of matchers (Yes, I said plethora), in a CFC and register that as the matchers via its instantiation path. This provides much more flexibility and re-usability for your projects.
 
 ```javascript
 addMatchers( "model.util.MyMatchers" );
@@ -67,4 +67,3 @@ You can also register a CFC instance:
 ```javascript
 addMatchers( new models.util.MyMatchers() );
 ```
-

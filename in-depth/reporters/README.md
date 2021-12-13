@@ -20,9 +20,9 @@ TestBox comes also with a nice plethora of reporters:
 
 To use a specific reporter append the `reporter` variable to the `url` string. ex `&reporter=Text` or set it in your `runner.cfm`
 
-## Open In Editor \(Simple\) 
+## Open In Editor (Simple)&#x20;
 
-The `simple` reporter allows you to set a code editor of choice so it can create links for stack traces and tag contexts.  It will then open your exceptions and traces in the right editor at the right line number.  
+The `simple` reporter allows you to set a code editor of choice so it can create links for stack traces and tag contexts.  It will then open your exceptions and traces in the right editor at the right line number. &#x20;
 
 {% hint style="info" %}
 The default editor is `vscode`
@@ -49,9 +49,9 @@ To change the editor of choice use the `url.editor` parameter which you can send
 
 ```
 
-![](../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.20-pm.png)
+![](<../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.20-pm (2) (2).png>)
 
-![](../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.29-pm.png)
+![](<../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.29-pm (1).png>)
 
 ### Available Editors
 
@@ -79,5 +79,4 @@ The available editors are:
 
 ![](../../.gitbook/assets/testbox-sc-text.png)
 
-![](../../.gitbook/assets/testbox-sc-xml.png)
-
+![](../../images/testbox-sc-xml.png)

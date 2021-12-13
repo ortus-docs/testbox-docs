@@ -2,7 +2,7 @@
 
 In order to create a mock object you need to use any of the following methods: `createMock()`, `createEmptyMock()`, or `prepareMock()`.
 
-## createMock\(\)
+## createMock()
 
 Used to create a new mock object from scratch or from an already instantiated object.
 
@@ -13,7 +13,7 @@ public any createMock([string CLASSNAME], [any OBJECT], [boolean CLEARMETHODS='f
 Parameters:
 
 * className - The class name of the object to create and mock
-* object - The instantiated object to add mocking capabilities to, similar to using prepareMock\(\)
+* object - The instantiated object to add mocking capabilities to, similar to using prepareMock()
 * clearMethods - If true, all methods in the target mock object will be removed. You can then mock only the methods that you want to mock
 * callLogging - Add method call logging for all mocked methods only
 
@@ -21,7 +21,7 @@ Parameters:
 collaborator = mockbox.createMock("model.myClass");
 ```
 
-## createEmptyMock\(\)
+## createEmptyMock()
 
 Used to create a new mock object with all its method signatures wiped out, basically an interface with no real implementation. It will be up to you to mock all behavior.
 
@@ -32,16 +32,16 @@ public any createEmptyMock(string CLASSNAME, [any OBJECT], [boolean CALLLOGGING=
 Parameters:
 
 * className - The class name of the object to create and mock
-* object - The instantiated object to add mocking capabilities to, similar to using prepareMock\(\)
+* object - The instantiated object to add mocking capabilities to, similar to using prepareMock()
 * callLogging - Add method call logging for all mocked methods only
 
 ```javascript
 user = mockbox.createEmptyMock("model.User");
 ```
 
-## prepareMock\(\)
+## prepareMock()
 
-Decorate an already instantiated object with mocking capabilities. It does not wipe out the object's methods or signature, it only decorates it \(mixes-in methods\) with methods for mocking operations. This is great for doing targeted mocking for specific methods, private methods, properties and more.
+Decorate an already instantiated object with mocking capabilities. It does not wipe out the object's methods or signature, it only decorates it (mixes-in methods) with methods for mocking operations. This is great for doing targeted mocking for specific methods, private methods, properties and more.
 
 ```javascript
 public any prepareMock([any OBJECT], [boolean CALLLOGGING='true'])
@@ -52,18 +52,18 @@ Parameters:
 * object - The already instantiated object to prepare for mocking
 * callLogging - Add method call logging for all mocked methods only
 
-```text
+```
 myService = createObject("component","model.services.MyCoolService").init();
 // prepare it for mocking
 mockBox.prepareMock( myService );
 ```
 
-> **Caution** If call logging is turned on, then the mock object will keep track of all method calls to mocked methods ONLY. It will store them in a sequential array with all the arguments the method was called with \(named or ordered\). This is essential if you need to investigate if a method was called and with what arguments. You can also use this to inspect save or update calls based on mocked external repositories.
+> **Caution** If call logging is turned on, then the mock object will keep track of all method calls to mocked methods ONLY. It will store them in a sequential array with all the arguments the method was called with (named or ordered). This is essential if you need to investigate if a method was called and with what arguments. You can also use this to inspect save or update calls based on mocked external repositories.
 
-  
- **Sample:**
+\
+&#x20;**Sample:**
 
-![](../../.gitbook/assets/mockbox_userservicesample.png)
+![](../../.gitbook/assets/mockbox\_userservicesample.png)
 
 Let's say that we have a user service layer object that relies on the following objects:
 
@@ -138,4 +138,3 @@ The service CFC we just injected mocked dependencies:
 
 </cfcomponent>
 ```
-

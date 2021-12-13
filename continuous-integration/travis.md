@@ -1,8 +1,8 @@
 # Travis
 
-![](../.gitbook/assets/travis-ci.png)
+![](../assets/travis-ci.png)
 
-[Travis CI](https://travis-ci.org/) is one of the most popular CI servers for open source software. At Ortus Solutions, we use it for all of our open source software due to its strength of pull request runners and multi-matrix runners. They have both free and commercial versions, so you can leverage it for private projects as well.
+[Travis CI](https://travis-ci.org) is one of the most popular CI servers for open source software. At Ortus Solutions, we use it for all of our open source software due to its strength of pull request runners and multi-matrix runners. They have both free and commercial versions, so you can leverage it for private projects as well.
 
 ![](../.gitbook/assets/travis-projectview.png)
 
@@ -10,7 +10,7 @@
 
 * FREE for Open Source Projects
 * Runs distributed VM’s and Container Support
-* Triggers Build Script via git repository commits \(`.travis.yml`\)
+* Triggers Build Script via git repository commits (`.travis.yml`)
 * Multiple language support
 * Many integrations and extensions
 * Many notification types
@@ -19,7 +19,7 @@
 
 ## TestBox Integration
 
-In order to work with Travis you must create a `.travis.yml` file in the root of your project. Once there are commits in your repository, Travis will process this file as your build file. Please refer to the [Travis Documentation](https://docs.travis-ci.com/) for further study.
+In order to work with Travis you must create a `.travis.yml` file in the root of your project. Once there are commits in your repository, Travis will process this file as your build file. Please refer to the [Travis Documentation](https://docs.travis-ci.com) for further study.
 
 ```yaml
 language: java
@@ -61,7 +61,7 @@ In our script we basically install our dependencies for our project using Comman
 
 ### Box.json
 
-In order for the `box testbox run` to execute correctly, our `box.json` \(See [https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html](https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html)\) in our project must be able to connect to our server and know which tests to execute. Below are all the possiblities for the `testbox` integration object in CommandBox's `box.json`. \(See [https://commandbox.ortusbooks.com/content/testbox-integration.html](https://commandbox.ortusbooks.com/content/testbox-integration.html)\)
+In order for the `box testbox run` to execute correctly, our `box.json` (See [https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html](https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html)) in our project must be able to connect to our server and know which tests to execute. Below are all the possiblities for the `testbox` integration object in CommandBox's `box.json`. (See [https://commandbox.ortusbooks.com/content/testbox-integration.html](https://commandbox.ortusbooks.com/content/testbox-integration.html))
 
 ```javascript
 {
@@ -110,4 +110,3 @@ In order for the `box testbox run` to execute correctly, our `box.json` \(See [h
 ## Online Example: cbVue
 
 You can look at our `cbVue` sample application online: [https://travis-ci.org/coldbox-samples/cbvue](https://travis-ci.org/coldbox-samples/cbvue) which contains all CI server integrations.
-
