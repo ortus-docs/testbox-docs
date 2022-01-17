@@ -16,7 +16,6 @@ TestBox comes also with a nice plethora of reporters:
 * `Tap` : A test anything protocol reporter
 * `Text` : Back to the 80's with an awesome text report
 * `XML` : Builds yet another XML testing report
-* `Tap` : A test anything protocol reporter
 
 To use a specific reporter append the `reporter` variable to the `url` string. ex `&reporter=Text` or set it in your `runner.cfm`
 
