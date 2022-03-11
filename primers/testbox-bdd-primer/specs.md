@@ -24,7 +24,7 @@ function run(){
 An expectation is a nice assertion DSL that TestBox exposes so you can pretty much read what should happen in the testing scenario. A spec will pass if all expectations pass. A spec with one or more expectations that fail will fail the entire spec.
 
 {% hint style="success" %}
-The `it()` function is also aliased as `then()`
+The `it()` function is also aliased as `then()` - except `it()` has `title` when `then()` uses `then` instead
 {% endhint %}
 
 ### Arguments
@@ -91,4 +91,8 @@ for( var filePath in files ){
   });
 }
 ```
+
+{% hint style="warning" %}
+When using the `then()` function instead of `it()` the title argument name is `then` instead of `title` for the `it()` function
+{% endhint %}
 
