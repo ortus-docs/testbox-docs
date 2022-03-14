@@ -87,9 +87,9 @@ describe("Some Included TestBox Matchers:", function() {
           message = 'foo man choo';
 
           expect( message )
-               .toMatch( '^FOO' )
-               .toMatch( '(MAN)' )
-               .notToMatch( 'SuperMan' );
+               .toMatchNoCase( '^FOO' )
+               .toMatchNoCase( '(MAN)' )
+               .notToMatchNoCase( 'SuperMan' );
      });
 
      describe("The 'toBeTypeOf' matcher evaluates using the CF isValid() function", function() {
