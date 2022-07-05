@@ -12,7 +12,7 @@ How in the world can I mock this? Well, using the mock arguments method.
 ```javascript
 //get a mock config bean
 mockConfig = getMockBox().createEmptyMock("coldbox.system.beans.ConfigBean");
-//mock the method with args
+//mock the method for positional arguments
 mockConfig.$("getKey").$args("debugmode").$results(true);
 mockConfig.$("getKey").$args("OutgoingMail").$results('devmail@mail.com');
 
@@ -20,4 +20,13 @@ mockConfig.$("getKey").$args("OutgoingMail").$results('devmail@mail.com');
 ```
 
 > **Hint** So remember that if you use the `$args()` call, you need to tell it what kind of results you are expecting by calling the `$results()` method after it or you might end up with an exception.
+
+If the method you are mocking is called using named arguments then you can mock this using:
+
+```javascript
+//get a mock config bean
+mockConfig = getMockBox().createEmptyMock("coldbox.system.beans.ConfigBean");
+//mock the method for named arguments
+mockConfig.$("getKey").$args(name="debugmode").$results(true);
+```
 
