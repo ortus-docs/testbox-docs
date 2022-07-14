@@ -129,6 +129,6 @@
 ## Continuous Integration
 
 * [Introduction](continuous-integration/introduction.md)
-* * [Gitlab](continuous-integration/github-actions.md)
+* [Github Actions](continuous-integration/github-actions.md)
 * [Gitlab](continuous-integration/gitlab.md)
 * [Travis](continuous-integration/travis.md)
