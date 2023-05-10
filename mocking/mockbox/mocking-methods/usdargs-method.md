@@ -1,4 +1,4 @@
-# $args\(\) Method
+# $args() Method
 
 This method is used to tell MockBox that you want to mock a method with a SPECIFIC number of argument calls. Then you will have to set the return results for it, but this is absolutely necessary if you need to test an object that makes several method calls to the same method with different arguments, and you need to mock different results coming back. Example, let's say you are using a ColdBox configuration bean that holds configuration data. You make several calls to the `getKey()` method with different arguments:
 
@@ -12,7 +12,7 @@ How in the world can I mock this? Well, using the mock arguments method.
 ```javascript
 //get a mock config bean
 mockConfig = getMockBox().createEmptyMock("coldbox.system.beans.ConfigBean");
-//mock the method with args
+//mock the method for positional arguments
 mockConfig.$("getKey").$args("debugmode").$results(true);
 mockConfig.$("getKey").$args("OutgoingMail").$results('devmail@mail.com');
 
@@ -21,3 +21,11 @@ mockConfig.$("getKey").$args("OutgoingMail").$results('devmail@mail.com');
 
 > **Hint** So remember that if you use the `$args()` call, you need to tell it what kind of results you are expecting by calling the `$results()` method after it or you might end up with an exception.
 
+If the method you are mocking is called using named arguments then you can mock this using:
+
+```javascript
+//get a mock config bean
+mockConfig = getMockBox().createEmptyMock("coldbox.system.beans.ConfigBean");
+//mock the method for named arguments
+mockConfig.$("getKey").$args(name="debugmode").$results(true);
+```

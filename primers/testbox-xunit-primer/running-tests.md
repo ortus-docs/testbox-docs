@@ -22,33 +22,33 @@ http://localhost/test/spec.cfc?method=runRemote
 
 Here are the arguments you can use for initializing TestBox or executing the `run()` method
 
-| Argument | Required | Default | Type | Description |
-| :--- | :--- | :--- | :--- | :--- |
-|  | bundles | true | --- | The path, list of paths or array of paths of the spec bundle CFCs to run and test |
-| directory | false | --- | struct | The directory mapping path or a struct: \[ mapping = the path to the directory using dot notation \(myapp.testing.specs\), recurse = boolean, filter = closure that receives the path of the CFC found, it must return true to process or false to continue process \] |
-| reporter | false | simple | string/struct/instance | The type of reporter to use for the results, by default is uses our 'simple' report. You can pass in a core reporter string type or an instance of a coldbox.system.reports.IReporter. You can also pass a struct with \[type="string or classpath", options={}\] if a reporter expects options. |
-| labels | false | false | string/array | The string or array of labels the runner will use to execute suites and specs with. |
-| options | false | {} | struct | A structure of property name-value pairs that each runner can implement and use at its discretion. |
-| testBundles | false | --- | string/array | A list or array of bundle names that are the ones that will be executed ONLY! |
-| testSuites | false | --- | string/array | A list or array of suite names that are the ones that will be executed ONLY! |
-| testSpecs | false | --- | string/array | A list or array of test names that are the ones that will be executed ONLY |
+| Argument    | Required | Default | Type                   | Description                                                                                                                                                                                                                                                                                     |
+| ----------- | -------- | ------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|             | bundles  | true    | ---                    | The path, list of paths or array of paths of the spec bundle CFCs to run and test                                                                                                                                                                                                               |
+| directory   | false    | ---     | struct                 | The directory mapping path or a struct: \[ mapping = the path to the directory using dot notation (myapp.testing.specs), recurse = boolean, filter = closure that receives the path of the CFC found, it must return true to process or false to continue process ]                             |
+| reporter    | false    | simple  | string/struct/instance | The type of reporter to use for the results, by default is uses our 'simple' report. You can pass in a core reporter string type or an instance of a coldbox.system.reports.IReporter. You can also pass a struct with \[type="string or classpath", options={}] if a reporter expects options. |
+| labels      | false    | false   | string/array           | The string or array of labels the runner will use to execute suites and specs with.                                                                                                                                                                                                             |
+| options     | false    | {}      | struct                 | A structure of property name-value pairs that each runner can implement and use at its discretion.                                                                                                                                                                                              |
+| testBundles | false    | ---     | string/array           | A list or array of bundle names that are the ones that will be executed ONLY!                                                                                                                                                                                                                   |
+| testSuites  | false    | ---     | string/array           | A list or array of suite names that are the ones that will be executed ONLY!                                                                                                                                                                                                                    |
+| testSpecs   | false    | ---     | string/array           | A list or array of test names that are the ones that will be executed ONLY                                                                                                                                                                                                                      |
 
 ## `runRemote()` arguments
 
 Here are the arguments you can use for executing the `runRemote()` method:
 
-| Argument | Required | Default | Type | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| bundles | true | --- | string | The path, list of paths or array of paths of the spec bundle CFCs to run and test |
-| directory | false | --- | string | The directory mapping to test: directory = the path to the directory using dot notation \(myapp.testing.specs\) |
-| recurse | false | true | boolean | Recurse the directory mapping or not, by default it does |
-| reporter | false | simple | string/path | The type of reporter to use for the results, by default is uses our 'simple' report. You can pass in a core reporter string type or a class path to the reporter to use. |
-| reporterOptions | false | {} | JSON | A JSON struct literal of options to pass into the reporter |
-| labels | false | false | string | The string array of labels the runner will use to execute suites and specs with. |
-| options | false | {} | JSON | A JSON struct literal of configuration options that are optionally used to configure a runner. |
-| testBundles | false | --- | string/array | A list or array of bundle names that are the ones that will be executed ONLY! |
-| testSuites | false | --- | string | A list of suite names that are the ones that will be executed ONLY! |
-| testSpecs | false | --- | string | A list of test names that are the ones that will be executed ONLY |
+| Argument        | Required | Default | Type         | Description                                                                                                                                                              |
+| --------------- | -------- | ------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| bundles         | true     | ---     | string       | The path, list of paths or array of paths of the spec bundle CFCs to run and test                                                                                        |
+| directory       | false    | ---     | string       | The directory mapping to test: directory = the path to the directory using dot notation (myapp.testing.specs)                                                            |
+| recurse         | false    | true    | boolean      | Recurse the directory mapping or not, by default it does                                                                                                                 |
+| reporter        | false    | simple  | string/path  | The type of reporter to use for the results, by default is uses our 'simple' report. You can pass in a core reporter string type or a class path to the reporter to use. |
+| reporterOptions | false    | {}      | JSON         | A JSON struct literal of options to pass into the reporter                                                                                                               |
+| labels          | false    | false   | string       | The string array of labels the runner will use to execute suites and specs with.                                                                                         |
+| options         | false    | {}      | JSON         | A JSON struct literal of configuration options that are optionally used to configure a runner.                                                                           |
+| testBundles     | false    | ---     | string/array | A list or array of bundle names that are the ones that will be executed ONLY!                                                                                            |
+| testSuites      | false    | ---     | string       | A list of suite names that are the ones that will be executed ONLY!                                                                                                      |
+| testSpecs       | false    | ---     | string       | A list of test names that are the ones that will be executed ONLY                                                                                                        |
 
 The bundles argument which can be a single CFC path or an array of CFC paths or a directory argument so it can go and discover the test bundles from that directory. The reporter argument can be a core reporter name like: json,xml,junit,raw,simple,dots,tap,min,etc or it can be an instance of a reporter CFC. You can execute the runners from any cfm template or any CFC or any URL, that is up to you.
 
@@ -68,17 +68,17 @@ TestBox ships with a test browser that is highly configurable to whatever URL ac
 
 In our test samples and templates we include an ANT runner that will be able to execute your tests via ANT. It can also leverage our ANTJunit reporter to use the junitreport task to produce JUnit compliant reports as well. You can find this runner in the test samples and runner template directory.
 
-## Bundle\(s\) Runner
+## Bundle(s) Runner
 
 ```javascript
 <cfset r = new coldbox.system.TestBox( "coldbox.testing.cases.testing.specs.BDDTest" ) >
 <cfoutput>#r.run()#</cfoutput>
 
-<cfset r = new coldbox.system.TestBox( bundles="coldbox.testing.cases.testing.specs.BDDTest", testSpecs="OnlyThis,AndThis,AndThis" ) >
-<cfoutput>#r.run()#</cfoutput>
+<cfset r = new coldbox.system.TestBox( bundles="coldbox.testing.cases.testing.specs.BDDTest" ) >
+<cfoutput>#r.run( testSpecs="OnlyThis,AndThis,AndThis" )#</cfoutput>
 
-<cfset r = new coldbox.system.TestBox( bundles="coldbox.testing.cases.testing.specs.BDDTest", testSuites="Custom Matchers,A Spec" ) >
-<cfoutput>#r.run()#</cfoutput>
+<cfset r = new coldbox.system.TestBox( bundles="coldbox.testing.cases.testing.specs.BDDTest" ) >
+<cfoutput>#r.run( testSuites="Custom Matchers,A Spec" )#</cfoutput>
 
 <cfset r = new coldbox.system.TestBox( [ "coldbox.testing.cases.testing.specs.BDDTest", "coldbox.testing.cases.testing.specs.BDD2Test" ] ) >
 <cfoutput>#r.run()#</cfoutput>
@@ -89,7 +89,13 @@ In our test samples and templates we include an ANT runner that will be able to 
 
 ### Test Runner
 
-If you make your test bundle CFC inherit from our testbox.system.BaseSpec class, you will be able to execute the CFC directly via the URL: \`\`\`javascript [http://localhost/test/MyTest.cfc?method=runRemote](http://localhost/test/MyTest.cfc?method=runRemote) \`\`\` You can also pass the following arguments to the method via the URL: \* \*\*testSuites\*\* : A list or array of suite names that are the ones that will be executed ONLY! \* \*\*testSpecs\*\* : A list or array of test names that are the ones that will be executed ONLY! \* \*\*reporter\*\* : The type of reporter to run the test with \`\`\`javascript [http://localhost/test/MyTest.cfc?method=runRemote&reporter=json](http://localhost/test/MyTest.cfc?method=runRemote&reporter=json) \`\`\`
+If you make your test bundle CFC inherit from our `testbox.system.BaseSpec` class, you will be able to execute the CFC directly via the URL: [http://localhost/test/MyTest.cfc?method=runRemote](http://localhost/test/MyTest.cfc?method=runRemote).
+
+You can also pass the following arguments to the method via the URL:
+
+* `testSuites`: A list or array of suite names that are the ones that will be executed ONLY!
+* `testSpecs`: A list or array of test names that are the ones that will be executed ONLY!
+* `reporter`: The type of reporter to run the test with [http://localhost/test/MyTest.cfc?method=runRemote\&reporter=json](http://localhost/test/MyTest.cfc?method=runRemote\&reporter=json)
 
 ### Directory Runner
 
@@ -119,13 +125,13 @@ If you make your test bundle CFC inherit from our testbox.system.BaseSpec class,
 
 ## SOAP Runner
 
-You can run tests via SOAP by leveraging the runRemote\(\) method. The WSDL URL will be
+You can run tests via SOAP by leveraging the runRemote() method. The WSDL URL will be
 
 ```javascript
 http://localhost/testbox/system/TestBox.cfc?wsdl
 ```
 
-HTTP/REST Runner You can run tests via HTTP/REST by leveraging the runRemote\(\) endpoint. The URL will be
+HTTP/REST Runner You can run tests via HTTP/REST by leveraging the runRemote() endpoint. The URL will be
 
 ```javascript
 http://localhost/testbox/system/TestBox.cfc
@@ -144,4 +150,3 @@ Just use node to install:
 ```bash
 npm install -g testbox-runner
 ```
-

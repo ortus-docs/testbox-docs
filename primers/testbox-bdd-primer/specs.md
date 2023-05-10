@@ -1,8 +1,8 @@
 # Specs
 
-A spec is a declaration that will usually test your system with a requirement.  They are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec. 
+A spec is a declaration that will usually test your system with a requirement. They are defined by calling the TestBox `it()` global function, which takes in a `title` and a `body` function/closure. The `title` is the title of this spec you will write and the `body` function/closure is a block of code that represents the spec.
 
-A spec will contain most likely one or more expectations that will test the state of the [SUT](http://en.wikipedia.org/wiki/System_under_test) \(software under test\) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your `describe()` block of your [story](http://en.wikipedia.org/wiki/User_story).
+A spec will contain most likely one or more expectations that will test the state of the [SUT](http://en.wikipedia.org/wiki/System\_under\_test) (software under test) or sometimes referred to as code under test. In BDD style, your specifications are what is used to validate your requirements of a scenario which is your `describe()` block of your [story](http://en.wikipedia.org/wiki/User\_story).
 
 ```javascript
 function run(){
@@ -24,22 +24,22 @@ function run(){
 An expectation is a nice assertion DSL that TestBox exposes so you can pretty much read what should happen in the testing scenario. A spec will pass if all expectations pass. A spec with one or more expectations that fail will fail the entire spec.
 
 {% hint style="success" %}
-The `it()` function is also aliased as `then()`
+The `it()` function is also aliased as `then()` - except `it()` has `title` when `then()` uses `then` instead
 {% endhint %}
 
 ### Arguments
 
-| Argument | Required | Default | Type | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| title | true | --- | string | the title of the spec |
-| body | true | --- | closure/udf | The closure that represents the spec |
-| labels | false | --- | string/array | The list or array of labels this suite group belongs to |
-| skip | false | false | Boolean | A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean. |
-| data | false | `{}` | struct | A struct of data you can bind the spec with so you can use within the `body` closure |
+| Argument | Required | Default | Type         | Description                                                                                                                        |
+| -------- | -------- | ------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| title    | true     | ---     | string       | the title of the spec                                                                                                              |
+| body     | true     | ---     | closure/udf  | The closure that represents the spec                                                                                               |
+| labels   | false    | ---     | string/array | The list or array of labels this suite group belongs to                                                                            |
+| skip     | false    | false   | Boolean      | A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean. |
+| data     | false    | `{}`    | struct       | A struct of data you can bind the spec with so you can use within the `body` closure                                               |
 
 ## They are closures Ma!
 
-Since the implementations of the `describe()` and `it()` functions are closures, they can contain executable code that is necessary to implement the test. All CFML rules of scoping apply to [closures](http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d31851842acbba1353e848b35-8000.html), so please remember them. We recommend always using the `variables` scope for easy access and distinction.
+Since the implementations of the `describe()` and `it()` functions are closures, they can contain executable code that is necessary to implement the test. All CFML rules of scoping apply to [closures](http://help.adobe.com/en\_US/ColdFusion/10.0/Developing/WSe61e35da8d31851842acbba1353e848b35-8000.html), so please remember them. We recommend always using the `variables` scope for easy access and distinction.
 
 ```javascript
 function run(){
@@ -92,3 +92,6 @@ for( var filePath in files ){
 }
 ```
 
+{% hint style="warning" %}
+When using the `then()` function instead of `it()` the title argument name is `then` instead of `title` for the `it()` function
+{% endhint %}

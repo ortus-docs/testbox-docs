@@ -15,7 +15,7 @@
 * Idea of CI pipelines
   * Pipelines composed of jobs executed in stages
   * Jobs can have dependencies, artifacts, services, etc
-  * Schedule Pipelines \(Cron\)
+  * Schedule Pipelines (Cron)
   * Jobs can track environments
 * Great stats + charting
 
@@ -49,7 +49,7 @@ run_tests:
       - box testbox run
 ```
 
-The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox. We then have a few stages \(build,test,deploy\), but let's focus on the `run_tests` job.
+The build file above leverages the `ortussolutions/commandbox:alpine` image, which is a compact and secure image for CommandBox. We then have a few stages (build,test,deploy), but let's focus on the `run_tests` job.
 
 ```yaml
 run_tests:
@@ -68,7 +68,7 @@ In our script we basically install our dependencies for our project using Comman
 
 ### Box.json
 
-In order for the `box testbox run` to execute correctly, our `box.json` \(See [https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html](https://commandbox.ortusbooks.com/content/packages/boxjson/boxjson.html)\) in our project must be able to connect to our server and know which tests to execute. Below are all the possiblities for the `testbox` integration object in CommandBox's `box.json`. \(See [https://commandbox.ortusbooks.com/content/testbox-integration.html](https://commandbox.ortusbooks.com/content/testbox-integration.html)\)
+In order for the `box testbox run` to execute correctly, our `box.json` in our project must be able to connect to our server and know which tests to execute. Below are all the possiblities for the `testbox` integration object in CommandBox's `box.json`. (See [the CommandBox docs for box.json](https://commandbox.ortusbooks.com/package-management/box.json/testbox#testbox.runner) for more details.)
 
 ```javascript
 {
@@ -117,4 +117,3 @@ In order for the `box testbox run` to execute correctly, our `box.json` \(See [h
 ## Online Example: cbVue
 
 You can look at our `cbVue` sample application online: [https://gitlab.com/lmajano/cbvue](https://gitlab.com/lmajano/cbvue) which contains all CI server integrations.
-

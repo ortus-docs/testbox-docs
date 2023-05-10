@@ -2,7 +2,7 @@
 
 ## Building Reporters
 
-You can also build your own reporters by implementing our core class: `testbox.system.reporters.IReport`
+You can also build your own reporters by implementing our core interface: `testbox.system.reporters.IReport`
 
 ```javascript
 interface{
@@ -81,4 +81,3 @@ component{
 
 }
 ```
-

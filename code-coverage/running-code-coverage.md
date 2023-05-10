@@ -25,7 +25,7 @@ install testbox --saveDev
 
 The `--saveDev` flag will store TestBox as a development dependency.
 
-To update a previous installation of TestBox 2.x to the latest, you will need to explicitly ask for 3.x. Please note 3.x may have some breaking changes from 2.x and support different CF engines, so please review the [release notes](../intro/release-history/whats-new-with-3.0.0.md) first.
+To update a previous installation of TestBox 2.x to the latest, you will need to explicitly ask for 3.x. Please note 3.x may have some breaking changes from 2.x and support different CF engines, so please review the [release notes](../intro/release-history/whats-new-with-4.0.0.md) first.
 
 ```bash
 install testbox@3
@@ -42,7 +42,7 @@ server start
 
 Inside your directory will be a folder called `/tests` which has our test runner `/tests/runner.cfm`. You will need to open your runner.cfm and default code coverage enabled to true.
 
-```text
+```
 <!--- Code Coverage requires FusionReactor --->
 <cfparam name="url.coverageEnabled"    default="true">
 ```
@@ -51,9 +51,8 @@ Inside your directory will be a folder called `/tests` which has our test runner
 
 All you need to do now is run your test suite. You can do so by hitting `/tests/runner.cfm` in the URL of your browser, or use the `testbox run` command in CommandBox.
 
-You don't need to configure anything for code coverage to work. TestBox will auto-detect if FusionReactor is installed on your server and will generate the code coverage results for you. In the output of your test reporter, you will see a percentage to represents the number of lines of code \(LOC\) which were executed divided by the total number of lines of code. Note, code coverage only counts executable lines of code against you, so comments, whitespace, or HTML do not count as an executable LOC.
+You don't need to configure anything for code coverage to work. TestBox will auto-detect if FusionReactor is installed on your server and will generate the code coverage results for you. In the output of your test reporter, you will see a percentage to represents the number of lines of code (LOC) which were executed divided by the total number of lines of code. Note, code coverage only counts executable lines of code against you, so comments, whitespace, or HTML do not count as an executable LOC.
 
 Keep reading in the next section to find out how to configure the details of code coverage to only look at the files you want and also how to generate the Code Coverage Browser.
 
 ![](../.gitbook/assets/testbox-codecoverage-overview.png)
-

@@ -10,7 +10,7 @@ In addition to the life-cycle methods, you can make any method a life-cycle meth
 
 Below are several examples using script notation.
 
-**DBTestCase.cfc \(parent class\)**
+**DBTestCase.cfc (parent class)**
 
 ```javascript
 component extends="coldbox.system.testing.BaseTestCase"{
@@ -66,5 +66,6 @@ component extends="DBTestCase"{
 
 This also helps parent classes enforce their setup methods are called by annotating the methods with `@beforeAll`. No more forgetting to call `super.beforeAll()`!
 
-> **Info**: You can have as many annotated methods as you would like. TestBox discovers them up the inheritance chain and calls them in reverse order.
-
+{% hint style="info" %}
+You can have as many annotated methods as you would like. TestBox discovers them up the inheritance chain and calls them in reverse order.
+{% endhint %}

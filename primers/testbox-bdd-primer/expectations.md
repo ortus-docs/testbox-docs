@@ -30,7 +30,7 @@ function run(){
 
 ### Included Matchers
 
-TestBox has a plethora \(That's Right! I said [Plethora](http://www.merriam-webster.com/dictionary/plethora)\) of matchers that are included in TestBox. The best way to see all the latest matchers is to visit our [API](http://apidocs.ortussolutions.com/testbox/current) and digest the `testbox.system.Expectation` class. There is also the ability to register and write custom matchers in TestBox via our `addMatchers()` function at runtime.
+TestBox has a plethora (That's Right! I said [Plethora](http://www.merriam-webster.com/dictionary/plethora)) of matchers that are included in TestBox. The best way to see all the latest matchers is to visit our [API](http://apidocs.ortussolutions.com/testbox/current) and digest the `testbox.system.Expectation` class. There is also the ability to register and write custom matchers in TestBox via our `addMatchers()` function at runtime.
 
 ```javascript
 describe("Some Included TestBox Matchers:", function() {
@@ -87,9 +87,9 @@ describe("Some Included TestBox Matchers:", function() {
           message = 'foo man choo';
 
           expect( message )
-               .toMatch( '^FOO' )
-               .toMatch( '(MAN)' )
-               .notToMatch( 'SuperMan' );
+               .toMatchNoCase( '^FOO' )
+               .toMatchNoCase( '(MAN)' )
+               .notToMatchNoCase( 'SuperMan' );
      });
 
      describe("The 'toBeTypeOf' matcher evaluates using the CF isValid() function", function() {
@@ -144,4 +144,3 @@ describe("Some Included TestBox Matchers:", function() {
 ### Custom Matchers
 
 You can also build and register custom matchers. Please visit the Custom Matchers chapter to read more about [custom matchers](../../in-depth/expectations/custom-matchers.md).
-
