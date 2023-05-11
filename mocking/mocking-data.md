@@ -1,3 +1,7 @@
+---
+description: Mock anything!
+---
+
 # Mocking Data
 
 ## Introduction

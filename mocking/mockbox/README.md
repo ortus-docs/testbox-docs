@@ -1,3 +1,7 @@
+---
+description: Create mocks and stubs!
+---
+
 # MockBox
 
 ![MockBox](../../.gitbook/assets/MockBox\_300.png)

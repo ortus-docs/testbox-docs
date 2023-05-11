@@ -20,20 +20,6 @@ Please note the `--saveDev` flag which tells CommandBox that TestBox is a develo
 
 This will install TestBox in a _`/testbox`_ folder from where you called the command.
 
-## Manual Installation
-
-You can also download TestBox from [https://www.forgebox.io/view/testbox#versions](https://www.forgebox.io/view/testbox#versions). Extract the downloaded zip and place it anywhere you like. You can either create a mapping called \_`/testbox`\_that points to **testbox** in the distribution folder, which is the most secure approach, or you can just place it in the webroot if you like. You can also create an application-level mapping:
-
-```javascript
-this.mappings[ "/testbox" ] = expandPath( "C:/frameworks/testbox/" );
-```
-
-You could also clone Testbox from [Github](https://github.com/ortus-solutions/testbox) and help us out:
-
-```javascript
-git clone git://github.com/ortus-solutions/testbox testbox
-```
-
 ## Generating a testing harness
 
 Once you have testbox installed, you'll need a quick way to set up a testing harness. The `generate harness` command will add a new `/tests` folder to your application with a few example tests to get you started.
@@ -45,13 +31,12 @@ box testbox generate harness
 ## System Requirements
 
 * Lucee 5.x+&#x20;
-* ColdFusion 2016+
+* ColdFusion 2018+
 
 ## What's Included
 
 The download structure includes:
 
-* **apidocs** : The API docs for TestBox
 * **system** : The main system framework folder
 * **test-browser** : This is a little utility to facilitate navigating big testing suites. This helps navigate to the suites you want and execute them instead of typing all the time.
 * **test-harness** : A simplified version of the TestBox runner that can be placed anywhere in your application. It includes an ANT build that allows you to execute your tests and produce results via ANT and also JUnit compliant reports via the junitreport task.
