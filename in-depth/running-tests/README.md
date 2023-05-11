@@ -14,6 +14,9 @@ testbox.runRemote()
 
 // Run via Spec URL
 http://localhost/tests/spec.cfc?method=runRemote
+
+// Via CommandBox
+testbox run
 ```
 
 > We encourage you to read the [API docs](http://apidocs.ortussolutions.com/testbox/current) included in the distribution for the complete parameters for each method.

@@ -20,12 +20,26 @@ Please note the `--saveDev` flag which tells CommandBox that TestBox is a develo
 
 This will install TestBox in a _`/testbox`_ folder from where you called the command.
 
+## CLI Installation
+
+TestBox comes with its own CLI for CommandBox.  You can use it to generate tests, harnesses, and suites and also run executions from the CLI.
+
+```bash
+install testbox-cli
+```
+
+You will now have the `testbox namesapce available to you, try it out`
+
+```bash
+testbox help
+```
+
 ## Generating a testing harness
 
 Once you have testbox installed, you'll need a quick way to set up a testing harness. The `generate harness` command will add a new `/tests` folder to your application with a few example tests to get you started.
 
 ```bash
-box testbox generate harness
+testbox generate harness
 ```
 
 ## System Requirements
