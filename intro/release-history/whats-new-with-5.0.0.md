@@ -50,7 +50,9 @@ void function doSomething(foo){
 
 ```cfscript
 function test_it(){
-  local.mocked = createMock( "com.foo. collaborator" );
+  local.mocked = createMock( "com.foo. collaborator" )
+    .$spy( "callMe" )
+    .$spy( "whatever" );
   variables.CUT.$property( "collaborator", "variables", local.mocked );
   assertEquals( 1, local.mocked.$count( "callMe" ) );
   assertEquals( 1, local.mocked.$count( "whatever" ) );
