@@ -33,3 +33,16 @@ component displayName="TestBox xUnit suite" skip="testEnv"{
 
 }
 ```
+
+## $assert.skip()
+
+You can use the `$assert.skip( message, detail )` method to skip any spec or suite a-la-carte instead of as an argument to the function definitions.  This lets you programmatically skip certain specs and suites and pass a nice message.
+
+```cfscript
+function testThrows(){
+     $assert.skip();
+     $assert.throws(function(){
+          var hello = application.wirebox.getInstance( "myINvalidService" ).run();
+     });
+}
+```

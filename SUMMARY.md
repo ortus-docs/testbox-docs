@@ -17,6 +17,7 @@
 
 ## Primers
 
+* [Testing Styles](primers/testing-styles.md)
 * [TestBox BDD Primer](primers/testbox-bdd-primer/README.md)
   * [Bundles: Group Your Tests](primers/testbox-bdd-primer/bundles-group-your-tests.md)
   * [Suites: Describe Your Tests](primers/testbox-bdd-primer/suites-describe-your-tests/README.md)
@@ -49,7 +50,6 @@
 
 ## In-Depth
 
-* [Testing Styles](in-depth/testing-styles.md)
 * [Test Bundles](in-depth/test-bundles/README.md)
   * [Optional Inheritance](in-depth/test-bundles/optional-inheritance.md)
   * [Injected Variables](in-depth/test-bundles/injected-variables.md)
