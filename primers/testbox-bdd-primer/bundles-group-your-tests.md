@@ -1,6 +1,6 @@
 # Bundles: Group Your Tests
 
-TestBox relies on the fact of creating **testing bundles** which are basically CFCs. A bundle CFC will hold all the **suites** and **specs** a TestBox runner will execute and produce reports on.  Don't worry, we will cover what's a suite and a spec as well.
+TestBox relies on the fact of creating **testing bundles** which are basically CFCs. A bundle CFC will hold all the **suites** and **specs** a TestBox runner will execute and produce reports on.  Don't worry, we will cover what's a suite and a spec as well.  Usually they will have a name that ends with `*Spec` or `*Test.`
 
 {% code title="tests/specs/MySpec.cfc" %}
 ```javascript

@@ -74,7 +74,6 @@
   * [Directory Runner](in-depth/running-tests/directory-runner.md)
   * [HTTP Test Runner](in-depth/running-tests/test-runner.md)
   * [CommandBox Runner](in-depth/running-tests/commandbox-runner.md)
-  * [SOAP Runner](in-depth/running-tests/soap-runner.md)
   * [ANT Runner](in-depth/running-tests/ant-runner.md)
   * [NodeJS Runner](in-depth/running-tests/nodejs-runner.md)
   * [Global Runner](in-depth/running-tests/global-runner.md)
