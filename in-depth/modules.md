@@ -4,7 +4,11 @@ description: Extend TestBox your way!
 
 # Modules
 
-TestBox supports the concepts of modules just like how ColdBox has modules.  They are self-contained packages that can extend the functionality of TestBox.  They can listen to test creations, errors, failures, skippings and much more.
+TestBox supports the concepts of modules just like how ColdBox has modules.  They are self-contained packages that can extend the functionality of TestBox.  They can listen to test creations, errors, failures, skippings and much more.  To get started you can use the TestBox CLI to generate a module for you:
+
+```bash
+testbox generate module MyModule
+```
 
 ### Module Layout
 
