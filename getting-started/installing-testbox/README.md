@@ -1,10 +1,8 @@
 # Installation
 
-TestBox can be installed easily via [CommandBox CLI](https://www.ortussolutions.com/products/commandbox) or by your manually implementing it.
+TestBox can be installed easily via [CommandBox CLI](https://www.ortussolutions.com/products/commandbox)
 
-## Commandbox installation
-
-CommandBox is our preferred approach for all package installations, updates and more.
+## CommandBox installation
 
 ```bash
 // latest stable version
@@ -15,12 +13,16 @@ box install testbox@be --saveDev
 ```
 
 {% hint style="info" %}
-Please note the `--saveDev` flag which tells CommandBox that TestBox is a development dependency and not a production dependency.
+Please note the `--saveDev` flag, which tells CommandBox that TestBox is a development dependency and not a production dependency.
+{% endhint %}
+
+{% hint style="danger" %}
+DO NOT USE TESTBOX IN PRODUCTION.
 {% endhint %}
 
 This will install TestBox in a _`/testbox`_ folder from where you called the command.
 
-## CLI Installation
+## TestBox CLI
 
 TestBox comes with its own CLI for CommandBox.  You can use it to generate tests, harnesses, and suites and also run executions from the CLI.
 
@@ -34,9 +36,9 @@ You will now have the `testbox namesapce available to you, try it out`
 testbox help
 ```
 
-## Generating a testing harness
+## Generating a Testing Harness
 
-Once you have testbox installed, you'll need a quick way to set up a testing harness. The `generate harness` command will add a new `/tests` folder to your application with a few example tests to get you started.
+Once you have TestBox installed, you'll need a quick way to set up a testing harness. The `generate harness` command will add a new `/tests` folder to your application with a few example tests to get you started.
 
 ```bash
 testbox generate harness
@@ -48,8 +50,6 @@ testbox generate harness
 * ColdFusion 2018+
 
 ## What's Included
-
-The download structure includes:
 
 * **system** : The main system framework folder
 * **test-browser** : This is a little utility to facilitate navigating big testing suites. This helps navigate to the suites you want and execute them instead of typing all the time.
