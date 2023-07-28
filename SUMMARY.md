@@ -81,6 +81,7 @@
 * [Reporters](in-depth/reporters/README.md)
   * [Custom Reporters](in-depth/reporters/custom-reporters.md)
 * [MXUnit Compatibility](in-depth/mxunit-compatibility.md)
+* [Modules](in-depth/modules.md)
 
 ## Mocking
 
