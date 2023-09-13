@@ -2,7 +2,15 @@
 description: August 1, 2023
 ---
 
-# What's New With 5.3.0
+# What's New With 5.3.x
+
+## 5.3.1 - September 13, 2023
+
+### Fixed
+
+* The variable `thisSuite` isn't defined if the for loop in the try/catch is never reached before the error. ([#150](https://github.com/Ortus-Solutions/TestBox/pull/150))
+
+## 5.3.0 - August 1, 2023
 
 ### New Features
 
