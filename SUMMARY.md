@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
   * [Release History](readme/release-history/README.md)
+    * [What's New With 6.5.0](readme/release-history/whats-new-with-6.5.0.md)
+    * [What's New With 6.4.0](readme/release-history/whats-new-with-6.4.0.md)
     * [What's New With 6.3.0](readme/release-history/whats-new-with-6.3.0.md)
     * [What's New With 6.2.1](readme/release-history/whats-new-with-6.2.1.md)
     * [What's New With 6.2.0](readme/release-history/whats-new-with-6.2.0.md)
