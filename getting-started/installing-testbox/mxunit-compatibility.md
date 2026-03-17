@@ -7,6 +7,12 @@ metaLinks:
       https://app.gitbook.com/s/06sPF32m7jrKRFAXmFkA/getting-started/installing-testbox/mxunit-compatibility
 ---
 
+{% hint style="danger" %}
+
+Please note that this compatibility is now DEPRECATED and will be removed in a future release. We recommend migrating your tests to TestBox's native xUnit or BDD styles as soon as possible.
+
+{% endhint %}
+
 # MXUnit Compatibility
 
 TestBox is fully compliant with [MXUnit](http://mxunit.org/) xUnit test cases. In order to leverage it you will need to create or override the `/mxunit` mapping and make it point to the `/testbox/system/compat` folder. That's it, everything should continue to work as expected.

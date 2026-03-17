@@ -12,6 +12,7 @@
 * [Installation](getting-started/installing-testbox/README.md)
   * [IDE Tools](getting-started/installing-testbox/ide-tools.md)
   * [MXUnit Compatibility](getting-started/installing-testbox/mxunit-compatibility.md)
+* [TestBox CLI](getting-started/testbox-cli.md)
 * [Writing Tests](getting-started/test-bundles.md)
 * [Running Tests](getting-started/running-tests/README.md)
   * [BoxLang CLI Runner](getting-started/running-tests/boxlang-cli-runner.md)
