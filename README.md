@@ -11,7 +11,10 @@ metaLinks:
 
 # Introduction
 
+
 ## TestBox BDD v7.x
+
+![alt text](.gitbook/assets/testbox-logo-full-dark-M.png)
 
 **TestBox** is a next-generation testing framework for the [BoxLang](https://www.boxlang.io) JVM language and ColdFusion (CFML) based on [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) (Behavior Driven Development) for providing a clean, obvious syntax for writing tests. It contains not only a testing framework, console/web runner, assertions, and expectations library but also ships with MockBox, A mocking and stubbing companion.&#x20;
 
@@ -128,7 +131,7 @@ component{
 {% endtab %}
 {% endtabs %}
 
-<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption><p>Runner</p></figcaption></figure>
+<figure><img src=".gitbook/assets/testbox-suite-run.gif" alt=""><figcaption><p>Runner</p></figcaption></figure>
 
 ### Features At A Glance
 
