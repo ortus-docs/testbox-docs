@@ -8,21 +8,15 @@ metaLinks:
 
 # CommandBox Runner
 
-By installing the CommandBox [TestBox CLI](../installing-testbox/) you can get access to our CommandBox runner.  The CommandBox runner leverages the HTTP(s) protocol to test against any server.  By default it will inspect your `box.json` for a `default` runner or try to connect to `/tests/runner.cfm` by default.&#x20;
-
-To see all the running options run the following in your CLI shell:
+By installing the CommandBox [TestBox CLI](../../getting-started/testbox-cli.md) you can access our CommandBox runner. The CommandBox runner leverages HTTP(S) to test against any running server. By default it reads your `box.json` for a `testbox.runner` entry, or falls back to `/tests/runner.cfm`.
 
 ```bash
-testbox run help
-
+testbox run
 testbox run directory="tests.specs" outputFormats="json,junit,html"
-
 testbox run runner="http://myremoteapp.com/tests/runner.cfm"
 ```
 
-It can also produce reports for you in JSON, HTML, and JUNIT.
-
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt="CommandBox runner output"><figcaption></figcaption></figure>
 
 ## Runner Options <a href="#default-runner-url" id="default-runner-url"></a>
 
@@ -98,7 +92,7 @@ testbox run default
 
 ## Watcher
 
-The CLI also comes with a code watcher and runner.  It will watch any paths for you, and if it detects any changes, it will run the tests you want.
+The CLI also comes with a code watcher and runner. It will watch any paths for you, and if it detects any changes, it will run the tests you want.
 
 ```bash
 testbox watch help
@@ -115,7 +109,7 @@ testbox watch
 You can also control what files to watch.
 
 ```bash
-testbox watch **.cfc
+testbox watch **.bx
 ```
 
 If you need more control over what tests run and their output, you can set additional options in your `box.json` which will be picked up automatically by `testbox run` when it fires.
@@ -125,9 +119,29 @@ package set testbox.verbose=false
 package set testbox.labels=foo
 package set testbox.testSuites=bar
 package set testbox.watchDelay=1000
-package set testbox.watchPaths=/models/**.cfc
+package set testbox.watchPaths=/models/**.bx
 ```
 
 This command will run in the foreground until you stop it. When you are ready to shut down the watcher, press `Ctrl+C`.
+
+## 🌊 Streaming (Real-Time Results)
+
+The `--streaming` flag taps into the new `StreamingRunner` to deliver each spec result to your terminal in real time via Server-Sent Events (SSE) — no waiting for the full suite to finish.
+
+<figure><img src="../../.gitbook/assets/testbox-cli-streaming-runner.gif" alt="CLI streaming runner real-time output"><figcaption></figcaption></figure>
+
+```bash
+testbox run --streaming
+```
+
+Pair with `--verbose` to include all passing specs in the live feed (by default only failures and skipped specs persist after the run):
+
+```bash
+testbox run --streaming --verbose
+```
+
+{% hint style="info" %}
+Streaming works best with BoxLang, but can be used with CFML engines that support SSE as well. See [Streaming Runner](streaming-runner.md) for the underlying API.
+{% endhint %}
 
 [<br>](https://commandbox.ortusbooks.com/testbox-integration/test-runner)

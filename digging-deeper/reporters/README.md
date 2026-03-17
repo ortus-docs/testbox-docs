@@ -7,34 +7,64 @@ metaLinks:
 
 # Reporters
 
-TestBox comes also with a nice plethora of reporters:
+TestBox ships with a rich set of reporters for every use case:
 
-* `ANTJunit` : A specific variant of JUnit XML that works with the ANT junitreport task
-* `Codexwiki` : Produces MediaWiki syntax for usage in Codex Wiki
-* `Console` : Sends report to console
-* `Doc` : Builds semantic HTML to produce nice documentation
-* `Dot` : Builds an awesome dot report
-* `JSON` : Builds a report into JSON
-* `JUnit` : Builds a JUnit compliant report
-* `Min` : A minimalistic view of your test reports
-* `MinText` : A minimalistic text report
-* `Raw` : Returns the raw structure representation of the testing results
-* `Simple` : A basic HTML reporter
-* `Tap` : A test anything protocol reporter
-* `Text` : Back to the 80's with an awesome text report
-* `XML` : Builds yet another XML testing report
+| Reporter | Description |
+|----------|-------------|
+| `ANTJunit` | JUnit XML variant compatible with the ANT `junitreport` task |
+| `Codexwiki` | MediaWiki syntax for use in Codex Wiki (DEPRECATED) |
+| `Console` | Sends the report to the console |
+| `Doc` | Semantic HTML for documentation-style output |
+| `Dot` | Compact dot-matrix report (DEPRECATED) |
+| `JSON` | Full JSON report of all results |
+| `JUnit` | Standard JUnit-compliant XML report |
+| `Min` | Minimalistic HTML view |
+| `MinText` | Minimalistic plain-text report |
+| `Raw` | Raw BoxLang/CFML struct representation of results |
+| `Simple` | Basic HTML reporter with editor link support |
+| `Tap` | Test Anything Protocol (TAP) output (DEPRECATED) |
+| `Text` | Full plain-text report |
+| `XML` | XML-based testing report |
 
-To use a specific reporter append the `reporter` variable to the `url` string. ex `&reporter=Text` or set it in your `runner.cfm`
+To use a specific reporter, append `reporter` to your runner URL, e.g. `&reporter=Text`, or set it in your `runner.bxm` / `runner.cfm`.
 
-## Open In Editor (Simple)
+## `ConsoleReporter` — Hiding Skipped Tests
 
-The `simple` reporter allows you to set a code editor of choice so it can create links for stack traces and tag contexts. It will then open your exceptions and traces in the right editor at the right line number.
+The `ConsoleReporter` now accepts a `hideSkipped` option (default `false`) that suppresses skipped spec output — useful when you have many pending specs and want cleaner terminal output.
+
+```javascript
+var testbox = new testbox.system.TestBox(
+    bundles  = "tests.specs",
+    reporter = {
+        type    : "testbox.system.reports.ConsoleReporter",
+        options : { hideSkipped : true }
+    }
+);
+```
+
+When using the BoxLang CLI runner, pass `--show-skipped=false` instead:
+
+```bash
+./testbox/run --show-skipped=false
+```
+
+## `StreamingReporter` — Real-Time SSE Output 🆕
+
+The new `StreamingReporter` (backed by `StreamingRunner`) pushes each spec result to the client in real time via Server-Sent Events. It powers both the [TestBox RUN IDE](../../getting-started/running-tests/testbox-run-ide.md) and the `testbox run --streaming` command.
+
+{% content-ref url="../../getting-started/running-tests/streaming-runner.md" %}
+[streaming-runner.md](../../getting-started/running-tests/streaming-runner.md)
+{% endcontent-ref %}
+
+## Open In Editor (Simple Reporter)
+
+The `simple` reporter allows you to set a code editor of choice so it creates clickable links for stack traces and tag contexts — opening exceptions in your editor at the exact line.
 
 {% hint style="info" %}
-The default editor is `vscode`
+The default editor is `vscode`.
 {% endhint %}
 
-To change the editor of choice use the `url.editor` parameter which you can send in via the url or set it in your `runner.cfm`
+Use the `url.editor` parameter in the URL or set it in your `runner.cfm`:
 
 ```markup
 <cfsetting showDebugOutput="false">
@@ -60,8 +90,6 @@ To change the editor of choice use the `url.editor` parameter which you can send
 
 ### Available Editors
 
-The available editors are:
-
 * atom
 * emacs
 * espresso
@@ -72,7 +100,7 @@ The available editors are:
 * vscode
 * vscode-insiders
 
-## `Images`
+## Reporter Screenshots
 
 ![](../../.gitbook/assets/testbox-sc-dots.png)
 

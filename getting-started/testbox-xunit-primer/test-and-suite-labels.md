@@ -7,7 +7,7 @@ metaLinks:
 
 # Test and Suite Labels
 
-Tests and suites can be tagged with TestBox labels. Labels allows you to further categorize different tests or suites so that when a runner executes with labels attached, only those tests and suites will be executed, the rest will be skipped. Labels can be applied globally to the component declaration of the test bundle suite or granularly at the test method declaration.
+Tests and suites can be tagged with TestBox labels. Labels allow you to further categorize different tests or suites so that when a runner executes with labels attached, only those tests and suites will be executed; the rest will be skipped. Labels can be applied globally to the component declaration of the test bundle suite or granularly at the test method declaration.
 
 ```javascript
 component displayName="TestBox xUnit suite" labels="railo,stg,dev"{
@@ -39,4 +39,36 @@ component displayName="TestBox xUnit suite" labels="railo,stg,dev"{
      }
 
 }
+```
+
+## Direct Suite Name Matching
+
+When using the `testSuites` filter (via a runner, the CLI, or `TestBox` directly), TestBox performs **direct suite name matching** at any nesting depth. This means if a suite's name exactly matches the filter value it will always be included — regardless of how deeply it is nested.
+
+```javascript
+// This suite will always be included when testSuites="My xUnit Suite"
+component displayName="My xUnit Suite" {
+
+     function testSomething(){
+          $assert.isTrue( true );
+     }
+}
+```
+
+Targeting by name from the various runners:
+
+```bash
+# BoxLang CLI runner
+./testbox/run --filter-suites="My xUnit Suite"
+
+# CommandBox CLI runner
+testbox run testSuites="My xUnit Suite"
+```
+
+```javascript
+// Programmatically via TestBox
+new testbox.system.TestBox(
+    bundles    = "tests.specs",
+    testSuites = "My xUnit Suite"
+).run();
 ```

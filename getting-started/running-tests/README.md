@@ -9,15 +9,18 @@ metaLinks:
 
 # Running Tests
 
-TestBox tests can be run from different sources from what we call **Runners.**  These can be from different sources:
+TestBox tests can be run from different sources from what we call **Runners.** These can be from different sources:
 
 * CLI
   * TestBox CLI (Powered by CommandBox)
   * BoxLang Scripts
   * NodeJS
-* Web Server
-  * Runner
+* Web Server / Browser
+  * Web Runner
   * TestBundle Directly
+  * **TestBox RUN IDE** (BoxLang-native browser IDE) 🆕
+* Streaming (Real-Time)
+  * **StreamingRunner** via SSE 🆕
 * Custom
 
 Your test harness already includes the web runner: `runner.bx or runner.cfm`.  You can execute that directly in your browser to get the results or run it via the CLI: `testbox run`.  We invite you to explore the different runners available to you.
@@ -52,6 +55,14 @@ Your test harness already includes the web runner: `runner.bx or runner.cfm`.  Y
 
 {% content-ref url="test-browser.md" %}
 [test-browser.md](test-browser.md)
+{% endcontent-ref %}
+
+{% content-ref url="testbox-run-ide.md" %}
+[testbox-run-ide.md](testbox-run-ide.md)
+{% endcontent-ref %}
+
+{% content-ref url="streaming-runner.md" %}
+[streaming-runner.md](streaming-runner.md)
 {% endcontent-ref %}
 
 ### Custom Runners

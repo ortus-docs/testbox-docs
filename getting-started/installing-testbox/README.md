@@ -36,11 +36,23 @@ The only requirement is that it be in either in the webroot or in a location whe
 
 ### System Requirements
 
-* <img src="../../.gitbook/assets/image (8).png" alt="" data-size="line"> [BoxLang 1+](https://boxlang.io) Language (Our preference)
-* CFML Engines: Lucee 5.x+ or ColdFusion 2021+
+
+| Engine | Support |
+|--------|---------|
+| <img src="../../.gitbook/assets/image (8).png" alt="" data-size="line"> **BoxLang 1.x+** | ✅ **Preferred** |
+| Lucee 6.x | ✅ Supported |
+| Lucee 7.x | ✅ Supported (new in 7.0) |
+| Adobe ColdFusion 2023 | ✅ Supported (deprecated) |
+| Adobe ColdFusion 2025 | ✅ Supported |
+| Lucee 5.x | ⚠️ Deprecated — upgrade recommended |
+| Adobe ColdFusion 2021 | ❌ Dropped as of TestBox 7 |
 
 {% hint style="success" %}
-TestBox has been designed to work in the BoxLang language and can also be compatible in CFML languages.
+TestBox is designed first and foremost for [BoxLang](https://boxlang.io) and remains fully compatible with modern CFML engines.
+{% endhint %}
+
+{% hint style="warning" %}
+Adobe ColdFusion 2021 support has been **dropped** as of TestBox 7. Please upgrade to Adobe 2023+ or migrate to [BoxLang](https://boxlang.io).
 {% endhint %}
 
 ### What's Included
