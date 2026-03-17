@@ -10,6 +10,10 @@ metaLinks:
 
 In this section, you will find the release notes for each version we release under this major version.  If you are looking for the release notes of previous major versions, use the version switcher at the top left of this documentation book.  Here is a breakdown of our major version releases.
 
+## Version 7.x - March 2026
+
+In this release, we focused on BoxLang CLI runner enhancements, real-time streaming test execution via SSE, a powerful dry run capability for spec discovery, Lucee 7 certification, and dropping Adobe 2021 support.  Developers gain a wealth of new output-control and performance-analysis options directly from the CLI runner.
+
 ## Version 6.x - September 2024
 
 In this release, we have dropped more legacy engines and added full support for not only running TestBox in [BoxLang](https://www.boxlang.io/), but writing every spec in [BoxLang](https://www.boxlang.io/).  We have added tons of bug fixes and major improvements but also a great CLI runner for BoxLang.

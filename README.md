@@ -13,8 +13,6 @@ metaLinks:
 
 ## TestBox BDD v6.x
 
-<figure><picture><source srcset=".gitbook/assets/testbox-6-light.jpg" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/testbox-6-dark.jpg" alt="" width="563"></picture><figcaption></figcaption></figure>
-
 **TestBox** is a next-generation testing framework for the [BoxLang](https://www.boxlang.io) JVM language and ColdFusion (CFML) based on [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) (Behavior Driven Development) for providing a clean, obvious syntax for writing tests. It contains not only a testing framework, console/web runner, assertions, and expectations library but also ships with MockBox, A mocking and stubbing companion.&#x20;
 
 {% tabs %}
@@ -24,16 +22,16 @@ class{
 
   function run(){
   	describe( "My calculator features", () => {
-	
+
 		beforeEach( () => {
 			variables.calc = new Calculator()
 		} )
-			
+
 		// Using expectations library
 		it( "can add", () => {
 			expect( calc.add(1,1) ).toBe( 2 )
 		} )
-		
+
 		// Using assert library
 		test( "it can multiply", () => {
 			assertIsEqual( calc.multiply(2,2), 4 )
@@ -53,17 +51,17 @@ class{
 class{
 
 	property calc;
-	
+
 	function setup(){
 	    calc = new Calculator()
 	}
-	
+
 	// Function name includes the word 'test'
 	// Using expectations library
 	function testAdd(){
 	    expect( calc.add(1,1) ).toBe( 2 )
 	}
-		
+
 	// Any name, but with a test annotation
 	// Using assertions library
 	@test
@@ -80,16 +78,16 @@ component{
 
   function run(){
   	describe( "My calculator features", () => {
-	
+
 		beforeEach( () => {
 			variables.calc = new Calculator()
 		} );
-			
+
 		// Using expectations library
 		it( "can add", () => {
 			expect( calc.add(1,1) ).toBe( 2 )
 		} );
-		
+
 		// Using assert library
 		test( "it can multiply", () => {
 			$assert.isEqual( calc.multiply(2,2), 4 )
@@ -107,19 +105,19 @@ component{
  * My calculator features
  */
 component{
-	
+
 	property calc;
-	
+
 	function setup(){
 	    calc = new Calculator()
 	}
-	
+
 	// Function name includes the word 'test'
 	// Using expectations library
 	function testAdd(){
 	    expect( calc.add(1,1) ).toBe( 2 )
 	}
-		
+
 	// Any name, but with a test annotation
 	// Using assertions library
 	function itCanMultiply() test{
