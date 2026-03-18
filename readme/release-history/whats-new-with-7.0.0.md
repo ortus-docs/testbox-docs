@@ -152,7 +152,7 @@ The BoxLang CLI runner also gains a `--dry-run` flag that performs the same disc
 ![alt text](../../.gitbook/assets/testbox-boxlang-dryrun.gif)
 
 ```bash
-./testbox/bin/run --dry-run
+./testbox/run --dry-run
 ```
 
 The output lists every suite and spec that would be executed, along with their labels and any skip reasons — perfect for CI pipeline auditing and test inventory reporting.
@@ -162,8 +162,8 @@ The output lists every suite and spec that would be executed, along with their l
 Pass `--dry-run=json` to receive the full discovery payload as raw JSON instead of the formatted text output.  This is ideal for programmatic consumption — CI tools, custom reporters, or any external script that needs to process the test inventory:
 
 ```bash
-./testbox/bin/run --dry-run=json
-./testbox/bin/run --dry-run=json --bundles=tests.specs.MySpec | jq .
+./testbox/run --dry-run=json
+./testbox/run --dry-run=json --bundles=tests.specs.MySpec | jq .
 ```
 
 {% hint style="success" %}
@@ -198,8 +198,8 @@ component {
 The BoxLang CLI runner gains a `--stream` flag that activates real-time output of test results as they execute rather than buffering until completion:
 
 ```bash
-./testbox/bin/run --stream
-./testbox/bin/run --directory=tests.specs --stream
+./testbox/run --stream
+./testbox/run --directory=tests.specs --stream
 ```
 
 {% hint style="info" %}
@@ -215,7 +215,7 @@ The BoxLang CLI runner has received a significant set of new options that give y
 Focus your terminal output exclusively on failures and errors, suppressing all passing and skipped specs:
 
 ```bash
-./testbox/bin/run --show-failed-only
+./testbox/run --show-failed-only
 ```
 
 ### `--stacktrace` Control (TESTBOX-445)
@@ -223,8 +223,8 @@ Focus your terminal output exclusively on failures and errors, suppressing all p
 Choose how much stack trace detail is shown for failures and exceptions.  The default is `short` to keep output readable:
 
 ```bash
-./testbox/bin/run --stacktrace=short   # default: condensed first frame
-./testbox/bin/run --stacktrace=full    # complete Java/BoxLang stack trace
+./testbox/run --stacktrace=short   # default: condensed first frame
+./testbox/run --stacktrace=full    # complete Java/BoxLang stack trace
 ```
 
 ### Output & Performance Options (TESTBOX-446)
@@ -233,25 +233,25 @@ A full suite of output-control and performance-analysis flags are now available:
 
 ```bash
 # Show or hide passing specs (default: true)
-./testbox/bin/run --show-passed=false
+./testbox/run --show-passed=false
 
 # Show or hide skipped specs (default: true)
-./testbox/bin/run --show-skipped=false
+./testbox/run --show-skipped=false
 
 # Abort the run after N failures
-./testbox/bin/run --max-failures=10
+./testbox/run --max-failures=10
 
 # Flag any spec that takes longer than N milliseconds as slow
-./testbox/bin/run --slow-threshold-ms=500
+./testbox/run --slow-threshold-ms=500
 
 # Print a summary of the N slowest specs at the end of the run
-./testbox/bin/run --top-slowest=5
+./testbox/run --top-slowest=5
 ```
 
 Combining these gives you a clean, focused workflow:
 
 ```bash
-./testbox/bin/run --show-failed-only --stacktrace=short --max-failures=5 --top-slowest=3
+./testbox/run --show-failed-only --stacktrace=short --max-failures=5 --top-slowest=3
 ```
 
 ### Application Mappings Auto-Load (TESTBOX-440)
@@ -305,7 +305,7 @@ This makes granular suite targeting far more reliable from all runners:
 
 ```bash
 # Via CLI runner
-./testbox/bin/run --testSuites="My Integration Suite"
+./testbox/run --testSuites="My Integration Suite"
 
 # Via TestBox directly
 new testbox.system.TestBox(
