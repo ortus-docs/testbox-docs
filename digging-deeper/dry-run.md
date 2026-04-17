@@ -1,6 +1,6 @@
 ---
 description: Discover your test specs and suites without executing any test code — explore what would run before it runs.
-icon: search
+icon: glasses
 metaLinks:
   alternates:
     - >-

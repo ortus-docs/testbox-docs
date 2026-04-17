@@ -71,14 +71,14 @@
   * [Custom Reporters](digging-deeper/reporters/custom-reporters.md)
 * [Modules](digging-deeper/modules.md)
 * [Dry Run & Spec Discovery](digging-deeper/dry-run.md)
-* [Code Coverage](digging-deeper/introduction/README.md)
-  * [Running Code Coverage](digging-deeper/introduction/running-code-coverage.md)
-  * [Configuring Code Coverage](digging-deeper/introduction/configuring-code-coverage.md)
-  * [Known Behaviors](digging-deeper/introduction/known-issues.md)
-* [Continous Integration](digging-deeper/introduction-1/README.md)
-  * [Github Actions](digging-deeper/introduction-1/github-actions.md)
-  * [Gitlab](digging-deeper/introduction-1/gitlab.md)
-  * [Travis](digging-deeper/introduction-1/travis.md)
+* [Code Coverage](digging-deeper/code-coverage/README.md)
+  * [Running Code Coverage](digging-deeper/code-coverage/running-code-coverage.md)
+  * [Configuring Code Coverage](digging-deeper/code-coverage/configuring-code-coverage.md)
+  * [Known Behaviors](digging-deeper/code-coverage/known-issues.md)
+* [Continous Integration](digging-deeper/ci/README.md)
+  * [Github Actions](digging-deeper/ci/github-actions.md)
+  * [Gitlab](digging-deeper/ci/gitlab.md)
+  * [Travis](digging-deeper/ci/travis.md)
 
 ## Mocking
 
