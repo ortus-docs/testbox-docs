@@ -33,4 +33,90 @@ toBeGT( target, [message] ) : Assert that the actual value is greater than the t
 toBeGTE( target, [message] ) : Assert that the actual value is greater than or equal the target value
 toBeLT( target, [message] ) : Assert that the actual value is less than the target value
 toBeLTE( target, [message] ) : Assert that the actual value is less than or equal the target value
+toBeTruthy( [message] ) : Assert the value is truthy: not false, not zero, not an empty string, not null
+toBeFalsy( [message] ) : Assert the value is falsy: false, zero, an empty string or null
+toBeSameInstanceAs( expected, [message] ) : Assert both references point at the very same object instance, not merely equal values
+toHaveSize( expected, [message] ) : Assert the size of an array, struct, string or query. Alias of toHaveLength() reading more naturally for collections
+toThrowMatching( predicate, [message] ) : Assert an exception is thrown AND that it satisfies the passed closure/lambda predicate
+toIncludeAll( needles, [message] ) : Assert the target contains every one of the passed values
+toIncludeAny( needles, [message] ) : Assert the target contains at least one of the passed values
+toIncludeNone( needles, [message] ) : Assert the target contains none of the passed values
 ```
+
+{% hint style="info" %}
+Every matcher above has a negated counterpart via the [not operator](not-operator.md), for example `expect( x ).notToHaveSize( 3 )`.
+{% endhint %}
+
+## Truthiness: `toBeTruthy()` and `toBeFalsy()`
+
+`toBeTrue()` and `toBeFalse()` require an actual boolean. `toBeTruthy()` and `toBeFalsy()` are looser, and are useful when a function returns "something or nothing" rather than a strict boolean.
+
+```javascript
+expect( "hello" ).toBeTruthy();
+expect( [ 1, 2 ] ).toBeTruthy();
+expect( 1 ).toBeTruthy();
+
+expect( "" ).toBeFalsy();
+expect( 0 ).toBeFalsy();
+expect( [] ).toBeFalsy();
+```
+
+## Identity: `toBeSameInstanceAs()`
+
+`toBe()` compares values. `toBeSameInstanceAs()` compares identity, which is what you want when asserting that a singleton really is a singleton, or that a factory handed back the cached object rather than a fresh one.
+
+```javascript
+var a = getInstance( "UserService" );
+var b = getInstance( "UserService" );
+
+expect( a ).toBeSameInstanceAs( b );      // same object in memory
+expect( a ).notToBeSameInstanceAs( {} );
+```
+
+## Size: `toHaveSize()`
+
+Works on arrays, structs, strings and queries.
+
+```javascript
+expect( [ 1, 2, 3 ] ).toHaveSize( 3 );
+expect( { a : 1, b : 2 } ).toHaveSize( 2 );
+expect( "TestBox" ).toHaveSize( 7 );
+```
+
+## Exceptions: `toThrowMatching()`
+
+`toThrow()` matches on exception type and a message regex. `toThrowMatching()` hands you the exception so you can assert anything about it.
+
+```javascript
+expect( function(){
+    paymentService.charge( amount = -5 );
+} ).toThrowMatching( function( e ){
+    return e.type == "InvalidAmount" && e.detail contains "negative";
+} );
+```
+
+This is the escape hatch for exceptions whose interesting detail is not in the type or the message: a custom `extendedInfo` payload, an error code, a nested cause.
+
+## Collections: `toIncludeAll()`, `toIncludeAny()`, `toIncludeNone()`
+
+`toInclude()` checks for a single needle. These three check for several at once against arrays, lists and strings.
+
+```javascript
+expect( [ "admin", "editor", "viewer" ] ).toIncludeAll( [ "admin", "editor" ] );
+expect( [ "admin", "viewer" ] ).toIncludeAny( [ "admin", "superuser" ] );
+expect( [ "viewer" ] ).toIncludeNone( [ "admin", "superuser" ] );
+```
+
+Use `toIncludeNone()` to assert the absence of things that must never leak, which reads better than chaining several negated `toInclude()` calls:
+
+```javascript
+expect( serializedUser ).toIncludeNone( [ "password", "salt", "apiToken" ] );
+```
+
+## Specialized Matcher Families
+
+TestBox 7.1 adds three dedicated matcher families with their own pages:
+
+- [Set Expectations](set-expectations.md) for BoxLang `Set` objects
+- [Range Expectations](range-expectations.md) for BoxLang `Range` objects
+- [Data Navigator Expectations](data-navigator.md) for asserting against deeply nested structures by path

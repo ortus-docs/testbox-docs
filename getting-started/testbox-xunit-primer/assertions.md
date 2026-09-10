@@ -261,6 +261,24 @@ component displayName="TestBox xUnit suite for CF9" labels="railo,cf"{
 }
 ```
 
+## Grouped Assertions
+
+A failing assertion aborts the test method, so you only see the first failure per run. `assertAll()` runs several assertion closures and reports every failure at once:
+
+```javascript
+function testUserProfile(){
+    var user = userService.get( 1 );
+
+    assertAll( [
+        () => $assert.isEqual( "Luis", user.getName() ),
+        () => $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ),
+        () => $assert.isTrue( user.isActive() )
+    ], "user profile" );
+}
+```
+
+See [Assertions](../../digging-deeper/assertions/#grouped-assertions) for the full details, plus the newer `isTruthy()`, `isFalsy()`, `includesAll()`, `includesAny()` and `includesNone()` assertions.
+
 ## Custom Assertions
 
 You can also register custom assertions within the $assert object. You will do this by reading our Custom Assertions section of our TestBox docs.

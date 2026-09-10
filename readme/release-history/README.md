@@ -14,6 +14,8 @@ In this section, you will find the release notes for each version we release und
 
 In this release, we focused on BoxLang CLI runner enhancements, real-time streaming test execution via SSE, a powerful dry run capability for spec discovery, Lucee 7 certification, and dropping Adobe 2021 support.  Developers gain a wealth of new output-control and performance-analysis options directly from the CLI runner.
 
+The **7.1** minor release builds on that foundation with a major expansion of the assertions and expectations library: grouped assertions, collection expectation modes, expectation context for richer failure messages, and dedicated matcher families for BoxLang `Set` and `Range` objects plus a data navigator for asserting against deeply nested structures.
+
 ## Version 6.x - September 2024
 
 In this release, we have dropped more legacy engines and added full support for not only running TestBox in [BoxLang](https://www.boxlang.io/), but writing every spec in [BoxLang](https://www.boxlang.io/).  We have added tons of bug fixes and major improvements but also a great CLI runner for BoxLang.
