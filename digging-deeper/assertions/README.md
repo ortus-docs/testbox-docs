@@ -81,7 +81,20 @@ typeOf( type, actual, [message] )
 
 `isTrue()` and `isFalse()` require an actual boolean. `isTruthy()` and `isFalsy()` are looser, and are useful when the value under test is "something or nothing" rather than a strict boolean.
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+$assert.isTruthy( "hello" )
+$assert.isTruthy( [ 1, 2 ] )
+
+$assert.isFalsy( "" )
+$assert.isFalsy( 0 )
+$assert.isFalsy( [] )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
 $assert.isTruthy( "hello" );
 $assert.isTruthy( [ 1, 2 ] );
 
@@ -89,28 +102,56 @@ $assert.isFalsy( "" );
 $assert.isFalsy( 0 );
 $assert.isFalsy( [] );
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Multiple Inclusions
 
 `includes()` checks for one needle. These three check for several at once:
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+$assert.includesAll( roles, [ "admin", "editor" ] )
+$assert.includesAny( roles, [ "admin", "superuser" ] )
+$assert.includesNone( serializedUser, [ "password", "salt", "apiToken" ] )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
 $assert.includesAll( roles, [ "admin", "editor" ] );
 $assert.includesAny( roles, [ "admin", "superuser" ] );
 $assert.includesNone( serializedUser, [ "password", "salt", "apiToken" ] );
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Grouped Assertions
 
 By default a failing assertion aborts the test, so you only ever see the first failure and fix them one run at a time. `$assert.all()` runs a set of assertion closures and reports **every** failure at once.
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
 $assert.all( [
     () => $assert.isEqual( "Luis", user.getName() ),
     () => $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ),
     () => $assert.isTrue( user.isActive() )
+], "user profile" )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+$assert.all( [
+    function(){ return $assert.isEqual( "Luis", user.getName() ); },
+    function(){ return $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ); },
+    function(){ return $assert.isTrue( user.isActive() ); }
 ], "user profile" );
 ```
+{% endtab %}
+{% endtabs %}
 
 If the name and the active flag are both wrong, both are reported:
 
@@ -124,12 +165,25 @@ The optional second argument is a heading prepended to the failure summary.
 
 `assertAll()` is available as a spec-level shortcut for the same thing:
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
 assertAll( [
     () => $assert.isEqual( 200, response.status ),
     () => $assert.key( response, "data" )
+], "response envelope" )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+assertAll( [
+    function(){ return $assert.isEqual( 200, response.status ); },
+    function(){ return $assert.key( response, "data" ); }
 ], "response envelope" );
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 Grouped assertions are the assertion-style counterpart to [collection expectations](../expectations/#collection-expectations). Reach for them when several independent facts about one object should all be reported together.

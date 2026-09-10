@@ -18,12 +18,25 @@ expect( () => calculator.add(2,2) ).toThrow();
 
 When several expectations in a spec assert against similar values, a raw matcher failure such as `expected [100] to be [108]` does not tell you which one broke. `withContext()` attaches a semantic label that is prepended to the failure message.
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+expect( order.getSubtotal() ).withContext( "subtotal" ).toBe( 100 )
+expect( order.getTotal() ).withContext( "total after tax" ).toBe( 108 )
+
+// Failure: total after tax: expected [100] to be [108]
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
 expect( order.getSubtotal() ).withContext( "subtotal" ).toBe( 100 );
 expect( order.getTotal() ).withContext( "total after tax" ).toBe( 108 );
 
 // Failure: total after tax: expected [100] to be [108]
 ```
+{% endtab %}
+{% endtabs %}
 
 The context flows through standard matchers, negated matchers and [custom matchers](custom-matchers.md) alike.
 
@@ -42,7 +55,25 @@ Instead of looping and expecting per element, you can assert against an entire a
 | `expectSome( collection, min, max )` | Between `min` and `max` elements satisfy the matcher |
 | `expectNone( collection )` | No element satisfies the matcher |
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+// every user must have an id
+expectAll( users ).toHaveKey( "id" )
+
+// at least one order is over the free-shipping threshold
+expectAny( orders ).toBeGT( 50 )
+
+// between 2 and 5 of them are flagged
+expectSome( flags, 2, 5 ).toBeTrue()
+
+// no serialized user may carry a password
+expectNone( serializedUsers ).toHaveKey( "password" )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
 // every user must have an id
 expectAll( users ).toHaveKey( "id" );
 
@@ -55,6 +86,8 @@ expectSome( flags, 2, 5 ).toBeTrue();
 // no serialized user may carry a password
 expectNone( serializedUsers ).toHaveKey( "password" );
 ```
+{% endtab %}
+{% endtabs %}
 
 Failure messages report the pass and fail counts plus per-element detail, including the array index or struct key of each failing element, so you learn which elements failed rather than only that something did.
 

@@ -265,17 +265,35 @@ component displayName="TestBox xUnit suite for CF9" labels="railo,cf"{
 
 A failing assertion aborts the test method, so you only see the first failure per run. `assertAll()` runs several assertion closures and reports every failure at once:
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```groovy
 function testUserProfile(){
-    var user = userService.get( 1 );
+    var user = userService.get( 1 )
 
     assertAll( [
         () => $assert.isEqual( "Luis", user.getName() ),
         () => $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ),
         () => $assert.isTrue( user.isActive() )
+    ], "user profile" )
+}
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+function testUserProfile(){
+    var user = userService.get( 1 );
+
+    assertAll( [
+        function(){ return $assert.isEqual( "Luis", user.getName() ); },
+        function(){ return $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ); },
+        function(){ return $assert.isTrue( user.isActive() ); }
     ], "user profile" );
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 See [Assertions](../../digging-deeper/assertions/#grouped-assertions) for the full details, plus the newer `isTruthy()`, `isFalsy()`, `includesAll()`, `includesAny()` and `includesNone()` assertions.
 

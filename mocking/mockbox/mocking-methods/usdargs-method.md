@@ -41,7 +41,20 @@ mockConfig.$("getKey").$args(name="debugmode").$results(true);
 
 `$args()` matches structurally, so a struct argument matches whatever order its keys were built in:
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+mockService.$( "charge" )
+    .$args( { amount : 100, currency : "USD" } )
+    .$results( true )
+
+// matches, despite the different key order at the call site
+mockService.charge( { currency : "USD", amount : 100 } )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
 mockService.$( "charge" )
     .$args( { amount : 100, currency : "USD" } )
     .$results( true );
@@ -49,6 +62,8 @@ mockService.$( "charge" )
 // matches, despite the different key order at the call site
 mockService.charge( { currency : "USD", amount : 100 } );
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="warning" %}
 Before TestBox 7.1, nested structures were hashed in a way that depended on struct iteration order, so two structurally-equal structs built in a different order could fail to match and the mock would return `null` instead. This was always latent but became reproducible on Lucee 7.1, which changed its underlying map implementation. Upgrade to 7.1 or later if you mock methods that take struct arguments.
@@ -56,12 +71,16 @@ Before TestBox 7.1, nested structures were hashed in a way that depended on stru
 
 As of TestBox 7.1, `$args()` also understands BoxLang `Set` and `Range` objects when matching:
 
-```javascript
+{% hint style="info" %}
+`Set` and `Range` argument matching requires BoxLang. On CFML engines these types do not exist, so the rest of `$args()` behaves as documented above.
+{% endhint %}
+
+```java
 mockService.$( "grant" )
     .$args( setOf( "admin", "editor" ) )
-    .$results( true );
+    .$results( true )
 
 mockService.$( "paginate" )
     .$args( 1..10 )
-    .$results( results );
+    .$results( results )
 ```

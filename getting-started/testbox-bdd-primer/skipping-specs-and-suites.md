@@ -57,11 +57,33 @@ describe("A spec", function() {
 
 As of TestBox 7.1, a BDD test class can carry a class-level `skip` annotation, so the whole class is skipped without prefixing every `describe()` or editing your runner filters.
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+{% code title="PaymentGatewaySpec.bx" %}
+```java
 /**
  * @skip
  */
-component extends="testbox.system.BaseSpec" {
+class extends="testbox.system.BaseSpec"{
+
+    function run(){
+        describe( "Payment gateway", () => {
+            // none of this runs while @skip is present
+        } )
+    }
+
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="CFML" %}
+{% code title="PaymentGatewayTest.cfc" %}
+```cfscript
+/**
+ * @skip
+ */
+component extends="testbox.system.BaseSpec"{
 
     function run(){
         describe( "Payment gateway", function(){
@@ -71,10 +93,13 @@ component extends="testbox.system.BaseSpec" {
 
 }
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 You can supply a reason, which shows up in the reporters:
 
-```javascript
+```java
 /**
  * @skip Waiting on the sandbox credentials
  */

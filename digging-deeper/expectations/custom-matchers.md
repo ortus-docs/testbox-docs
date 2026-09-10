@@ -79,10 +79,21 @@ addMatchers( new models.util.MyMatchers() );
 
 Custom matcher failures route through the same internal fail path as built-in matchers, so any [context](./#adding-context-to-failures) set on the expectation is applied to your matcher's message too:
 
-```javascript
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+expect( 10 ).withContext( "retry budget" ).toBeGreaterThan( 50 )
+// Failure: retry budget: expected [10] to be greater than [50]
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
 expect( 10 ).withContext( "retry budget" ).toBeGreaterThan( 50 );
 // Failure: retry budget: expected [10] to be greater than [50]
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 **Fixed in TestBox 7.1:** custom matchers previously raised their failure message directly, bypassing the internal fail method. That meant `withContext()` applied to built-in matchers but was silently dropped for custom ones. Both behave the same way now.

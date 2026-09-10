@@ -285,9 +285,11 @@ it( "validates menu selection", () => {
 
 TestBox now includes a full set of matchers for BoxLang `Range` objects, including containment, ordering, bounds, and step/clamp assertions.
 
-> **BoxLang Only**: Range features depend on BoxLang range support. On CFML engines these expectations are guarded and report unsupported behavior cleanly.
->
-> **Syntax Note**: BoxLang ranges are created with the `..` operator (for example `1..10`, `..10`, `1..`, `..`) and stepped via `.step( n )`. There is no `rangeNew()` BIF.
+{% hint style="info" %}
+**BoxLang only.** Range features depend on BoxLang range support. On CFML engines these expectations are guarded and report unsupported behavior cleanly.
+
+Ranges are created with the `..` operator (for example `1..10`, `..10`, `1..`, `..`) and stepped via `.step( n )`. There is no `rangeNew()` BIF.
+{% endhint %}
 
 ### Core Range Matchers
 
@@ -346,7 +348,9 @@ base.clamp( 15 )           // 10
 
 TestBox now provides a suite of matchers that leverage BoxLang's built-in `dataNavigate()` BIF to safely navigate and assert against values in nested data structures. These matchers support dot-notation, array indexes, wildcards, filters, recursive descent, and all other JSONPath-style expressions.
 
-> **BoxLang Only**: Data navigator features require the BoxLang runtime and are guarded at the matcher level. On CFML engines they throw `TestBox.BoxLangFeatureNotAvailable`.
+{% hint style="info" %}
+**BoxLang only.** Data navigator features require the BoxLang runtime and are guarded at the matcher level. On CFML engines they throw `TestBox.BoxLangFeatureNotAvailable`.
+{% endhint %}
 
 ### `toHavePath()` / `notToHavePath()`
 
