@@ -47,7 +47,7 @@ coldbox create app
 server start
 ```
 
-Inside your directory will be a folder called `/tests` which has our test runner `/tests/runner.cfm`. You will need to open your runner.cfm and default code coverage enabled to true.
+Inside your directory will be a folder called `/tests` which has our test runner `/tests/runner.cfm`. Code coverage is opt-in, so you will need to open your `runner.cfm` and default code coverage enabled to true.
 
 ```
 <!--- Code Coverage requires FusionReactor --->

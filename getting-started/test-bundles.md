@@ -159,7 +159,7 @@ These methods assist you with identifying environment conditions.
 ```java
 // Which language/engine are you running on
 isAdobe()
-isLucee
+isLucee()
 isBoxLang()
 
 // What OS are we on
@@ -170,6 +170,10 @@ isWindows()
 // Get the Environment Class
 getEnv()
 ```
+
+{% hint style="info" %}
+**Fixed in TestBox 7.1:** `isLucee()` used to return `true` under BoxLang, because BoxLang registers a `lucee` server scope key for compatibility. Specs that branched or skipped on engine took the Lucee path when running on BoxLang. `isLucee()` now returns `true` only on actual Lucee.
+{% endhint %}
 
 ### Java Environment
 

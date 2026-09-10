@@ -53,6 +53,64 @@ describe("A spec", function() {
 });
 ```
 
+## Skipping An Entire Class
+
+As of TestBox 7.1, a BDD test class can carry a class-level `skip` annotation, so the whole class is skipped without prefixing every `describe()` or editing your runner filters.
+
+{% tabs %}
+{% tab title="BoxLang" %}
+{% code title="PaymentGatewaySpec.bx" %}
+```java
+/**
+ * @skip
+ */
+class extends="testbox.system.BaseSpec"{
+
+    function run(){
+        describe( "Payment gateway", () => {
+            // none of this runs while @skip is present
+        } )
+    }
+
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="CFML" %}
+{% code title="PaymentGatewayTest.cfc" %}
+```cfscript
+/**
+ * @skip
+ */
+component extends="testbox.system.BaseSpec"{
+
+    function run(){
+        describe( "Payment gateway", function(){
+            // none of this runs while @skip is present
+        } );
+    }
+
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+You can supply a reason, which shows up in the reporters:
+
+```java
+/**
+ * @skip Waiting on the sandbox credentials
+ */
+```
+
+Skipped classes are reported as skipped rather than silently dropped, so your totals stay honest and the class does not quietly rot.
+
+{% hint style="info" %}
+This is the class-level equivalent of `xdescribe()`. Use it when an entire bundle is blocked on something external, and prefer the [skip argument](#skip-argument) below when the decision depends on the engine or on runtime state.
+{% endhint %}
+
 ## Skip Argument
 
 The `skip` argument can be a boolean value or a closure. If the value is **true** then the suite or spec is skipped. If the return value of the closure is **true** then the suite or spec is skipped. Using the closure approach allows you to dynamically at runtime figure out if the desired spec or suite is skipped. This is such a great way to prepare tests for different CFML engines.

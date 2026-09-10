@@ -18,11 +18,11 @@ Most of the coverage settings are devoted to helping TestBox know what files to 
 
 ## Default Settings
 
-Code coverage is enabled by default and set with a default configuration. You can control how it behaves with a series of `<CFParam>` tags in your `/tests/runner.cfm` file. If you created a fresh new ColdBox app from our app templates using `coldbox create app`, you'll see there are already configuration options ready for you to change. If you are working with an existing test suite runner, place the following lines PRIOR to the `<CFInclude>` in your runner.cfm.
+Code coverage is **disabled by default** and set with a default configuration. You can control how it behaves with a series of `<CFParam>` tags in your `/tests/runner.cfm` file. If you created a fresh new ColdBox app from our app templates using `coldbox create app`, you'll see there are already configuration options ready for you to change. If you are working with an existing test suite runner, place the following lines PRIOR to the `<CFInclude>` in your runner.cfm.
 
 ```markup
 <!--- Code Coverage requires FusionReactor --->
-<cfparam name="url.coverageEnabled"                    default="true">
+<cfparam name="url.coverageEnabled"                    default="false">
 <cfparam name="url.coveragePathToCapture"            default="#expandPath( '/' )#">
 <cfparam name="url.coverageWhitelist"                default="">
 <cfparam name="url.coverageBlacklist"                default="/testbox,/coldbox,/tests,/modules,Application.cfc,/index.cfm">
@@ -36,13 +36,17 @@ Let's go over the options above and what they do. Feel free to comment/uncomment
 
 ## coverageEnabled
 
-Set this to `true` or `false` to enable the code coverage feature of TestBox. This setting will default to `true` if TestBox detects that you have FusionReactor installed, `false` otherwise. Setting this to `true` without FusionReactor installed will be ignored.
+Set this to `true` or `false` to enable the code coverage feature of TestBox. Setting this to `true` without FusionReactor installed will be ignored.
 
-The following setting would turn off code coverage:
+The following setting would turn on code coverage:
 
 ```markup
-<cfparam name="url.coverageEnabled" default="false">
+<cfparam name="url.coverageEnabled" default="true">
 ```
+
+{% hint style="warning" %}
+**Changed in TestBox 7.1:** this setting now defaults to `false`. Previously it defaulted to `true`, so every runner hit attempted to start coverage even on installs with no FusionReactor. Coverage is now opt-in: set the param to `true`, or pass `?coverageEnabled=true` on the URL.
+{% endhint %}
 
 ## coveragePathToCapture
 

@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
   * [Release History](readme/release-history/README.md)
+    * [What's New With 7.1.0](readme/release-history/whats-new-with-7.1.0.md)
     * [What's New With 7.0.0](readme/release-history/whats-new-with-7.0.0.md)
   * [About This Book](readme/about-this-book/README.md)
     * [Author](readme/about-this-book/author.md)
@@ -64,6 +65,9 @@
   * [Matchers](digging-deeper/expectations/matchers.md)
   * [Not Operator](digging-deeper/expectations/not-operator.md)
   * [Expecting Exceptions](digging-deeper/expectations/expecting-exceptions.md)
+  * [Set Expectations](digging-deeper/expectations/set-expectations.md)
+  * [Range Expectations](digging-deeper/expectations/range-expectations.md)
+  * [Data Navigator Expectations](digging-deeper/expectations/data-navigator.md)
   * [Custom Matchers](digging-deeper/expectations/custom-matchers.md)
 * [Output Utilities](digging-deeper/output-utilities.md)
 * [Runner Listeners](digging-deeper/run-listeners.md)

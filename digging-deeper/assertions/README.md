@@ -32,18 +32,23 @@ assertCloseTo()
 Here are some common assertion methods:
 
 ```javascript
+all( closures, [heading] )
 assert( expression, [message] )
 between( actual, min, max, [message] )
 closeTo(expected, actual, delta, [datePart], [message])
 deepKey( target, key, [message] )
 fail( [message] )
 includes( target, needle, [message] )
+includesAll( target, needles, [message] )
+includesAny( target, needles, [message] )
+includesNone( target, needles, [message] )
 includesWithCase( target, needle, [message] )
 instanceOf( actual, typeName, [message] )
 isEmpty( target, [message] )
 isEqual(expected, actual, [message])
 isEqualWithCase(expected, actual, [message])
 isFalse( actual, [message] )
+isFalsy( actual, [message] )
 isGT( actual, target, [message])
 isGTE( actual, target, [message])
 isLT( actual, target, [message])
@@ -51,6 +56,7 @@ isLTE( actual, target, [message])
 isNotEmpty( target, [message] )
 isNotEqual(expected, actual, [message])
 isTrue( actual, [message] )
+isTruthy( actual, [message] )
 key( target, key, [message] )
 lengthOf( target, length, [message] )
 match( actual, regex, [message] )
@@ -70,3 +76,115 @@ skip( message, detail )
 throws(target, [type], [regex], [message])
 typeOf( type, actual, [message] )
 ```
+
+### Truthiness
+
+`isTrue()` and `isFalse()` require an actual boolean. `isTruthy()` and `isFalsy()` are looser, and are useful when the value under test is "something or nothing" rather than a strict boolean.
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+$assert.isTruthy( "hello" )
+$assert.isTruthy( [ 1, 2 ] )
+
+$assert.isFalsy( "" )
+$assert.isFalsy( 0 )
+$assert.isFalsy( [] )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+$assert.isTruthy( "hello" );
+$assert.isTruthy( [ 1, 2 ] );
+
+$assert.isFalsy( "" );
+$assert.isFalsy( 0 );
+$assert.isFalsy( [] );
+```
+{% endtab %}
+{% endtabs %}
+
+### Multiple Inclusions
+
+`includes()` checks for one needle. These three check for several at once:
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+$assert.includesAll( roles, [ "admin", "editor" ] )
+$assert.includesAny( roles, [ "admin", "superuser" ] )
+$assert.includesNone( serializedUser, [ "password", "salt", "apiToken" ] )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+$assert.includesAll( roles, [ "admin", "editor" ] );
+$assert.includesAny( roles, [ "admin", "superuser" ] );
+$assert.includesNone( serializedUser, [ "password", "salt", "apiToken" ] );
+```
+{% endtab %}
+{% endtabs %}
+
+### Grouped Assertions
+
+By default a failing assertion aborts the test, so you only ever see the first failure and fix them one run at a time. `$assert.all()` runs a set of assertion closures and reports **every** failure at once.
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+$assert.all( [
+    () => $assert.isEqual( "Luis", user.getName() ),
+    () => $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ),
+    () => $assert.isTrue( user.isActive() )
+], "user profile" )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+$assert.all( [
+    function(){ return $assert.isEqual( "Luis", user.getName() ); },
+    function(){ return $assert.isEqual( "luis@ortussolutions.com", user.getEmail() ); },
+    function(){ return $assert.isTrue( user.isActive() ); }
+], "user profile" );
+```
+{% endtab %}
+{% endtabs %}
+
+If the name and the active flag are both wrong, both are reported:
+
+```
+user profile: 1 of 3 assertions passed
+  [1] expected [Luis] but received [Alice]
+  [3] expected [true] but received [false]
+```
+
+The optional second argument is a heading prepended to the failure summary.
+
+`assertAll()` is available as a spec-level shortcut for the same thing:
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+assertAll( [
+    () => $assert.isEqual( 200, response.status ),
+    () => $assert.key( response, "data" )
+], "response envelope" )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+assertAll( [
+    function(){ return $assert.isEqual( 200, response.status ); },
+    function(){ return $assert.key( response, "data" ); }
+], "response envelope" );
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Grouped assertions are the assertion-style counterpart to [collection expectations](../expectations/#collection-expectations). Reach for them when several independent facts about one object should all be reported together.
+{% endhint %}
