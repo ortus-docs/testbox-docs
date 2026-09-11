@@ -6,7 +6,7 @@ description: Assert against deeply nested data structures by path
 
 Asserting against a deeply nested structure usually means a chain of intermediate variables and `structKeyExists()` guards before you reach the value you actually care about. The data navigator matchers collapse that into a single path expression, built on BoxLang's `dataNavigate()` built-in.
 
-Paths support dot-notation, array indexes, wildcards, filters, recursive descent and the rest of the JSONPath-style expression set.
+Paths are JSONPath-style expressions, supporting dot notation, array indexing, recursive descent, wildcards, slices and filters. The full syntax is listed under [Path Syntax](#path-syntax) below.
 
 {% hint style="info" %}
 These matchers require BoxLang. On CFML engines they throw `TestBox.BoxLangFeatureNotAvailable`.
@@ -20,6 +20,31 @@ var data = {
     "users" : [ { "name" : "Alice", "age" : 30 } ]
 }
 ```
+
+## Path Syntax
+
+Every matcher on this page takes the same path expression, handed straight to BoxLang's `dataNavigate()`.
+
+| Syntax | Example | Matches |
+| --- | --- | --- |
+| Dot notation | `app.settings.port` | The value at that key path |
+| Array index | `users[1]` | The **first** user — indexing is 1-based |
+| Recursive descent | `..name` | Every `name` key at any depth |
+| Wildcard, keys | `app.settings.*` | Every value under `settings` |
+| Wildcard, array | `users[*].name` | The `name` of every user |
+| Slice | `primes[1:3]` | Elements 1 through 3, inclusive |
+| Open-ended slice | `primes[2:]` | Element 2 through the end |
+| Filter | `users[?(@.age > 18)].name` | The `name` of every user over 18 |
+
+{% hint style="info" %}
+Array indexing is **1-based**, following the language convention rather than JSONPath's usual 0-based indexing. `users[1]` is the first element, not the second.
+{% endhint %}
+
+Filters use `@` to refer to the current element and support `==`, `!=`, `>`, `<`, `>=` and `<=`. Whitespace inside the filter is tolerated, so `[?(@.active==true)]` and `[?( @.active == true )]` are equivalent.
+
+{% hint style="success" %}
+A path that resolves to many values — anything using a wildcard, slice, recursive descent or filter — is best paired with `queryPath()`, which returns every match. `path()` and the `toHavePath*()` matchers resolve to the first match.
+{% endhint %}
 
 ## Existence
 
@@ -90,12 +115,29 @@ expect( data ).path( "nonexistent" ).toBeNull()
 
 ### `queryPath()`
 
-Navigates to a path and hands back an `Expectation` on an **array of every match**. This is the one to use with wildcards, filters and recursive descent, where a path resolves to many values rather than one.
+Navigates to a path and hands back an `Expectation` on an **array of every match**. This is the one to use with wildcards, slices, filters and recursive descent, where a path resolves to many values rather than one.
 
 ```java
+// wildcards
 expect( data ).queryPath( "users[*].name" ).toHaveLength( 1 )
 expect( data ).queryPath( "users[*].name" ).toInclude( "Alice" )
+
+// filters: only the users who pass the predicate
+expect( data ).queryPath( "users[?(@.age > 18)].name" ).toInclude( "Alice" )
+
+// recursive descent: every matching key at any depth
+expect( data ).queryPath( "..name" ).toInclude( "TestApp" )
+
 expect( data ).queryPath( "nonexistent" ).toBeEmpty()
+```
+
+Slices take an inclusive, 1-based window into an array:
+
+```java
+var primes = { "values" : [ 2, 3, 5, 7, 11 ] }
+
+expect( primes ).queryPath( "values[1:3]" ).toHaveLength( 3 )   // 2, 3, 5
+expect( primes ).queryPath( "values[4:]" ).toHaveLength( 2 )    // 7, 11
 ```
 
 ## A Real Example
