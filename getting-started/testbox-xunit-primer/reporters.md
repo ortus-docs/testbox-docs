@@ -23,4 +23,5 @@ TestBox comes also with a nice plethora of reporters:
 * **Tap**         : A test anything protocol reporter
 * **Min**         : A minimalistic view of your test reports
 * **MinText** : A minimalistic view of your test reports for consoles
+* **Agent**     : Compact, token-efficient JSON for AI agents and automation
 * **NodeJS**    : User-contributed: [https://www.npmjs.com/package/testbox-runner](https://www.npmjs.com/package/testbox-runner)
