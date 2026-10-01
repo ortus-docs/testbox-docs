@@ -183,7 +183,7 @@ Identify slow specs and surface them at the end of the run:
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--reporter` | The reporter to use. | `text` |
+| `--reporter` | The reporter to use. Use `agent` for compact JSON built for AI agents, see [Reporters](../../digging-deeper/reporters/README.md#agentreporter---token-efficient-output-for-ai-agents). | `text` |
 | `--reportpath` | Directory for report files. | `/tests/results` |
 | `--properties-summary` | Generate a `.properties` summary file. | `true` |
 | `--properties-filename` | Name for the properties file. | `TEST.properties` |

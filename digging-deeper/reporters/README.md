@@ -11,6 +11,7 @@ TestBox ships with a rich set of reporters for every use case:
 
 | Reporter | Description |
 |----------|-------------|
+| `Agent` | Compact, token-efficient JSON for AI agents and automation |
 | `ANTJunit` | JUnit XML variant compatible with the ANT `junitreport` task |
 | `Codexwiki` | MediaWiki syntax for use in Codex Wiki (DEPRECATED) |
 | `Console` | Sends the report to the console |
@@ -47,6 +48,85 @@ When using the BoxLang CLI runner, pass `--show-skipped=false` instead:
 ```bash
 ./testbox/run --show-skipped=false
 ```
+
+## `AgentReporter` - Token-Efficient Output for AI Agents
+
+**Added in TestBox 7.2.** The `Agent` reporter is a compact JSON reporter for AI agents and automation. It reports the totals plus only the specs that failed or errored, as a single minified line. A passing run costs a few dozen tokens, where the `JSON` reporter returns the full result set.
+
+{% tabs %}
+{% tab title="BoxLang" %}
+{% code title="Programmatic" %}
+```java
+var testbox = new testbox.system.TestBox(
+    bundles  = "tests.specs",
+    reporter = {
+        type    : "testbox.system.reports.AgentReporter",
+        options : { maxFailures : 10, includeStack : true }
+    }
+)
+println( testbox.run() )
+```
+{% endcode %}
+
+{% code title="BoxLang CLI runner" %}
+```bash
+./testbox/run --reporter=agent
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="CFML" %}
+{% code title="Programmatic" %}
+```cfscript
+var testbox = new testbox.system.TestBox(
+    bundles  = "tests.specs",
+    reporter = {
+        type    : "testbox.system.reports.AgentReporter",
+        options : { maxFailures : 10, includeStack : true }
+    }
+);
+writeOutput( testbox.run() );
+```
+{% endcode %}
+
+{% code title="HTML runner URL" %}
+```
+runner.cfm?reporter=agent&directory=tests.specs
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+### Output
+
+```json
+{"ok":false,"totals":{"pass":120,"fail":2,"error":1,"skipped":3,"specs":126,"ms":4210},"failures":[{"bundle":"tests.specs.FooTest","spec":"Foo > can add","status":"failed","message":"Expected [4] but received [3]","at":"tests/specs/FooTest.cfc:42"}],"truncated":0}
+```
+
+| Key | Description |
+|-----|-------------|
+| `ok` | `true` when nothing failed or errored. Agents can branch on this alone. |
+| `totals` | `pass`, `fail`, `error`, `skipped`, `specs` and `ms` for the whole run. |
+| `failures` | One entry per failed or errored spec: `bundle`, `spec` (suite path joined with ` > `), `status` (`failed` or `error`), `message` and `at` (`file:line`, relative to the web or working root). |
+| `truncated` | How many failures were left out because of `maxFailures`. |
+
+Bundle-level exceptions, such as a failing `beforeAll()`, appear in `failures` with an empty `spec` and the `error` status.
+
+### Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `detail` | `failures` | `summary` returns totals only, `failures` adds the failures, `all` also adds a compact `specs` list (`bundle`, `spec`, `status`, `ms`). |
+| `maxFailures` | `20` | Maximum failures listed. `0` means unlimited. The overflow is reported in `truncated`. |
+| `maxMessageLength` | `300` | Truncates each failure message. `0` means unlimited. |
+| `includeStack` | `false` | Adds a `stack` array of `file:line` frames to each failure, user code first. |
+| `stackDepth` | `3` | Number of frames kept when `includeStack` is `true`. |
+| `includeSkipped` | `false` | Adds a `skipped` array of spec paths. |
+| `includeDebug` | `false` | Adds a `debug` array with the `debug()` output of the run. |
+
+{% hint style="info" %}
+The reporter does not change the process exit code. Read the `ok` key to decide whether the run passed.
+{% endhint %}
 
 ## `StreamingReporter` — Real-Time SSE Output 🆕
 
