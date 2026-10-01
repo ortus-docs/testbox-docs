@@ -16,6 +16,8 @@ In this release, we focused on BoxLang CLI runner enhancements, real-time stream
 
 The **7.1** minor release builds on that foundation with a major expansion of the assertions and expectations library: grouped assertions, collection expectation modes, expectation context for richer failure messages, and dedicated matcher families for BoxLang `Set` and `Range` objects plus a data navigator for asserting against deeply nested structures.
 
+The **7.2** minor release brings browser testing to TestBox: BoxLang specs extend `BrowserSpec` to drive a real browser through the [bx-playwright](https://bxplaywright.boxlang.io) module, with web-first browser matchers and the screenshots, traces and videos of failures attached to the spec. Every suite, on every engine, also gains spec attachments, spec retries, and BoxLang runner options to start a web server for the run and rerun only the specs that failed.
+
 ## Version 6.x - September 2024
 
 In this release, we have dropped more legacy engines and added full support for not only running TestBox in [BoxLang](https://www.boxlang.io/), but writing every spec in [BoxLang](https://www.boxlang.io/).  We have added tons of bug fixes and major improvements but also a great CLI runner for BoxLang.

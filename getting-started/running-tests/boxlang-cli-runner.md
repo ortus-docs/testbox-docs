@@ -193,6 +193,32 @@ Identify slow specs and surface them at the end of the run:
 
 ---
 
+## Retries, Failed Specs and Web Servers
+
+These options shine for [browser tests](../../browser-testing/README.md), but `--retries` and `--failed` work for every bundle, `.bx` or `.cfc`.
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `--retries` | How many extra times to run a failing or erroring spec. A spec `retries` argument and a bundle `retries` annotation take precedence. Skipped specs are never retried. | `0` |
+| `--failed` | Run only the bundles and specs that failed or errored in the last run, read from `{reportpath}/.testbox-failed.json`. Every run writes that file. When it is missing or lists nothing, a message is printed and nothing runs. | `false` |
+| `--web-server` | A shell command that starts a web server before the tests run, stopped with its child processes after the tests. Runs with `sh -c` (`cmd /c` on Windows) from the current directory. | |
+| `--web-server-url` | The URL polled until the web server answers with a status below 500. Also the default `baseURL` of `BrowserSpec` bundles. | `http://localhost:8080` |
+| `--web-server-timeout` | How long to wait for the web server to answer, in seconds. When it does not answer in time, the runner stops it, prints the reason and exits with code `1`. | `60` |
+
+```bash
+# Start the app, run the browser specs, retry flaky ones once
+./testbox/run --directory=tests.browser --web-server="boxlang-miniserver --port 8080" --retries=1
+
+# Rerun only what failed last time
+./testbox/run --failed
+```
+
+{% hint style="info" %}
+Quote a `--web-server` command that contains spaces. When a launcher splits it at its spaces anyway, the runner joins the words after `--web-server=` back together until the next runner option, so a command whose own flags share a runner option name (such as `--directory`) belongs in a script. See [Running Browser Tests](../../browser-testing/running-browser-tests.md) for the details and a CI example.
+{% endhint %}
+
+---
+
 ## Runner Options
 
 Pass arbitrary options directly through to the selected runner:

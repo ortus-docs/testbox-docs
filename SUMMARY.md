@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
   * [Release History](readme/release-history/README.md)
+    * [What's New With 7.2.0](readme/release-history/whats-new-with-7.2.0.md)
     * [What's New With 7.1.0](readme/release-history/whats-new-with-7.1.0.md)
     * [What's New With 7.0.0](readme/release-history/whats-new-with-7.0.0.md)
   * [About This Book](readme/about-this-book/README.md)
@@ -83,6 +84,14 @@
   * [Github Actions](digging-deeper/ci/github-actions.md)
   * [Gitlab](digging-deeper/ci/gitlab.md)
   * [Travis](digging-deeper/ci/travis.md)
+
+## Browser Testing
+
+* [Overview](browser-testing/README.md)
+* [Browser Matchers](browser-testing/browser-matchers.md)
+* [Attachments](browser-testing/attachments.md)
+* [Retries](browser-testing/retries.md)
+* [Running Browser Tests](browser-testing/running-browser-tests.md)
 
 ## Mocking
 

@@ -43,6 +43,35 @@ The `it()` function is also aliased as `then()` - except `it()` has `title` when
 | labels   | false    | ---     | string/array | The list or array of labels this suite group belongs to                                                                            |
 | skip     | false    | false   | Boolean      | A flag or a closure that tells TestBox to skip this suite group from testing if true. If this is a closure it must return boolean. |
 | data     | false    | `{}`    | struct       | A struct of data you can bind the spec with so you can use within the `body` closure                                               |
+| retries  | false    | `0`     | numeric      | How many extra times to run the spec when it fails or errors. `0` inherits the bundle `retries` annotation or the global `retries` option. See [Retries](../../browser-testing/retries.md). |
+
+## Retrying Flaky Specs
+
+A spec that depends on the outside world, such as a browser, a remote API or a slow server, can pass the `retries` argument to run again, up to that many extra times, before TestBox reports it. The `beforeEach()` and `afterEach()` closures run again on every attempt, and the spec stats record the `attempts`.
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+it( title = "charges a card in the sandbox", body = () => {
+    expect( gateway.charge( 100 ).status ).toBe( "succeeded" )
+}, retries = 2 )
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+it( title = "charges a card in the sandbox", body = function(){
+    expect( gateway.charge( 100 ).status ).toBe( "succeeded" );
+}, retries = 2 );
+```
+{% endtab %}
+{% endtabs %}
+
+Retries can also be set for a whole bundle or run. See [Retries](../../browser-testing/retries.md) for the precedence rules.
+
+## Attaching Files
+
+Call `attach( path, type, name )` inside a spec to attach a file, such as a screenshot or a log, to its result. Reporters list it under the spec. See [Attachments](../../browser-testing/attachments.md).
 
 ## They are closures Ma!
 

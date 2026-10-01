@@ -61,6 +61,10 @@ expect( data ).notToHavePath( "nonexistent" )
 expect( data ).notToHavePath( "app.nonexistent" )
 ```
 
+{% hint style="info" %}
+The [browser matchers](../../browser-testing/browser-matchers.md) also define `toHavePath()`, for the URL path of a bx-playwright page. When they are registered, as in every `BrowserSpec`, pages get the browser check and every other value still gets this Data Navigator matcher.
+{% endhint %}
+
 ## Values
 
 ### `toHavePathValue()`
