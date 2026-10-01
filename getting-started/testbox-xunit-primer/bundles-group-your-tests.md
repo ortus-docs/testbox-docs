@@ -39,6 +39,7 @@ component displayName="My test suite" extends="testbox.system.BaseSpec"{
 | asyncAll    | false    | false   | boolean     | If true, it will execute all the test methods in parallel and join at the end asynchronously.                                                                              |
 | labels      | false    | ---     | string/list | The list of labels this test belongs to                                                                                                                                    |
 | skip        | false    | false   | boolean/udf | A boolean flag that makes the runners skip the test for execution. It can also be the name of a UDF in the same CFC that will be executed and MUST return a boolean value. |
+| retries     | false    | 0       | numeric     | How many extra times to run a failing or erroring test of the bundle. A test `retries` annotation wins over it, and it wins over the global `retries` option. See [Retries](../../browser-testing/retries.md). |
 
 > **Caution** If you activate the `asyncAll` flag for asynchronous testing, you HAVE to make sure your tests are also thread safe and appropriately locked.
 

@@ -136,6 +136,19 @@ The new `StreamingReporter` (backed by `StreamingRunner`) pushes each spec resul
 [streaming-runner.md](../../getting-started/running-tests/streaming-runner.md)
 {% endcontent-ref %}
 
+## Attachments and Retries
+
+Specs can [attach files](../../browser-testing/attachments.md), such as screenshots, traces or logs, and can be [retried](../../browser-testing/retries.md). Reporters show both:
+
+| Reporter | Attachments | Retries |
+|----------|-------------|---------|
+| `JSON`, `Raw` | An `attachments` array of `{ path, type, name }` in every spec's stats | An `attempts` count in every spec's stats |
+| `Simple` | A linked list under each spec | `(passed after N attempts)` after the duration |
+| `JUnit`, `ANTJunit` | A `<system-out>` with one `[[ATTACHMENT\|path]]` line per file, read by the Jenkins JUnit Attachments plugin and GitLab | |
+| `Text`, `Console` | Listed under failed and errored specs | `(passed after N attempts)` after the duration |
+
+See [Attachments in Reports](../../browser-testing/attachments.md#attachments-in-reports) for an example of the JUnit output.
+
 ## Open In Editor (Simple Reporter)
 
 The `simple` reporter allows you to set a code editor of choice so it creates clickable links for stack traces and tag contexts — opening exceptions in your editor at the exact line.

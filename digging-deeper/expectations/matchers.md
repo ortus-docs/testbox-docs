@@ -195,3 +195,5 @@ TestBox 7.1 adds three dedicated matcher families with their own pages:
 - [Set Expectations](set-expectations.md) for BoxLang `Set` objects
 - [Range Expectations](range-expectations.md) for BoxLang `Range` objects
 - [Data Navigator Expectations](data-navigator.md) for asserting against deeply nested structures by path
+
+TestBox 7.2 adds [Browser Matchers](../../browser-testing/browser-matchers.md), web-first matchers for bx-playwright pages and locators such as `toSee()`, `toHaveTitle()`, `toBeVisible()` and `toHaveCount()`.
