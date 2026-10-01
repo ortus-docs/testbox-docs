@@ -61,7 +61,7 @@ Prefer to start the server yourself? Skip `--web-server` and set the `baseURL` a
 Every run of the BoxLang runner writes a `.testbox-failed.json` file to the report path (`--reportpath`, `tests/results` by default) with the bundles and spec ids that failed or errored:
 
 ```json
-{ "bundles" : [ "tests.specs.LoginSpec" ], "specs" : [ "spec id", "spec id" ] }
+{ "bundles" : [ "tests.specs.LoginSpec" ], "specs" : [ "spec id", "spec id" ], "bundleErrors" : [ "tests.specs.CartSpec" ] }
 ```
 
 `--failed` reads that file and runs only those bundles and specs:
@@ -74,8 +74,8 @@ Every run of the BoxLang runner writes a `.testbox-failed.json` file to the repo
 ./testbox/run --failed
 ```
 
-* When a bundle failed outside of a spec, for example in `beforeAll()`, `specs` is empty and the failed bundles rerun completely.
-* When everything passed, both arrays are empty. `--failed` then prints `No failed tests recorded in [...], nothing to run.` and runs nothing. The same happens when the file is missing.
+* A bundle that failed outside of a spec, for example in `beforeAll()` or `afterAll()`, is broken, not flaky: it goes to `bundleErrors` and is **not** rerun. `--failed` lists those bundles so you can fix them and run them directly. The other failed bundles still rerun only their failed specs.
+* When everything passed, every array is empty. `--failed` then prints `No failed tests recorded in [...], nothing to run.` and runs nothing. The same happens when the file is missing.
 * The rerun writes the file again, so repeat `--failed` until it has nothing left to run.
 * Use the same `--reportpath` for the full run and the rerun.
 

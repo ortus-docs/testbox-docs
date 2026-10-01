@@ -143,7 +143,7 @@ See [Retries](../../browser-testing/retries.md).
 
 ## BoxLang Runner: `--failed`
 
-Every run writes `{reportpath}/.testbox-failed.json` with the bundles and spec ids that failed or errored. `./testbox/run --failed` reruns only those.
+Every run writes `{reportpath}/.testbox-failed.json` with the bundles and spec ids that failed or errored. `./testbox/run --failed` reruns only those. Bundles that failed outside of a spec (`beforeAll()`, `afterAll()`) are listed, not rerun.
 
 ## BoxLang Runner: `--web-server`
 
