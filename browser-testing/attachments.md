@@ -108,7 +108,8 @@ bx-playwright records screenshots, traces and videos according to its **artifact
 The `ci` profile keeps a screenshot (`only-on-failure`), a trace and videos (`retain-on-failure`) of every failed context:
 
 ```java
-class extends="testbox.system.BrowserSpec" browserProfile="ci" {
+@browserProfile( "ci" )
+class extends="testbox.system.BrowserSpec" {
     // ...
 }
 ```

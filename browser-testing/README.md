@@ -45,7 +45,9 @@ Extend `testbox.system.BrowserSpec` instead of `testbox.system.BaseSpec`. Inside
 {% tab title="BDD - BoxLang" %}
 {% code title="tests/specs/LoginSpec.bx" %}
 ```java
-class extends="testbox.system.BrowserSpec" baseURL="http://localhost:8080" browserProfile="ci" {
+@baseURL( "http://localhost:8080" )
+@browserProfile( "ci" )
+class extends="testbox.system.BrowserSpec" {
 
     function run() {
         describe( "Login", () => {
@@ -85,7 +87,9 @@ class extends="testbox.system.BrowserSpec" baseURL="http://localhost:8080" brows
 {% tab title="xUnit - BoxLang" %}
 {% code title="tests/specs/LoginTest.bx" %}
 ```groovy
-class extends="testbox.system.BrowserSpec" baseURL="http://localhost:8080" browserProfile="ci" {
+@baseURL( "http://localhost:8080" )
+@browserProfile( "ci" )
+class extends="testbox.system.BrowserSpec" {
 
     function testSignsInWithValidCredentials() {
         browse( ( page ) => {
@@ -152,10 +156,9 @@ When `browserProfile` is not set, bx-playwright uses its `defaultProfile` settin
 
 ```java
 // A mobile, dark mode bundle against staging
-class extends="testbox.system.BrowserSpec"
-    baseURL="https://staging.example.com"
-    browserProfile="mobile,dark"
-{
+@baseURL( "https://staging.example.com" )
+@browserProfile( "mobile,dark" )
+class extends="testbox.system.BrowserSpec" {
     // ...
 }
 ```

@@ -39,7 +39,8 @@ xUnit test methods take a `retries` annotation, which wins over the bundle annot
 {% code title="tests/specs/CheckoutSpec.bx" %}
 ```java
 // Every spec of this bundle gets one retry
-class extends="testbox.system.BrowserSpec" retries="1" {
+@retries( 1 )
+class extends="testbox.system.BrowserSpec" {
 
     function run() {
         describe( "Checkout", () => {
@@ -75,7 +76,8 @@ class extends="testbox.system.BrowserSpec" retries="1" {
 {% code title="tests/specs/CheckoutTest.bx" %}
 ```groovy
 // Every test of this bundle gets one retry
-class extends="testbox.system.BrowserSpec" retries="1" {
+@retries( 1 )
+class extends="testbox.system.BrowserSpec" {
 
     // Uses the bundle retries: up to 2 attempts
     function testShowsTheCart() {
@@ -192,7 +194,7 @@ TestBox resolves the retries of a spec in this order, and the first match wins:
 | Order | Source | Notes |
 | --- | --- | --- |
 | 1 | The spec: `it( ..., retries = N )` or the xUnit `retries` method annotation | Only when greater than `0`. `0`, the default, means "inherit". |
-| 2 | The bundle `retries` annotation | Any number, so `retries="0"` turns retries off for the bundle, even when the run sets a global value. |
+| 2 | The bundle `retries` annotation | Any number, so `@retries( 0 )` (or `retries="0"` on a CFML component) turns retries off for the bundle, even when the run sets a global value. |
 | 3 | The global `retries` runner option (`--retries=N`) | Applies to specs and bundles that declare nothing. |
 | 4 | None | `0`: every spec runs once. |
 

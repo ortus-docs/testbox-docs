@@ -21,7 +21,9 @@ This release is not out yet. The release date will be added here when it ships.
 Extend `testbox.system.BrowserSpec` and call `browse()`: every declared closure argument gets a fresh page in its own isolated browser context, and the bundle shares one browser that closes after the bundle.
 
 ```java
-class extends="testbox.system.BrowserSpec" baseURL="http://localhost:8080" browserProfile="ci" {
+@baseURL( "http://localhost:8080" )
+@browserProfile( "ci" )
+class extends="testbox.system.BrowserSpec" {
 
     function run() {
         describe( "Login", () => {
@@ -101,7 +103,8 @@ Rerun a failing or erroring spec, with its `beforeEach()` and `afterEach()` (or 
 {% tabs %}
 {% tab title="BoxLang" %}
 ```java
-class extends="testbox.system.BaseSpec" retries="1" {
+@retries( 1 )
+class extends="testbox.system.BaseSpec" {
 
     function run() {
         describe( "Payment gateway", () => {

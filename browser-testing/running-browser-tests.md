@@ -83,7 +83,7 @@ Combine it with [retries](retries.md) for a forgiving rerun: `./testbox/run --fa
 
 ## Debugging a Failing Browser Spec
 
-* Run the bundle with a visible browser: set `browserProfile="debug"` on the bundle, or run with `BX_PLAYWRIGHT_PROFILE=debug` when the bundle has no `browserProfile`. The `debug` profile is headed, slowed down and records every artifact.
+* Run the bundle with a visible browser: annotate the bundle with `@browserProfile( "debug" )`, or run with `BX_PLAYWRIGHT_PROFILE=debug` when the bundle has no `browserProfile`. The `debug` profile is headed, slowed down and records every artifact.
 * Open the trace a failure [attached](attachments.md) with `bxPlaywright show-trace path/to/trace.zip`.
 * Record the steps of a new spec as BoxLang code with `bxPlaywright codegen http://localhost:8080`.
 
@@ -94,7 +94,7 @@ More in the [bx-playwright testing guide](https://bxplaywright.boxlang.io/testin
 A CI run needs the bx-playwright module, a browser and its system libraries, your application running, and somewhere to keep the screenshots and traces of failed specs:
 
 * Install the browser with `bxPlaywright install chromium --with-deps` (the `--with-deps` flag installs the system libraries on Linux).
-* Use the `ci` profile, through `BX_PLAYWRIGHT_PROFILE=ci` or a `browserProfile="ci"` annotation: headless, with a screenshot, trace and videos kept for every failed context.
+* Use the `ci` profile, through `BX_PLAYWRIGHT_PROFILE=ci` or a `@browserProfile( "ci" )` annotation: headless, with a screenshot, trace and videos kept for every failed context.
 * Cache `~/.boxlang/playwright` (driver, Node.js and browsers) between runs.
 * Start the application with `--web-server`.
 * Upload `tests/results` and the artifacts when the job fails.
