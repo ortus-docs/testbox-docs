@@ -140,6 +140,10 @@ When the `browse()` closure throws, whether from a matcher, a bx-playwright asse
 | Playwright trace (a `.zip`) | `trace` |
 | Video of each page | `video` |
 
+This is the screenshot TestBox attached when the spec expected the last order to be `Shipped` but the page showed `Processing`:
+
+<figure><img src="../.gitbook/assets/browser-testing-failure-screenshot.png" alt="Failure screenshot of the dashboard with the last order still Processing"><figcaption><p>The failure screenshot: the last order is still Processing</p></figcaption></figure>
+
 Files go to `~/.boxlang/playwright/artifacts` unless you set `artifacts.directory`. When the closure passes, nothing is kept or attached for the `on-failure` policies. More on policies in the [bx-playwright testing guide](https://bxplaywright.boxlang.io/testing/).
 
 ### Opening a Trace
@@ -150,6 +154,10 @@ A trace records every action, a DOM snapshot before and after it, the console an
 bxPlaywright show-trace tests/results/artifacts/trace.zip
 ```
 
+Select an action to see the page at that moment, the call parameters and the error. Here the `hasText` assertion waited 5 seconds for `Shipped` and the trace shows the `Processing` pill it found instead:
+
+<figure><img src="../.gitbook/assets/browser-testing-trace-viewer.png" alt="The Playwright trace viewer showing the failed hasText assertion"><figcaption><p>The failed assertion in the Playwright trace viewer</p></figcaption></figure>
+
 ## Attachments in Reports
 
 | Reporter or output | Shows |
@@ -158,6 +166,8 @@ bxPlaywright show-trace tests/results/artifacts/trace.zip
 | Simple (`simple`) | A paperclip list under the spec, each name linking to its file. |
 | JUnit (`junit`) and ANT JUnit (`antjunit`) | A `<system-out>` element on the test case with one `[[ATTACHMENT\|path]]` line per file. |
 | Text (`text`), Console (`console`) and the BoxLang runner `--stream` output | The attachments of **failed and errored** specs, listed under the failure with their name, type and path. |
+
+<figure><img src="../.gitbook/assets/browser-testing-report-attachments.png" alt="The Simple reporter listing the screenshot, trace and video of a failed browser spec"><figcaption><p>The Simple reporter links each attachment under the failing spec</p></figcaption></figure>
 
 The JUnit output follows the convention of the Jenkins [JUnit Attachments plugin](https://plugins.jenkins.io/junit-attachments/), which GitLab also reads for its test reports:
 

@@ -25,6 +25,12 @@ Unit and integration specs call your code directly. A browser test exercises the
 
 TestBox adds the testing glue on top: one browser per bundle, fresh isolated pages per spec, `expect()` [matchers](browser-matchers.md) for pages and locators, failure screenshots, traces and videos [attached to the spec](attachments.md), [retries](retries.md) for flaky specs, and runner options to [start your web server and rerun only what failed](running-browser-tests.md).
 
+<figure><img src="../.gitbook/assets/browser-testing-demo.gif" alt="A BrowserSpec signing in to a demo shop and checking the dashboard"><figcaption><p>A BrowserSpec signing in and checking the dashboard</p></figcaption></figure>
+
+And when a spec fails, you get the evidence on the failing spec in your report:
+
+<figure><img src="../.gitbook/assets/browser-testing-report-attachments.png" alt="A failing browser spec in the HTML report with its screenshot, trace and video attached"><figcaption><p>Screenshot, trace and video attached to a failing spec</p></figcaption></figure>
+
 ## Installation
 
 bx-playwright needs BoxLang 1.17+ and Java 21+. Install the module into your BoxLang runtime, then download a browser:
