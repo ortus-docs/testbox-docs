@@ -30,4 +30,4 @@ The [BoxLang Sublime Text package](https://boxlang.ortusbooks.com/getting-starte
 
 Install **BoxLang** through Package Control. With TestBox 7 or later available in your project, use the Command Palette to run the current bundle, the spec or suite at the cursor, all tests, or repeat the last run. The package uses the BoxLang CLI runner by default and can also run tests through a configured HTTP runner.
 
-The runner requires the BoxLang CLI and TestBox 7 or later. See the [TestBox BoxLang CLI Runner guide](../running-tests/boxlang-cli-runner.md) for runner details, and the [Sublime Text package repository](https://github.com/ortus-boxlang/sublimetext-boxlang) for installation and configuration options.
+Syntax highlighting works without BoxLang. The full feature set requires BoxLang CLI 1.17 or later, and the TestBox runner requires TestBox 7 or later. See the [TestBox BoxLang CLI Runner guide](../running-tests/boxlang-cli-runner.md) for runner details, and the [Sublime Text package repository](https://github.com/ortus-boxlang/sublimetext-boxlang) for installation and configuration options.
