@@ -18,6 +18,7 @@
 * [Writing Tests](getting-started/test-bundles.md)
 * [Running Tests](getting-started/running-tests/README.md)
   * [BoxLang CLI Runner](getting-started/running-tests/boxlang-cli-runner.md)
+  * [AI Agent Reporter](getting-started/running-tests/ai-agent-reporter.md)
   * [CommandBox Runner](getting-started/running-tests/commandbox-runner.md)
   * [Web Runner](getting-started/running-tests/test-runner.md)
   * [Bundle(s) Runner](getting-started/running-tests/bundle-s-runner.md)
