@@ -10,7 +10,7 @@ TestBox 7.2.0 gives the HTML reporters a complete new look and an **Ask AI** ass
 
 ## A New Look For The HTML Reporters
 
-The `Simple`, `Min`, `Dot` and `Doc` reporters have been rebuilt on Bootstrap 5.3, Bootstrap Icons and Alpine.js, with light and dark themes on the TestBox palette and the new TestBox logos. They keep every feature they had, and they are still fully inlined, so reports run airgapped. A page also went from about 1.4 MB to about 0.45 MB.
+The `Simple`, `Min`, `Dot` and `Doc` reporters have been rebuilt and made reactive thanks to AlpineJS, with light and dark themes on the TestBox palette and the new TestBox logos. They keep every feature they had, and they are still fully inlined, so reports run airgapped. A page also went from about 1.4 MB to about 0.45 MB when fully loaded.
 
 {% embed url="https://youtu.be/FNiiAzqS7tU" %}
 
