@@ -134,7 +134,7 @@ You can assert in two styles, and mix them freely:
 
 ## How a `BrowserSpec` Works
 
-* **One browser per bundle.** The bundle starts one bx-playwright manager, and its browser, the first time a spec uses it. It closes after the bundle through the `closeBrowser()` method, which carries the `afterAll` annotation. Your own `beforeAll()` and `afterAll()` need no `super` calls. If your `afterAll()` throws or a spec calls `abort`, the browser still closes when the TestBox run ends, and bx-playwright closes anything left open when the module unloads or the JVM stops.
+* **One browser per bundle.** The bundle starts one bx-playwright manager, and its browser, the first time a spec uses it. It closes after the bundle through the `closeBrowser()` method, which carries the `afterAll` annotation. Your own `beforeAll()` and `afterAll()` need no `super` calls. If your `afterAll()` throws or a spec calls `abort`, the browser stays open until the next test run that opens a browser, which closes it first. bx-playwright also closes anything left open when the module unloads or the JVM stops.
 * **Fresh pages per `browse()`.** Every `browse()` call gets new pages, each in its own browser context (its own cookies, storage and session), and closes them when the closure ends. Specs never leak state into each other.
 * **Matchers registered for you.** The [browser matchers](browser-matchers.md) are registered for every spec of the bundle.
 * **Failure artifacts attached.** When the closure throws, the screenshots, trace and videos your artifact policy kept are [attached to the spec](attachments.md#automatic-browser-artifacts) and the exception is rethrown unchanged.
