@@ -12,9 +12,7 @@ TestBox 7.2.0 gives the HTML reporters a complete new look and an **Ask AI** ass
 
 The `Simple`, `Min`, `Dot` and `Doc` reporters have been rebuilt on Bootstrap 5.3, Bootstrap Icons and Alpine.js, with light and dark themes on the TestBox palette and the new TestBox logos. They keep every feature they had, and they are still fully inlined, so reports run airgapped. A page also went from about 1.4 MB to about 0.45 MB.
 
-{% file src="../../.gitbook/assets/testbox-new-reporters-trailer.mp4" %}
-A 50 second tour of the new HTML reporters
-{% endfile %}
+{% embed url="https://youtu.be/FNiiAzqS7tU" %}
 
 <figure><img src="../../.gitbook/assets/reporters-simple-failures-light.png" alt="The Simple reporter in light mode"><figcaption><p>Simple, light mode</p></figcaption></figure>
 
