@@ -167,6 +167,7 @@ writeOutput( testbox.run() );
 | `aiContextLines` | `5` | Lines of code before and after the failing line in the prompt. |
 | `aiStackFrames` | `8` | Stack frames in the prompt. Very long prompts are trimmed automatically to fit a URL. |
 | `aiPrompt` | built in | A custom prompt template, see below. |
+| `inlineImageMaxKB` | `2048` | Image attachments, such as failure screenshots, up to this size are embedded in the page as thumbnails. Larger ones stay links. `0` links every image. See [Attachments](../../browser-testing/attachments.md#screenshots-in-the-html-reports). |
 | `urlParams` | none | A struct of request params, such as `editor` or `aiAssist`, for reports that you produce from code. See below. |
 
 ### Your Own Prompt

@@ -94,7 +94,7 @@ it( "renders the PDF", function(){
 {% endtab %}
 {% endtabs %}
 
-Attachments land in the new `attachments` array of the spec stats. The JSON report includes them, the Simple report links them, the text, console and stream outputs list them under failed specs, and the JUnit and ANT JUnit reports add one `[[ATTACHMENT|path]]` line per file in `<system-out>`, the format the Jenkins JUnit Attachments plugin and GitLab understand. See [Attachments](../../browser-testing/attachments.md).
+Attachments land in the new `attachments` array of the spec stats. The JSON report includes them, the HTML reports show screenshots inline as thumbnails that open full size and link the other files, the text, console and stream outputs list them under failed specs, and the JUnit and ANT JUnit reports add one `[[ATTACHMENT|path]]` line per file in `<system-out>`, the format the Jenkins JUnit Attachments plugin and GitLab understand. See [Attachments](../../browser-testing/attachments.md).
 
 ## Spec Retries
 
