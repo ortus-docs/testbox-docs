@@ -49,10 +49,6 @@ Your test harness already includes the web runner: `runner.bx or runner.cfm`.  Y
 [nodejs-runner.md](nodejs-runner.md)
 {% endcontent-ref %}
 
-{% content-ref url="global-runner.md" %}
-[global-runner.md](global-runner.md)
-{% endcontent-ref %}
-
 {% content-ref url="test-browser.md" %}
 [test-browser.md](test-browser.md)
 {% endcontent-ref %}

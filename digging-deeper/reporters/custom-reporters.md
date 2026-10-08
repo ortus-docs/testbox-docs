@@ -1,8 +1,6 @@
 ---
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/06sPF32m7jrKRFAXmFkA/digging-deeper/reporters/custom-reporters
+description: How to create and use custom reporters in TestBox.
+icon: code
 ---
 
 # Custom Reporters

@@ -24,7 +24,6 @@
   * [Directory Runner](getting-started/running-tests/directory-runner.md)
   * [ANT Runner](getting-started/running-tests/ant-runner.md)
   * [NodeJS Runner](getting-started/running-tests/nodejs-runner.md)
-  * [Global Runner](getting-started/running-tests/global-runner.md)
   * [Test Browser](getting-started/running-tests/test-browser.md)
   * [TestBox RUN IDE](getting-started/running-tests/testbox-run-ide.md)
   * [Streaming Runner](getting-started/running-tests/streaming-runner.md)
