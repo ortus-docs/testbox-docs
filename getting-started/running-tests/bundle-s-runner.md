@@ -15,7 +15,7 @@ This is more of an approach than an actual specifc runner.  This approach shows 
 The BoxLang language allows you to run your scripts via the CLI or the browser if you have a web server attached to your project.
 
 {% code title="run.bxs" %}
-```cfscript
+```js
 // Test the BDD Bundle
 r = new testbox.system.TestBox( "tests.specs.BDDTest" )
 println( r.run() );
@@ -60,19 +60,19 @@ CFML engines only allow you to run tests via the browser.  So create your script
 	// Test the BDD Bundle
 	r = new testbox.system.TestBox( "tests.specs.BDDTest" )
 	writeOutput( r.run() );
-	
+
 	// Test the bundle with ONLY the passed specs
 	r = new testbox.system.TestBox( "tests.specs.BDDTest" )
 	writeOutput( r.run( testSpecs="OnlyThis,AndThis,AndThis" ) )
-	
+
 	// Test the bundle with ONLY the passed suites
 	r = new testbox.system.TestBox( "tests.specs.BDDTest" )
 	writeOutput( r.run( testSuites="Custom Matchers,A Spec" ) )
-	
+
 	// Test the passed array of bundles
 	r = new testbox.system.TestBox( [ "tests.specs.BDDTest", "tests.specs.BDD2Test" ] )
 	writeOutput( r.run() )
-	
+
 	// Test with labels and the minimal reporter
 	r = new testbox.system.TestBox( bundles: "tests.specs.BDDTest", labels="linux" )
 	writeOutput( r.run( reporter: "mintext" ) )

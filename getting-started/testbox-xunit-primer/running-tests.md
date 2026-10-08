@@ -58,12 +58,6 @@ You can also target a specific spec to execute via the URL
 http://localhost{port}/tests/specs/MySpec.cfc
 ```
 
-## Global Runner
-
-TestBox ships with a global runner that can run pretty much anything. You can customize it or place it wherever you need it:
-
-![](https://raw.githubusercontent.com/ortus-docs/testbox-docs/master/.gitbook/assets/testbox-global-runner.png)
-
 ## Test Browser
 
 TestBox ships with a test browser that is highly configurable to whatever URL-accessible path you want. It will then show you a test browser where you can navigate and execute not only individual tests but also directory suites.

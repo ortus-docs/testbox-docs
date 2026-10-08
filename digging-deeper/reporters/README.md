@@ -15,19 +15,29 @@ TestBox ships with a rich set of reporters for every use case:
 | `ANTJunit` | JUnit XML variant compatible with the ANT `junitreport` task |
 | `Codexwiki` | MediaWiki syntax for use in Codex Wiki (DEPRECATED) |
 | `Console` | Sends the report to the console |
-| `Doc` | Semantic HTML for documentation-style output |
-| `Dot` | Compact dot-matrix report (DEPRECATED) |
+| `Doc` | Documentation-style HTML with a bundle navigation and light and dark themes |
+| `Dot` | One dot per spec with a details drawer and light and dark themes |
 | `JSON` | Full JSON report of all results |
 | `JUnit` | Standard JUnit-compliant XML report |
-| `Min` | Minimalistic HTML view |
+| `Min` | Compact HTML view that lists only what needs attention |
 | `MinText` | Minimalistic plain-text report |
 | `Raw` | Raw BoxLang/CFML struct representation of results |
-| `Simple` | Basic HTML reporter with editor link support |
+| `Simple` | The complete HTML report: failures first, then every bundle, with Ask AI and editor links |
 | `Tap` | Test Anything Protocol (TAP) output (DEPRECATED) |
 | `Text` | Full plain-text report |
 | `XML` | XML-based testing report |
 
 To use a specific reporter, append `reporter` to your runner URL, e.g. `&reporter=Text`, or set it in your `runner.bxm` / `runner.cfm`.
+
+## HTML Reporters
+
+`Simple`, `Min`, `Dot` and `Doc` were rebuilt in TestBox 7.2 with light and dark themes, keyboard navigation, highlighted BoxLang and CFML code and **Ask AI** on every failure. They are fully inlined, so reports still run airgapped.
+
+<figure><img src="../../.gitbook/assets/reporters-simple-failures-light.png" alt="The Simple reporter"><figcaption><p>The Simple reporter</p></figcaption></figure>
+
+{% content-ref url="html-reporters.md" %}
+[html-reporters.md](html-reporters.md)
+{% endcontent-ref %}
 
 ## `ConsoleReporter` — Hiding Skipped Tests
 
@@ -187,9 +197,9 @@ if ( arrayLen( failed.bundles ) ) {
 {% endtab %}
 {% endtabs %}
 
-## Open In Editor (Simple Reporter)
+## Open In Editor
 
-The `simple` reporter allows you to set a code editor of choice so it creates clickable links for stack traces and tag contexts — opening exceptions in your editor at the exact line.
+The HTML reporters (`Simple`, `Min`, `Dot` and `Doc`) allow you to set a code editor of choice so they create clickable links for failures, stack traces and tag contexts, opening exceptions in your editor at the exact line.
 
 {% hint style="info" %}
 The default editor is `vscode`.
@@ -215,9 +225,7 @@ Use the `url.editor` parameter in the URL or set it in your `runner.cfm`:
 <cfinclude template="/testbox/system/runners/HTMLRunner.cfm" >
 ```
 
-![](<../../.gitbook/assets/screen-shot-2021-05-24-at-5.25.20-pm (2) (1).png>)
-
-![](<../../.gitbook/assets/Screen Shot 2021-05-24 at 5.25.29 PM.png>)
+<figure><img src="../../.gitbook/assets/reporters-simple-failures-dark.png" alt="Open in editor links on every failure"><figcaption><p>Every failure has an <em>Open in editor</em> link, and every stack frame links to its file and line</p></figcaption></figure>
 
 ### Available Editors
 
@@ -233,13 +241,17 @@ Use the `url.editor` parameter in the URL or set it in your `runner.cfm`:
 
 ## Reporter Screenshots
 
-![](../../.gitbook/assets/testbox-sc-dots.png)
+<figure><img src="../../.gitbook/assets/reporters-dot-light.png" alt="Dot reporter"><figcaption><p>Dot</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/reporters-doc-light.png" alt="Doc reporter"><figcaption><p>Doc</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/reporters-min-light.png" alt="Min reporter"><figcaption><p>Min</p></figcaption></figure>
 
 ![](../../.gitbook/assets/testbox-sc-json.png)
 
 ![](../../.gitbook/assets/testbox-sc-junit.png)
 
-![](../../.gitbook/assets/testbox-sc-simple.png)
+<figure><img src="../../.gitbook/assets/reporters-simple-failures-light.png" alt="Simple reporter"><figcaption><p>Simple</p></figcaption></figure>
 
 ![](../../.gitbook/assets/testbox-sc-text.png)
 

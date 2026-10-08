@@ -66,8 +66,11 @@ Under the `jobs.tests.steps` is where we will place each sequential testing step
           distribution: "adopt"
           java-version: "11"
 
-      - name: Setup CommandBox
-        uses: Ortus-Solutions/setup-commandbox@main
+      - name: Setup BoxLang
+        uses: Ortus-Solutions/setup-boxlang@main
+        with:
+          modules: bx-cli
+          commandbox-modules: testbox-cli
 ```
 
 If we need to install dependencies, we would do that now:
@@ -117,8 +120,11 @@ jobs:
           distribution: "adopt"
           java-version: "11"
 
-      - name: Setup CommandBox
-        uses: Ortus-Solutions/setup-commandbox@main
+      - name: Setup BoxLang
+        uses: Ortus-Solutions/setup-boxlang@main
+        with:
+          modules: bx-cli
+          commandbox-modules: testbox-cli
 
       - name: Install dependencies
         run: box install

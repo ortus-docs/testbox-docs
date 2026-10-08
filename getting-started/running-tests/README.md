@@ -29,6 +29,10 @@ Your test harness already includes the web runner: `runner.bx or runner.cfm`.  Y
 [commandbox-runner.md](commandbox-runner.md)
 {% endcontent-ref %}
 
+{% content-ref url="ai-agent-reporter.md" %}
+[ai-agent-reporter.md](ai-agent-reporter.md)
+{% endcontent-ref %}
+
 {% content-ref url="test-runner.md" %}
 [test-runner.md](test-runner.md)
 {% endcontent-ref %}
@@ -47,10 +51,6 @@ Your test harness already includes the web runner: `runner.bx or runner.cfm`.  Y
 
 {% content-ref url="nodejs-runner.md" %}
 [nodejs-runner.md](nodejs-runner.md)
-{% endcontent-ref %}
-
-{% content-ref url="global-runner.md" %}
-[global-runner.md](global-runner.md)
 {% endcontent-ref %}
 
 {% content-ref url="test-browser.md" %}
