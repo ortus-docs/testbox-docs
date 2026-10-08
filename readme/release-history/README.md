@@ -16,7 +16,7 @@ In this release, we focused on BoxLang CLI runner enhancements, real-time stream
 
 The **7.1** minor release builds on that foundation with a major expansion of the assertions and expectations library: grouped assertions, collection expectation modes, expectation context for richer failure messages, and dedicated matcher families for BoxLang `Set` and `Range` objects plus a data navigator for asserting against deeply nested structures.
 
-The **7.2** minor release adds the **Agent reporter**, a compact JSON reporter built for AI agents and automation. It reports the totals plus only the failing specs so that agents can run tests and read the results with a minimal token cost.
+The **7.2** minor release gives the **HTML reporters** a complete new look, with light and dark themes, keyboard navigation and **Ask AI**, which hands any failure to ChatGPT, Claude or your coding agent in one click. It also adds the **Agent reporter**, a compact JSON reporter built for AI agents and automation. It reports the totals plus only the failing specs so that agents can run tests and read the results with a minimal token cost.
 
 ## Version 6.x - September 2024
 
