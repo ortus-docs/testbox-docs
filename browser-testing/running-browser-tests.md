@@ -81,6 +81,22 @@ Every run of the BoxLang runner writes a `.testbox-failed.json` file to the repo
 
 Combine it with [retries](retries.md) for a forgiving rerun: `./testbox/run --failed --retries=1`.
 
+### Run Failed in the HTML reports
+
+The web runners keep no state, so they need no file. When something failed, the Simple, Min, Dot and Doc reports show a **Run Failed (N)** button next to **Run All**. Its link is built from the report on screen: `?testBundles=...&testSpecs=...` with the failed bundles and spec ids. Click it, fix, click it again. When the spec ids would make the link too long, it reruns the failed bundles whole. Bundles that failed outside of a spec are left out, like with `--failed`.
+
+### From code
+
+Both use `TestResult.getFailedTargets()`, available on every engine:
+
+```js
+var results = new testbox.system.TestBox( directory = "tests.specs" ).runRaw()
+var failed  = results.getFailedTargets()
+// { bundles : [ "tests.specs.LoginSpec" ], specs : [ "spec id" ], bundleErrors : [] }
+
+new testbox.system.TestBox( bundles = failed.bundles ).runRaw( testBundles = failed.bundles, testSpecs = failed.specs )
+```
+
 ## Debugging a Failing Browser Spec
 
 * Run the bundle with a visible browser: annotate the bundle with `@browserProfile( "debug" )`, or run with `BX_PLAYWRIGHT_PROFILE=debug` when the bundle has no `browserProfile`. The `debug` profile is headed, slowed down and records every artifact.

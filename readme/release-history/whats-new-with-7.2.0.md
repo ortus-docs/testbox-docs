@@ -141,9 +141,13 @@ component extends="testbox.system.BaseSpec" retries="1" {
 
 See [Retries](../../browser-testing/retries.md).
 
-## BoxLang Runner: `--failed`
+## Run Only What Failed
 
-Every run writes `{reportpath}/.testbox-failed.json` with the bundles and spec ids that failed or errored. `./testbox/run --failed` reruns only those. Bundles that failed outside of a spec (`beforeAll()`, `afterAll()`) are listed, not rerun.
+* **HTML reports:** the Simple, Min, Dot and Doc reports show a **Run Failed (N)** button next to **Run All** when something failed. The link is built from the report, so the web runners keep no state.
+* **BoxLang runner:** every run writes `{reportpath}/.testbox-failed.json` with the bundles and spec ids that failed or errored, and `./testbox/run --failed` reruns only those.
+* **From code:** `TestResult.getFailedTargets()` returns `{ bundles, specs, bundleErrors }` on every engine.
+
+Bundles that failed outside of a spec (`beforeAll()`, `afterAll()`) go to `bundleErrors`: they are listed, not rerun.
 
 ## BoxLang Runner: `--web-server`
 
