@@ -73,6 +73,7 @@
 * [Output Utilities](digging-deeper/output-utilities.md)
 * [Runner Listeners](digging-deeper/run-listeners.md)
 * [Reporters](digging-deeper/reporters/README.md)
+  * [HTML Reporters](digging-deeper/reporters/html-reporters.md)
   * [Custom Reporters](digging-deeper/reporters/custom-reporters.md)
 * [Modules](digging-deeper/modules.md)
 * [Dry Run & Spec Discovery](digging-deeper/dry-run.md)

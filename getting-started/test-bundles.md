@@ -86,7 +86,7 @@ testbox create unit name=SecurityTest directory="tests/specs/unit/"
 
 Now you can run your tests via the browser (http://localhost:port/tests/runner.cfm)
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/reporters-simple-myfirsttest.png" alt="The Simple reporter showing a passing My First Test"><figcaption><p>The Simple reporter in the browser</p></figcaption></figure>
 
 or via the CLI `testbox run`
 
