@@ -146,6 +146,57 @@ The new `StreamingReporter` (backed by `StreamingRunner`) pushes each spec resul
 [streaming-runner.md](../../getting-started/running-tests/streaming-runner.md)
 {% endcontent-ref %}
 
+## Attachments and Retries
+
+Specs can [attach files](../../browser-testing/attachments.md), such as screenshots, traces or logs, and can be [retried](../../browser-testing/retries.md). Reporters show both:
+
+| Reporter | Attachments | Retries |
+|----------|-------------|---------|
+| `JSON`, `Raw` | An `attachments` array of `{ path, type, name }` in every spec's stats | An `attempts` count in every spec's stats |
+| `Simple` | A linked list under each spec | `(passed after N attempts)` after the duration |
+| `JUnit`, `ANTJunit` | A `<system-out>` with one `[[ATTACHMENT\|path]]` line per file, read by the Jenkins JUnit Attachments plugin and GitLab | |
+| `Text`, `Console` | Listed under failed and errored specs | `(passed after N attempts)` after the duration |
+
+See [Attachments in Reports](../../browser-testing/attachments.md#attachments-in-reports) for an example of the JUnit output.
+
+## Run All and Run Failed
+
+The `Simple`, `Min`, `Dot` and `Doc` reports have a **Run All** button. When something failed or errored, a **Run Failed (N)** button sits next to it and reruns only those specs.
+
+![The Simple report with Run All and Run Failed](../../.gitbook/assets/testbox-sc-run-failed.png)
+
+* The link is built from the report on screen, `?testBundles=...&testSpecs=...` with the failed bundles and spec ids, so the web runner keeps no state between runs. Fix, click it again, repeat.
+* When the spec ids would make the link longer than 2000 characters, it reruns the failed bundles whole.
+* Bundles that failed outside of a spec, for example in `beforeAll()`, are left out: they are broken, not failed. The report shows them as bundle exceptions.
+* The same list is available from code on every engine with `TestResult.getFailedTargets()`, and the BoxLang CLI runner keeps it between runs for [`--failed`](../../browser-testing/running-browser-tests.md#rerun-what-failed-failed).
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+var results = new testbox.system.TestBox( directory = "tests.specs" ).runRaw()
+var failed  = results.getFailedTargets()
+// { bundles : [ "tests.specs.LoginSpec" ], specs : [ "spec id" ], bundleErrors : [] }
+
+if ( failed.bundles.len() ) {
+	new testbox.system.TestBox( bundles = failed.bundles )
+		.runRaw( testBundles = failed.bundles, testSpecs = failed.specs )
+}
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+var results = new testbox.system.TestBox( directory = "tests.specs" ).runRaw();
+var failed  = results.getFailedTargets();
+
+if ( arrayLen( failed.bundles ) ) {
+	new testbox.system.TestBox( bundles = failed.bundles )
+		.runRaw( testBundles = failed.bundles, testSpecs = failed.specs );
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## Open In Editor
 
 The HTML reporters (`Simple`, `Min`, `Dot` and `Doc`) allow you to set a code editor of choice so they create clickable links for failures, stack traces and tag contexts, opening exceptions in your editor at the exact line.

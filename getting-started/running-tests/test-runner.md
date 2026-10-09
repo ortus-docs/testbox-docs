@@ -46,6 +46,10 @@ You can open that file and customize it as you see fit.  Here is an example of s
 <bx:include template="/testbox/system/runners/HTMLRunner.cfm" >
 ```
 
+### Run All and Run Failed
+
+The HTML reports (`Simple`, `Min`, `Dot`, `Doc`) have a **Run All** button and, when something failed or errored, a **Run Failed (N)** button that reruns only those specs through the same runner. The link carries the failed bundles and spec ids (`testBundles` and `testSpecs`), so the runner keeps no state. See [Run All and Run Failed](../../digging-deeper/reporters/README.md#run-all-and-run-failed).
+
 ### Test Bundle Execution
 
 If you make your test bundle class inherit from our `testbox.system.BaseSpec` class, you will be able to execute the class directly via the URL:

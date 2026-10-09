@@ -86,6 +86,14 @@
   * [Gitlab](digging-deeper/ci/gitlab.md)
   * [Travis](digging-deeper/ci/travis.md)
 
+## Browser Testing
+
+* [Overview](browser-testing/README.md)
+* [Browser Matchers](browser-testing/browser-matchers.md)
+* [Attachments](browser-testing/attachments.md)
+* [Retries](browser-testing/retries.md)
+* [Running Browser Tests](browser-testing/running-browser-tests.md)
+
 ## Mocking
 
 * [MockBox](mocking/mockbox/README.md)

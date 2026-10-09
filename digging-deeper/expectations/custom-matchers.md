@@ -75,6 +75,19 @@ You can also register an instance:
 addMatchers( new models.util.MyMatchers() );
 ```
 
+### Browser Matchers
+
+TestBox ships a ready-made matcher class for bx-playwright pages and locators, `testbox.system.browser.BrowserMatchers`. `BrowserSpec` bundles register it for you; in any other BoxLang spec, register it like any class of matchers:
+
+```java
+addMatchers( new testbox.system.browser.BrowserMatchers() )
+
+expect( page ).toSee( "Welcome" )
+expect( page.locator( ".todo" ) ).toHaveCount( 3 )
+```
+
+It requires BoxLang and the bx-playwright module. See [Browser Matchers](../../browser-testing/browser-matchers.md).
+
 ### Failure Messages And Context
 
 Custom matcher failures route through the same internal fail path as built-in matchers, so any [context](./#adding-context-to-failures) set on the expectation is applied to your matcher's message too:

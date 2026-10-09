@@ -71,6 +71,10 @@ Every bundle, suite and spec has a **Run** link. A run link is a plain link to t
 A run link carries only the target you asked for (`testBundles`, `testSuites` or `testSpecs`). Every other runner option falls back to its default.
 {% endhint %}
 
+When something failed or errored, **Run Failed (N)** sits next to **Run All** and reruns only those specs. Its link lists the failed bundles and spec ids, built from the report itself, so the runner keeps no state: fix, click it again, repeat. See [Run All and Run Failed](README.md#run-all-and-run-failed).
+
+![The Simple report with Run All and Run Failed](../../.gitbook/assets/testbox-sc-run-failed.png)
+
 ### Open In Your Editor
 
 Failures link to the failing file and line in your editor. See [Open In Editor](README.md#open-in-editor) for the editors you can choose.

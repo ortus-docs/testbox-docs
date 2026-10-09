@@ -136,6 +136,10 @@ jobs:
         run: box testbox run
 ```
 
+{% hint style="info" %}
+Running browser tests with bx-playwright? See the [browser tests GitHub Actions workflow](../../browser-testing/running-browser-tests.md#github-actions), which installs the browser, caches it, starts your web server and uploads the screenshots and traces of failed specs.
+{% endhint %}
+
 ### Box.json
 
 In order for the `box testbox run` to execute correctly, our `box.json` in our project must be able to connect to our server and know which tests to execute. Here's a basic example showing the most important testbox property: the `testbox.runner` property:
