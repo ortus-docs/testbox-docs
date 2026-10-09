@@ -202,7 +202,7 @@ These options shine for [browser tests](../../browser-testing/README.md), but `-
 | `--retries` | How many extra times to run a failing or erroring spec. A spec `retries` argument and a bundle `retries` annotation take precedence. Skipped specs are never retried. | `0` |
 | `--failed` | Run only the bundles and specs that failed or errored in the last run, read from `{reportpath}/.testbox-failed.json`. Every run writes that file. When it is missing or lists nothing, a message is printed and nothing runs. | `false` |
 | `--web-server` | A shell command that starts a web server before the tests run, stopped with its child processes after the tests. Runs with `sh -c` (`cmd /c` on Windows) from the current directory. | |
-| `--web-server-url` | The URL polled until the web server answers with a status below 500. Also the default `baseURL` of `BrowserSpec` bundles. | `http://localhost:8080` |
+| `--web-server-url` | The URL polled until the web server answers with a status below 500. Also the default `baseURL` of browser bundles. | `http://localhost:8080` |
 | `--web-server-timeout` | How long to wait for the web server to answer, in seconds. When it does not answer in time, the runner stops it, prints the reason and exits with code `1`. | `60` |
 
 ```bash

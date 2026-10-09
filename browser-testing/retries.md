@@ -39,8 +39,9 @@ xUnit test methods take a `retries` annotation, which wins over the bundle annot
 {% code title="tests/specs/CheckoutSpec.bx" %}
 ```java
 // Every spec of this bundle gets one retry
+@browser
 @retries( 1 )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
 
     function run() {
         describe( "Checkout", () => {
@@ -76,8 +77,9 @@ class extends="testbox.system.BrowserSpec" {
 {% code title="tests/specs/CheckoutTest.bx" %}
 ```groovy
 // Every test of this bundle gets one retry
+@browser
 @retries( 1 )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
 
     // Uses the bundle retries: up to 2 attempts
     function testShowsTheCart() {

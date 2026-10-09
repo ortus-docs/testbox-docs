@@ -7,7 +7,7 @@ icon: paperclip
 
 A failing browser test is much easier to fix when you can see the page. TestBox lets any spec **attach files** to its result: screenshots, Playwright traces, videos, logs, HAR files or anything else. Reporters list the attachments under the spec, and the JUnit reports expose them to Jenkins and GitLab.
 
-`BrowserSpec` attaches the screenshots, trace and videos of a failed `browse()` call for you, and you can call `attach()` from any spec, on any engine.
+[Browser specs](README.md#turning-on-browser-support) attach the screenshots, trace and videos of a failed `browse()` call for you, and you can call `attach()` from any spec, on any engine.
 
 ## `attach()`
 
@@ -94,7 +94,7 @@ TestBox records the path you give it; it does not copy the file. Keep attached f
 ## Automatic Browser Artifacts
 
 {% hint style="info" %}
-Automatic browser artifacts require BoxLang and bx-playwright, like every [`BrowserSpec`](README.md) feature. On CFML engines browser specs are skipped before any artifact is recorded.
+Automatic browser artifacts require BoxLang and bx-playwright, like every [browser spec](README.md) feature. On CFML engines browser specs are skipped before any artifact is recorded.
 {% endhint %}
 
 bx-playwright records screenshots, traces and videos according to its **artifact policies**. They are all `off` by default. Turn them on with a profile, for example the built-in `ci` profile, or with the `artifacts` setting or `browse()` option:
@@ -109,7 +109,7 @@ The `ci` profile keeps a screenshot (`only-on-failure`), a trace and videos (`re
 
 ```java
 @browserProfile( "ci" )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
     // ...
 }
 ```

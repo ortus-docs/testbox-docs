@@ -132,19 +132,19 @@ component{
 
 ## Browser Testing
 
-Drive a real browser (Chromium, Firefox or WebKit) right from your specs. Extend `BrowserSpec`, call `browse()`, and assert on what your users actually see. Powered by [bx-playwright](https://bxplaywright.boxlang.io) on BoxLang.
+Drive a real browser (Chromium, Firefox or WebKit) right from your specs. Add the `@browser` annotation to a spec, call `browse()`, and assert on what your users actually see. Powered by [bx-playwright](https://bxplaywright.boxlang.io) on BoxLang.
 
 {% hint style="info" %}
 Browser testing requires BoxLang and the bx-playwright module. On CFML engines browser specs skip with the reason, so the rest of your suite still runs.
 {% endhint %}
 
-<figure><img src=".gitbook/assets/browser-testing-demo.gif" alt="A BrowserSpec signing in to a demo shop and checking the dashboard"><figcaption><p>A BrowserSpec signing in and checking the dashboard</p></figcaption></figure>
+<figure><img src=".gitbook/assets/browser-testing-demo.gif" alt="A browser spec signing in to a demo shop and checking the dashboard"><figcaption><p>A browser spec signing in and checking the dashboard</p></figcaption></figure>
 
 {% code title="tests/specs/browser/ShopSpec.bx" %}
 ```java
 @baseURL( "http://localhost:8090" )
 @browserProfile( "ci" )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
 
 	function run() {
 		describe( "Ortus Shop", () => {

@@ -8,7 +8,7 @@ icon: browsers
 TestBox can drive a real browser (Chromium, Firefox or WebKit) from your specs through the [bx-playwright](https://bxplaywright.boxlang.io) module. Your specs visit pages, click, fill forms and assert on what a user actually sees, with the same `describe()`, `it()` and `expect()` you already write.
 
 {% hint style="info" %}
-`BrowserSpec` and the [browser matchers](browser-matchers.md) require BoxLang, because bx-playwright only runs on BoxLang. When the engine is not BoxLang, or bx-playwright is not installed, `browse()` and `this.playwright()` skip the running spec with the reason, so the rest of your suite still runs:
+Browser specs and the [browser matchers](browser-matchers.md) require BoxLang, because bx-playwright only runs on BoxLang. When the engine is not BoxLang, or bx-playwright is not installed, `browse()` and `this.playwright()` skip the running spec with the reason, so the rest of your suite still runs:
 
 * `Browser specs need the BoxLang engine: bx-playwright only runs on BoxLang`
 * `bx-playwright is not installed: install-bx-module bx-playwright`
@@ -25,7 +25,7 @@ Unit and integration specs call your code directly. A browser test exercises the
 
 TestBox adds the testing glue on top: one browser per bundle, fresh isolated pages per spec, `expect()` [matchers](browser-matchers.md) for pages and locators, failure screenshots, traces and videos [attached to the spec](attachments.md), [retries](retries.md) for flaky specs, and runner options to [start your web server and rerun only what failed](running-browser-tests.md).
 
-<figure><img src="../.gitbook/assets/browser-testing-demo.gif" alt="A BrowserSpec signing in to a demo shop and checking the dashboard"><figcaption><p>A BrowserSpec signing in and checking the dashboard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/browser-testing-demo.gif" alt="A browser spec signing in to a demo shop and checking the dashboard"><figcaption><p>A browser spec signing in and checking the dashboard</p></figcaption></figure>
 
 And when a spec fails, you get the evidence on the failing spec in your report:
 
@@ -45,7 +45,7 @@ On Linux CI machines add `--with-deps` to `bxPlaywright install` so the system l
 
 ## Your First Browser Spec
 
-Extend `testbox.system.BrowserSpec` instead of `testbox.system.BaseSpec`. Inside a spec, call `browse()` with a closure: it receives a fresh page, and everything the page offers (`visit()`, `click()`, `fill()`, finders, locators and assertions) is the [bx-playwright browsing API](https://bxplaywright.boxlang.io/browsing/).
+Add a browser annotation, such as `@browser`, `@browserProfile` or `@baseURL`, on the lines above `class`, and extend `testbox.system.BaseSpec` as usual. TestBox then [turns on browser support](#turning-on-browser-support) for the bundle. Inside a spec, call `browse()` with a closure: it receives a fresh page, and everything the page offers (`visit()`, `click()`, `fill()`, finders, locators and assertions) is the [bx-playwright browsing API](https://bxplaywright.boxlang.io/browsing/).
 
 {% tabs %}
 {% tab title="BDD - BoxLang" %}
@@ -53,7 +53,7 @@ Extend `testbox.system.BrowserSpec` instead of `testbox.system.BaseSpec`. Inside
 ```java
 @baseURL( "http://localhost:8080" )
 @browserProfile( "ci" )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
 
     function run() {
         describe( "Login", () => {
@@ -95,7 +95,7 @@ class extends="testbox.system.BrowserSpec" {
 ```groovy
 @baseURL( "http://localhost:8080" )
 @browserProfile( "ci" )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
 
     function testSignsInWithValidCredentials() {
         browse( ( page ) => {
@@ -138,9 +138,67 @@ You can assert in two styles, and mix them freely:
 * TestBox [browser matchers](browser-matchers.md): `expect( page ).toSee( "Welcome" )`, `expect( locator ).toBeVisible()`, with `not` forms.
 * bx-playwright [assertions](https://bxplaywright.boxlang.io/assertions/): `page.assertSee( "Welcome" )`, `page.expect( "h1" ).toHaveText( "Hi" )`. Their `Playwright.AssertionFailed` exceptions count as spec **failures**, not errors.
 
-## How a `BrowserSpec` Works
+## Turning On Browser Support
 
-* **One browser per bundle.** The bundle starts one bx-playwright manager, and its browser, the first time a spec uses it. It closes after the bundle through the `closeBrowser()` method, which carries the `afterAll` annotation. Your own `beforeAll()` and `afterAll()` need no `super` calls. If your `afterAll()` throws or a spec calls `abort`, the browser stays open until the next test run that opens a browser, which closes it first. bx-playwright also closes anything left open when the module unloads or the JVM stops.
+Browser support is turned on by class annotations, not by a base class. Any spec whose class, or a class it extends, has one of these annotations gets it:
+
+| Annotation | Description |
+| --- | --- |
+| `@browser` | Turns browser support on with the bx-playwright default profile. |
+| `@browserProfile( "ci" )` | Turns it on with the given bx-playwright profiles, a list such as `ci,mobile`. |
+| `@baseURL( "http://localhost:8080" )` | Turns it on with the URL relative visits resolve against. |
+
+`@browserAutoInstall( false )` requires a pre-installed browser instead of downloading one on first use. It does not turn browser support on by itself.
+
+```java
+@browser
+class extends="testbox.system.BaseSpec" {
+
+    function run() {
+        it( "shows the home page", () => {
+            browse( ( page ) => page.visit( "http://localhost:8080/" ).assertSee( "Welcome" ) )
+        } )
+    }
+
+}
+```
+
+When a bundle has browser support, the TestBox runner creates a `testbox.system.browser.BrowserSupport` for it and mixes these methods into the spec's `this` and `variables` scopes, so you call them unqualified:
+
+* `browse( callback, options )`: run a closure with fresh, isolated browser pages.
+* `browserAvailable()`: can browser specs run here? See [Skipping When No Browser Is Available](#skipping-when-no-browser-is-available).
+* `ensureBrowserInstalled()`: install the profile browser, for example from `beforeAll()` when auto-install is off.
+* `getBrowserSupport()`: the bundle `BrowserSupport`.
+* `closeBrowser()`: close the bundle browser.
+
+It also adds `this.playwright()`, the bundle manager (described below), and registers the [browser matchers](browser-matchers.md) for every spec of the bundle. A method your spec declares itself, with one of these names, is kept, not overridden.
+
+* **Inherited.** The annotations are read from the spec class and every class it extends. Put `@browser` on your project base spec and every spec that extends it can browse.
+* **Any base class.** It works for BDD and xUnit bundles, whatever they extend: `testbox.system.BaseSpec`, a ColdBox `BaseTestCase` or your own base spec.
+* **BoxLang only.** The runner attaches browser support on BoxLang, where bx-playwright runs.
+
+```java
+// tests/resources/BaseBrowserSpec.bx: every spec that extends it gets browser support.
+// It is abstract, so TestBox does not run it as a bundle.
+@browserProfile( "ci" )
+abstract class extends="testbox.system.BaseSpec" {
+}
+```
+
+### `BrowserSpec`
+
+`testbox.system.BrowserSpec` is an optional base class: it is a `testbox.system.BaseSpec` that carries the `@browser` annotation. Existing specs that extend it keep working unchanged.
+
+```java
+@baseURL( "http://localhost:8080" )
+class extends="testbox.system.BrowserSpec" {
+    // ...
+}
+```
+
+## How Browser Support Works
+
+* **One browser per bundle.** The bundle starts one bx-playwright manager, and its browser, the first time a spec uses it. The runner closes it after the bundle, even when your `afterAll()` throws, so your own `beforeAll()` and `afterAll()` need no `super` calls. If a request aborts before the bundle ends, the browser stays open until the next test run that opens a browser, which closes it first. bx-playwright also closes anything left open when the module unloads or the JVM stops.
 * **Fresh pages per `browse()`.** Every `browse()` call gets new pages, each in its own browser context (its own cookies, storage and session), and closes them when the closure ends. Specs never leak state into each other.
 * **Matchers registered for you.** The [browser matchers](browser-matchers.md) are registered for every spec of the bundle.
 * **Failure artifacts attached.** When the closure throws, the screenshots, trace and videos your artifact policy kept are [attached to the spec](attachments.md#automatic-browser-artifacts) and the exception is rethrown unchanged.
@@ -149,8 +207,10 @@ You can assert in two styles, and mix them freely:
 
 | Annotation | Description |
 | --- | --- |
+| `browser` | Turns browser support on. Not needed when `baseURL` or `browserProfile` is set. |
 | `baseURL` | The URL relative visits such as `page.visit( "/login" )` resolve against. |
 | `browserProfile` | The bx-playwright [profiles](https://bxplaywright.boxlang.io/profiles/) for the bundle browser, a list such as `ci,mobile`. Profiles merge left to right. |
+| `browserAutoInstall` | Set to `false` to require a pre-installed browser instead of downloading one on first use. |
 | `retries` | Rerun failing specs of the bundle. See [Retries](retries.md). |
 
 When `baseURL` is not set, the bundle uses, in order:
@@ -164,7 +224,7 @@ When `browserProfile` is not set, bx-playwright uses its `defaultProfile` settin
 // A mobile, dark mode bundle against staging
 @baseURL( "https://staging.example.com" )
 @browserProfile( "mobile,dark" )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
     // ...
 }
 ```
@@ -235,7 +295,7 @@ it( "lists the products from the API", () => {
 ```
 
 {% hint style="warning" %}
-Call it as `this.playwright()`. An unqualified `playwright()` resolves to the bx-playwright built-in function, even inside a `BrowserSpec`, and returns a **new** manager that ignores the bundle annotations and that the bundle does not close for you.
+Call it as `this.playwright()`. An unqualified `playwright()` resolves to the bx-playwright built-in function, even inside a browser spec, and returns a **new** manager that ignores the bundle annotations and that the bundle does not close for you.
 {% endhint %}
 
 ## Skipping When No Browser Is Available
@@ -256,7 +316,7 @@ function run() {
 
 ## Using the Browser From Any Spec
 
-`BrowserSpec` delegates to `testbox.system.browser.BrowserSupport`, which any BoxLang spec can use directly. Close it yourself when you are done:
+Browser support delegates to `testbox.system.browser.BrowserSupport`, which any BoxLang code can use directly, without the annotations. Close it yourself when you are done:
 
 ```java
 class extends="testbox.system.BaseSpec" {

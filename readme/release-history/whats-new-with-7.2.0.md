@@ -12,18 +12,18 @@ This release is not out yet. The release date will be added here when it ships.
 
 * * *
 
-## Browser Testing With `BrowserSpec`
+## Browser Testing
 
 {% hint style="info" %}
-`BrowserSpec` and the browser matchers require BoxLang and the bx-playwright module. On a CFML engine, or without bx-playwright, `browse()` skips the running spec with the reason, such as `bx-playwright is not installed: install-bx-module bx-playwright`.
+Browser specs and the browser matchers require BoxLang and the bx-playwright module. On a CFML engine, or without bx-playwright, `browse()` skips the running spec with the reason, such as `bx-playwright is not installed: install-bx-module bx-playwright`.
 {% endhint %}
 
-Extend `testbox.system.BrowserSpec` and call `browse()`: every declared closure argument gets a fresh page in its own isolated browser context, and the bundle shares one browser that closes after the bundle.
+Turn browser support on with a class annotation, `@browser`, `@browserProfile` or `@baseURL`, on any spec whose class, or a class it extends, carries it. No special base class is needed. Then call `browse()`: every declared closure argument gets a fresh page in its own isolated browser context, and the bundle shares one browser that the runner closes after the bundle, even when an `afterAll()` throws.
 
 ```java
 @baseURL( "http://localhost:8080" )
 @browserProfile( "ci" )
-class extends="testbox.system.BrowserSpec" {
+class extends="testbox.system.BaseSpec" {
 
     function run() {
         describe( "Login", () => {
@@ -43,10 +43,12 @@ class extends="testbox.system.BrowserSpec" {
 }
 ```
 
-* `browserProfile` and `baseURL` class annotations.
+* `@browser`, `@browserProfile` and `@baseURL` class annotations turn browser support on, and are inherited from parent classes: put `@browser` on your project base spec and its children can browse. It works for BDD and xUnit bundles on any base class, such as `testbox.system.BaseSpec` or a ColdBox `BaseTestCase`.
+* The runner mixes `browse()`, `browserAvailable()`, `ensureBrowserInstalled()`, `getBrowserSupport()` and `closeBrowser()` into the spec, adds `this.playwright()` and registers the browser matchers. Methods your spec declares itself are kept.
+* `testbox.system.BrowserSpec` is an optional base class that carries `@browser`.
 * `browse( callback, options )` with one page per declared argument, for multi-user flows.
 * `this.playwright()` for the bundle's bx-playwright manager, and `browserAvailable()` for skip constraints.
-* The logic lives in `testbox.system.browser.BrowserSupport`, usable from any BoxLang spec.
+* The logic lives in `testbox.system.browser.BrowserSupport`, usable from any BoxLang code.
 
 Read the [Browser Testing guide](../../browser-testing/README.md).
 
@@ -66,7 +68,7 @@ expect( page.locator( ".cart li" ) ).toHaveCount( 2 )
 expect( page.byLabel( "Email" ) ).toHaveValue( "luis@ortus.com" )
 ```
 
-`BrowserSpec` registers them for you; any other BoxLang spec can use `addMatchers( new testbox.system.browser.BrowserMatchers() )`. See [Browser Matchers](../../browser-testing/browser-matchers.md).
+Browser bundles register them for you; any other BoxLang spec can use `addMatchers( new testbox.system.browser.BrowserMatchers() )`. See [Browser Matchers](../../browser-testing/browser-matchers.md).
 
 ## Spec Attachments: `attach()`
 
@@ -157,7 +159,7 @@ Start your application before the tests, wait until it answers, and stop it with
 ./testbox/run --web-server="boxlang-miniserver --port 8080" --web-server-url=http://localhost:8080 --web-server-timeout=60
 ```
 
-The runner exits with code 1 when the server does not answer in time. The URL becomes the default `baseURL` of `BrowserSpec` bundles. See [Running Browser Tests](../../browser-testing/running-browser-tests.md).
+The runner exits with code 1 when the server does not answer in time. The URL becomes the default `baseURL` of browser bundles. See [Running Browser Tests](../../browser-testing/running-browser-tests.md).
 
 * * *
 

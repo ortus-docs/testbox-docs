@@ -18,7 +18,7 @@ Browser specs are regular TestBox bundles, so every [runner](../getting-started/
 | Option | Default | Description |
 | --- | --- | --- |
 | `--web-server` | | A shell command that starts a web server before the tests run. |
-| `--web-server-url` | `http://localhost:8080` | The URL polled until the server answers. Also the default `baseURL` of `BrowserSpec` bundles. |
+| `--web-server-url` | `http://localhost:8080` | The URL polled until the server answers. Also the default `baseURL` of browser bundles. |
 | `--web-server-timeout` | `60` | How long to wait for the server to answer, in seconds. |
 | `--retries` | `0` | How many extra times to run a failing or erroring spec. See [Retries](retries.md). |
 | `--failed` | `false` | Run only the bundles and specs that failed or errored in the last run. |
@@ -31,7 +31,7 @@ Browser tests need your application running. With `--web-server`, the runner sta
 
 1. It runs the command with `sh -c` (`cmd /c` on Windows) from the directory you run the tests from.
 2. It polls `--web-server-url` until the server answers with an HTTP status below 500.
-3. It stores the URL in `server.testbox.webServerURL`, which every [`BrowserSpec`](README.md#bundle-annotations) without a `baseURL` annotation uses as its base URL, so `page.visit( "/login" )` just works.
+3. It stores the URL in `server.testbox.webServerURL`, which every [browser bundle](README.md#bundle-annotations) without a `baseURL` annotation uses as its base URL, so `page.visit( "/login" )` just works.
 4. It runs the tests.
 5. It stops the server **and its child processes** after the tests, whether they passed, failed or threw.
 
