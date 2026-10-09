@@ -130,6 +130,49 @@ component{
 
 <figure><img src=".gitbook/assets/testbox-suite-run.gif" alt=""><figcaption><p>Runner</p></figcaption></figure>
 
+## Browser Testing
+
+Drive a real browser (Chromium, Firefox or WebKit) right from your specs. Extend `BrowserSpec`, call `browse()`, and assert on what your users actually see. Powered by [bx-playwright](https://bxplaywright.boxlang.io) on BoxLang.
+
+{% hint style="info" %}
+Browser testing requires BoxLang and the bx-playwright module. On CFML engines browser specs skip with the reason, so the rest of your suite still runs.
+{% endhint %}
+
+<figure><img src=".gitbook/assets/browser-testing-demo.gif" alt="A BrowserSpec signing in to a demo shop and checking the dashboard"><figcaption><p>A BrowserSpec signing in and checking the dashboard</p></figcaption></figure>
+
+{% code title="tests/specs/browser/ShopSpec.bx" %}
+```java
+@baseURL( "http://localhost:8090" )
+@browserProfile( "ci" )
+class extends="testbox.system.BrowserSpec" {
+
+	function run() {
+		describe( "Ortus Shop", () => {
+			it( "signs in and shows the dashboard", () => {
+				browse( ( page ) => {
+					page.visit( "/" )
+						.fill( "Email", "luis@ortus.com" )
+						.fill( "Password", "secret" )
+						.click( "Sign in" )
+					expect( page ).toHavePath( "/dashboard.html" )
+					expect( page ).toSee( "Welcome, Luis" )
+				} )
+			} )
+		} )
+	}
+
+}
+```
+{% endcode %}
+
+When a browser spec fails, TestBox captures the evidence for you: a **screenshot** of the page, a Playwright **trace** you can step through, and a **video** of the run, all linked right on the failing spec in your report.
+
+<figure><img src=".gitbook/assets/browser-testing-report-attachments.png" alt="A failing browser spec in the HTML report with its screenshot, trace and video attached"><figcaption><p>Failure screenshot, trace and video attached to the failing spec</p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/browser-testing-trace-viewer.png" alt="The Playwright trace viewer showing the failed assertion"><figcaption><p>Step through the failure in the Playwright trace viewer</p></figcaption></figure>
+
+Then fix it and rerun only what failed with `--failed` or the **Run Failed** button. Start with the [Browser Testing guide](browser-testing/README.md).
+
 ### Features At A Glance
 
 Here is a simple listing of features TestBox brings to the table:
@@ -150,6 +193,8 @@ Here is a simple listing of features TestBox brings to the table:
   * Min - Minimalistic Heaven
   * Raw
   * CommandBox
+* [Browser testing](browser-testing/README.md) with automatic failure screenshots, traces and videos
+* Rerun only what failed, from the CLI (`--failed`) or the web runners (**Run Failed**)
 * Asynchronous testing
 * Multi-suite capabilities
 * Test skipping

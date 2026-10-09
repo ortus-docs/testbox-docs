@@ -100,8 +100,10 @@ new testbox.system.TestBox( bundles = failed.bundles ).runRaw( testBundles = fai
 ## Debugging a Failing Browser Spec
 
 * Run the bundle with a visible browser: annotate the bundle with `@browserProfile( "debug" )`, or run with `BX_PLAYWRIGHT_PROFILE=debug` when the bundle has no `browserProfile`. The `debug` profile is headed, slowed down and records every artifact.
-* Open the trace a failure [attached](attachments.md) with `bxPlaywright show-trace path/to/trace.zip`.
+* Open the trace a failure [attached](attachments.md) with `bxPlaywright show-trace path/to/trace.zip`. It shows every action, the page before and after it, the console and the network.
 * Record the steps of a new spec as BoxLang code with `bxPlaywright codegen http://localhost:8080`.
+
+<figure><img src="../.gitbook/assets/browser-testing-trace-viewer.png" alt="The Playwright trace viewer showing the failed hasText assertion"><figcaption><p>Debugging a failure in the Playwright trace viewer</p></figcaption></figure>
 
 More in the [bx-playwright testing guide](https://bxplaywright.boxlang.io/testing/).
 
