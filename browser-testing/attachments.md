@@ -140,6 +140,10 @@ When the `browse()` closure throws, whether from a matcher, a bx-playwright asse
 | Playwright trace (a `.zip`) | `trace` |
 | Video of each page | `video` |
 
+This is the screenshot TestBox attached when the spec expected the last order to be `Shipped` but the page showed `Processing`:
+
+<figure><img src="../.gitbook/assets/browser-testing-failure-screenshot.png" alt="Failure screenshot of the dashboard with the last order still Processing"><figcaption><p>The failure screenshot: the last order is still Processing</p></figcaption></figure>
+
 Files go to `~/.boxlang/playwright/artifacts` unless you set `artifacts.directory`. When the closure passes, nothing is kept or attached for the `on-failure` policies. More on policies in the [bx-playwright testing guide](https://bxplaywright.boxlang.io/testing/).
 
 ### Opening a Trace
@@ -150,14 +154,52 @@ A trace records every action, a DOM snapshot before and after it, the console an
 bxPlaywright show-trace tests/results/artifacts/trace.zip
 ```
 
+Select an action to see the page at that moment, the call parameters and the error. Here the `hasText` assertion waited 5 seconds for `Shipped` and the trace shows the `Processing` pill it found instead:
+
+<figure><img src="../.gitbook/assets/browser-testing-trace-viewer.png" alt="The Playwright trace viewer showing the failed hasText assertion"><figcaption><p>The failed assertion in the Playwright trace viewer</p></figcaption></figure>
+
 ## Attachments in Reports
 
 | Reporter or output | Shows |
 | --- | --- |
 | JSON (`json`) and Raw | An `attachments` array of `{ path, type, name }` in every spec's stats, passed or failed. |
-| Simple (`simple`) | A paperclip list under the spec, each name linking to its file. |
+| Simple (`simple`), Min (`min`), Dot (`dot`) and Doc (`doc`) | Screenshots as thumbnails that open full size, and a list of the other files, each name linking to its file. A trace has a **Copy show-trace command** button. |
 | JUnit (`junit`) and ANT JUnit (`antjunit`) | A `<system-out>` element on the test case with one `[[ATTACHMENT\|path]]` line per file. |
 | Text (`text`), Console (`console`) and the BoxLang runner `--stream` output | The attachments of **failed and errored** specs, listed under the failure with their name, type and path. |
+
+### Screenshots in the HTML Reports
+
+The HTML reporters embed image attachments (`png`, `jpg`, `gif` and `webp`) in the page, so the screenshot of a failure shows right on the failed spec. Click a thumbnail to see it full size, then click anywhere or press Escape to close it.
+
+<figure><img src="../.gitbook/assets/browser-testing-report-inline-screenshot.png" alt="A failed browser spec in the Simple report with its screenshot as a thumbnail, and its trace and video listed below"><figcaption><p>The failure screenshot on the failed spec</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/browser-testing-report-screenshot-zoom.png" alt="The failure screenshot open full size over the report"><figcaption><p>A click opens it full size</p></figcaption></figure>
+
+Embedding means the screenshots work wherever the report goes: served by a web runner, saved as a file, or uploaded as a CI artifact. A failed spec's screenshots are embedded once, in its failure card, and the bundle list links to that card.
+
+Images up to 2 MB are embedded. Larger ones stay links. Change the limit with the `inlineImageMaxKB` reporter option, or set it to `0` to link every image:
+
+{% tabs %}
+{% tab title="BoxLang" %}
+```java
+new testbox.system.TestBox(
+    bundles  = "tests.specs",
+    reporter = { type : "simple", options : { inlineImageMaxKB : 512 } }
+).run()
+```
+{% endtab %}
+
+{% tab title="CFML" %}
+```cfscript
+new testbox.system.TestBox(
+    bundles  = "tests.specs",
+    reporter = { type : "simple", options : { inlineImageMaxKB : 512 } }
+).run();
+```
+{% endtab %}
+{% endtabs %}
+
+Videos, traces and other files are listed under the spec. A trace has a **Copy show-trace command** button that copies the `bxPlaywright show-trace` command for its path.
 
 The JUnit output follows the convention of the Jenkins [JUnit Attachments plugin](https://plugins.jenkins.io/junit-attachments/), which GitLab also reads for its test reports:
 
