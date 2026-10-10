@@ -8,9 +8,8 @@ icon: browsers
 TestBox can drive a real browser (Chromium, Firefox or WebKit) from your specs through the [bx-playwright](https://bxplaywright.boxlang.io) module. Your specs visit pages, click, fill forms and assert on what a user actually sees, with the same `describe()`, `it()` and `expect()` you already write.
 
 {% hint style="info" %}
-Browser specs and the [browser matchers](browser-matchers.md) require BoxLang, because bx-playwright only runs on BoxLang. When the engine is not BoxLang, or bx-playwright is not installed, `browse()` and `this.playwright()` skip the running spec with the reason, so the rest of your suite still runs:
+Browser specs and the [browser matchers](browser-matchers.md) require BoxLang, because bx-playwright only runs on BoxLang. Write browser specs as BoxLang classes (`.bx`) and keep them in a folder that your CFML engine runs exclude: on Lucee or Adobe the browser annotations do nothing, so `browse()` is not defined and calling it errors. On BoxLang without bx-playwright, `browse()` and `this.playwright()` skip the running spec with an install hint, so the rest of your suite still runs:
 
-* `Browser specs need the BoxLang engine: bx-playwright only runs on BoxLang`
 * `bx-playwright is not installed: install-bx-module bx-playwright`
 
 The features that browser tests rely on, [attachments](attachments.md), [retries](retries.md), `Playwright.AssertionFailed` counted as a failure and the [`--failed` runner option](running-browser-tests.md#rerun-what-failed-failed), work for every spec on every engine.
@@ -33,15 +32,22 @@ And when a spec fails, you get the evidence on the failing spec in your report:
 
 ## Installation
 
-bx-playwright needs BoxLang 1.17+ and Java 21+. Install the module into your BoxLang runtime, then download a browser:
+bx-playwright needs BoxLang 1.17+ and Java 21+. TestBox needs a bx-playwright version that provides `playwrightEnsureBrowser()`, the first stable bx-playwright release or later. Install the module into your BoxLang runtime:
 
 ```bash
 install-bx-module bx-playwright
-bxPlaywright install chromium
+```
+
+That is all you need locally: the first time a bundle opens a browser, TestBox installs the browser of its profile through `playwrightEnsureBrowser()`. The first run needs network access and is slower while the browser downloads. On Linux, the system libraries the browser needs are not part of that download: install them once with `bxPlaywright install chromium --with-deps` (or your profile's browser).
+
+For CI or offline machines, install the browser up front and turn the download off with `@browserAutoInstall( false )`, or call `ensureBrowserInstalled()` yourself, for example from `beforeAll()`:
+
+```bash
+bxPlaywright install chromium --with-deps
 bxPlaywright doctor
 ```
 
-On Linux CI machines add `--with-deps` to `bxPlaywright install` so the system libraries the browser needs are installed too. More browsers, profiles and settings are covered in the [bx-playwright getting started guide](https://bxplaywright.boxlang.io/getting-started/).
+More browsers, profiles and settings are covered in the [bx-playwright getting started guide](https://bxplaywright.boxlang.io/getting-started/).
 
 ## Your First Browser Spec
 
@@ -171,11 +177,11 @@ When a bundle has browser support, the TestBox runner creates a `testbox.system.
 * `getBrowserSupport()`: the bundle `BrowserSupport`.
 * `closeBrowser()`: close the bundle browser.
 
-It also adds `this.playwright()`, the bundle manager (described below), and registers the [browser matchers](browser-matchers.md) for every spec of the bundle. A method your spec declares itself, with one of these names, is kept, not overridden.
+It also adds `this.playwright()`, the bundle manager (described below), and registers the [browser matchers](browser-matchers.md) for every spec of the bundle. A public method your spec declares itself, with one of these names, is kept, not overridden.
 
 * **Inherited.** The annotations are read from the spec class and every class it extends. Put `@browser` on your project base spec and every spec that extends it can browse.
 * **Any base class.** It works for BDD and xUnit bundles, whatever they extend: `testbox.system.BaseSpec`, a ColdBox `BaseTestCase` or your own base spec.
-* **BoxLang only.** The runner attaches browser support on BoxLang, where bx-playwright runs.
+* **BoxLang only.** The runner attaches browser support on BoxLang, where bx-playwright runs. On Lucee and Adobe the annotations are ignored, so keep browser specs out of CFML runs.
 
 ```java
 // tests/resources/BaseBrowserSpec.bx: every spec that extends it gets browser support.
@@ -187,7 +193,7 @@ abstract class extends="testbox.system.BaseSpec" {
 
 ### `BrowserSpec`
 
-`testbox.system.BrowserSpec` is an optional base class: it is a `testbox.system.BaseSpec` that carries the `@browser` annotation. Existing specs that extend it keep working unchanged.
+`testbox.system.BrowserSpec` is an optional base class: it is a `testbox.system.BaseSpec` that carries the `@browser` annotation and declares no methods of its own. The runner mixes in the browser methods and closes the browser after the bundle. Specs that extend it keep working unless they call `super.browse()` or `super.closeBrowser()`, or override `closeBrowser()` expecting it to run after the bundle.
 
 ```java
 @baseURL( "http://localhost:8080" )
@@ -300,7 +306,7 @@ Call it as `this.playwright()`. An unqualified `playwright()` resolves to the bx
 
 ## Skipping When No Browser Is Available
 
-`browse()` and `this.playwright()` already skip the running spec when bx-playwright is missing. To skip whole suites up front, without even entering them, use `browserAvailable()` in a `skip` constraint:
+On BoxLang, `browse()` and `this.playwright()` already skip the running spec when bx-playwright is missing. To skip whole suites up front, without even entering them, use `browserAvailable()` in a `skip` constraint:
 
 ```java
 function run() {

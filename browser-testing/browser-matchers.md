@@ -17,7 +17,7 @@ expect( page.locator( "@error" ) ).notToBeVisible()
 ```
 
 {% hint style="info" %}
-These matchers require BoxLang: they live in `testbox.system.browser.BrowserMatchers`, a BoxLang class built on bx-playwright. [Browser](README.md#turning-on-browser-support) bundles skip their specs on CFML engines, or when bx-playwright is not installed, before any matcher runs.
+These matchers require BoxLang: they live in `testbox.system.browser.BrowserMatchers`, a BoxLang class built on bx-playwright. On BoxLang without bx-playwright, [browser](README.md#turning-on-browser-support) bundles skip their specs before any matcher runs. Keep browser specs out of Lucee and Adobe runs: there the browser annotations do nothing.
 {% endhint %}
 
 ## Web-First: They Wait

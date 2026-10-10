@@ -94,7 +94,7 @@ TestBox records the path you give it; it does not copy the file. Keep attached f
 ## Automatic Browser Artifacts
 
 {% hint style="info" %}
-Automatic browser artifacts require BoxLang and bx-playwright, like every [browser spec](README.md) feature. On CFML engines browser specs are skipped before any artifact is recorded.
+Automatic browser artifacts require BoxLang and bx-playwright, like every [browser spec](README.md) feature. Browser specs are BoxLang classes, and on BoxLang without bx-playwright they skip before any artifact is recorded.
 {% endhint %}
 
 bx-playwright records screenshots, traces and videos according to its **artifact policies**. They are all `off` by default. Turn them on with a profile, for example the built-in `ci` profile, or with the `artifacts` setting or `browse()` option:

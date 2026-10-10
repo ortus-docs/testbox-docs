@@ -135,7 +135,7 @@ component{
 Drive a real browser (Chromium, Firefox or WebKit) right from your specs. Add the `@browser` annotation to a spec, call `browse()`, and assert on what your users actually see. Powered by [bx-playwright](https://bxplaywright.boxlang.io) on BoxLang.
 
 {% hint style="info" %}
-Browser testing requires BoxLang and the bx-playwright module. On CFML engines browser specs skip with the reason, so the rest of your suite still runs.
+Browser testing requires BoxLang and the bx-playwright module. Write browser specs as BoxLang classes (`.bx`) and keep them out of Lucee and Adobe runs. On BoxLang without bx-playwright they skip with an install hint, so the rest of your suite still runs.
 {% endhint %}
 
 <figure><img src=".gitbook/assets/browser-testing-demo.gif" alt="A browser spec signing in to a demo shop and checking the dashboard"><figcaption><p>A browser spec signing in and checking the dashboard</p></figcaption></figure>
