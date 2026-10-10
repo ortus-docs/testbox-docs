@@ -179,7 +179,11 @@ When a bundle has browser support, the TestBox runner creates a `testbox.system.
 
 It also adds `this.playwright()`, the bundle manager (described below), and registers the [browser matchers](browser-matchers.md) for every spec of the bundle. A public method your spec declares itself, with one of these names, is kept, not overridden.
 
-* **Inherited.** The annotations are read from the spec class and every class it extends. Put `@browser` on your project base spec and every spec that extends it can browse.
+{% hint style="warning" %}
+Only **public** methods are kept. A private method with one of these names is replaced by the browser method, so make an override public.
+{% endhint %}
+
+* **Inherited.** The annotations are read from the spec class and every class it extends. Put `@browser` on your project base spec and every spec that extends it can browse. A spec can opt out with `@browser( false )`, even when its base spec turns it on.
 * **Any base class.** It works for BDD and xUnit bundles, whatever they extend: `testbox.system.BaseSpec`, a ColdBox `BaseTestCase` or your own base spec.
 * **BoxLang only.** The runner attaches browser support on BoxLang, where bx-playwright runs. On Lucee and Adobe the annotations are ignored, so keep browser specs out of CFML runs.
 

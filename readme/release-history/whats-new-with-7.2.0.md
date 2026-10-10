@@ -54,10 +54,10 @@ class extends="testbox.system.BaseSpec" {
 }
 ```
 
-* `@browser`, `@browserProfile` and `@baseURL` class annotations turn browser support on, and are inherited from parent classes: put `@browser` on your project base spec and its children can browse. It works for BDD and xUnit bundles on any base class, such as `testbox.system.BaseSpec` or a ColdBox `BaseTestCase`.
-* The runner mixes `browse()`, `browserAvailable()`, `ensureBrowserInstalled()`, `getBrowserSupport()` and `closeBrowser()` into the spec, adds `this.playwright()` and registers the browser matchers. Public methods your spec declares itself are kept.
+* `@browser`, `@browserProfile` and `@baseURL` class annotations turn browser support on, and are inherited from parent classes: put `@browser` on your project base spec and its children can browse, and `@browser( false )` opts a child out. It works for BDD and xUnit bundles on any base class, such as `testbox.system.BaseSpec` or a ColdBox `BaseTestCase`.
+* The runner mixes `browse()`, `browserAvailable()`, `ensureBrowserInstalled()`, `getBrowserSupport()` and `closeBrowser()` into the spec, adds `this.playwright()` and registers the browser matchers. Public methods your spec declares itself are kept; a private method with the same name is replaced.
 * `testbox.system.BrowserSpec` is an optional base class that carries `@browser`.
-* The browser of the bundle profile is installed on first use (it needs network access, and Linux needs the system libraries from `bxPlaywright install chromium --with-deps`). Use `@browserAutoInstall( false )` to require a pre-installed browser, or `ensureBrowserInstalled()` to install it yourself. TestBox needs a bx-playwright version that provides `playwrightEnsureBrowser()`, the first stable release or later.
+* The browser of the bundle profile is installed on first use, unless the profile uses a branded channel such as `chrome` or `msedge` (it needs network access, and Linux needs the system libraries from `bxPlaywright install chromium --with-deps`). Use `@browserAutoInstall( false )` to require a pre-installed browser, or `ensureBrowserInstalled()` to install it yourself. TestBox needs a bx-playwright version that provides `playwrightEnsureBrowser()`, the first stable release or later.
 * `browse( callback, options )` with one page per declared argument, for multi-user flows.
 * `this.playwright()` for the bundle's bx-playwright manager, and `browserAvailable()` for skip constraints.
 * The logic lives in `testbox.system.browser.BrowserSupport`, usable from any BoxLang code.
@@ -315,6 +315,7 @@ xUnit failures now also record the failure detail in the spec stats, as BDD fail
 
 * **Bundle error badge.** The bundle badge of the HTML reporters showed a negative error count (`-1 error`) when a bundle threw outside a spec, for example in `beforeAll()`. It now shows none.
 * **`run` script quoting.** The `run` launcher script now quotes its arguments, so runner options with spaces, such as a `--web-server` command, reach the BoxLang runner intact.
+* **Specs that do not extend `BaseSpec`.** TestBox mixes `testbox.system.BaseSpec` into a spec that does not extend it. Those specs errored on the 7.2 development line (missing private state, `BaseSpec` return types, a relative `Expectation` path). They run again.
 * **JUnit reports without `bx-esapi`.** The `JUnit` and `ANTJunit` reporters failed on BoxLang when the `bx-esapi` module was not installed, because they encode attributes with `encodeForXMLAttribute()`. They now fall back to `xmlFormat()`, also on Adobe with full null support.
 
 ## Release Notes
@@ -354,6 +355,7 @@ xUnit failures now also record the failure detail in the spec stats, as BDD fail
 | [TESTBOX-471](https://ortussolutions.atlassian.net/browse/TESTBOX-471) | The bundle badge of the HTML reporters showed `-1 error` when a bundle threw outside a spec |
 | | The `run` script now quotes its arguments |
 | | The `JUnit` and `ANTJunit` reporters failed on BoxLang without `bx-esapi` |
+| | Specs that do not extend `testbox.system.BaseSpec` run again ([#223](https://github.com/Ortus-Solutions/TestBox/pull/223)) |
 
 ### Removed
 
