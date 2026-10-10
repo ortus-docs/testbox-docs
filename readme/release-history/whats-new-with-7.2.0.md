@@ -315,7 +315,7 @@ xUnit failures now also record the failure detail in the spec stats, as BDD fail
 
 * **Bundle error badge.** The bundle badge of the HTML reporters showed a negative error count (`-1 error`) when a bundle threw outside a spec, for example in `beforeAll()`. It now shows none.
 * **`run` script quoting.** The `run` launcher script now quotes its arguments, so runner options with spaces, such as a `--web-server` command, reach the BoxLang runner intact.
-* **Specs that do not extend `BaseSpec`.** TestBox mixes `testbox.system.BaseSpec` into a spec that does not extend it. Those specs errored on the 7.2 development line (missing private state, `BaseSpec` return types, a relative `Expectation` path). They run again.
+* **Specs that do not extend `BaseSpec`.** TestBox mixes `testbox.system.BaseSpec` into a spec that does not extend it. On BoxLang those specs errored: the mixed in BaseSpec missed its private state, three of its methods declared a `BaseSpec` return type, and `expect()` resolved `Expectation` relative to the spec. They run again.
 * **JUnit reports without `bx-esapi`.** The `JUnit` and `ANTJunit` reporters failed on BoxLang when the `bx-esapi` module was not installed, because they encode attributes with `encodeForXMLAttribute()`. They now fall back to `xmlFormat()`, also on Adobe with full null support.
 
 ## Release Notes
