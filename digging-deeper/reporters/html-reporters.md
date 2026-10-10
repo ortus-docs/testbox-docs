@@ -248,6 +248,12 @@ The reports are responsive, so you can open a CI artifact on your phone.
 
 Everything a report needs, the styles, the icons, the scripts, the highlighter and the logo, is inlined in the page. A report is a single file that works offline, on a build server without internet, or attached to an email. The only time the page talks to the network is when you click an Ask AI provider.
 
+Contributing to TestBox? The inlined front-end libraries (Bootstrap, Bootstrap Icons, Alpine and Prism) are built from `build/vendor` in the TestBox repository. Rebuild them with one command, and CI checks that the committed files match:
+
+```bash
+box run-script assets:update
+```
+
 {% hint style="warning" %}
 **Changed in TestBox 7.2:** the `url.fullPage` switch was removed. An HTML reporter always returns a complete page. If you embedded a reporter in your own page, include the report in an `<iframe>` or use the `JSON` reporter and render the data yourself.
 {% endhint %}

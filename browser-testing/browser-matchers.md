@@ -17,7 +17,7 @@ expect( page.locator( "@error" ) ).notToBeVisible()
 ```
 
 {% hint style="info" %}
-These matchers require BoxLang: they live in `testbox.system.browser.BrowserMatchers`, a BoxLang class built on bx-playwright. [`BrowserSpec`](README.md) bundles skip their specs on CFML engines, or when bx-playwright is not installed, before any matcher runs.
+These matchers require BoxLang: they live in `testbox.system.browser.BrowserMatchers`, a BoxLang class built on bx-playwright. On BoxLang without bx-playwright, [browser](README.md#turning-on-browser-support) bundles skip their specs before any matcher runs. Keep browser specs out of Lucee and Adobe runs: there the browser annotations do nothing.
 {% endhint %}
 
 ## Web-First: They Wait
@@ -248,9 +248,9 @@ toSee() needs a bx-playwright page or locator, but the actual value is the simpl
 toHaveTitle() needs a bx-playwright page, but the actual value is a struct.
 ```
 
-## Using the Matchers Outside `BrowserSpec`
+## Using the Matchers Outside Browser Specs
 
-`BrowserSpec` registers the matchers for every spec of the bundle. In any other BoxLang spec, register them yourself with [`addMatchers()`](../digging-deeper/expectations/custom-matchers.md):
+TestBox registers the matchers for every spec of a bundle with [browser support](README.md#turning-on-browser-support), turned on by `@browser`, `@browserProfile` or `@baseURL`. In any other BoxLang spec, register them yourself with [`addMatchers()`](../digging-deeper/expectations/custom-matchers.md):
 
 ```java
 class extends="testbox.system.BaseSpec" {

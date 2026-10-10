@@ -77,7 +77,7 @@ addMatchers( new models.util.MyMatchers() );
 
 ### Browser Matchers
 
-TestBox ships a ready-made matcher class for bx-playwright pages and locators, `testbox.system.browser.BrowserMatchers`. `BrowserSpec` bundles register it for you; in any other BoxLang spec, register it like any class of matchers:
+TestBox ships a ready-made matcher class for bx-playwright pages and locators, `testbox.system.browser.BrowserMatchers`. Bundles with [browser support](../../browser-testing/README.md#turning-on-browser-support) (`@browser`, `@browserProfile` or `@baseURL`) register it for you; in any other BoxLang spec, register it like any class of matchers:
 
 ```java
 addMatchers( new testbox.system.browser.BrowserMatchers() )
