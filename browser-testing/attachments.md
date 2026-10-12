@@ -151,7 +151,7 @@ Files go to `~/.boxlang/playwright/artifacts` unless you set `artifacts.director
 A trace records every action, a DOM snapshot before and after it, the console and the network. Open one in the Playwright trace viewer:
 
 ```bash
-bxPlaywright show-trace tests/results/artifacts/trace.zip
+bxplaywright show-trace tests/results/artifacts/trace.zip
 ```
 
 Select an action to see the page at that moment, the call parameters and the error. Here the `hasText` assertion waited 5 seconds for `Shipped` and the trace shows the `Processing` pill it found instead:
@@ -199,7 +199,7 @@ new testbox.system.TestBox(
 {% endtab %}
 {% endtabs %}
 
-Videos, traces and other files are listed under the spec. A trace has a **Copy show-trace command** button that copies the `bxPlaywright show-trace` command for its path.
+Videos, traces and other files are listed under the spec. A trace has a **Copy show-trace command** button that copies the `bxplaywright show-trace` command for its path.
 
 The JUnit output follows the convention of the Jenkins [JUnit Attachments plugin](https://plugins.jenkins.io/junit-attachments/), which GitLab also reads for its test reports:
 
