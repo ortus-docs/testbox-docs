@@ -100,8 +100,8 @@ new testbox.system.TestBox( bundles = failed.bundles ).runRaw( testBundles = fai
 ## Debugging a Failing Browser Spec
 
 * Run the bundle with a visible browser: annotate the bundle with `@browserProfile( "debug" )`, or run with `BX_PLAYWRIGHT_PROFILE=debug` when the bundle has no `browserProfile`. The `debug` profile is headed, slowed down and records every artifact.
-* Open the trace a failure [attached](attachments.md) with `bxPlaywright show-trace path/to/trace.zip`. It shows every action, the page before and after it, the console and the network.
-* Record the steps of a new spec as BoxLang code with `bxPlaywright codegen http://localhost:8080`.
+* Open the trace a failure [attached](attachments.md) with `bxplaywright show-trace path/to/trace.zip`. It shows every action, the page before and after it, the console and the network.
+* Record the steps of a new spec as BoxLang code with `bxplaywright codegen http://localhost:8080`.
 
 <figure><img src="../.gitbook/assets/browser-testing-trace-viewer.png" alt="The Playwright trace viewer showing the failed hasText assertion"><figcaption><p>Debugging a failure in the Playwright trace viewer</p></figcaption></figure>
 
@@ -111,7 +111,7 @@ More in the [bx-playwright testing guide](https://bxplaywright.boxlang.io/testin
 
 A CI run needs the bx-playwright module, a browser and its system libraries, your application running, and somewhere to keep the screenshots and traces of failed specs:
 
-* Install the browser with `bxPlaywright install chromium --with-deps` (the `--with-deps` flag installs the system libraries on Linux).
+* Install the browser with `bxplaywright install chromium --with-deps` (the `--with-deps` flag installs the system libraries on Linux).
 * Use the `ci` profile, through `BX_PLAYWRIGHT_PROFILE=ci` or a `@browserProfile( "ci" )` annotation: headless, with a screenshot, trace and videos kept for every failed context.
 * Cache `~/.boxlang/playwright` (driver, Node.js and browsers) between runs.
 * Start the application with `--web-server`.
@@ -163,8 +163,8 @@ jobs:
       - name: Install Chromium
         run: |
           export PATH="$HOME/.boxlang/bin:$PATH"
-          bxPlaywright install chromium --with-deps
-          bxPlaywright doctor
+          bxplaywright install chromium --with-deps
+          bxplaywright doctor
 
       - name: Run browser tests
         env:
@@ -188,7 +188,7 @@ jobs:
 ```
 {% endcode %}
 
-Adapt the run step to your project: point `--directory` at your specs, and replace the MiniServer command with whatever starts your application. Artifacts go to `~/.boxlang/playwright/artifacts` unless you set the bx-playwright `artifacts.directory` setting. Download the `browser-test-results` artifact from the failed run and open a trace with `bxPlaywright show-trace trace.zip`.
+Adapt the run step to your project: point `--directory` at your specs, and replace the MiniServer command with whatever starts your application. Artifacts go to `~/.boxlang/playwright/artifacts` unless you set the bx-playwright `artifacts.directory` setting. Download the `browser-test-results` artifact from the failed run and open a trace with `bxplaywright show-trace trace.zip`.
 
 ### Jenkins and GitLab
 

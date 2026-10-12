@@ -38,13 +38,13 @@ bx-playwright needs BoxLang 1.17+ and Java 21+. TestBox needs a bx-playwright ve
 install-bx-module bx-playwright
 ```
 
-That is all you need locally: the first time a bundle opens a browser, TestBox installs the browser of its profile through `playwrightEnsureBrowser()`. The first run needs network access and is slower while the browser downloads. On Linux, the system libraries the browser needs are not part of that download: install them once with `bxPlaywright install chromium --with-deps` (or your profile's browser).
+That is all you need locally: the first time a bundle opens a browser, TestBox installs the browser of its profile through `playwrightEnsureBrowser()`. The first run needs network access and is slower while the browser downloads. On Linux, the system libraries the browser needs are not part of that download: install them once with `bxplaywright install chromium --with-deps` (or your profile's browser).
 
 For CI or offline machines, install the browser up front and turn the download off with `@browserAutoInstall( false )`, or call `ensureBrowserInstalled()` yourself, for example from `beforeAll()`:
 
 ```bash
-bxPlaywright install chromium --with-deps
-bxPlaywright doctor
+bxplaywright install chromium --with-deps
+bxplaywright doctor
 ```
 
 More browsers, profiles and settings are covered in the [bx-playwright getting started guide](https://bxplaywright.boxlang.io/getting-started/).
