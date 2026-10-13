@@ -93,6 +93,8 @@ TestBox records the path you give it; it does not copy the file. Keep attached f
 
 ## Automatic Browser Artifacts
 
+<figure><img src="../.gitbook/assets/testbox-failure-artifacts.gif" alt="A failed browser spec with its screenshot in the HTML report and its Playwright trace"><figcaption><p>The screenshot, trace and video of a failed browser spec</p></figcaption></figure>
+
 {% hint style="info" %}
 Automatic browser artifacts require BoxLang and bx-playwright, like every [browser spec](README.md) feature. Browser specs are BoxLang classes, and on BoxLang without bx-playwright they skip before any artifact is recorded.
 {% endhint %}

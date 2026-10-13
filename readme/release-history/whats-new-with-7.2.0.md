@@ -21,6 +21,10 @@ TestBox 7.2.0 brings **browser testing** to TestBox. Built on the [bx-playwright
 
 ## Browser Testing
 
+{% file src="../../.gitbook/assets/testbox-browser-testing.mp4" %}
+Browser testing in TestBox 7.2, in 80 seconds
+{% endfile %}
+
 {% hint style="info" %}
 Browser specs and the browser matchers require BoxLang and the bx-playwright module. Write browser specs as BoxLang classes (`.bx`) and keep them out of Lucee and Adobe runs, where the browser annotations do nothing. On BoxLang without bx-playwright, `browse()` skips the running spec with an install hint: `bx-playwright is not installed: install-bx-module bx-playwright`.
 {% endhint %}
@@ -61,6 +65,8 @@ class extends="testbox.system.BaseSpec" {
 Read the [Browser Testing guide](../../browser-testing/README.md).
 
 ## Browser Matchers
+
+<figure><img src="../../.gitbook/assets/testbox-browser-matchers.gif" alt="Browser matchers in a spec, a browser waiting for the page, and a failing toHaveCount() message"><figcaption><p>Browser matchers wait for the page and explain their failures</p></figcaption></figure>
 
 Nine web-first matchers for bx-playwright pages and locators, each with its `not` form. They retry until they pass or the assertion timeout expires, and fail with Playwright's expected, received and call log message.
 
@@ -104,9 +110,13 @@ it( "renders the PDF", function(){
 {% endtab %}
 {% endtabs %}
 
+<figure><img src="../../.gitbook/assets/testbox-failure-artifacts.gif" alt="A failed browser spec with its screenshot in the HTML report and its Playwright trace"><figcaption><p>The screenshot, trace and video of a failed browser spec</p></figcaption></figure>
+
 Attachments land in the new `attachments` array of the spec stats. The JSON report includes them, the HTML reports show screenshots inline as thumbnails that open full size and link the other files, the text, console and stream outputs list them under failed specs, and the JUnit and ANT JUnit reports add one `[[ATTACHMENT|path]]` line per file in `<system-out>`, the format the Jenkins JUnit Attachments plugin and GitLab understand. See [Attachments](../../browser-testing/attachments.md).
 
 ## Spec Retries
+
+<figure><img src="../../.gitbook/assets/testbox-spec-retries.gif" alt="A spec with retries = 2 that passes on its second attempt"><figcaption><p>A flaky spec passing on its second attempt</p></figcaption></figure>
 
 Rerun a failing or erroring spec, with its `beforeEach()` and `afterEach()` (or `setup()` and `teardown()`), up to N more times, on every engine:
 
@@ -153,6 +163,8 @@ See [Retries](../../browser-testing/retries.md).
 
 ## Run Only What Failed
 
+<figure><img src="../../.gitbook/assets/testbox-run-failed.gif" alt="The Run Failed button of the HTML report and ./testbox/run --failed rerunning one spec"><figcaption><p>Run Failed in the report and --failed in the CLI</p></figcaption></figure>
+
 * **HTML reports:** the Simple, Min, Dot and Doc reports show a **Run Failed (N)** button next to **Run All** when something failed. The link is built from the report, so the web runners keep no state.
 * **BoxLang runner:** every run writes `{reportpath}/.testbox-failed.json` with the bundles and spec ids that failed or errored, and `./testbox/run --failed` reruns only those.
 * **From code:** `TestResult.getFailedTargets()` returns `{ bundles, specs, bundleErrors }` on every engine.
@@ -165,6 +177,8 @@ See [Retries](../../browser-testing/retries.md).
 Bundles that failed outside of a spec (`beforeAll()`, `afterAll()`) go to `bundleErrors`: they are listed, not rerun. When the file is missing or lists nothing, `--failed` prints a message and runs nothing. See [Rerun What Failed](../../browser-testing/running-browser-tests.md#rerun-what-failed-failed).
 
 ## BoxLang Runner: `--web-server`
+
+<figure><img src="../../.gitbook/assets/testbox-web-server.gif" alt="The BoxLang runner starting a MiniServer, running a browser spec and stopping the server"><figcaption><p>The BoxLang runner starting and stopping your web server</p></figcaption></figure>
 
 Start your application before the tests, wait until it answers, and stop it with its child processes afterwards:
 

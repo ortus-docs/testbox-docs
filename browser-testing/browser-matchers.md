@@ -22,6 +22,8 @@ These matchers require BoxLang: they live in `testbox.system.browser.BrowserMatc
 
 ## Web-First: They Wait
 
+<figure><img src="../.gitbook/assets/testbox-browser-matchers.gif" alt="Browser matchers in a spec, a browser waiting for the page, and a failing toHaveCount() message"><figcaption><p>Browser matchers wait for the page and explain their failures</p></figcaption></figure>
+
 Every browser matcher delegates to bx-playwright's [web-first assertions](https://bxplaywright.boxlang.io/assertions/). It **retries until it passes or the assertion timeout expires** (5 seconds by default), so a matcher waits for a redirect to land, a spinner to go away or a list to fill in:
 
 ```java

@@ -7,6 +7,8 @@ icon: arrows-rotate
 
 Browser tests talk to a real browser, a real server and sometimes real third-party services, so a spec can fail once for reasons that have nothing to do with your code. **Retries** run a failing or erroring spec again, up to a number of extra times, and report the final attempt. They work for every spec, browser or not, BDD or xUnit, on every engine.
 
+<figure><img src="../.gitbook/assets/testbox-spec-retries.gif" alt="A spec with retries = 2 that passes on its second attempt"><figcaption><p>A flaky spec passing on its second attempt</p></figcaption></figure>
+
 {% hint style="success" %}
 Retries hide flakiness, they do not fix it. Prefer the web-first [browser matchers](browser-matchers.md), which already wait, over retries, and keep the retry count low. The [attempts](#attempts-in-the-results) TestBox records tell you which specs need attention.
 {% endhint %}
