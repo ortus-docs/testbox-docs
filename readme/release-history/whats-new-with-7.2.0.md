@@ -1,14 +1,10 @@
 ---
-description: Coming soon
+description: October 13, 2026
 ---
 
 # What's New With 7.2.0
 
 TestBox 7.2.0 brings **browser testing** to TestBox. Built on the [bx-playwright](https://bxplaywright.boxlang.io) module, BoxLang specs can now drive a real browser, assert on pages with web-first matchers, and keep the screenshots, traces and videos of failures. Around it, TestBox gains features that every test suite benefits from, on every engine: spec attachments, retries, a **Run Failed** option, and BoxLang runner options to start your web server. The HTML reporters get a complete new look and an **Ask AI** assistant for every failure, and the new **Agent reporter** lets AI agents and automation read a test run with a minimal token cost.
-
-{% hint style="info" %}
-This release is not out yet. The release date will be added here when it ships.
-{% endhint %}
 
 ## Highlights
 
