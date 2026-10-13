@@ -7,6 +7,10 @@ icon: browsers
 
 TestBox can drive a real browser (Chromium, Firefox or WebKit) from your specs through the [bx-playwright](https://bxplaywright.boxlang.io) module. Your specs visit pages, click, fill forms and assert on what a user actually sees, with the same `describe()`, `it()` and `expect()` you already write.
 
+{% file src="../.gitbook/assets/testbox-browser-testing.mp4" %}
+Browser testing in TestBox 7.2, in 80 seconds
+{% endfile %}
+
 {% hint style="info" %}
 Browser specs and the [browser matchers](browser-matchers.md) require BoxLang, because bx-playwright only runs on BoxLang. Write browser specs as BoxLang classes (`.bx`) and keep them in a folder that your CFML engine runs exclude: on Lucee or Adobe the browser annotations do nothing, so `browse()` is not defined and calling it errors. On BoxLang without bx-playwright, `browse()` and `this.playwright()` skip the running spec with an install hint, so the rest of your suite still runs:
 

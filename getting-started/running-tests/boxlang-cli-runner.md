@@ -195,6 +195,8 @@ Identify slow specs and surface them at the end of the run:
 
 ## Retries, Failed Specs and Web Servers
 
+<figure><img src="../../.gitbook/assets/testbox-web-server.gif" alt="The BoxLang runner starting a MiniServer, running a browser spec and stopping the server"><figcaption><p>The BoxLang runner starting and stopping your web server</p></figcaption></figure>
+
 These options shine for [browser tests](../../browser-testing/README.md), but `--retries` and `--failed` work for every bundle, `.bx` or `.cfc`.
 
 | Option | Description | Default |

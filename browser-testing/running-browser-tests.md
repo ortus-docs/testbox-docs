@@ -27,6 +27,8 @@ Browser specs are regular TestBox bundles, so every [runner](../getting-started/
 
 ## Start a Web Server for the Run
 
+<figure><img src="../.gitbook/assets/testbox-web-server.gif" alt="The BoxLang runner starting a MiniServer, running a browser spec and stopping the server"><figcaption><p>The BoxLang runner starting and stopping your web server</p></figcaption></figure>
+
 Browser tests need your application running. With `--web-server`, the runner starts it for you:
 
 1. It runs the command with `sh -c` (`cmd /c` on Windows) from the directory you run the tests from.
@@ -57,6 +59,8 @@ If the server does not answer within `--web-server-timeout` seconds, or its comm
 Prefer to start the server yourself? Skip `--web-server` and set the `baseURL` annotation on your bundles, or the `BX_PLAYWRIGHT_BASEURL` environment variable.
 
 ## Rerun What Failed: `--failed`
+
+<figure><img src="../.gitbook/assets/testbox-run-failed.gif" alt="The Run Failed button of the HTML report and ./testbox/run --failed rerunning one spec"><figcaption><p>Run Failed in the report and --failed in the CLI</p></figcaption></figure>
 
 Every run of the BoxLang runner writes a `.testbox-failed.json` file to the report path (`--reportpath`, `tests/results` by default) with the bundles and spec ids that failed or errored:
 
